@@ -1,0 +1,15 @@
+# Secrets — never commit tokens or credentials
+token.txt
+.env
+.env.local
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Logs
+*.log

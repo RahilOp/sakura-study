@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FBF8F6">
+<title>Sakura Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<header class="topbar" id="topbar">
+  <button class="back" id="backBtn" aria-label="Go back" hidden>&#8249;</button>
+  <div class="brand">
+    <span class="mark" aria-hidden="true">&#10047;</span>
+    <span class="brandname">Sakura Study</span>
+  </div>
+  <div class="streakchip" id="streakChip" hidden></div>
+</header>
+
+<main id="app"></main>
+
+<nav class="tabbar" id="tabbar">
+  <button data-tab="home" class="tab is-on">Today</button>
+  <button data-tab="course" class="tab">Course</button>
+  <button data-tab="review" class="tab">Review</button>
+  <button data-tab="progress" class="tab">Progress</button>
+</nav>
+
+<script src="data/english.js"></script>
+<script src="data/sociology.js"></script>
+<script src="data/economics.js"></script>
+<script src="app.js"></script>
+
+<!--
+  SAKURA STUDY — INTRO SURPRISE FOR SUGRA
+  =========================================
+  WHAT THIS IS
+  A full-screen "sakura letter" that greets her the first time she opens
+  the app, then gets out of the way and never bothers her again (unless
+  she taps the little sakura bud in the corner to reread it).
+
+  HOW TO INSTALL (no editing of your existing app.js / styles.css needed)
+  1. Open your project's index.html.
+  2. Paste this ENTIRE block right before the closing </body> tag
+     (after your existing app content/scripts).
+  3. Edit the message text inside the <div id="sakura-letter-body"> below —
+     look for the "EDIT ME" comment. Everything else can stay as-is.
+  4. Redeploy as usual (drop the folder contents on Vercel, same as before).
+
+  HOW IT BEHAVES
+  - First visit: full-screen overlay, envelope closed. Tap it to open the
+    letter. Read it, then tap "Continue to Sakura Study →" to dismiss.
+  - It remembers she's seen it (localStorage) so it won't auto-show again.
+  - A small pink sakura bud stays fixed in the bottom-right corner forever
+    — tapping it replays the letter any time she wants.
+  - Falling petals are pure CSS, no images/libraries needed, and it's all
+    self-contained so it can't break your existing quiz code.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  #sakura-intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 20%, #fff5f7 0%, #ffe4ec 45%, #ffd3e0 100%);
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    overflow: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+  }
+  #sakura-intro-overlay.sakura-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .sakura-petal {
+    position: absolute;
+    top: -10%;
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(135deg, #ffb7c9, #ff8fab);
+    border-radius: 150% 0 150% 0;
+    opacity: 0.85;
+    animation: sakura-fall linear infinite;
+  }
+  @keyframes sakura-fall {
+    0%   { transform: translateY(-10vh) translateX(0) rotate(0deg); }
+    100% { transform: translateY(110vh) translateX(40px) rotate(360deg); }
+  }
+
+  #sakura-envelope-stage {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    cursor: pointer;
+    padding: 2rem;
+  }
+  #sakura-envelope-stage.sakura-fade-out {
+    animation: sakura-fadeout 0.5s ease forwards;
+  }
+  @keyframes sakura-fadeout {
+    to { opacity: 0; transform: scale(0.95); }
+  }
+
+  .sakura-emoji {
+    font-size: 3.2rem;
+    display: inline-block;
+    animation: sakura-bob 2.4s ease-in-out infinite;
+  }
+  @keyframes sakura-bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  #sakura-envelope-stage p {
+    margin-top: 1.2rem;
+    color: #b3486a;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+  }
+  #sakura-envelope-stage .sakura-tap-hint {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    color: #d98aa3;
+  }
+
+  #sakura-letter-card {
+    position: relative;
+    z-index: 2;
+    max-width: 520px;
+    width: min(90vw, 520px);
+    max-height: 82vh;
+    overflow-y: auto;
+    background: #fffaf9;
+    border-radius: 18px;
+    padding: 2.4rem 2rem;
+    box-shadow: 0 20px 60px rgba(214, 92, 129, 0.25);
+    text-align: center;
+    display: none;
+    border: 1px solid #ffd9e3;
+  }
+  #sakura-letter-card.sakura-show {
+    display: block;
+    animation: sakura-open 0.5s ease;
+  }
+  @keyframes sakura-open {
+    from { opacity: 0; transform: scale(0.9) translateY(10px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  #sakura-letter-card h1 {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #c8446b;
+    margin: 0 0 1.1rem;
+  }
+  #sakura-letter-body {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #5a3a42;
+    text-align: left;
+    white-space: pre-line;
+  }
+  #sakura-letter-card .sakura-signoff {
+    margin-top: 1.6rem;
+    font-family: 'Shippori Mincho', serif;
+    font-style: italic;
+    color: #c8446b;
+    text-align: right;
+  }
+
+  #sakura-continue-btn {
+    margin-top: 1.8rem;
+    padding: 0.75rem 1.6rem;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ff8fab, #ff6f91);
+    color: #fff;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255, 111, 145, 0.35);
+    transition: transform 0.15s ease;
+  }
+  #sakura-continue-btn:hover { transform: translateY(-2px); }
+
+  #sakura-replay-bud {
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    z-index: 500;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #fff0f4;
+    border: 1px solid #ffd0dd;
+    box-shadow: 0 6px 16px rgba(214, 92, 129, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+  }
+  #sakura-replay-bud:hover { transform: scale(1.08); }
+</style>
+
+<div id="sakura-intro-overlay">
+  <!-- falling petals, generated once via script below -->
+  <div id="sakura-envelope-stage" onclick="sakuraOpenLetter()">
+    <div class="sakura-emoji">🌸</div>
+    <p>A little something for you, Sugra.</p>
+    <div class="sakura-tap-hint">(tap the blossom to open)</div>
+  </div>
+
+  <div id="sakura-letter-card">
+    <h1>咲良スタディ — For You</h1>
+    <div id="sakura-letter-body">
+      <!-- EDIT ME: rewrite this however you like, it's just a starting draft -->
+Sugra,
+
+Before you get to today's quiz, I wanted to sneak in one honest thing:
+I built this little app in the quiet hours between everything else, not
+because you needed another study tool, but because I wanted one small
+piece of your day to carry a piece of me in it.
+
+Three years of anime nights, long-distance calls, and talking about a
+country neither of us had seen yet — and somehow we're actually getting
+there. Every sociology definition and every English essay you practice
+here is one step closer to that.
+
+I love you in a way I don't think fits neatly into words, so I'm not
+going to pretend this app says it all. Just take this as proof: even
+when I'm buried in code and deadlines, you're the thing I keep coming
+back to build for.
+
+Ganbatte on today's set. I'm cheering for you from here. 🌸
+    </div>
+    <div class="sakura-signoff">— always, wherever I am</div>
+    <div>
+      <button id="sakura-continue-btn" onclick="sakuraDismiss()">Continue to Sakura Study →</button>
+    </div>
+  </div>
+</div>
+
+<div id="sakura-replay-bud" onclick="sakuraReplay()" title="Read it again">🌸</div>
+
+<script>
+(function () {
+  var overlay = document.getElementById('sakura-intro-overlay');
+  var stage = document.getElementById('sakura-envelope-stage');
+  var card = document.getElementById('sakura-letter-card');
+  var STORAGE_KEY = 'sakura_intro_seen_v1';
+
+  // scatter falling petals
+  for (var i = 0; i < 26; i++) {
+    var p = document.createElement('div');
+    p.className = 'sakura-petal';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.animationDuration = (6 + Math.random() * 6) + 's';
+    p.style.animationDelay = (Math.random() * 6) + 's';
+    p.style.opacity = 0.5 + Math.random() * 0.5;
+    p.style.transform = 'scale(' + (0.6 + Math.random() * 0.8) + ')';
+    overlay.appendChild(p);
+  }
+
+  window.sakuraOpenLetter = function () {
+    stage.classList.add('sakura-fade-out');
+    setTimeout(function () {
+      stage.style.display = 'none';
+      card.classList.add('sakura-show');
+    }, 400);
+  };
+
+  window.sakuraDismiss = function () {
+    overlay.classList.add('sakura-hidden');
+    try { localStorage.setItem(STORAGE_KEY, 'true'); } catch (e) {}
+  };
+
+  window.sakuraReplay = function () {
+    stage.style.display = '';
+    stage.classList.remove('sakura-fade-out');
+    card.classList.remove('sakura-show');
+    overlay.classList.remove('sakura-hidden');
+  };
+
+  // only auto-show once
+  try {
+    if (localStorage.getItem(STORAGE_KEY) === 'true') {
+      overlay.classList.add('sakura-hidden');
+    }
+  } catch (e) {}
+})();
+</script>
+
+</body>
+</html>
