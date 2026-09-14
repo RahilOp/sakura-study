@@ -196,6 +196,14 @@ button.ghost{
 .notes-md a{color:var(--koubai);text-decoration:none}
 .notes-md a:hover{text-decoration:underline}
 
+.pageview{min-height:180px;cursor:grab;user-select:none}
+.pagecount{font-weight:400;font-size:.85rem;color:var(--ink-soft);margin-left:8px}
+.pagenav{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:10px}
+.pagenav button{flex:0 0 auto;margin-top:0;padding:8px 14px}
+.pagedots{display:flex;gap:6px;justify-content:center;flex:1}
+.pagedot{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer}
+.pagedot.active{background:var(--koubai)}
+
 .tabbar{
   position:fixed;left:0;right:0;bottom:0;z-index:30;
   display:grid;grid-template-columns:repeat(4,1fr);

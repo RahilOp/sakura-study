@@ -319,7 +319,53 @@
     fetch(notePath)
       .then(function (r) { return r.ok ? r.text() : Promise.reject(r.status); })
       .then(function (text) {
-        notesCard.innerHTML = "<h3>Notes</h3>" + mdToHtml(text);
+        var pages = text.split(/\n---\s*\n/).map(function (p) { return p.trim(); }).filter(function (p) { return p; });
+        if (pages.length === 0) pages = [text.trim()];
+        var pageIndex = 0;
+
+        function showPage() {
+          notesCard.innerHTML = '<h3>Notes <span class="pagecount">' + (pageIndex + 1) + " / " + pages.length + "</span></h3>" +
+            '<div class="pageview" id="pageView">' + mdToHtml(pages[pageIndex]) + "</div>" +
+            '<div class="pagenav">' +
+            '<button class="ghost" id="pagePrev">&#8249; Previous</button>' +
+            '<div class="pagedots" id="pageDots"></div>' +
+            '<button class="ghost" id="pageNext">Next &#8250;</button>' +
+            "</div>";
+          document.getElementById("pagePrev").disabled = pageIndex === 0;
+          document.getElementById("pageNext").disabled = pageIndex === pages.length - 1;
+          bindPage();
+        }
+
+        function bindPage() {
+          var prev = document.getElementById("pagePrev");
+          var next = document.getElementById("pageNext");
+          var view = document.getElementById("pageView");
+          var dots = document.getElementById("pageDots");
+          if (prev) prev.onclick = function () { if (pageIndex > 0) { pageIndex--; showPage(); } };
+          if (next) next.onclick = function () { if (pageIndex < pages.length - 1) { pageIndex++; showPage(); } };
+          if (dots) {
+            dots.innerHTML = "";
+            pages.forEach(function (_, n) {
+              var d = document.createElement("span");
+              d.className = "pagedot" + (n === pageIndex ? " active" : "");
+              d.onclick = function () { pageIndex = n; showPage(); };
+              dots.appendChild(d);
+            });
+          }
+          if (view) {
+            var startX = null;
+            view.addEventListener("touchstart", function (e) { startX = e.changedTouches[0].screenX; }, { passive: true });
+            view.addEventListener("touchend", function (e) {
+              var endX = e.changedTouches[0].screenX;
+              if (startX === null) return;
+              if (endX < startX - 50 && pageIndex < pages.length - 1) { pageIndex++; showPage(); }
+              if (endX > startX + 50 && pageIndex > 0) { pageIndex--; showPage(); }
+              startX = null;
+            }, { passive: true });
+          }
+        }
+
+        showPage();
       })
       .catch(function (err) {
         notesCard.innerHTML = '<h3>Notes</h3><div class="empty">Notes not available for this unit yet.</div>';
