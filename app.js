@@ -136,6 +136,26 @@
     });
   }
 
+  /* Lightweight markdown → HTML for study notes */
+  function mdToHtml(md) {
+    var html = esc(md)
+      .replace(/^###### (.*$)/gim, "<h6>$1</h6>")
+      .replace(/^##### (.*$)/gim, "<h5>$1</h5>")
+      .replace(/^#### (.*$)/gim, "<h4>$1</h4>")
+      .replace(/^### (.*$)/gim, "<h3>$1</h3>")
+      .replace(/^## (.*$)/gim, "<h2>$1</h2>")
+      .replace(/^# (.*$)/gim, "<h1>$1</h1>")
+      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*(.*?)\*/g, "<em>$1</em>")
+      .replace(/^\s*[-*] (.*$)/gim, "<li>$1</li>")
+      .replace(/^(\d+)\.\s+(.*$)/gim, "<li>$2</li>")
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    html = html.replace(/(<li>.*<\/li>)/gs, function (m) {
+      return "<ul>" + m + "</ul>";
+    });
+    return "<div class=\"notes-md\">" + html.replace(/\n/g, "<br>") + "</div>";
+  }
+
   function el(html) {
     var d = document.createElement("div");
     d.innerHTML = html.trim();
@@ -278,13 +298,11 @@
   }
 
   function screenStudy(unit, paper) {
+    var notePath = "notes/" + paper.id + "/" + unit.id + ".md";
     var html = "<h1>" + esc(unit.name) + "</h1>" +
-      '<p class="lede">' + esc(unit.blurb || "") + "</p>";
-
-    if (unit.notes) {
-      html += '<div class="card"><h3>Notes</h3><div class="notes">' +
-        esc(unit.notes).replace(/\n/g, "<br>") + "</div></div>";
-    }
+      '<p class="lede">' + esc(unit.blurb || "") + "</p>" +
+      '<div class="card" id="notesCard"><h3>Notes</h3>' +
+      '<div class="empty">Loading notes…</div></div>';
 
     if (unit.resources && unit.resources.length) {
       html += '<div class="card"><h3>Resources</h3><ul class="reslist">';
@@ -294,12 +312,19 @@
       html += "</ul></div>";
     }
 
-    if (!unit.notes && (!unit.resources || !unit.resources.length)) {
-      html += '<div class="card"><div class="empty">No notes or resources added for this unit yet.</div></div>';
-    }
-
     html += '<button class="primary" id="studyStart">Practice this unit</button>';
     render(html);
+
+    var notesCard = document.getElementById("notesCard");
+    fetch(notePath)
+      .then(function (r) { return r.ok ? r.text() : Promise.reject(r.status); })
+      .then(function (text) {
+        notesCard.innerHTML = "<h3>Notes</h3>" + mdToHtml(text);
+      })
+      .catch(function (err) {
+        notesCard.innerHTML = '<h3>Notes</h3><div class="empty">Notes not available for this unit yet.</div>';
+      });
+
     document.getElementById("studyStart").onclick = function () {
       go(function () { screenQuiz(shuffle(unitQuestions(paper, unit)), unit.name); });
     };

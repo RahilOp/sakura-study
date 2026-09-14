@@ -186,6 +186,16 @@ button.ghost{
 .reslist a{color:var(--koubai);text-decoration:none}
 .reslist a:hover{text-decoration:underline}
 
+.notes-md h1,.notes-md h2,.notes-md h3,.notes-md h4{font-family:var(--serif);margin:18px 0 8px;color:var(--ink)}
+.notes-md h1{font-size:1.25rem}
+.notes-md h2{font-size:1.1rem}
+.notes-md h3{font-size:1rem}
+.notes-md p{margin:8px 0;line-height:1.6}
+.notes-md ul{margin:8px 0;padding-left:18px}
+.notes-md li{margin-bottom:4px}
+.notes-md a{color:var(--koubai);text-decoration:none}
+.notes-md a:hover{text-decoration:underline}
+
 .tabbar{
   position:fixed;left:0;right:0;bottom:0;z-index:30;
   display:grid;grid-template-columns:repeat(4,1fr);

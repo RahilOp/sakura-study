@@ -23,10 +23,13 @@ sakura-study/
 ├── vercel.json
 ├── README.md
 ├── .gitignore
-└── data/
-    ├── english.js         # canonical English data
-    ├── economics.js       # canonical Economics data
-    └── sociology.js       # canonical Sociology scaffold
+├── data/
+│   ├── english.js         # canonical English data
+│   ├── economics.js       # canonical Economics data
+│   └── sociology.js       # canonical Sociology scaffold
+└── notes/                 # exam-style markdown notes per unit
+    └── <paper-id>/
+        └── <unit-id>.md
 ```
 
 **Important:** the deployable site lives at the repo root. Vercel serves `index.html` directly. `vercel.json` is at root level.
@@ -84,6 +87,7 @@ Rules:
 - Every question must have exactly four options.
 - `status: "pending"` papers are scaffolded but have no questions; the UI disables them and may show a source link.
 - Keep ids stable. A question's identity is `uid(paperId, unitId, questionIndex)`. If questions are reordered, the index changes and progress for that question is effectively lost.
+- Study notes live in `notes/<paperId>/<unitId>.md` and are fetched at runtime; `unit.resources` can still link to source PDFs or videos.
 
 ---
 
