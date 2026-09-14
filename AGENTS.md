@@ -244,8 +244,8 @@ Sociology is the main gap: three papers are scaffolded with source URLs in `data
 
 ## 14. Current content status
 
-- English: 661 questions ready (`eng-sem2`, English Poetry; `eng-sem6-indian-new`, Indian and New Literature in English). Sugra’s Semester 5 papers Classical Literature & History (A040501T) and Fiction (A040502T), and her Semester 6 paper Media and Journalistic Writing (A040603T), are pending because no MCQ question bank or official answer key has been found.
-- Economics: 89 questions ready (`eco-sem2`, Principles of Macro Economics). Sugra’s Semester 5 papers Economic Growth and Development (A080501T) and International Economics (A080503T), and her Semester 6 papers Indian Economy & Economy of Uttar Pradesh (A080601T) and Agriculture Economics (A080602T), are pending. The International Economics booklet has notes/short questions but no MCQs; the others have not been located in the question bank or booklet archive.
+- English: 761 questions ready (`eng-sem2`, English Poetry; `eng-sem6-indian-new`, Indian and New Literature in English; `eng-sem6-media-journalistic`, Media and Journalistic Writing). The Media and Journalistic Writing answers are worked out from the exam booklet (Set A) because no official answer key is available. Sugra’s Semester 5 papers Classical Literature & History (A040501T) and Fiction (A040502T) are pending because no MCQ question bank or official answer key has been found.
+- Economics: 189 questions ready (`eco-sem2`, Principles of Macro Economics; `eco-sem4-money`, Money/Banking/Public Finance). The Semester 4 paper answers are worked out from the exam booklet (Set A) without an official key. Sugra’s Semester 5 papers Economic Growth and Development (A080501T) and International Economics (A080503T), and her Semester 6 papers Indian Economy & Economy of Uttar Pradesh (A080601T) and Agriculture Economics (A080602T), are pending. The International Economics booklet has notes/short questions but no MCQs; the others have not been located in the question bank or booklet archive.
 - Sociology: 1,148 questions ready across all three papers (`soc-sem2`, `soc-sem2-research`, `soc-sem4`).
 
 ---

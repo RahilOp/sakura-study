@@ -2,7 +2,7 @@
 
 A daily MCQ practice app for CSJM University BA papers. Static site, no build step, no dependencies.
 
-Currently loaded: **1,898 questions** (661 English, 89 Economics, 1,148 Sociology).
+Currently loaded: **2,098 questions** (761 English, 189 Economics, 1,148 Sociology).
 
 ## Deploy to Vercel
 
@@ -79,13 +79,18 @@ Sugra’s current papers:
 
 - **English Poetry** — CSJMU Prashn Bank, course code A020201T (Semester 2).
 - **Indian and New Literature in English** — CSJMU Prashn Bank, course code A040601T (Semester 6).
-- **Classical Literature and History of English Literature** (A040501T), **Fiction** (A040502T), and **Media and Journalistic Writing** (A040603T) are listed as pending — no MCQ question bank or answer key has been found yet.
+- **Media and Journalistic Writing** — B.A. Semester 6 exam booklet (Set A), course code A040603T. Answers are worked out, not from an official key.
+- **Classical Literature and History of English Literature** (A040501T) and **Fiction** (A040502T) are listed as pending — no MCQ question bank or answer key has been found yet.
 
 ## Where the questions came from
 
 **English Poetry** — CSJMU Prashn Bank, the university's own question bank, written by Dr Shilpi Mishra and Dr Nidhish Kumar Singh. Answers are the ones printed in the bank's own answer keys.
 
-**Principles of Macro Economics** — the real Sem II exam paper, code A080201T. The university did not publish an answer key for it, so **these answers were worked out rather than taken from an official source**. They are reliable, but if one ever contradicts a teacher or textbook, trust that instead.
+**Principles of Macro Economics** — the real Sem II exam paper, code A080201T. The university did not publish an answer key for it, so **these answers were worked out rather than taken from an official source**.
+
+**Money, Banking and Public Finance** — the real Sem IV exam paper, code A080401T (Set A). The university did not publish an answer key for it, so these answers are also worked out.
+
+In both Economics papers, the answers are reliable for study, but if one ever contradicts a teacher or textbook, trust that source instead.
 
 One thing worth knowing: the Prashn Bank contains a few internal errors. Its Unit II key marks blank verse as rhymed, which is wrong, and it gives two different answers for the stanza form of Gray's Elegy in two different units. I left those questions out. Treat the bank as a very good predictor of what the exam will ask, not as a final authority on fact.
 

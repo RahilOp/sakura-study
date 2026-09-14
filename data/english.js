@@ -1,7 +1,7 @@
 // English — question data
 // Source: CSJMU Prashn Bank and B.A. exam booklets for Sugra's papers.
+// NOTE: Semester 6 Media and Journalistic Writing answers are worked out, not official.
 // Format: { q: question, o: [four options], a: index of correct option (0-3) }
-
 window.SUBJECT_ENGLISH = {
   id: "english",
   name: "English",
@@ -6762,10 +6762,1046 @@ window.SUBJECT_ENGLISH = {
       id: "eng-sem6-media-journalistic",
       semester: 6,
       name: "Media and Journalistic Writing",
-      status: "pending",
-      note: "Sugra's Semester 6 paper (A040603T). Past exam booklet found, but no official answer key is available yet.",
+      status: "ready",
+      note: "Parsed from the B.A. Semester 6 exam booklet (Set A). Answers are worked out, not from an official answer key. If a teacher or textbook disagrees, trust that source.",
       source: "https://csjmu.ac.in/wp-content/uploads/booklets/booklets-apr-2026/28-04-2026/A040603T_A.pdf",
-      units: []
+      units: [
+      {
+          id: "u1",
+          name: "Unit 1",
+          blurb: "Practice set 1 (20 questions).",
+          questions: [
+          {
+              q: "The spread of information through digital platforms is called:",
+              o: [
+              "Print media",
+              "Electronic media",
+              "New media",
+              "Traditional media"
+              ],
+              a: 2
+            },
+          {
+              q: "Which type of media includes news- papers and magazines?",
+              o: [
+              "Electronic media",
+              "Print media",
+              "Digital media",
+              "Social media"
+              ],
+              a: 1
+            },
+          {
+              q: "A questionnaire is mainly used to:",
+              o: [
+              "Collect written responses form respondents",
+              "Tell stories",
+              "Record music",
+              "Edit videos"
+              ],
+              a: 0
+            },
+          {
+              q: "Data collected directly form people is called:",
+              o: [
+              "Secondary data",
+              "Primary data",
+              "Historical data",
+              "Printed data"
+              ],
+              a: 1
+            },
+          {
+              q: "Which tool is useful for studying peo- ple's behavior in natural settings?",
+              o: [
+              "Interview",
+              "Observation",
+              "Questionnaire",
+              "Survey"
+              ],
+              a: 1
+            },
+          {
+              q: "Communication through fi lms and documentaries is a part of:",
+              o: [
+              "Print media",
+              "Audio-Visual media",
+              "Personal media",
+              "Folk media"
+              ],
+              a: 1
+            },
+          {
+              q: "What is the main purpose of precis writing?",
+              o: [
+              "To expand a passage",
+              "To summarize a passage briefl y",
+              "To translate a passage",
+              "To criticize a passage"
+              ],
+              a: 1
+            },
+          {
+              q: "Which of the following is a key fea- ture of Online journalism?",
+              o: [
+              "Delayed publication",
+              "Interactivity with readers",
+              "Limited reach",
+              "No updates"
+              ],
+              a: 1
+            },
+          {
+              q: "The term \"hypertext\" in Online jour- nalism means:",
+              o: [
+              "Printed text",
+              "Text with links to other content",
+              "Audio news",
+              "Visual news"
+              ],
+              a: 1
+            },
+          {
+              q: "Real-Time updating of news is a fea- ture of:",
+              o: [
+              "Print journalism",
+              "Online journalism",
+              "Traditional media",
+              "Books"
+              ],
+              a: 1
+            },
+          {
+              q: "Blogs and vlogs are forms of:",
+              o: [
+              "Traditional media",
+              "Cyber media",
+              "Print media",
+              "Broadcast media"
+              ],
+              a: 1
+            },
+          {
+              q: "Which of the following is a cyber me- dia tool?",
+              o: [
+              "Typewriter",
+              "Printing machine",
+              "Google Chrome",
+              "Radio set"
+              ],
+              a: 2
+            },
+          {
+              q: "Which of the following is NOT a type of essay?",
+              o: [
+              "Narrative",
+              "Descriptive",
+              "Argumentative",
+              "Alphabetical"
+              ],
+              a: 3
+            },
+          {
+              q: "A narrative essay mainly:",
+              o: [
+              "Argues a point",
+              "Describes an event or story",
+              "Explains a process",
+              "Gives instructions"
+              ],
+              a: 1
+            },
+          {
+              q: "\"Coherence\" in essay writing means:",
+              o: [
+              "Use of diffi cult words",
+              "Logical fl ow of ideas",
+              "Length of essay",
+              "Use of quotations"
+              ],
+              a: 1
+            },
+          {
+              q: "Which of the following is essential for academic essay writing?",
+              o: [
+              "Informal language",
+              "Slang",
+              "Formal tone",
+              "Personal jokes"
+              ],
+              a: 2
+            },
+          {
+              q: "The \"5Ws\" are mainly used to:",
+              o: [
+              "Entertain readers",
+              "Structure news stories",
+              "Write poems",
+              "Design advertisements"
+              ],
+              a: 1
+            },
+          {
+              q: "Which of the following questions identifi es the subject of the news?",
+              o: [
+              "What",
+              "Who",
+              "When",
+              "Where"
+              ],
+              a: 1
+            },
+          {
+              q: "The 5Ws are essential in:",
+              o: [
+              "Fiction writing",
+              "Journalism and reporting",
+              "Poetry writing",
+              "Painting"
+              ],
+              a: 1
+            },
+          {
+              q: "Public speaking is defi ned as:",
+              o: [
+              "Talking to oneself",
+              "Communicating ideas to a group of people",
+              "Writing essays",
+              "Reading silently"
+              ],
+              a: 1
+            }
+          ]
+        },
+      {
+          id: "u2",
+          name: "Unit 2",
+          blurb: "Practice set 2 (20 questions).",
+          questions: [
+          {
+              q: "\"Voice modulation\" means:",
+              o: [
+              "Speaking loudly only",
+              "Changing tone, pitch, and pace",
+              "Speaking slowly only",
+              "Speaking without pause"
+              ],
+              a: 1
+            },
+          {
+              q: "Non-verbal communication in public speaking includes:",
+              o: [
+              "Words only",
+              "Gestures, posture, and facial expressions",
+              "Writing Skills",
+              "Grammer"
+              ],
+              a: 1
+            },
+          {
+              q: "Visual Aids in public speaking in- clude:",
+              o: [
+              "Only books",
+              "Only notes",
+              "Charts and slides",
+              "Only speech"
+              ],
+              a: 2
+            },
+          {
+              q: "A paragraph is defi ned as:",
+              o: [
+              "A group of unrelated sentences",
+              "A group of sentences on a sin- gle idea",
+              "A single sentence",
+              "A long essay"
+              ],
+              a: 1
+            },
+          {
+              q: "\"Unity\" in paragraph writing means:",
+              o: [
+              "Using diffi cult words",
+              "Sticking to one main idea",
+              "Writing long sentences",
+              "Using quotations"
+              ],
+              a: 1
+            },
+          {
+              q: "A paragraph should generally being with:",
+              o: [
+              "Conclusion",
+              "Example",
+              "Topic sentence",
+              "Quotation"
+              ],
+              a: 2
+            },
+          {
+              q: "Which of the following is a linking word?",
+              o: [
+              "Because",
+              "Table",
+              "Chair",
+              "Book"
+              ],
+              a: 0
+            },
+          {
+              q: "The main purpose of a lead is to:",
+              o: [
+              "Conclude the story",
+              "Attract attention and summa- rize key facts",
+              "Provide advertisements",
+              "Add unnecessary"
+              ],
+              a: 1
+            },
+          {
+              q: "\"Disinformation\" refers to:",
+              o: [
+              "True information",
+              "False information shared unintentionally",
+              "False information shared delib- erately to mislead",
+              "Educational content"
+              ],
+              a: 2
+            },
+          {
+              q: "A good headline should be:",
+              o: [
+              "Long and complex",
+              "Short, clear and catchy",
+              "Confusing",
+              "Irrelevant"
+              ],
+              a: 1
+            },
+          {
+              q: "What is the primary feature of tele- vision reporting?",
+              o: [
+              "Lengthy description",
+              "Visual storytelling",
+              "Use of complex vocabulary",
+              "Only written format"
+              ],
+              a: 1
+            },
+          {
+              q: "In TV reporting \"Visual\" refer to:",
+              o: [
+              "Written script",
+              "Background music",
+              "Video footage/images",
+              "Voice modulation"
+              ],
+              a: 2
+            },
+          {
+              q: "What does \"bite\" or \"sound bite\" mean?",
+              o: [
+              "A long interview",
+              "Background noise",
+              "A short recorded statement",
+              "A written script"
+              ],
+              a: 2
+            },
+          {
+              q: "What is breaking news?",
+              o: [
+              "Old news",
+              "Scheduled news",
+              "Urgent and recent event",
+              "Entertainment news"
+              ],
+              a: 2
+            },
+          {
+              q: "What is the primary purpose of a paragraph?",
+              o: [
+              "To confuse the reader",
+              "To develop a single idea",
+              "To list unrelated facts",
+              "To summarize an entire book"
+              ],
+              a: 1
+            },
+          {
+              q: "Which of the following ensures that all sentences in a paragraph relate to one idea?",
+              o: [
+              "Coherence",
+              "Unity",
+              "Emphasis",
+              "Variety"
+              ],
+              a: 1
+            },
+          {
+              q: "Which feature allows users to interact in cyber media?",
+              o: [
+              "One-way communication",
+              "Ineractivity",
+              "Printability",
+              "Broadcasting"
+              ],
+              a: 1
+            },
+          {
+              q: "Which platform is used for microb- logging?",
+              o: [
+              "Instagram",
+              "X",
+              "You Tube",
+              "Television"
+              ],
+              a: 1
+            },
+          {
+              q: "Online news portals are part of:",
+              o: [
+              "Cyber media",
+              "Print media",
+              "Radio",
+              "Cinema"
+              ],
+              a: 0
+            },
+          {
+              q: "The term 'cyberspace' refers to:",
+              o: [
+              "Physical Library",
+              "Virtual digital environment",
+              "Print publication",
+              "Broadcasting studios"
+              ],
+              a: 1
+            }
+          ]
+        },
+      {
+          id: "u3",
+          name: "Unit 3",
+          blurb: "Practice set 3 (20 questions).",
+          questions: [
+          {
+              q: "Which of the following is a blog pub- lishing platform?",
+              o: [
+              "Wordpress",
+              "Television",
+              "Radio",
+              "Newspaper"
+              ],
+              a: 0
+            },
+          {
+              q: "Which of the following is used for Online communication?",
+              o: [
+              "Email",
+              "Social media",
+              "Blogs",
+              "All of the above"
+              ],
+              a: 3
+            },
+          {
+              q: "Which platform is commonly used for video blogging?",
+              o: [
+              "You Tube",
+              "Radio",
+              "Newspaper",
+              "Book"
+              ],
+              a: 0
+            },
+          {
+              q: "Which term refers to unauthorized access to data?",
+              o: [
+              "Blogging",
+              "Hacking",
+              "Streaming",
+              "Posting"
+              ],
+              a: 1
+            },
+          {
+              q: "What is the role of hashtag(#) in cy- ber media?",
+              o: [
+              "Editing content",
+              "Organizing and categorizing content",
+              "Printing news",
+              "Broadcasting signals"
+              ],
+              a: 1
+            },
+          {
+              q: "What does \"OTT platform\" stand for in cyber media?",
+              o: [
+              "Over the top",
+              "On the television",
+              "Over the transmission",
+              "Online tech tool"
+              ],
+              a: 0
+            },
+          {
+              q: "Which of the following is an OTT platform?",
+              o: [
+              "Sony",
+              "MX player",
+              "Zee TV",
+              "You Tube"
+              ],
+              a: 1
+            },
+          {
+              q: "A news presenter is also known as:",
+              o: [
+              "Reporter",
+              "Editor",
+              "Anchor",
+              "Cameraman"
+              ],
+              a: 2
+            },
+          {
+              q: "What is a 'news bulletin'?",
+              o: [
+              "Advertisement",
+              "Collection of news stories pre- sented together",
+              "Movie",
+              "Documentary"
+              ],
+              a: 1
+            },
+          {
+              q: "News presentation helps in:",
+              o: [
+              "Spreding rumors",
+              "Creating Awareness",
+              "Hinding facts",
+              "Misleading people"
+              ],
+              a: 1
+            },
+          {
+              q: "News presentation should maintain:",
+              o: [
+              "Sensationalism",
+              "Professional ethics",
+              "Personal bias",
+              "Irrelevance"
+              ],
+              a: 1
+            },
+          {
+              q: "Which of the following is essential in precis writing?",
+              o: [
+              "Adding examples",
+              "Including all details",
+              "Retaining main ideas",
+              "Changing meaning"
+              ],
+              a: 2
+            },
+          {
+              q: "A precis must preserve:",
+              o: [
+              "Writer's original meaning",
+              "Only examples",
+              "Personal opinion",
+              "Extra information"
+              ],
+              a: 0
+            },
+          {
+              q: "A precis should be written in:",
+              o: [
+              "First person",
+              "Second person",
+              "Third person",
+              "Any person"
+              ],
+              a: 2
+            },
+          {
+              q: "What does 'DM' stands for in social media?",
+              o: [
+              "Digital map",
+              "Data message",
+              "Direct message",
+              "Download media"
+              ],
+              a: 2
+            },
+          {
+              q: "Which platform is used for profes- sional networking?",
+              o: [
+              "Facebook",
+              "TikTok",
+              "Linkedln",
+              "Zoom"
+              ],
+              a: 2
+            },
+          {
+              q: "Which feature allows reposting con- tent on social media?",
+              o: [
+              "Like",
+              "Subscribe",
+              "Share",
+              "Follow"
+              ],
+              a: 2
+            },
+          {
+              q: "Which regulatory body in India gov- erns television and radio content?",
+              o: [
+              "CBSE",
+              "ISRO",
+              "OTT",
+              "TRAI"
+              ],
+              a: 3
+            },
+          {
+              q: "The Censor Board in India is offi cially known as:",
+              o: [
+              "Film Board of India",
+              "Central Board of Film certifi cation",
+              "National Film Authority",
+              "Indian Cinema board"
+              ],
+              a: 1
+            },
+          {
+              q: "Which certifi cate of censor board is meant only for adults?",
+              o: [
+              "U",
+              "UA",
+              "A",
+              "S"
+              ],
+              a: 2
+            }
+          ]
+        },
+      {
+          id: "u4",
+          name: "Unit 4",
+          blurb: "Practice set 4 (20 questions).",
+          questions: [
+          {
+              q: "The Censor Board ensures that fi lms do not:",
+              o: [
+              "Entertain",
+              "Violate social and moral standards",
+              "Earn profi t",
+              "Get popular"
+              ],
+              a: 1
+            },
+          {
+              q: "Akashvani is also known as:",
+              o: [
+              "Doordarshan",
+              "All India Radio",
+              "BBC",
+              "Press Trust of India"
+              ],
+              a: 1
+            },
+          {
+              q: "Facebook was founded by:",
+              o: [
+              "Bill Gates",
+              "Steve Jobs",
+              "Mark Zuckerberg",
+              "Elon Musk"
+              ],
+              a: 2
+            },
+          {
+              q: "Which symbol is commonly used to tag someone in a post or comment?",
+              o: [
+              "#",
+              "@",
+              "*",
+              "$"
+              ],
+              a: 1
+            },
+          {
+              q: "Which part of the news report provides detailed information explanation?",
+              o: [
+              "Headline",
+              "Body",
+              "Caption",
+              "Byline"
+              ],
+              a: 1
+            },
+          {
+              q: "Which part of the news report comes immediately after the headline?",
+              o: [
+              "Body",
+              "Byline",
+              "Lead",
+              "Caption"
+              ],
+              a: 2
+            },
+          {
+              q: "Which part of the news report is op- tional?",
+              o: [
+              "Headline",
+              "Lead",
+              "Caption",
+              "Body"
+              ],
+              a: 1
+            },
+          {
+              q: "Twitter (X) is best categorized as:",
+              o: [
+              "Blogging platform",
+              "Microblogging platform",
+              "Social bookmarking site",
+              "Professional network"
+              ],
+              a: 2
+            },
+          {
+              q: "Which of the following is an example of a discussion forum?",
+              o: [
+              "Instagram",
+              "Linkedln",
+              "Reddit",
+              "Snapchat"
+              ],
+              a: 2
+            },
+          {
+              q: "Whatsapp and Telegram are exam- ple of:",
+              o: [
+              "Blogging platforms",
+              "Messaging apps",
+              "Social bookmarking sites",
+              "Professional networks"
+              ],
+              a: 1
+            },
+          {
+              q: "Pinterest is an example of:",
+              o: [
+              "Blogging platform",
+              "Social bookmarking site",
+              "Messaging app",
+              "Microblogging"
+              ],
+              a: 1
+            },
+          {
+              q: "Which of the following is a form of cyber media?",
+              o: [
+              "Newspaper",
+              "Magazine",
+              "Website",
+              "Pamphlet"
+              ],
+              a: 2
+            },
+          {
+              q: "Which device is commonly used to access cyber media?",
+              o: [
+              "Typewriter",
+              "Smart phone",
+              "Printing machine",
+              "Fax machine"
+              ],
+              a: 1
+            },
+          {
+              q: "What is a hyper-link in Online journalism?",
+              o: [
+              "A printed reference",
+              "A click-able link to another web- page",
+              "A headline style",
+              "A type of image"
+              ],
+              a: 1
+            },
+          {
+              q: "Which part of a report presents the fi ndings?",
+              o: [
+              "Introduction",
+              "Body",
+              "Conclusion",
+              "Title page"
+              ],
+              a: 1
+            },
+          {
+              q: "Which section includes sources used in the report?",
+              o: [
+              "Introduction",
+              "References/bibliography",
+              "Conclusion",
+              "Appendix"
+              ],
+              a: 1
+            },
+          {
+              q: "A formal report usually avoids:",
+              o: [
+              "Facts",
+              "Data",
+              "Personal opinions",
+              "Analysis"
+              ],
+              a: 1
+            },
+          {
+              q: "What is a bibliography?",
+              o: [
+              "A summary of the report",
+              "A list of sources used",
+              "A conclusion",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "What is mass communication?",
+              o: [
+              "Communication between two people",
+              "Communication to a large audi- ence through media",
+              "Personal communication",
+              "Written communication"
+              ],
+              a: 1
+            },
+          {
+              q: "The term \"Mass\" in mass communi- cation refers to:",
+              o: [
+              "Weight",
+              "A large and diverse audience",
+              "A small group",
+              "Individuals only"
+              ],
+              a: 1
+            }
+          ]
+        },
+      {
+          id: "u5",
+          name: "Unit 5",
+          blurb: "Practice set 5 (20 questions).",
+          questions: [
+          {
+              q: "Which is the most important princi- pal of journalism?",
+              o: [
+              "Entertainment",
+              "Truth and accuracy",
+              "Advertisement",
+              "Profi t"
+              ],
+              a: 1
+            },
+          {
+              q: "Headlines usually avoid:",
+              o: [
+              "Verbs",
+              "Articles",
+              "Noun",
+              "Adjective"
+              ],
+              a: 1
+            },
+          {
+              q: "Headlines should refl ect:",
+              o: [
+              "Writers opinion",
+              "Actual news content",
+              "Personal feelings",
+              "Fiction"
+              ],
+              a: 1
+            },
+          {
+              q: "Which punctuation is commonly avoided in headlines?",
+              o: [
+              "Comma",
+              "Full stop",
+              "Colon",
+              "Hyphen"
+              ],
+              a: 0
+            },
+          {
+              q: "What is \"News Feed\"?",
+              o: [
+              "A chat window",
+              "A list of trending videos",
+              "A stream of updates form friends/pages",
+              "A search result page"
+              ],
+              a: 3
+            },
+          {
+              q: "Which feature allows private com- munication on facebook?",
+              o: [
+              "Time-line",
+              "Messenger",
+              "News Feed",
+              "Groups"
+              ],
+              a: 1
+            },
+          {
+              q: "Which feature allows sending mes- sages to multiple contacts messages to multiple contacts at once without creating a group?",
+              o: [
+              "Status",
+              "Broadcast",
+              "Group chat",
+              "Call"
+              ],
+              a: 1
+            },
+          {
+              q: "Which feature provides security to messages on WhatsApp?",
+              o: [
+              "Cloud storage",
+              "End-to-End encryption",
+              "Status",
+              "Broadcast"
+              ],
+              a: 1
+            },
+          {
+              q: "What is a post on twitter called?",
+              o: [
+              "Blog",
+              "Tweet",
+              "Story",
+              "Post"
+              ],
+              a: 1
+            },
+          {
+              q: "What is the purpose of \"mentions\" (@)?",
+              o: [
+              "To delete users",
+              "To tag or refer to another user",
+              "To block users",
+              "To save tweets"
+              ],
+              a: 1
+            },
+          {
+              q: "Media acts as a:",
+              o: [
+              "Watchdog of society",
+              "Teacher only",
+              "Business only",
+              "Government only"
+              ],
+              a: 0
+            },
+          {
+              q: "Media infl uences:",
+              o: [
+              "Culture",
+              "Politics",
+              "Social values",
+              "All of the above"
+              ],
+              a: 3
+            },
+          {
+              q: "The \"watchdog\" role of media means?",
+              o: [
+              "Entertainment",
+              "Monitoring government and so- ciety",
+              "Advertising products",
+              "Teaching students"
+              ],
+              a: 1
+            },
+          {
+              q: "Which of the following is a digital tool for gathering information?",
+              o: [
+              "Library",
+              "Internet",
+              "Notebook",
+              "Pen"
+              ],
+              a: 1
+            },
+          {
+              q: "Which tool is most useful for collect- ing quantitative data?",
+              o: [
+              "Interview",
+              "Observation",
+              "Survey",
+              "Case study"
+              ],
+              a: 2
+            },
+          {
+              q: "Which of the following reaches the largest auidance at once",
+              o: [
+              "Personal letter",
+              "Classroom lecture",
+              "Mass Media",
+              "Telephone call"
+              ],
+              a: 2
+            },
+          {
+              q: "What is a \"Byline\" in a newspaper?",
+              o: [
+              "Title of the article",
+              "Name of the reporter",
+              "Summary of news",
+              "Advertisement"
+              ],
+              a: 1
+            },
+          {
+              q: "Which section includes advertise- ments in newspaper?",
+              o: [
+              "Editorial",
+              "Classifi ed",
+              "News",
+              "Feature"
+              ],
+              a: 1
+            },
+          {
+              q: "Newspapers are usually published:",
+              o: [
+              "Monthly",
+              "Weekly only",
+              "Daily or periodically",
+              "Yearly"
+              ],
+              a: 2
+            },
+          {
+              q: "Magazines are usually published:",
+              o: [
+              "Daily",
+              "Weekly or Monthly",
+              "Every hour",
+              "Yearly only"
+              ],
+              a: 1
+            }
+          ]
+        }
+      ]
     }
   ]
 };
