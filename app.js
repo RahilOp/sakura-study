@@ -277,6 +277,34 @@
     });
   }
 
+  function screenStudy(unit, paper) {
+    var html = "<h1>" + esc(unit.name) + "</h1>" +
+      '<p class="lede">' + esc(unit.blurb || "") + "</p>";
+
+    if (unit.notes) {
+      html += '<div class="card"><h3>Notes</h3><div class="notes">' +
+        esc(unit.notes).replace(/\n/g, "<br>") + "</div></div>";
+    }
+
+    if (unit.resources && unit.resources.length) {
+      html += '<div class="card"><h3>Resources</h3><ul class="reslist">';
+      unit.resources.forEach(function (r) {
+        html += '<li><a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.title) + "</a></li>";
+      });
+      html += "</ul></div>";
+    }
+
+    if (!unit.notes && (!unit.resources || !unit.resources.length)) {
+      html += '<div class="card"><div class="empty">No notes or resources added for this unit yet.</div></div>';
+    }
+
+    html += '<button class="primary" id="studyStart">Practice this unit</button>';
+    render(html);
+    document.getElementById("studyStart").onclick = function () {
+      go(function () { screenQuiz(shuffle(unitQuestions(paper, unit)), unit.name); });
+    };
+  }
+
   function screenPaper(paper) {
     var qs = paperQuestions(paper);
     var html = "<h1>" + esc(paper.name) + "</h1>" +
@@ -307,6 +335,9 @@
         '<span class="sub">' + esc(u.blurb || "") + "</span>" +
         '<span class="bar"><i style="width:' + (n ? Math.round(done / n * 100) : 0) + '%"></i></span></span>' +
         '<span class="chev">&#8250;</span></button>';
+      if (u.notes || (u.resources && u.resources.length)) {
+        html += '<div class="study-bar"><button class="ghost study-btn" data-study="' + u.id + '">Study notes</button></div>';
+      }
     });
 
     render(html);
@@ -321,6 +352,13 @@
       btn.onclick = function () {
         var u = paper.units.filter(function (x) { return x.id === btn.dataset.unit; })[0];
         go(function () { screenQuiz(shuffle(unitQuestions(paper, u)), u.name); });
+      };
+    });
+    app.querySelectorAll("[data-study]").forEach(function (btn) {
+      btn.onclick = function (e) {
+        e.stopPropagation();
+        var u = paper.units.filter(function (x) { return x.id === btn.dataset.study; })[0];
+        go(function () { screenStudy(u, paper); });
       };
     });
   }
@@ -382,7 +420,9 @@
   /* ---------- quiz engine ---------- */
 
   function screenQuiz(items, title, seconds) {
-    var i = 0, score = 0, answered = false, timeLeft = seconds || 0, timer = null;
+    var i = 0, score = 0, timeLeft = seconds || 0, timer = null;
+    var answers = new Array(items.length).fill(null);
+    var corrects = new Array(items.length).fill(null);
 
     function finish() {
       if (timer) clearInterval(timer);
@@ -401,38 +441,112 @@
       document.getElementById("homeBtn").onclick = function () { stack = []; go(screenHome); setTab("home"); };
     }
 
+    function gridHtml() {
+      var html = '<div class="qgrid-title">Questions</div><div class="qgrid-btns">';
+      items.forEach(function (it, idx) {
+        html += '<button class="qgrid-btn" data-j="' + idx + '">' + (idx + 1) + "</button>";
+      });
+      html += '</div><button class="ghost" id="gridFinish" style="margin-top:12px">Finish</button>';
+      return html;
+    }
+
+    function updateGrid() {
+      app.querySelectorAll(".qgrid-btn").forEach(function (btn) {
+        var j = parseInt(btn.dataset.j, 10);
+        btn.className = "qgrid-btn";
+        if (j === i) btn.classList.add("current");
+        if (answers[j] !== null) btn.classList.add(corrects[j] ? "grid-ok" : "grid-no");
+      });
+    }
+
+    function afterHtml(answered, n, ok, q) {
+      var html = '<p class="verdict ' + (ok ? "ok" : "no") + '">' +
+        (ok ? "Correct." : "Not this time.") + "</p>" +
+        (ok ? "" : "<p>The answer is " + "ABCD"[q.a] + ": " + esc(q.o[q.a]) + ". This one goes to your review list.</p>") +
+        navHtml();
+      return html;
+    }
+
+    function navHtml() {
+      var nextLabel = i === items.length - 1 ? "See result" : "Next question";
+      return '<div class="quiz-nav">' +
+        (i > 0 ? '<button class="ghost" id="prevBtn">Previous</button>' : "") +
+        '<button class="primary" id="nextBtn">' + nextLabel + "</button>" +
+        "</div>";
+    }
+
+    function bindMain(ok, n, it) {
+      app.querySelectorAll(".opt").forEach(function (btn) {
+        var bn = parseInt(btn.dataset.n, 10);
+        if (answers[i] !== null) {
+          btn.disabled = true;
+          if (bn === it.q.a) btn.classList.add("correct");
+          else if (bn === answers[i]) btn.classList.add("wrong");
+        } else {
+          btn.onclick = function () { choose(parseInt(btn.dataset.n, 10), it); };
+        }
+      });
+
+      var next = document.getElementById("nextBtn");
+      if (next) next.onclick = function () { i++; draw(); };
+      var prev = document.getElementById("prevBtn");
+      if (prev) prev.onclick = function () { i--; draw(); };
+
+      app.querySelectorAll(".qgrid-btn").forEach(function (btn) {
+        btn.onclick = function () {
+          i = parseInt(btn.dataset.j, 10);
+          draw();
+        };
+      });
+      var fin = document.getElementById("gridFinish");
+      if (fin) fin.onclick = function () { finish(); };
+
+      if (answers[i] !== null) {
+        var after = document.getElementById("after");
+        if (after) {
+          after.innerHTML = afterHtml(true, answers[i], corrects[i], it.q);
+          var next2 = document.getElementById("nextBtn");
+          if (next2) next2.onclick = function () { i++; draw(); };
+          var prev2 = document.getElementById("prevBtn");
+          if (prev2) prev2.onclick = function () { i--; draw(); };
+        }
+      }
+      updateGrid();
+    }
+
     function draw() {
       if (i >= items.length) return finish();
-      answered = false;
       var it = items[i];
       var q = it.q;
+      var answered = answers[i] !== null;
 
       var head = (i + 1) + " of " + items.length;
       var right = seconds
         ? Math.floor(timeLeft / 60) + ":" + ("0" + (timeLeft % 60)).slice(-2)
         : title;
 
-      var html = '<div class="qhead"><span>' + head + "</span><span>" + right + "</span></div>" +
+      var main = '<div class="qhead"><span>' + head + "</span><span>" + right + "</span></div>" +
         '<span class="bar"><i style="width:' + Math.round(i / items.length * 100) + '%"></i></span>' +
         '<p class="qtext">' + esc(q.q) + "</p>" +
         '<div id="opts">';
       q.o.forEach(function (o, n) {
-        html += '<button class="opt" data-n="' + n + '"><span class="letter">' +
+        main += '<button class="opt" data-n="' + n + '"><span class="letter">' +
           "ABCD"[n] + '</span>' + esc(o) + "</button>";
       });
-      html += "</div><div id=\"after\"></div>";
-      render(html);
+      main += '</div><div id="after">' + navHtml() + "</div>";
 
-      app.querySelectorAll(".opt").forEach(function (btn) {
-        btn.onclick = function () { choose(parseInt(btn.dataset.n, 10), it); };
-      });
+      render('<div class="quiz-layout"><div class="quiz-main">' + main + '</div>' +
+        '<div class="quiz-grid">' + gridHtml() + "</div></div>");
+
+      bindMain(answered, answers[i], it);
     }
 
     function choose(n, it) {
-      if (answered) return;
-      answered = true;
+      if (answers[i] !== null) return;
       var q = it.q;
       var ok = n === q.a;
+      answers[i] = n;
+      corrects[i] = ok;
 
       S.seen[it.id] = 1;
       S.total++;
@@ -448,13 +562,13 @@
       });
 
       var after = document.getElementById("after");
-      after.innerHTML = '<p class="verdict ' + (ok ? "ok" : "no") + '">' +
-        (ok ? "Correct." : "Not this time.") + "</p>" +
-        (ok ? "" : "<p>The answer is " + "ABCD"[q.a] + ": " + esc(q.o[q.a]) + ". This one goes to your review list.</p>") +
-        '<button class="primary" id="nextBtn" style="margin-top:18px">' +
-        (i === items.length - 1 ? "See result" : "Next question") + "</button>";
-      document.getElementById("nextBtn").onclick = function () { i++; draw(); };
-      document.getElementById("nextBtn").focus();
+      after.innerHTML = afterHtml(true, n, ok, q);
+      var next = document.getElementById("nextBtn");
+      if (next) next.onclick = function () { i++; draw(); };
+      var prev = document.getElementById("prevBtn");
+      if (prev) prev.onclick = function () { i--; draw(); };
+      if (next) next.focus();
+      updateGrid();
     }
 
     if (seconds) {

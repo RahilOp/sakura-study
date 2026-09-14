@@ -1191,6 +1191,12 @@ window.SUBJECT_ECONOMICS = {
               ],
               a: 1
             }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://csjmu.ac.in/wp-content/uploads/booklets/booklets-apr-2026/21-04-2026/A080401T-A.pdf"
+            }
           ]
         },
       {
@@ -1397,6 +1403,12 @@ window.SUBJECT_ECONOMICS = {
               "Four-tier"
               ],
               a: 2
+            }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://csjmu.ac.in/wp-content/uploads/booklets/booklets-apr-2026/21-04-2026/A080401T-A.pdf"
             }
           ]
         },
@@ -1605,6 +1617,12 @@ window.SUBJECT_ECONOMICS = {
               ],
               a: 1
             }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://csjmu.ac.in/wp-content/uploads/booklets/booklets-apr-2026/21-04-2026/A080401T-A.pdf"
+            }
           ]
         },
       {
@@ -1812,6 +1830,12 @@ window.SUBJECT_ECONOMICS = {
               ],
               a: 0
             }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://csjmu.ac.in/wp-content/uploads/booklets/booklets-apr-2026/21-04-2026/A080401T-A.pdf"
+            }
           ]
         },
       {
@@ -2018,6 +2042,12 @@ window.SUBJECT_ECONOMICS = {
               "Pigou"
               ],
               a: 0
+            }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://csjmu.ac.in/wp-content/uploads/booklets/booklets-apr-2026/21-04-2026/A080401T-A.pdf"
             }
           ]
         }

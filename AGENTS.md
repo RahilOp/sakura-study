@@ -65,6 +65,10 @@ window.SUBJECT_ENGLISH = {
           id: "u1",
           name: "Forms of poetry",
           blurb: "...",
+          notes: "Optional short revision notes for this unit.",
+          resources: [
+            { title: "Prashn Bank PDF", url: "..." }
+          ],
           questions: [
             { q: "...", o: ["A", "B", "C", "D"], a: 0 }
           ]
@@ -146,6 +150,7 @@ Tabs and their root screens:
 - Mock exam button: 75 questions, 90-minute timer.
 - Lists units with progress bars.
 - Tapping a unit starts a shuffled quiz for that unit.
+- If a unit has `notes` or `resources`, a "Study notes" button appears below the unit; tapping opens a study screen with revision notes and source links before practising.
 - If the paper has no questions, shows an empty state and the optional `source` link.
 
 ### `screenReview`
@@ -160,6 +165,7 @@ Tabs and their root screens:
 ### `screenQuiz(items, title, seconds)`
 - Renders one question at a time with A-D options.
 - On answer: disables options, highlights correct/wrong, shows verdict.
+- Shows a question-number grid on the right (desktop) or below the question (mobile). Tapping a number jumps to that question and shows its state: current, correct, wrong, or not yet attempted.
 - Updates `seen`, `total`, `correct`, `wrong` in state.
 - If `seconds` is provided, shows a countdown in the header; time-up forces finish.
 - Finish screen shows score, percentage, and a motivational message.

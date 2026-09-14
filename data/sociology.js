@@ -22,6 +22,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u1",
           name: "Structure and composition of Indian society",
           blurb: "Village, town, city, rural-urban linkages, unity and diversity",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/society-in-india-structure-organization-change/" }
+            ],
           questions: [
             { q: "Who wrote the book “Indian Village”.?", o: ["M.N. Shrinivas", "S.C. Dubey", "Rajbali Panday", "All of the above"], a: 1 },
             { q: "Where does most of India’s population live?", o: ["In Villages", "In cities", "In Megapolis", "None of the above"], a: 0 },
@@ -76,6 +79,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u2",
           name: "Perspectives to study Indian society",
           blurb: "Indological, historical, structural and functional perspectives",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/society-in-india-structure-organization-change/" }
+            ],
           questions: [
             { q: "Indological perspectives focus on the study of Indian society through:", o: ["Western lenses and methodologies", "Indigenous sources and cultural frameworks", "Comparative analysis with other Asian societies", "Exclusively religious texts and scriptures"], a: 1 },
             { q: "The Indological approach to studying Indian society often emphasizes:", o: ["Understanding Indian society in isolation from global influences", "Analyzing Indian society solely through colonial perspectives", "Engaging with ancient texts, scriptures, and classical languages", "Ignoring regional and linguistic diversity within India"], a: 2 },
@@ -131,6 +137,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u3",
           name: "Cultural and ethnic diversity",
           blurb: "Language, caste, region and religious diversities",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/society-in-india-structure-organization-change/" }
+            ],
           questions: [
             { q: "What does cultural diversity refer to?", o: ["The presence of multiple ethnic groups within a society", "The variety of cultural practices and perspectives within a society", "The dominance of one culture over others", "The uniformity of beliefs and customs within a society"], a: 1 },
             { q: "What is the term used to describe the blending of cultural elements from different ethnic groups?", o: ["Assimilation", "Multiculturalism", "Homogenization", "Segregation"], a: 1 },
@@ -181,6 +190,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u4",
           name: "Tribal communities in India",
           blurb: "Geographical distribution, assimilation, integration, backwardness",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/society-in-india-structure-organization-change/" }
+            ],
           questions: [
             { q: "Which state in India has the largest population of Scheduled Tribes (STs)?", o: ["Madhya Pradesh", "Odisha", "Rajasthan", "Maharashtra"], a: 0 },
             { q: "The term \"Adivasi\" in India refers to:", o: ["Indigenous or tribal people", "Upper caste Hindus", "Muslim minority groups", "Buddhist monks"], a: 0 },
@@ -237,6 +249,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u5",
           name: "Basic institutions of Indian society",
           blurb: "Caste, marriage, religion, class and joint family",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/society-in-india-structure-organization-change/" }
+            ],
           questions: [
             { q: "Which term refers to a hereditary social group in traditional Indian society?", o: ["Clan", "Caste", "Tribe", "Sect"], a: 1 },
             { q: "In Hindu society, the caste system is traditionally based on:", o: ["Occupational roles", "Geographical location", "Birth lineage", "Educational qualifications"], a: 2 },
@@ -294,6 +309,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u6",
           name: "Social classes in India",
           blurb: "Agrarian-rural, industrial-urban, middle class, exclusion and inclusion",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/society-in-india-structure-organization-change/" }
+            ],
           questions: [
             { q: "Which of the following is not considered a characteristic of agrarian classes in India?", o: ["Dependence on agriculture", "Landownership", "Urban residence", "Traditional occupation"], a: 2 },
             { q: "The Green Revolution in India primarily aimed to benefit which class of society?", o: ["Agrarian class", "Middle class", "Backward class", "Urban elite"], a: 0 },
@@ -351,6 +369,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u7",
           name: "Population",
           blurb: "Structure, dynamics, demographic analysis, population growth and control",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/society-in-india-structure-organization-change/" }
+            ],
           questions: [
             { q: "What is the most populous country in the world as of 2022?", o: ["India", "China", "United States", "Brazil"], a: 1 },
             { q: "What is the term for the number of live births per 1,000 people in a population in a given year?", o: ["Mortality rate", "Birth rate", "Fertility rate", "Growth rate"], a: 1 },
@@ -407,6 +428,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u8",
           name: "Change and transformation in Indian society",
           blurb: "National integration, casteism, communalism, naxalism",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/society-in-india-structure-organization-change/" }
+            ],
           questions: [
             { q: "Which of the following is NOT a factor contributing to the transformation of Indian society?", o: ["Globalization", "Urbanization", "Traditionalism", "Technological advancements"], a: 2 },
             { q: "Which demographic trend has contributed to changes in Indian family structures?", o: ["Decrease in life expectancy", "Increase in nuclear families", "Decline in birth rates", "Preference for joint families"], a: 1 },
@@ -471,6 +495,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u1",
           name: "Measurement and scales",
           blurb: "Nature, properties and functions of measurement; nominal, ordinal, interval, ratio scales",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/basic-research-methodology-and-statistics/" }
+            ],
           questions: [
             { q: "1. Determine which of the four levels of measurement (nominal, ordinal, interval, ratio) is the most appropriate. Amount of calories in a biscuit", o: ["Nominal", "Ordinal", "Interval", "Ratio"], a: 3 },
             { q: "The amount of calories in a biscuit can be measured on a ratio scale. Ratio level of measurement is the highest level of measurement as it possesses all the characteristics of the other levels of measurement (nominal, ordinal, and interval) along with a true zero point. In this case, the amount of calories can be quantitatively measured, and a zero calorie biscuit is possible. Therefore, it falls under the ratio level of measurement. 2. Determine which of the four levels of measurement (nominal, ordinal, interval, ratio) is the most appropriate. Calendar year", o: ["Nominal", "Ordinal", "Interval", "Ratio"], a: 2 },
@@ -514,6 +541,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u2",
           name: "Scientific approach and research methods",
           blurb: "Aim and functions of scientific approach; experimental, correlational, observational methods; variables and hypothesis; sampling",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/basic-research-methodology-and-statistics/" }
+            ],
           questions: [
             { q: "1. Scientific research has many characteristics. Which of the following cannot be included in the list of these characteristics?", o: ["It is systematic.", "It is controlled.", "It is empirical.", "It is knowledge-oriented."], a: 3 },
             { q: "3. Scientific method has some characteristics. Which of the following will be considered as its characteristic?", o: ["This method has a controlled situation.", "In this method, generalization of the results obtained is possible.", "This method has the quality of replication.", "All of the above."], a: 3 },
@@ -568,6 +598,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u3",
           name: "Descriptive statistics",
           blurb: "Measures of central tendency and variability; graphical representation of data",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/basic-research-methodology-and-statistics/" }
+            ],
           questions: [
             { q: "1. What should be used when the most reliable central tendency measure is desired ?", o: ["Median", "Mean", "Mode", "Range"], a: 1 },
             { q: "2. Three commonly used measures of central tendency are:", o: ["range, standard deviation, median,", "median, mode, dispersion", "mode, median, standard deviation", "median, mode, mean"], a: 3 },
@@ -624,6 +657,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u4",
           name: "Normal distribution and significance",
           blurb: "Normal distribution, significance of statistics, t test",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/basic-research-methodology-and-statistics/" }
+            ],
           questions: [
             { q: "1. In a normal distribution most scores are located:", o: ["at the high end of the distribution", "at the low end of the distribution", "in the centre of the distribution", "at the extremes of the distribution"], a: 2 },
             { q: "2. The shape of the Normal Curve is ___________", o: ["Bell Shaped", "Flat", "Circular", "Spiked"], a: 0 },
@@ -685,6 +721,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u5",
           name: "Correlation and Chi-Square tests",
           blurb: "Types and interpretation of correlation; Chi-Square tests",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/basic-research-methodology-and-statistics/" }
+            ],
           questions: [
             { q: "Explanation: Mainly the correlational analysis focus on finding the association between one or more quantitative independent variables and one or more quantitative dependent variables. 2. Correlation coefficients range from:", o: ["r = -1 to r = +1", "r = 0 to r = +1", "r = -1 to r = 0", "r = +.5 to r = +1"], a: 0 },
             { q: "3. The more exercise a person takes the fewer medical problems they report. This is an example of:", o: ["a curvilinear relationship", "statistical independence", "a positive correlation", "a negative correlation"], a: 3 },
@@ -739,6 +778,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u6",
           name: "Validity and reliability",
           blurb: "Concept and types of tests; validity and reliability",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/basic-research-methodology-and-statistics/" }
+            ],
           questions: [
             { q: "1. Psychological assessment is often said to be the measurement of-", o: ["Psychometrics", "intelligence", "Situations", "individual differences"], a: 3 },
             { q: "2. Which of the following can be called the basic characteristics of psychological measurement?", o: ["In psychological measurement the measurement unit is unclear.", "There is a false zero point in psychological measurement.", "There is a true zero point in psychological measurement.", "Psychological measurement is indirect."], a: 1 },
@@ -813,6 +855,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u7",
           name: "Intelligence testing",
           blurb: "Stanford Binet, Wechsler and culture fair intelligence tests",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/basic-research-methodology-and-statistics/" }
+            ],
           questions: [
             { q: "1. The concept of an alternate item was first introduced in", o: ["The Stanford-Binet Intelligence Scale.", "The Wechsler-Bellevue Intelligence Scale.", "The Wechsler Adult Intelligence Scale.", "The Wechsler Intelligence Scale for Children."], a: 0 },
             { q: "2. A researcher plans to assess intelligence by counting the number of times participants can hop on one leg in 60 seconds. An obvious problem with this is:", o: ["lack of statistical validity", "number of hops is too subjective", "lack of construct validity", "lack of significance"], a: 2 },
@@ -847,6 +892,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u8",
           name: "Personality tests",
           blurb: "Self report inventories and projective techniques",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/basic-research-methodology-and-statistics/" }
+            ],
           questions: [
             { q: "3. The NEO Personality Inventory-Revised (NEO PI-R) assesses personality based on which model?", o: ["Big Five", "Myers-Briggs Type Indicator (MBTI)", "Trait theory", "Freudian psychoanalytic theory"], a: 0 },
             { q: "4. In the 16 PF questionnaire, \"Factor Q2\" assesses:", o: ["Emotional Stability", "Extraversion", "Tough-mindedness", "Dominance"], a: 2 },
@@ -905,6 +953,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u1",
           name: "Deviance, crime and juvenile delinquency",
           blurb: "Concept and meaning of deviance, crime, juvenile delinquency",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/social-problem-and-social-development/" }
+            ],
           questions: [
             { q: "Q.1 What is deviant behaviour?", o: ["Following the norms of society", "Actions or behaviours that go against social norms or expectations", "Following the codified laws", "Doings actions which is positive for society"], a: 1 },
             { q: "Rape, murder, Abduction ,is an example of", o: ["Criminal violence", "Domestic violence", "National violence", "All of the above"], a: 0 },
@@ -961,6 +1012,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u2",
           name: "Corruption, cyber crime, drug addiction, suicide, terrorism",
           blurb: "Corruption in public life, cyber crime, drug addiction, suicide, terrorism",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/social-problem-and-social-development/" }
+            ],
           questions: [
             { q: "What is Depressant?", o: ["A type of medicine which provide energy to the body", "A type of medicine that induce sleep, relive anxiety", "A type of medicine that cause nausea", "None of these"], a: 1 },
             { q: "What is the objective of drug rehabilitation?", o: ["Educate to drug addict", "Social well being of drug addict", "complete abstaining from drug", "All of the above"], a: 3 },
@@ -1017,6 +1071,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u3",
           name: "Structural problems: poverty, caste, religion, minorities",
           blurb: "Poverty, caste inequality, religious and ethnic problems, minorities, backward classes and Dalits",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/social-problem-and-social-development/" }
+            ],
           questions: [
             { q: "What is the cause of religious conflict ?", o: ["Desire for political power", "Struggle for resources", "Economic competition", "All of the above"], a: 3 },
             { q: "Pure and impure concept is related to …..", o: ["Religion", "Caste", "Ethnicity", "Race"], a: 1 },
@@ -1073,6 +1130,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u4",
           name: "Familial problems: dowry, domestic violence, divorce",
           blurb: "Dowry, domestic violence, divorce, generational conflict, problems of elderly",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/social-problem-and-social-development/" }
+            ],
           questions: [
             { q: "How could be abolished dowry ?", o: ["Distortion of traditions", "Making girl independent", "Codified law", "All of the above"], a: 3 },
             { q: "When dowry prohibition act come ?", o: ["1966", "1961", "1971", "1951"], a: 1 },
@@ -1129,6 +1189,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u5",
           name: "Development: economic, social and human",
           blurb: "Concept of development, economic vs social development, human development",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/social-problem-and-social-development/" }
+            ],
           questions: [
             { q: "Which of the following characteristics of free- market economy", o: ["No Government intervention in the economic system", "All goods and services are produced in private sector", "Any goods or services are exchanged voluntarily by buyers and sellers", "All of the above"], a: 3 },
             { q: "What is mixed economy ?", o: ["It is a idea where farmers forming two or more crops in a single farm", "It is a system where private and public sector both co- exist", "It is a system where government controls economy", "None of these"], a: 1 },
@@ -1185,6 +1248,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u6",
           name: "Theories of development",
           blurb: "Smelser, Lerner, Rostow, dependency, centre-periphery, globalisation",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/social-problem-and-social-development/" }
+            ],
           questions: [
             { q: "Who has written the book ‘ The sociology of economic life’ ?", o: ["Deniel Lerner", "WW Rostow", "Smelser", "Giddnes"], a: 2 },
             { q: "Who has discussed the psychological theory of development ?", o: ["Smelser", "Rostow", "Goddnes", "Lerner"], a: 3 },
@@ -1241,6 +1307,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u7",
           name: "Issues of development",
           blurb: "Agrarian crisis, human resource development, unemployment",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/social-problem-and-social-development/" }
+            ],
           questions: [
             { q: "Which statement is correct about globalization ?", o: ["Globalization is only an economic phenomena", "Globalization stared in 1991", "Globalization and Westernization are same", "Globalization is a multidimensional phenomena"], a: 3 },
             { q: "What is the full form of LPG ?", o: ["Liquid Petroleum Gas", "Liberalization Privatization and Globalization", "Labour Participation in Global market", "None of these"], a: 1 },
@@ -1297,6 +1366,9 @@ window.SUBJECT_SOCIOLOGY = {
           id: "u8",
           name: "Ecology and development",
           blurb: "Development and displacement, rehabilitation, sustainable development, climate change",
+            resources: [
+              { title: "Source PDF / question bank", url: "https://prashnbank.csjmu.ac.in/social-problem-and-social-development/" }
+            ],
           questions: [
             { q: "voluntarily leaving a job and finding another 50. Which type of unemployment sometimes called as ‘search unemployment’ ?", o: ["Frictional unemployment", "Seasonal unemployment", "Structural unemployment", "Cyclical unemployment"], a: 0 },
             { q: "Unit – 8 Ecology and Development Ecology is the branch of biology that studies how organisms interact with their environment and other organisms. Every organism experiences complex relationships with other organisms of its species, and organisms of different species. These complex interactions lead to different selective pressures on organisms12. In essence, ecology explores the intricate web of connections between living beings and their non-living surroundings, shaping the evolution and survival of species. The community and environmental factors found in any area, in terms of structure and function, work as a system which is called ecosystem. The word ecosystem was first used by the English ecologist A. G. Tansley published the book Ecology in 1935. Made from the words Eco and System, Eco system means home and system. According to A.G. Tansley, \"The system formed as a result of integration of all the biological and non-biological factors of the environment is called ecosystem.\" According to P. Heget, ecosystem is that ecological system in which plants and animals are connected to their environment through nutrient chains. According to F.R. Fosverg, “Ecological system is a functioning and interacting system which is composed of one or more organisms and their environment. On the basis of the above definitions, it can be said that development in a particular area is a system in which different types of organisms develop by interacting with non-biological elements. The ecological system is called the entire earth on which biological and non- biological components keep interacting continuously. It is a large ecosystem, in other words the biosphere is also a large and basic ecosystem.\" Development Induced Displacement Development-induced displacement refers to the forced relocation of people from their homes due to various development projects. This can include the construction of dams, roads, ports, airports, industrial complexes, urbanization, and more1. It’s a form of forced migration that often results in loss of livelihood and impoverishment for those displaced. Development-induced displacement is a social problem affecting multiple levels of human organization, from tribal and village communities to well-developed urban areas. Development is widely viewed as an inevitable step towards modernization and economic growth in developing countries; however, for those who are displaced, the result is most often loss of livelihood and impoverishment. According to Pablo Bose “ The forcing of communities and individuals out of their homes , other also homelands for purpose of economic development.” Others “ Use of coercion or force of any nature by state is central to the idea of development induced development.” Types of Development Induced Displacement There are two types of development induced displacement 1. Direct or Primary displacement 2. Indirect or Secondary displacement 1.Primary or direct displacement occurs when people are moved from their traditional lands to make way for a development project or when people move towards a project to meet a new labor demand. Primary displacement is usually predictable and can therefore be mitigated through planning. 2.Secondary or indirect displacement is a result of environmental, geographical and socio- political consequences of the development project that take place over time and distance from the initial project. This type of displacement is less predictable and difficult to control.[5] One example of secondary displacement is if a community is forced to move because of pollution of their water supply by a mining project. Examples of development induced displacement Sardar Sarovar Dam in India – The largest dam in the Narmada Valley Project, which displaced over 40,000 people. The dam was the subject of protest by environment groups and tribal groups during the 1980s and 1990s. Three Gorges Dam in China – A hydroelectric dam on China's Yangtze River constructed between 1994 and 2006, which displaced over 1.4 million people through primary and secondary displacement Impact ofDevelopment Induced Displacement Michael Cernea's impoverishment and reconstruction model (IRR) sets forth eight potential risks of displacement: Landlessness Joblessness Homelessness Marginalization Food insecurity Increased morbidity and mortality Loss of access to common property Social Disarticulation Rehabilitation and Resettlement Policy The National rehabilitation and resettlement policy, 2007 states all the prerequisites that should be taken care of before and after the displacement of people for government or private projects. The assessment of social and economic impact on the affected families has been given importance. The policy recognizes that public infrastructure development often requires the exercise of legal powers (eminent domain) for acquiring private property, leading to displacement.Involuntary displacement affects people’s land, livelihood, and shelter, causing psychological and socio-cultural consequences. The policy aims to protect the rights of weaker sections of society, including Scheduled Castes, Scheduled Tribes, marginal farmers, and women. Objectives of The National rehabilitation and resettlement policy, 2007 1.Minimize displacement by promoting non-displacing alternatives whenever possible 2.Ensure adequate rehabilitation packages and expedite the rehabilitation process with active participation from affected families. 3.Provide special care for vulnerable sections of society. 4.Improve living standards and provide sustainable income to affected families. 5.Integrate rehabilitation concerns into development planning. 6.Facilitate harmonious relationships between acquiring bodies and affected families. Sustainable Development The concept of sustainable development formed the basis of the United Nations Conference on Environment and Development held in Rio de Janeiro in 1992. The summit marked the first international attempt to draw up action plans and strategies for moving towards a more sustainable pattern of development. It was attended by over 100 Heads of State and representatives from 178 national governments. The Summit was also attended by representatives from a range of other organisations representing civil society. Sustainable development was the solution to the problems of environmental degradation discussed by the Brundtland Commission in the 1987 report Our Common Future. The concept of sustainable development received its first major international recognition in 1972 at the UN Conference on the Human Environment held in Stockholm. The term was not referred to explicitly, but nevertheless the international community agreed to the notion - now fundamental to sustainable development - that both development and the environment, hitherto addressed as separate issues, could be managed in a mutually beneficial way. Concept of Sustainable Development Sustainable development is a holistic approach to progress that seeks to balance different, and often competing, needs against an awareness of the environmental, social, and economic limitations we face as a society. It’s about meeting the needs of the present without compromising the ability of future generations to meet their own needs. Here are some key aspects of sustainable development: Definition of Sustainable Development According to Brundland Commission - \"The process of development in which the needs of the present are met without compromising the capabilities and abilities of the future generations Robert Repetto - \"Sustainable development means a development strategy that manages all natural, human, financial and physical resources for long-term increase in wealth and economic well-being.\". Features of Sustainable development Sustainable development is a crucial concept that aims to balance social, economic, and environmental needs while ensuring the well-being of present and future generations. Here are some key features and characteristics of sustainable development: Responsible and Efficient Use of Resources: Sustainable development emphasizes the efficient utilization of resources, especially non-renewable ones like fossil fuels. It encourages practices that minimize waste and promote resource conservation. Clean Technologies: Incorporating clean technologies in production processes is essential. These technologies help reduce pollution levels and minimize environmental impact. Biodiversity Protection: Sustainable development recognizes the importance of conserving biodiversity. This includes safeguarding ecosystems, addressing climate change, and protecting against emerging pathogens. Recycling and Reuse: Promoting recycling and reusing materials for mass consumption (such as paper, plastic, and glass) is a fundamental aspect of sustainable development. Environmental Damage Repair: Efforts are made to restore damaged ecosystems. Specialists study these ecosystems rigorously to understand their dynamics and plan effective restoration measures. Quality of Life Improvement: Sustainable development aims to enhance the quality of life for everyone. All citizens have the right to live in a healthy environment. Ecosystem Protection: It respects and cares for all living creatures, including fish, birds, and pollinators like insects. Water Conservation: Sustainable development places great value on water resources and ensures responsible management of reservoirs. Engagement of Regional Communities: Encouraging regional communities to actively participate in caring for natural resources within their areas of influence is a key characteristic. Conditions for Sustainable Development 1. Conservations of Natural Resources 2. Coordinated and Balanced Use 3. Pollution Free Development 4. Increase in Quality Life 5. Future Generations not Ignored 6. Development Policies International Efforts for Sustainable Development Stockholm Conference -1972 The United Nations Conference on the Human Environment, held in Stockholm in 1972, was a landmark event as it was the first world conference to make the environment a major issue. Stockholm Declaration: A set of 26 principles was adopted, placing environmental issues at the forefront of international concerns and starting a dialogue between industrialized and developing countries on the link between economic growth, pollution, and well-being. Vienna Conference 1985 -The Vienna Conference of 1985 was a pivotal international gathering that addressed the urgent issue of ozone layer depletion. Vienna Convention for the Protection of the Ozone Layer: At the Vienna Conference, participating nations agreed upon the Vienna Convention for the Protection of the Ozone Layer. The Earth Summit 1992 -The Earth Summit, also known as the United Nations Conference on Environment and Development (UNCED), was a major United Nations conference held in Rio de Janeiro from 3 to 14 June 1992. Its primary objective was to produce a broad agenda and a new blueprint for international action on environmental and development issues that would guide international cooperation and development policy in the twenty-first century. Sustainable Development: The conference emphasized that the concept of sustainable development was an attainable goal for all people, regardless of their level (local, national, regional, or international). Agenda 21: One of the major results of the UNCED Conference was Agenda 21, a program of action calling for new strategies to invest in the future and achieve overall sustainable development in the twenty-first century. Recommendations ranged from education methods to preserving natural resources and participating in a sustainable economy. Rio Declaration: The conference produced the Rio Declaration, which included 27 universal principles related to environmental protection and sustainable development. Sustainable Development Goals ( SDGs) The 2030 Agenda for Sustainable Development, adopted by all United Nations Member States in 2015, provides a shared blueprint for peace and prosperity for people and the planet, now and into the future. At its heart are the17Sustainable Development Goals (SDGs), which are an urgent call for action by all countries - developed and developing - in a global partnership. 1. No Poverty: End poverty in all its forms everywhere. 2. Zero Hunger: End hunger, achieve food security, and improve nutrition. 3. Good Health and Well-being: Ensure healthy lives and promote well-being for all. 4. Quality Education: Ensure inclusive and equitable quality education. 5. Gender Equality: Achieve gender equality and empower all women and girls. 6. Clean Water and Sanitation: Ensure availability and sustainable management of water and sanitation. 7. Affordable and Clean Energy: Ensure access to affordable, reliable, sustainable, and modern energy. 8. Decent Work and Economic Growth: Promote sustained, inclusive, and sustainable economic growth. 9. Industry, Innovation, and Infrastructure: Build resilient infrastructure, promote inclusive and sustainable industrialization. 10. Reduced Inequality: Reduce inequality within and among countries. 11. Sustainable Cities and Communities: Make cities and human settlements inclusive, safe, resilient, and sustainable. 12. Responsible Consumption and Production: Ensure sustainable consumption and production patterns. 13. Climate Action: Take urgent action to combat climate change and its impacts. 14. Life Below Water: Conserve and sustainably use the oceans, seas, and marine resources. 15. Life on Land: Protect, restore, and promote sustainable use of terrestrial ecosystems. 16. Peace, Justice, and Strong Institutions: Promote peaceful and inclusive societies for sustainable development. 17. Partnerships for the Goals: Strengthen the means of implementation and revitalize the global partnership for sustainable development. These goals recognize that ending poverty and other deprivations must go hand- in-hand with strategies that improve health and education, reduce inequality, and spur economic growth – all while tackling climate change and working to preserve our oceans and forests. Global Warming Global warming is the phenomenon of a gradual increase in the temperature near the earth’s surface. This phenomenon has been observed over the past one or two centuries. This change has disturbed the climatic pattern of the earth. However, the concept of global warming is quite controversial but the scientists have provided relevant data in support of the fact that the temperature of the earth is rising constantly. According to the Oxford Dictionary, \"The measurable warming of the Earth's surface due to the enveloping effect of anthropogenic carbon dioxide in the atmosphere is called the Green House Effect.\" What Are Greenhouse Gases? Greenhouse gases are atmospheric components that have the property of absorbing infrared radiation (net heat energy) emitted from Earth’s surface and then reradiating it back to the surface. This process contributes to the greenhouse effect, which helps regulate the Earth’s temperature. The most important greenhouse gases include: Carbon dioxide (CO₂): Dominant and produced by burning fossil fuels, industrial processes, and land use changes. Methane (CH₄): Emitted from sources like livestock, rice cultivation, and biomass burning. Water vapor: Naturally present and also contributes to the greenhouse effect. Surface-level ozone, nitrous oxides, and fluorinated gases also trap infrared radiation, albeit to a lesser extent. Human Influence on Greenhouse Gas Levels: Human activities, especially fossil fuel combustion since the Industrial Revolution, have led to steady increases in atmospheric concentrations of various greenhouse gases. These activities release gases such as carbon dioxide, methane, ozone, and chlorofluorocarbons (CFCs) into the atmosphere. Deforestation is another significant source of CO₂ emissions. Cause of Global Warming Global warming is a critical issue with far-reaching consequences. Greenhouse Gases: The primary cause of global warming is the accumulation of greenhouse gases in the atmosphere. These gases trap heat, leading to a warming effect. The major greenhouse gases include: Water vapor: Although often overlooked, it is the most abundant greenhouse gas. Carbon dioxide (CO₂): Released from burning fossil fuels (coal, oil, and gas) and deforestation. Methane (CH₄): Produced by livestock, rice paddies, and fossil fuel extraction. Nitrous oxide (N₂O): Emitted from agricultural practices and industrial processes. Chlorofluorocarbons (CFCs): Used in refrigeration and banned due to their harmful impact on the ozone layer. Industrial Activity: Since the Industrial Revolution, human activities have significantly contributed to global warming. Burning fossil fuels for energy (coal, petroleum) releases carbon dioxide into the atmosphere. Transportation, industrial processes, and electricity generation are major sources of CO₂ emissions. Other greenhouse gases like methane and CFCs are also released during these activities. Agricultural Practices: Agricultural activities play a crucial role. The use of fertilizers releases nitrous oxide, a potent greenhouse gas. Livestock digestion produces methane. Deforestation for agriculture further reduces the planet’s ability to absorb CO₂, exacerbating the problem. Deforestation: Cutting down trees reduces the Earth’s capacity to absorb carbon dioxide. Forests act as carbon sinks, capturing CO₂ from the atmosphere. When trees are removed, this natural process is disrupted, leading to increased greenhouse gas levels. Effects of Global Warming Global warming, the phenomenon of increasing average air temperatures near the surface of Earth over the past one to two centuries, has significant impacts on our planet. Rising Temperatures: Since the Industrial Revolution, Earth has warmed by approximately 1 degree Celsius (about 2 degrees Fahrenheit). The year 2023 was the hottest on record, and all 10 of the hottest years have occurred in the past decade. Climate Change: While global warming and climate change are often used interchangeably, scientists prefer the term “climate change” to describe the complex shifts affecting our planet. It encompasses not only rising temperatures but also natural disasters, shifting wildlife habitats, rising seas, and other impacts. Human activities, such as burning fossil fuels, release heat- trapping greenhouse gases into the atmosphere, contributing to these changes. Greenhouse Effect: When fossil fuel emissions alter the chemistry of our atmosphere, sunlight can reach Earth but heat is trapped, creating a greenhouse effect. Carbon dioxide (CO₂) is the most common greenhouse gas, resulting from oil, gas, and coal production. Methane, though less abundant, is more potent and dissipates quickly. It contributes to warming and is produced by agriculture, oil and gas leaks, and landfills. Effects on Polar Regions and Glaciers: The Arctic is warming four times faster than the rest of the planet, leading to reduced ice habitat and disruptions in the jet stream, affecting global weather patterns. Mountain glaciers are shrinking, impacting freshwater availability and ecosystems. Extreme Precipitation: As temperatures rise, the atmosphere holds about 7% more moisture for every degree increase. This results in more intense rainfall events and extreme weather patterns. Coastal Erosion and Sea Level Rise: Global warming contributes to melting ice caps and glaciers, leading to rising sea levels. Coastal areas face increased erosion and flooding due to higher sea levels. Shifts in Wildlife Habitats: Many plant and animal species face extinction due to changing ecosystems. Habitats are shifting, affecting biodiversity and ecosystems. Impact on Agriculture: Changing weather patterns and extreme events disrupt crop growth and yield. Agricultural practices need adaptation to cope with these changes. Health Risks: Global warming affects the spread of infectious diseases. Warmer temperatures can expand the range of disease vectors like mosquitoes. Prevention of Global Warming Preventing global warming involves a range of strategies that can be implemented on individual, community, and global levels. Here are some effective ways to help prevent global warming: Change a Light: Replace regular light bulbs with compact fluorescent light bulbs to save 150 pounds of carbon dioxide annually. Drive Less: Opt for walking, biking, carpooling, or public transit to reduce carbon emissions by one pound for every mile not driven. Recycle More: Recycling half of your household waste can save 2,400 pounds of carbon dioxide per year. Check Your Tires: Properly inflated tires improve gas mileage, reducing 20 pounds of carbon dioxide for every gallon of gasoline saved. Use Less Hot Water: Taking shorter showers and using cooler water for washing clothes can save over 500 pounds of carbon dioxide annually. Avoid Excessive Packaging: Reducing your garbage by 10 percent can save 1,200 pounds of carbon dioxide per year. Adjust Your Thermostat: Lowering the thermostat by 2 degrees in winter and raising it by 2 degrees in summer can save about 2,000 pounds of carbon dioxide yearly. Plant a Tree: A single tree can absorb one ton of carbon dioxide over its lifetime. Turn Off Electronics: Turning off devices when not in use can save thousands of pounds of carbon dioxide each year. Switch to Renewable Energy: Using solar and wind energy instead of fossil fuels can significantly reduce heat-trapping gases. Drive Electric Vehicles: Electric vehicles emit fewer greenhouse gases compared to those burning fossil fuels. Energy Conservation: Insulate homes better and use energy-efficient appliances to conserve energy. Support Sustainable Businesses: Choose local businesses that promote sustainable practices.Achieving a carbon-neutral society requires substantial changes in energy technologies and infrastructure, going beyond individual actions to include collective efforts from all sectors of society. Climate Change Climate change refers to long-term shifts in temperatures and weather patterns. Such shifts can be natural, due to changes in the sun’s activity or large volcanic eruptions. But since the 1800s, human activities have been the main driver of climate change, primarily due to the burning of fossil fuels like coal, oil and gas. According United Nations Causes of Climate Change Generating power Generating electricity and heat by burning fossil fuels causes a large chunk of global emissions. Most electricity is still generated by burning coal, oil, or gas, which produces carbon dioxide and nitrous oxide – powerful greenhouse gases that blanket the Earth and trap the sun’s heat. Globally, a bit more than a quarter of electricity comes from wind, solar and other renewable sources which, as opposed to fossil fuels, emit little to no greenhouse gases or pollutants into the air. Manufacturing goods Manufacturing and industry produce emissions, mostly from burning fossil fuels to produce energy for making things like cement, iron, steel, electronics, plastics, clothes, and other goods. Mining and other industrial processes also release gases, as does the construction industry. Machines used in the manufacturing process often run on coal, oil, or gas; and some materials, like plastics, are made from chemicals sourced from fossil fuels. The manufacturing industry is one of the largest contributors to greenhouse gas emissions worldwide. Cutting down forests Cutting down forests to create farms or pastures, or for other reasons, causes emissions, since trees, when they are cut, release the carbon they have been storing. Each year approximately 12 million hectares of forest are destroyed. Since forests absorb carbon dioxide, destroying them also limits nature’s ability to keep emissions out of the atmosphere. Deforestation, together with agriculture and other land use changes, is responsible for roughly a quarter of global greenhouse gas emissions. Using transportation Most cars, trucks, ships, and planes run on fossil fuels. That makes transportation a major contributor of greenhouse gases, especially carbon-dioxide emissions. Road vehicles account for the largest part, due to the combustion of petroleum-based products, like gasoline, in internal combustion engines. But emissions from ships and planes continue to grow. Transport accounts for nearly one quarter of global energy-related carbon-dioxide emissions. And trends point to a significant increase in energy use for transport over the coming years. Producing food Producing food causes emissions of carbon dioxide, methane, and other greenhouse gases in various ways, including through deforestation and clearing of land for agriculture and grazing, digestion by cows and sheep, the production and use of fertilizers and manure for growing crops, and the use of energy to run farm equipment or fishing boats, usually with fossil fuels. All this makes food production a major contributor to climate change. And greenhouse gas emissions also come from packaging and distributing food. Powering buildings Globally, residential and commercial buildings consume over half of all electricity. As they continue to draw on coal, oil, and natural gas for heating and cooling, they emit significant quantities of greenhouse gas emissions. Growing energy demand for heating and cooling, with rising air-conditioner ownership, as well as increased electricity consumption for lighting, appliances, and connected devices, has contributed to a rise in energy-related carbon-dioxide emissions from buildings in recent years. Consuming too much Your home and use of power, how you move around, what you eat and how much you throw away all contribute to greenhouse gas emissions. So does the consumption of goods such as clothing, electronics, and plastics. A large chunk of global greenhouse gas emissions are linked to private households. Our lifestyles have a profound impact on our planet. The wealthiest bear the greatest responsibility: the richest 1 per cent of the global population combined account for more greenhouse gas emissions than the poorest 50 per cent. Effects of Climate Change 1. Hotter Temperature 2. More Severe Storms 3. Increased Drought 4. Loss of Species 5. Not Enough Food 6. Health Risk 7. Poverty and Displacement 1. Who has used first time the term Ecology ?", o: ["Ernest Haeckel", "W.C. Odum", "Charles Darwin", "Gregor Mendel"], a: 0 },

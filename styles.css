@@ -127,6 +127,21 @@ button.ghost{
 .bar i{display:block;height:100%;background:var(--koubai);border-radius:99px}
 
 /* quiz */
+.quiz-layout{display:flex;flex-direction:column;gap:16px}
+.quiz-main{flex:1;min-width:0}
+.quiz-grid{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+.qgrid-title{font-family:var(--serif);font-weight:700;font-size:.95rem;margin-bottom:10px}
+.qgrid-btns{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.qgrid-btn{
+  border:1.5px solid var(--line);background:var(--card);border-radius:8px;
+  padding:8px 2px;font-size:.85rem;font-weight:600;color:var(--ink);cursor:pointer;
+}
+.qgrid-btn.current{border-color:var(--koubai);color:var(--koubai)}
+.qgrid-btn.grid-ok{border-color:var(--matcha);background:#F3F6F1;color:var(--matcha)}
+.qgrid-btn.grid-no{border-color:var(--koubai);background:#FCF2F3;color:var(--koubai)}
+.quiz-nav{display:flex;gap:10px;margin-top:18px}
+.quiz-nav button{flex:1;margin-top:0}
+
 .qhead{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;color:var(--ink-soft);margin-bottom:8px}
 .qtext{font-family:var(--serif);font-size:1.2rem;line-height:1.5;margin:16px 0 20px}
 
@@ -163,6 +178,14 @@ button.ghost{
 }
 .empty a{color:var(--koubai)}
 
+.study-bar{margin:-6px 0 14px 2px}
+.study-bar button{width:auto;padding:8px 14px;font-size:.85rem;margin-top:0}
+.notes{font-size:.93rem;line-height:1.65;color:var(--ink-soft);white-space:pre-line}
+.reslist{margin:6px 0 0;padding-left:18px;font-size:.93rem;line-height:1.7}
+.reslist li{margin-bottom:4px}
+.reslist a{color:var(--koubai);text-decoration:none}
+.reslist a:hover{text-decoration:underline}
+
 .tabbar{
   position:fixed;left:0;right:0;bottom:0;z-index:30;
   display:grid;grid-template-columns:repeat(4,1fr);
@@ -183,6 +206,11 @@ button.ghost{
   main{padding-top:30px}
   .today{padding:34px 30px}
   .today h1{font-size:2rem}
+}
+
+@media (min-width:900px){
+  .quiz-layout{flex-direction:row;align-items:flex-start}
+  .quiz-grid{width:190px;position:sticky;top:86px;align-self:flex-start}
 }
 
 @media (prefers-reduced-motion:reduce){

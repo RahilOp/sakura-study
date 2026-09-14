@@ -538,6 +538,12 @@ window.SUBJECT_ENGLISH = {
               ],
               a: 1
             }
+          ],
+          resources: [
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=mb6VDqDAXDQ"
+            }
           ]
         },
       {
@@ -794,6 +800,12 @@ window.SUBJECT_ENGLISH = {
               "English verse form"
               ],
               a: 0
+            }
+          ],
+          resources: [
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=mb6VDqDAXDQ"
             }
           ]
         },
@@ -1111,6 +1123,12 @@ window.SUBJECT_ENGLISH = {
               "ABABCDCDE"
               ],
               a: 1
+            }
+          ],
+          resources: [
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=mb6VDqDAXDQ"
             }
           ]
         },
@@ -1639,6 +1657,12 @@ window.SUBJECT_ENGLISH = {
               ],
               a: 3
             }
+          ],
+          resources: [
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=mb6VDqDAXDQ"
+            }
           ]
         },
       {
@@ -2075,6 +2099,12 @@ window.SUBJECT_ENGLISH = {
               "Eliot"
               ],
               a: 1
+            }
+          ],
+          resources: [
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=mb6VDqDAXDQ"
             }
           ]
         },
@@ -2563,6 +2593,12 @@ window.SUBJECT_ENGLISH = {
               ],
               a: 1
             }
+          ],
+          resources: [
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=mb6VDqDAXDQ"
+            }
           ]
         },
       {
@@ -3020,6 +3056,12 @@ window.SUBJECT_ENGLISH = {
               ],
               a: 3
             }
+          ],
+          resources: [
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=mb6VDqDAXDQ"
+            }
           ]
         }
       ]
@@ -3457,6 +3499,16 @@ window.SUBJECT_ENGLISH = {
               ],
               a: 0
             }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://prashnbank.csjmu.ac.in/indian-and-new-literature-in-english/"
+            },
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=anhqnV79K-U"
+            }
           ]
         },
       {
@@ -3703,6 +3755,16 @@ window.SUBJECT_ENGLISH = {
               "Cooking"
               ],
               a: 0
+            }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://prashnbank.csjmu.ac.in/indian-and-new-literature-in-english/"
+            },
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=anhqnV79K-U"
             }
           ]
         },
@@ -4100,6 +4162,16 @@ window.SUBJECT_ENGLISH = {
               "Rita"
               ],
               a: 1
+            }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://prashnbank.csjmu.ac.in/indian-and-new-literature-in-english/"
+            },
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=anhqnV79K-U"
             }
           ]
         },
@@ -4537,6 +4609,16 @@ window.SUBJECT_ENGLISH = {
               "Police officer"
               ],
               a: 1
+            }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://prashnbank.csjmu.ac.in/indian-and-new-literature-in-english/"
+            },
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=anhqnV79K-U"
             }
           ]
         },
@@ -5025,6 +5107,16 @@ window.SUBJECT_ENGLISH = {
               ],
               a: 3
             }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://prashnbank.csjmu.ac.in/indian-and-new-literature-in-english/"
+            },
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=anhqnV79K-U"
+            }
           ]
         },
       {
@@ -5451,6 +5543,16 @@ window.SUBJECT_ENGLISH = {
               "None of these"
               ],
               a: 0
+            }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://prashnbank.csjmu.ac.in/indian-and-new-literature-in-english/"
+            },
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=anhqnV79K-U"
             }
           ]
         },
@@ -5898,6 +6000,16 @@ window.SUBJECT_ENGLISH = {
               "None of these"
               ],
               a: 2
+            }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://prashnbank.csjmu.ac.in/indian-and-new-literature-in-english/"
+            },
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=anhqnV79K-U"
             }
           ]
         },
@@ -6736,6 +6848,16 @@ window.SUBJECT_ENGLISH = {
               ],
               a: 1
             }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://prashnbank.csjmu.ac.in/indian-and-new-literature-in-english/"
+            },
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=anhqnV79K-U"
+            }
           ]
         }
       ]
@@ -6971,6 +7093,16 @@ window.SUBJECT_ENGLISH = {
               ],
               a: 1
             }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://csjmu.ac.in/wp-content/uploads/booklets/booklets-apr-2026/28-04-2026/A040603T_A.pdf"
+            },
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=S8l4-8-Hi2U"
+            }
           ]
         },
       {
@@ -7177,6 +7309,16 @@ window.SUBJECT_ENGLISH = {
               "Broadcasting studios"
               ],
               a: 1
+            }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://csjmu.ac.in/wp-content/uploads/booklets/booklets-apr-2026/28-04-2026/A040603T_A.pdf"
+            },
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=S8l4-8-Hi2U"
             }
           ]
         },
@@ -7385,6 +7527,16 @@ window.SUBJECT_ENGLISH = {
               ],
               a: 2
             }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://csjmu.ac.in/wp-content/uploads/booklets/booklets-apr-2026/28-04-2026/A040603T_A.pdf"
+            },
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=S8l4-8-Hi2U"
+            }
           ]
         },
       {
@@ -7592,6 +7744,16 @@ window.SUBJECT_ENGLISH = {
               ],
               a: 1
             }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://csjmu.ac.in/wp-content/uploads/booklets/booklets-apr-2026/28-04-2026/A040603T_A.pdf"
+            },
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=S8l4-8-Hi2U"
+            }
           ]
         },
       {
@@ -7798,6 +7960,16 @@ window.SUBJECT_ENGLISH = {
               "Yearly only"
               ],
               a: 1
+            }
+          ],
+          resources: [
+          {
+              title: "Source PDF / question bank",
+              url: "https://csjmu.ac.in/wp-content/uploads/booklets/booklets-apr-2026/28-04-2026/A040603T_A.pdf"
+            },
+          {
+              title: "Related YouTube video",
+              url: "https://www.youtube.com/watch?v=S8l4-8-Hi2U"
             }
           ]
         }
