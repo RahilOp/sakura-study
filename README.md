@@ -2,7 +2,7 @@
 
 A daily MCQ practice app for CSJM University BA papers. Static site, no build step, no dependencies.
 
-Currently loaded: **2,539 questions** (1,302 English, 89 Economics, 1,148 Sociology).
+Currently loaded: **1,898 questions** (661 English, 89 Economics, 1,148 Sociology).
 
 ## Deploy to Vercel
 
@@ -75,10 +75,11 @@ The pending Economics papers still need an official or worked-out answer key bef
 
 ## English question sources
 
-- **English Poetry** — CSJMU Prashn Bank, course code A020201T.
-- **British and American Drama** — CSJMU Prashn Bank, course code A040301T. The booklet labels it as B.A.-II (Semester III); it is grouped under Semester 4 in the app.
-- **Indian and New Literature in English** — CSJMU Prashn Bank, course code A040601T.
-- **Literature in Film and Media Studies** — CSJMU Prashn Bank, course code A040602T.
+Sugra’s current papers:
+
+- **English Poetry** — CSJMU Prashn Bank, course code A020201T (Semester 2).
+- **Indian and New Literature in English** — CSJMU Prashn Bank, course code A040601T (Semester 6).
+- **Classical Literature and History of English Literature** (A040501T), **Fiction** (A040502T), and **Media and Journalistic Writing** (A040603T) are listed as pending — no MCQ question bank or answer key has been found yet.
 
 ## Where the questions came from
 

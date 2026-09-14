@@ -244,11 +244,9 @@ Sociology is the main gap: three papers are scaffolded with source URLs in `data
 
 ## 14. Current content status
 
-- English: 1,302 questions ready (`eng-sem2`, English Poetry; `eng-sem4-drama`, British and American Drama; `eng-sem6-indian-new`, Indian and New Literature in English; `eng-sem6-film-media`, Literature in Film and Media Studies).
-- Economics: 89 questions ready (`eco-sem2`, Principles of Macro Economics).
+- English: 661 questions ready (`eng-sem2`, English Poetry; `eng-sem6-indian-new`, Indian and New Literature in English). Sugra’s Semester 5 papers Classical Literature & History (A040501T) and Fiction (A040502T), and her Semester 6 paper Media and Journalistic Writing (A040603T), are pending because no MCQ question bank or official answer key has been found.
+- Economics: 89 questions ready (`eco-sem2`, Principles of Macro Economics). Sugra’s Semester 5 papers Economic Growth and Development (A080501T) and International Economics (A080503T), and her Semester 6 papers Indian Economy & Economy of Uttar Pradesh (A080601T) and Agriculture Economics (A080602T), are pending. The International Economics booklet has notes/short questions but no MCQs; the others have not been located in the question bank or booklet archive.
 - Sociology: 1,148 questions ready across all three papers (`soc-sem2`, `soc-sem2-research`, `soc-sem4`).
-- Pending Economics papers: Money/Banking/Public Finance (sem 4 — past paper found but no official answer key), Financial Literacy (sem 4), Sem 6 Economics.
-- Economics International (sem 5, course code A080503T) was found but contains no MCQs in the downloaded booklet, only notes and short/long questions.
 
 ---
 

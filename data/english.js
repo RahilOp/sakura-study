@@ -1,610 +1,3030 @@
 // English — question data
-// Source: CSJMU Prashn Bank, "English Poetry" (Dr. Shilpi Mishra, Dr. Nidhish Kumar Singh)
-// https://prashnbank.csjmu.ac.in/english-poetry/
+// Source: CSJMU Prashn Bank and B.A. exam booklets for Sugra's papers.
 // Format: { q: question, o: [four options], a: index of correct option (0-3) }
 
 window.SUBJECT_ENGLISH = {
   id: "english",
   name: "English",
   papers: [
-    {
+  {
       id: "eng-sem2",
       semester: 2,
       name: "English Poetry",
       status: "ready",
       note: "Questions verified against the university question bank.",
       units: [
-        {
+      {
           id: "u1",
           name: "Forms of poetry",
           blurb: "Sonnet, elegy, ode, epic, ballad, lyric, dramatic monologue, allegory.",
           questions: [
-            { q: "What is a sonnet?", o: ["A poem of fourteen lines", "A religious poem", "A moral poem of twelve lines", "A song of mourning"], a: 0 },
-            { q: "The sonnet originated in", o: ["England", "France", "Italy", "Spain"], a: 2 },
-            { q: "Before Petrarch, who used the sonnet in his poems?", o: ["Aristotle", "Virgil", "Homer", "Dante"], a: 3 },
-            { q: "Who was the first to use the sonnet in England?", o: ["Spenser", "Shakespeare", "Sir Thomas Wyatt", "Milton"], a: 2 },
-            { q: "The word 'sonnet' comes from a", o: ["Latin word", "Italian word", "Greek word", "Spanish word"], a: 1 },
-            { q: "The Petrarchan sonnet is also called the", o: ["Spanish sonnet", "French sonnet", "Italian sonnet", "Miltonic sonnet"], a: 2 },
-            { q: "A Petrarchan sonnet has two parts. The first is the octave, the second is the", o: ["Couplet", "Sestet", "Quatrain", "Strophe"], a: 1 },
-            { q: "An octave has", o: ["4 lines", "6 lines", "8 lines", "10 lines"], a: 2 },
-            { q: "A sestet has", o: ["8 lines", "6 lines", "2 lines", "9 lines"], a: 1 },
-            { q: "The English sonnet is also called the", o: ["Spenserian sonnet", "Miltonic sonnet", "Italian sonnet", "Shakespearean sonnet"], a: 3 },
-            { q: "abba, abba, cde, cde is the rhyme scheme of the", o: ["Petrarchan sonnet", "Shakespearean sonnet", "Spenserian sonnet", "Miltonic sonnet"], a: 0 },
-            { q: "Three quatrains and one couplet make a", o: ["Shakespearean sonnet", "Petrarchan sonnet", "Miltonic sonnet", "Spenserian sonnet"], a: 0 },
-            { q: "An elegy is a", o: ["Marriage song", "Historical poem", "Allegorical poem", "Song of lamentation"], a: 3 },
-            { q: "The tone of an elegy is", o: ["Joyous", "Humorous", "Satirical", "Mournful"], a: 3 },
-            { q: "The elegy has its origin in", o: ["England", "France", "Ancient Greece", "Spain"], a: 2 },
-            { q: "An elegy is a poem about", o: ["Marriage", "Love", "War", "Death"], a: 3 },
-            { q: "A pastoral elegy is the lament of a", o: ["Teacher", "Villager", "Queen", "Shepherd"], a: 3 },
-            { q: "The term 'elegia' is derived from", o: ["French", "Latin", "Greek", "Spanish"], a: 2 },
-            { q: "Shelley's pastoral elegy 'Adonais' was written on the death of", o: ["Spenser", "Milton", "Keats", "Shakespeare"], a: 2 },
-            { q: "Tennyson's elegy 'In Memoriam' is an example of a", o: ["Pastoral elegy", "Impersonal elegy", "Personal elegy", "Mock elegy"], a: 2 },
-            { q: "The most important characteristic of an ode is that", o: ["It is in the form of an address", "It is a love poem", "It is satirical in tone", "It is always unrhymed"], a: 0 },
-            { q: "The ode has its origin in", o: ["England", "America", "Greece", "France"], a: 2 },
-            { q: "An ode is a type of", o: ["Narrative poem", "Lyrical poem", "Allegorical poem", "Dramatic poem"], a: 1 },
-            { q: "The Horatian ode is named after the poet", o: ["Virgil", "Homer", "Horace", "Pindar"], a: 2 },
-            { q: "The Pindaric ode is named after the poet", o: ["Pindar", "Horace", "Dante", "Virgil"], a: 0 },
-            { q: "Strophe, antistrophe and epode are parts of the", o: ["Horatian ode", "Pindaric ode", "Regular ode", "Irregular ode"], a: 1 },
-            { q: "The Horatian ode is also known as the", o: ["Lesbian ode", "Regular ode", "Irregular ode", "English ode"], a: 0 },
-            { q: "'The Bard' and 'The Progress of Poesy' by Thomas Gray are examples of the", o: ["Horatian ode", "Pindaric ode", "Regular ode", "Irregular ode"], a: 1 },
-            { q: "The Cowleyan ode was established by", o: ["Abraham Cowley", "John Keats", "Horace", "Pindar"], a: 0 },
-            { q: "Who is the most important writer of Pindaric odes in English?", o: ["John Keats", "John Milton", "Thomas Gray", "Shelley"], a: 2 },
-            { q: "An epic is", o: ["A long narrative verse", "A short poem", "A poem of 14 lines", "A song of mourning"], a: 0 },
-            { q: "An epic is generally divided into", o: ["10 books", "11 books", "12 books", "14 books"], a: 2 },
-            { q: "Aristotle ranked the epic second only to", o: ["Comedy", "Tragedy", "Tragicomedy", "Satire"], a: 1 },
-            { q: "The folk epic is also known as the", o: ["Epic of growth", "Literary epic", "Mock epic", "Proper epic"], a: 0 },
-            { q: "The Mahabharata and the Ramayana are the finest examples of the", o: ["Ballad", "Lyric", "Epic", "Ode"], a: 2 },
-            { q: "'Paradise Lost' was written by", o: ["John Keats", "Spenser", "John Milton", "Shakespeare"], a: 2 },
-            { q: "A short story in verse is called a", o: ["Epic", "Ode", "Ballad", "Sonnet"], a: 2 },
-            { q: "The word 'ballad' is of", o: ["French origin", "Latin origin", "Greek origin", "German origin"], a: 0 },
-            { q: "'The Rime of the Ancient Mariner', a fine example of the ballad, was written by", o: ["John Milton", "John Keats", "S.T. Coleridge", "William Wordsworth"], a: 2 },
-            { q: "'Reliques of Ancient English Poetry' is a collection of", o: ["Odes", "Sonnets", "Couplets", "Ballads"], a: 3 },
-            { q: "'Ballad' means a", o: ["Dancing song", "Marriage song", "Story", "Prayer"], a: 0 },
-            { q: "'Lyrical Ballads' by Coleridge and Wordsworth was published in", o: ["1798", "1799", "1698", "1699"], a: 0 },
-            { q: "A lyric is a", o: ["Short story", "Long poem", "Satirical poem", "Short musical poem"], a: 3 },
-            { q: "A lyric is an expression of", o: ["Multiple emotions", "A single emotion", "Music", "Pure thought"], a: 1 },
-            { q: "Who defined the lyric as 'The Perfect Singing God'?", o: ["Keats", "Shelley", "Milton", "A.C. Swinburne"], a: 3 },
-            { q: "The most famous writer of the dramatic monologue is", o: ["William Wordsworth", "S.T. Coleridge", "Robert Browning", "John Keats"], a: 2 },
-            { q: "'The Love Song of J. Alfred Prufrock' was written by", o: ["Robert Browning", "Tennyson", "T.S. Eliot", "P.B. Shelley"], a: 2 },
-            { q: "'Ulysses', a fine example of the dramatic monologue, was written by", o: ["William Wordsworth", "S.T. Coleridge", "Tennyson", "Shelley"], a: 2 },
-            { q: "The word 'allegory' derives from the Latin word", o: ["Alegore", "Algrie", "Allegoria", "Allegorium"], a: 2 },
-            { q: "Allegory was a popular literary form of the", o: ["Age of Chaucer", "Elizabethan Age", "Romantic Age", "Middle Ages"], a: 3 },
-            { q: "The chief feature of allegory is", o: ["Single meaning", "Double meaning", "Simplicity", "Brevity"], a: 1 },
-            { q: "George Orwell's 'Animal Farm' is a", o: ["Ballad", "Allegory", "Sonnet", "Short story"], a: 1 }
+          {
+              q: "What is a sonnet?",
+              o: [
+              "A poem of fourteen lines",
+              "A religious poem",
+              "A moral poem of twelve lines",
+              "A song of mourning"
+              ],
+              a: 0
+            },
+          {
+              q: "The sonnet originated in",
+              o: [
+              "England",
+              "France",
+              "Italy",
+              "Spain"
+              ],
+              a: 2
+            },
+          {
+              q: "Before Petrarch, who used the sonnet in his poems?",
+              o: [
+              "Aristotle",
+              "Virgil",
+              "Homer",
+              "Dante"
+              ],
+              a: 3
+            },
+          {
+              q: "Who was the first to use the sonnet in England?",
+              o: [
+              "Spenser",
+              "Shakespeare",
+              "Sir Thomas Wyatt",
+              "Milton"
+              ],
+              a: 2
+            },
+          {
+              q: "The word 'sonnet' comes from a",
+              o: [
+              "Latin word",
+              "Italian word",
+              "Greek word",
+              "Spanish word"
+              ],
+              a: 1
+            },
+          {
+              q: "The Petrarchan sonnet is also called the",
+              o: [
+              "Spanish sonnet",
+              "French sonnet",
+              "Italian sonnet",
+              "Miltonic sonnet"
+              ],
+              a: 2
+            },
+          {
+              q: "A Petrarchan sonnet has two parts. The first is the octave, the second is the",
+              o: [
+              "Couplet",
+              "Sestet",
+              "Quatrain",
+              "Strophe"
+              ],
+              a: 1
+            },
+          {
+              q: "An octave has",
+              o: [
+              "4 lines",
+              "6 lines",
+              "8 lines",
+              "10 lines"
+              ],
+              a: 2
+            },
+          {
+              q: "A sestet has",
+              o: [
+              "8 lines",
+              "6 lines",
+              "2 lines",
+              "9 lines"
+              ],
+              a: 1
+            },
+          {
+              q: "The English sonnet is also called the",
+              o: [
+              "Spenserian sonnet",
+              "Miltonic sonnet",
+              "Italian sonnet",
+              "Shakespearean sonnet"
+              ],
+              a: 3
+            },
+          {
+              q: "abba, abba, cde, cde is the rhyme scheme of the",
+              o: [
+              "Petrarchan sonnet",
+              "Shakespearean sonnet",
+              "Spenserian sonnet",
+              "Miltonic sonnet"
+              ],
+              a: 0
+            },
+          {
+              q: "Three quatrains and one couplet make a",
+              o: [
+              "Shakespearean sonnet",
+              "Petrarchan sonnet",
+              "Miltonic sonnet",
+              "Spenserian sonnet"
+              ],
+              a: 0
+            },
+          {
+              q: "An elegy is a",
+              o: [
+              "Marriage song",
+              "Historical poem",
+              "Allegorical poem",
+              "Song of lamentation"
+              ],
+              a: 3
+            },
+          {
+              q: "The tone of an elegy is",
+              o: [
+              "Joyous",
+              "Humorous",
+              "Satirical",
+              "Mournful"
+              ],
+              a: 3
+            },
+          {
+              q: "The elegy has its origin in",
+              o: [
+              "England",
+              "France",
+              "Ancient Greece",
+              "Spain"
+              ],
+              a: 2
+            },
+          {
+              q: "An elegy is a poem about",
+              o: [
+              "Marriage",
+              "Love",
+              "War",
+              "Death"
+              ],
+              a: 3
+            },
+          {
+              q: "A pastoral elegy is the lament of a",
+              o: [
+              "Teacher",
+              "Villager",
+              "Queen",
+              "Shepherd"
+              ],
+              a: 3
+            },
+          {
+              q: "The term 'elegia' is derived from",
+              o: [
+              "French",
+              "Latin",
+              "Greek",
+              "Spanish"
+              ],
+              a: 2
+            },
+          {
+              q: "Shelley's pastoral elegy 'Adonais' was written on the death of",
+              o: [
+              "Spenser",
+              "Milton",
+              "Keats",
+              "Shakespeare"
+              ],
+              a: 2
+            },
+          {
+              q: "Tennyson's elegy 'In Memoriam' is an example of a",
+              o: [
+              "Pastoral elegy",
+              "Impersonal elegy",
+              "Personal elegy",
+              "Mock elegy"
+              ],
+              a: 2
+            },
+          {
+              q: "The most important characteristic of an ode is that",
+              o: [
+              "It is in the form of an address",
+              "It is a love poem",
+              "It is satirical in tone",
+              "It is always unrhymed"
+              ],
+              a: 0
+            },
+          {
+              q: "The ode has its origin in",
+              o: [
+              "England",
+              "America",
+              "Greece",
+              "France"
+              ],
+              a: 2
+            },
+          {
+              q: "An ode is a type of",
+              o: [
+              "Narrative poem",
+              "Lyrical poem",
+              "Allegorical poem",
+              "Dramatic poem"
+              ],
+              a: 1
+            },
+          {
+              q: "The Horatian ode is named after the poet",
+              o: [
+              "Virgil",
+              "Homer",
+              "Horace",
+              "Pindar"
+              ],
+              a: 2
+            },
+          {
+              q: "The Pindaric ode is named after the poet",
+              o: [
+              "Pindar",
+              "Horace",
+              "Dante",
+              "Virgil"
+              ],
+              a: 0
+            },
+          {
+              q: "Strophe, antistrophe and epode are parts of the",
+              o: [
+              "Horatian ode",
+              "Pindaric ode",
+              "Regular ode",
+              "Irregular ode"
+              ],
+              a: 1
+            },
+          {
+              q: "The Horatian ode is also known as the",
+              o: [
+              "Lesbian ode",
+              "Regular ode",
+              "Irregular ode",
+              "English ode"
+              ],
+              a: 0
+            },
+          {
+              q: "'The Bard' and 'The Progress of Poesy' by Thomas Gray are examples of the",
+              o: [
+              "Horatian ode",
+              "Pindaric ode",
+              "Regular ode",
+              "Irregular ode"
+              ],
+              a: 1
+            },
+          {
+              q: "The Cowleyan ode was established by",
+              o: [
+              "Abraham Cowley",
+              "John Keats",
+              "Horace",
+              "Pindar"
+              ],
+              a: 0
+            },
+          {
+              q: "Who is the most important writer of Pindaric odes in English?",
+              o: [
+              "John Keats",
+              "John Milton",
+              "Thomas Gray",
+              "Shelley"
+              ],
+              a: 2
+            },
+          {
+              q: "An epic is",
+              o: [
+              "A long narrative verse",
+              "A short poem",
+              "A poem of 14 lines",
+              "A song of mourning"
+              ],
+              a: 0
+            },
+          {
+              q: "An epic is generally divided into",
+              o: [
+              "10 books",
+              "11 books",
+              "12 books",
+              "14 books"
+              ],
+              a: 2
+            },
+          {
+              q: "Aristotle ranked the epic second only to",
+              o: [
+              "Comedy",
+              "Tragedy",
+              "Tragicomedy",
+              "Satire"
+              ],
+              a: 1
+            },
+          {
+              q: "The folk epic is also known as the",
+              o: [
+              "Epic of growth",
+              "Literary epic",
+              "Mock epic",
+              "Proper epic"
+              ],
+              a: 0
+            },
+          {
+              q: "The Mahabharata and the Ramayana are the finest examples of the",
+              o: [
+              "Ballad",
+              "Lyric",
+              "Epic",
+              "Ode"
+              ],
+              a: 2
+            },
+          {
+              q: "'Paradise Lost' was written by",
+              o: [
+              "John Keats",
+              "Spenser",
+              "John Milton",
+              "Shakespeare"
+              ],
+              a: 2
+            },
+          {
+              q: "A short story in verse is called a",
+              o: [
+              "Epic",
+              "Ode",
+              "Ballad",
+              "Sonnet"
+              ],
+              a: 2
+            },
+          {
+              q: "The word 'ballad' is of",
+              o: [
+              "French origin",
+              "Latin origin",
+              "Greek origin",
+              "German origin"
+              ],
+              a: 0
+            },
+          {
+              q: "'The Rime of the Ancient Mariner', a fine example of the ballad, was written by",
+              o: [
+              "John Milton",
+              "John Keats",
+              "S.T. Coleridge",
+              "William Wordsworth"
+              ],
+              a: 2
+            },
+          {
+              q: "'Reliques of Ancient English Poetry' is a collection of",
+              o: [
+              "Odes",
+              "Sonnets",
+              "Couplets",
+              "Ballads"
+              ],
+              a: 3
+            },
+          {
+              q: "'Ballad' means a",
+              o: [
+              "Dancing song",
+              "Marriage song",
+              "Story",
+              "Prayer"
+              ],
+              a: 0
+            },
+          {
+              q: "'Lyrical Ballads' by Coleridge and Wordsworth was published in",
+              o: [
+              "1798",
+              "1799",
+              "1698",
+              "1699"
+              ],
+              a: 0
+            },
+          {
+              q: "A lyric is a",
+              o: [
+              "Short story",
+              "Long poem",
+              "Satirical poem",
+              "Short musical poem"
+              ],
+              a: 3
+            },
+          {
+              q: "A lyric is an expression of",
+              o: [
+              "Multiple emotions",
+              "A single emotion",
+              "Music",
+              "Pure thought"
+              ],
+              a: 1
+            },
+          {
+              q: "Who defined the lyric as 'The Perfect Singing God'?",
+              o: [
+              "Keats",
+              "Shelley",
+              "Milton",
+              "A.C. Swinburne"
+              ],
+              a: 3
+            },
+          {
+              q: "The most famous writer of the dramatic monologue is",
+              o: [
+              "William Wordsworth",
+              "S.T. Coleridge",
+              "Robert Browning",
+              "John Keats"
+              ],
+              a: 2
+            },
+          {
+              q: "'The Love Song of J. Alfred Prufrock' was written by",
+              o: [
+              "Robert Browning",
+              "Tennyson",
+              "T.S. Eliot",
+              "P.B. Shelley"
+              ],
+              a: 2
+            },
+          {
+              q: "'Ulysses', a fine example of the dramatic monologue, was written by",
+              o: [
+              "William Wordsworth",
+              "S.T. Coleridge",
+              "Tennyson",
+              "Shelley"
+              ],
+              a: 2
+            },
+          {
+              q: "The word 'allegory' derives from the Latin word",
+              o: [
+              "Alegore",
+              "Algrie",
+              "Allegoria",
+              "Allegorium"
+              ],
+              a: 2
+            },
+          {
+              q: "Allegory was a popular literary form of the",
+              o: [
+              "Age of Chaucer",
+              "Elizabethan Age",
+              "Romantic Age",
+              "Middle Ages"
+              ],
+              a: 3
+            },
+          {
+              q: "The chief feature of allegory is",
+              o: [
+              "Single meaning",
+              "Double meaning",
+              "Simplicity",
+              "Brevity"
+              ],
+              a: 1
+            },
+          {
+              q: "George Orwell's 'Animal Farm' is a",
+              o: [
+              "Ballad",
+              "Allegory",
+              "Sonnet",
+              "Short story"
+              ],
+              a: 1
+            }
           ]
         },
-        {
+      {
           id: "u2",
           name: "Stanza forms",
           blurb: "Heroic couplet, blank verse, Spenserian stanza, terza rima.",
           questions: [
-            { q: "What is a couplet?", o: ["A stanza of 5 lines", "A stanza of 6 lines", "A stanza of 7 lines", "A stanza of 2 lines"], a: 3 },
-            { q: "What is a heroic couplet?", o: ["Three lines rhyming together", "Four lines rhyming in iambic pentameter", "Two lines rhyming together in iambic pentameter", "Two unrhymed lines"], a: 2 },
-            { q: "Who introduced the heroic couplet into English literature?", o: ["Dryden", "Milton", "Chaucer", "Pope"], a: 2 },
-            { q: "Chaucer first used the heroic couplet in his work", o: ["The Legend of Good Women", "The Book of the Duchess", "The Canterbury Tales", "Troilus and Criseyde"], a: 0 },
-            { q: "How many syllables are there in a line of a heroic couplet?", o: ["Four", "Five", "Six", "Ten"], a: 3 },
-            { q: "Heroic couplets were popularised in English poetry and plays in the", o: ["Early 14th century", "Late 14th to mid 15th century", "17th and 18th century", "19th century"], a: 2 },
-            { q: "Who is not a writer of the heroic couplet?", o: ["Dryden", "Chaucer", "Pope", "P.B. Shelley"], a: 3 },
-            { q: "Who introduced blank verse into English literature?", o: ["Thomas Wyatt", "Earl of Surrey", "Browning", "Tennyson"], a: 1 },
-            { q: "Earl of Surrey first used blank verse in his", o: ["Adonais", "Ode to the West Wind", "Translation of Books 2 and 4 of Virgil's Aeneid", "Astrophel and Stella"], a: 2 },
-            { q: "In which tragedy was blank verse first used?", o: ["Hamlet", "Gorboduc", "King Lear", "Doctor Faustus"], a: 1 },
-            { q: "'Gorboduc' was written by", o: ["Marlowe", "Norton and Sackville", "Spenser", "Shakespeare"], a: 1 },
-            { q: "Whose blank verse is called the 'Mighty Line'?", o: ["Marlowe", "Shakespeare", "Milton", "Jonson"], a: 0 },
-            { q: "'Paradise Lost' by John Milton is written in", o: ["Blank verse", "Rhyme royal", "Heroic couplet", "Terza rima"], a: 0 },
-            { q: "'Tintern Abbey' by William Wordsworth is written in", o: ["Ottava rima", "Terza rima", "Rhyme royal", "Blank verse"], a: 3 },
-            { q: "How many lines are there in a Spenserian stanza?", o: ["8", "9", "10", "11"], a: 1 },
-            { q: "In which work did Spenser employ the Spenserian stanza?", o: ["The Faerie Queene", "Astrophel", "Amoretti", "Epithalamion"], a: 0 },
-            { q: "The last line of a Spenserian stanza is called an", o: ["Alexandrine", "Rhyme royal", "Couplet", "Envoi"], a: 0 },
-            { q: "Shelley's 'Adonais' is written in", o: ["Blank verse", "Spenserian stanza", "Rhyme royal", "Terza rima"], a: 1 },
-            { q: "Keats' 'The Eve of St Agnes' is written in", o: ["Spenserian stanza", "Heroic couplet", "Free verse", "Blank verse"], a: 0 },
-            { q: "Who introduced terza rima?", o: ["Shakespeare", "Shelley", "Dante", "Thomas Gray"], a: 2 },
-            { q: "Terza rima is a", o: ["One-line stanza", "Two-line stanza", "Three-line stanza", "Four-line stanza"], a: 2 },
-            { q: "In which work did Dante first use terza rima?", o: ["The Divine Comedy", "Essay on Man", "The Rape of the Lock", "Vita Nuova"], a: 0 },
-            { q: "Who introduced terza rima to English literature?", o: ["Spenser", "Keats", "Chaucer", "Milton"], a: 2 },
-            { q: "Shelley's 'Ode to the West Wind' is written in", o: ["Heroic couplet", "Spenserian stanza", "Blank verse", "Terza rima"], a: 3 },
-            { q: "Terza rima is an", o: ["Italian verse form", "Spanish verse form", "French verse form", "English verse form"], a: 0 }
+          {
+              q: "What is a couplet?",
+              o: [
+              "A stanza of 5 lines",
+              "A stanza of 6 lines",
+              "A stanza of 7 lines",
+              "A stanza of 2 lines"
+              ],
+              a: 3
+            },
+          {
+              q: "What is a heroic couplet?",
+              o: [
+              "Three lines rhyming together",
+              "Four lines rhyming in iambic pentameter",
+              "Two lines rhyming together in iambic pentameter",
+              "Two unrhymed lines"
+              ],
+              a: 2
+            },
+          {
+              q: "Who introduced the heroic couplet into English literature?",
+              o: [
+              "Dryden",
+              "Milton",
+              "Chaucer",
+              "Pope"
+              ],
+              a: 2
+            },
+          {
+              q: "Chaucer first used the heroic couplet in his work",
+              o: [
+              "The Legend of Good Women",
+              "The Book of the Duchess",
+              "The Canterbury Tales",
+              "Troilus and Criseyde"
+              ],
+              a: 0
+            },
+          {
+              q: "How many syllables are there in a line of a heroic couplet?",
+              o: [
+              "Four",
+              "Five",
+              "Six",
+              "Ten"
+              ],
+              a: 3
+            },
+          {
+              q: "Heroic couplets were popularised in English poetry and plays in the",
+              o: [
+              "Early 14th century",
+              "Late 14th to mid 15th century",
+              "17th and 18th century",
+              "19th century"
+              ],
+              a: 2
+            },
+          {
+              q: "Who is not a writer of the heroic couplet?",
+              o: [
+              "Dryden",
+              "Chaucer",
+              "Pope",
+              "P.B. Shelley"
+              ],
+              a: 3
+            },
+          {
+              q: "Who introduced blank verse into English literature?",
+              o: [
+              "Thomas Wyatt",
+              "Earl of Surrey",
+              "Browning",
+              "Tennyson"
+              ],
+              a: 1
+            },
+          {
+              q: "Earl of Surrey first used blank verse in his",
+              o: [
+              "Adonais",
+              "Ode to the West Wind",
+              "Translation of Books 2 and 4 of Virgil's Aeneid",
+              "Astrophel and Stella"
+              ],
+              a: 2
+            },
+          {
+              q: "In which tragedy was blank verse first used?",
+              o: [
+              "Hamlet",
+              "Gorboduc",
+              "King Lear",
+              "Doctor Faustus"
+              ],
+              a: 1
+            },
+          {
+              q: "'Gorboduc' was written by",
+              o: [
+              "Marlowe",
+              "Norton and Sackville",
+              "Spenser",
+              "Shakespeare"
+              ],
+              a: 1
+            },
+          {
+              q: "Whose blank verse is called the 'Mighty Line'?",
+              o: [
+              "Marlowe",
+              "Shakespeare",
+              "Milton",
+              "Jonson"
+              ],
+              a: 0
+            },
+          {
+              q: "'Paradise Lost' by John Milton is written in",
+              o: [
+              "Blank verse",
+              "Rhyme royal",
+              "Heroic couplet",
+              "Terza rima"
+              ],
+              a: 0
+            },
+          {
+              q: "'Tintern Abbey' by William Wordsworth is written in",
+              o: [
+              "Ottava rima",
+              "Terza rima",
+              "Rhyme royal",
+              "Blank verse"
+              ],
+              a: 3
+            },
+          {
+              q: "How many lines are there in a Spenserian stanza?",
+              o: [
+              "8",
+              "9",
+              "10",
+              "11"
+              ],
+              a: 1
+            },
+          {
+              q: "In which work did Spenser employ the Spenserian stanza?",
+              o: [
+              "The Faerie Queene",
+              "Astrophel",
+              "Amoretti",
+              "Epithalamion"
+              ],
+              a: 0
+            },
+          {
+              q: "The last line of a Spenserian stanza is called an",
+              o: [
+              "Alexandrine",
+              "Rhyme royal",
+              "Couplet",
+              "Envoi"
+              ],
+              a: 0
+            },
+          {
+              q: "Shelley's 'Adonais' is written in",
+              o: [
+              "Blank verse",
+              "Spenserian stanza",
+              "Rhyme royal",
+              "Terza rima"
+              ],
+              a: 1
+            },
+          {
+              q: "Keats' 'The Eve of St Agnes' is written in",
+              o: [
+              "Spenserian stanza",
+              "Heroic couplet",
+              "Free verse",
+              "Blank verse"
+              ],
+              a: 0
+            },
+          {
+              q: "Who introduced terza rima?",
+              o: [
+              "Shakespeare",
+              "Shelley",
+              "Dante",
+              "Thomas Gray"
+              ],
+              a: 2
+            },
+          {
+              q: "Terza rima is a",
+              o: [
+              "One-line stanza",
+              "Two-line stanza",
+              "Three-line stanza",
+              "Four-line stanza"
+              ],
+              a: 2
+            },
+          {
+              q: "In which work did Dante first use terza rima?",
+              o: [
+              "The Divine Comedy",
+              "Essay on Man",
+              "The Rape of the Lock",
+              "Vita Nuova"
+              ],
+              a: 0
+            },
+          {
+              q: "Who introduced terza rima to English literature?",
+              o: [
+              "Spenser",
+              "Keats",
+              "Chaucer",
+              "Milton"
+              ],
+              a: 2
+            },
+          {
+              q: "Shelley's 'Ode to the West Wind' is written in",
+              o: [
+              "Heroic couplet",
+              "Spenserian stanza",
+              "Blank verse",
+              "Terza rima"
+              ],
+              a: 3
+            },
+          {
+              q: "Terza rima is an",
+              o: [
+              "Italian verse form",
+              "Spanish verse form",
+              "French verse form",
+              "English verse form"
+              ],
+              a: 0
+            }
           ]
         },
-        {
+      {
           id: "u3",
           name: "Poetic devices",
           blurb: "Metre, feet, figures of speech, irony, negative capability.",
           questions: [
-            { q: "Rhythm is best described as", o: ["The diction of a poem", "The style of a poem", "The beat and pace of a poem", "The structure of a poem"], a: 2 },
-            { q: "The pattern of stressed and unstressed syllables is called", o: ["Rhyme", "Rhythm", "Metre", "Assonance"], a: 2 },
-            { q: "Words such as 'ding', 'dong' and 'trin-trin' are examples of", o: ["Simile", "Anaphora", "Onomatopoeia", "Litotes"], a: 2 },
-            { q: "A stressed syllable followed by an unstressed syllable is called a", o: ["Iamb", "Trochee", "Dactyl", "Anapest"], a: 1 },
-            { q: "'Life is like a box of chocolates' is an example of", o: ["Simile", "Metaphor", "Metonymy", "Hyperbole"], a: 0 },
-            { q: "'The chair comforts his weary legs' is an example of", o: ["Onomatopoeia", "Personification", "Metonymy", "Hyperbole"], a: 1 },
-            { q: "'Death, come and free me of my miseries' employs", o: ["Simile", "Apostrophe", "Metaphor", "Litotes"], a: 1 },
-            { q: "'Trust me, he is not a corrupt officer' uses which figure of speech?", o: ["Litotes", "Simile", "Personification", "Hyperbole"], a: 0 },
-            { q: "'He had a sleepless night yesterday' employs", o: ["Simile", "Transferred epithet", "Metaphor", "Oxymoron"], a: 1 },
-            { q: "Heptametre is a line of poetry containing", o: ["4 feet", "5 feet", "6 feet", "7 feet"], a: 3 },
-            { q: "An octosyllabic couplet has lines of", o: ["7 syllables", "8 syllables", "10 syllables", "9 syllables"], a: 1 },
-            { q: "'Not all the perfumes of Arabia will sweeten my little hand' is an example of", o: ["Litotes", "Simile", "Personification", "Hyperbole"], a: 3 },
-            { q: "Tetrametre is a line of poetry containing", o: ["4 feet", "3 feet", "6 feet", "8 feet"], a: 0 },
-            { q: "Which figure of speech is also known as 'echoism'?", o: ["Oxymoron", "Onomatopoeia", "Personification", "Hyperbole"], a: 1 },
-            { q: "'I came, I saw, I conquered' is an example of", o: ["Antithesis", "Thesis", "Climax", "Anticlimax"], a: 2 },
-            { q: "In which figure of speech are unpleasant things described in agreeable terms?", o: ["Euphemism", "Aphorism", "Epigram", "Paradox"], a: 0 },
-            { q: "Irony can be defined as", o: ["The literal meaning of a statement", "The sarcastic meaning of a statement", "The opposite meaning of a statement", "An exaggerated statement"], a: 2 },
-            { q: "Which of the following is not a type of irony?", o: ["Verbal irony", "Dramatic irony", "Cosmic irony", "Allegorical irony"], a: 3 },
-            { q: "Irony of fate is also known as", o: ["Verbal irony", "Romantic irony", "Cosmic irony", "Situational irony"], a: 2 },
-            { q: "Saying the opposite of what you mean is called", o: ["Dramatic irony", "Cosmic irony", "Situational irony", "Verbal irony"], a: 3 },
-            { q: "When a writer lets the reader know something a character does not, the writer uses", o: ["Situational irony", "Dramatic irony", "Verbal irony", "Cosmic irony"], a: 1 },
-            { q: "Who coined the phrase 'negative capability'?", o: ["Eliot", "Keats", "Arnold", "Wordsworth"], a: 1 },
-            { q: "Who was said to possess negative capability most fully?", o: ["Chaucer", "Dryden", "Shakespeare", "Gray"], a: 2 },
-            { q: "'When a man is capable of being in uncertainties, mysteries, doubts, without any irritable reaching after fact and reason' defines", o: ["Objective correlative", "Touchstone method", "Negative capability", "Aphorism"], a: 2 },
-            { q: "'Rises the sun' is an example of", o: ["Juxtaposition", "Inversion", "Dactyl", "Euphemism"], a: 1 },
-            { q: "Which of the following is a trochee?", o: ["daDUM", "DADAdum", "DAdum", "dadaDUM"], a: 2 },
-            { q: "A universal lesson or message present throughout a literary piece is known as the", o: ["Attitude", "Theme", "Tone", "Subject"], a: 1 },
-            { q: "Hexametre is a line of poetry containing", o: ["4 feet", "3 feet", "6 feet", "8 feet"], a: 2 },
-            { q: "Identify the foot in which two unstressed syllables are followed by a stressed syllable", o: ["Iamb", "Dactyl", "Spondee", "Anapest"], a: 3 },
-            { q: "What is the rhyme scheme of a Shakespearean sonnet?", o: ["ABAB CDCD EFEF GG", "ABBAABBA CDECDE", "ABAB CBCB DCDC EE", "ABBA CDDC EFFE GG"], a: 0 },
-            { q: "What is the rhyme scheme of the Spenserian stanza?", o: ["ABBABCBCD", "ABABBCBCC", "ABABABABC", "ABABCDCDE"], a: 1 }
+          {
+              q: "Rhythm is best described as",
+              o: [
+              "The diction of a poem",
+              "The style of a poem",
+              "The beat and pace of a poem",
+              "The structure of a poem"
+              ],
+              a: 2
+            },
+          {
+              q: "The pattern of stressed and unstressed syllables is called",
+              o: [
+              "Rhyme",
+              "Rhythm",
+              "Metre",
+              "Assonance"
+              ],
+              a: 2
+            },
+          {
+              q: "Words such as 'ding', 'dong' and 'trin-trin' are examples of",
+              o: [
+              "Simile",
+              "Anaphora",
+              "Onomatopoeia",
+              "Litotes"
+              ],
+              a: 2
+            },
+          {
+              q: "A stressed syllable followed by an unstressed syllable is called a",
+              o: [
+              "Iamb",
+              "Trochee",
+              "Dactyl",
+              "Anapest"
+              ],
+              a: 1
+            },
+          {
+              q: "'Life is like a box of chocolates' is an example of",
+              o: [
+              "Simile",
+              "Metaphor",
+              "Metonymy",
+              "Hyperbole"
+              ],
+              a: 0
+            },
+          {
+              q: "'The chair comforts his weary legs' is an example of",
+              o: [
+              "Onomatopoeia",
+              "Personification",
+              "Metonymy",
+              "Hyperbole"
+              ],
+              a: 1
+            },
+          {
+              q: "'Death, come and free me of my miseries' employs",
+              o: [
+              "Simile",
+              "Apostrophe",
+              "Metaphor",
+              "Litotes"
+              ],
+              a: 1
+            },
+          {
+              q: "'Trust me, he is not a corrupt officer' uses which figure of speech?",
+              o: [
+              "Litotes",
+              "Simile",
+              "Personification",
+              "Hyperbole"
+              ],
+              a: 0
+            },
+          {
+              q: "'He had a sleepless night yesterday' employs",
+              o: [
+              "Simile",
+              "Transferred epithet",
+              "Metaphor",
+              "Oxymoron"
+              ],
+              a: 1
+            },
+          {
+              q: "Heptametre is a line of poetry containing",
+              o: [
+              "4 feet",
+              "5 feet",
+              "6 feet",
+              "7 feet"
+              ],
+              a: 3
+            },
+          {
+              q: "An octosyllabic couplet has lines of",
+              o: [
+              "7 syllables",
+              "8 syllables",
+              "10 syllables",
+              "9 syllables"
+              ],
+              a: 1
+            },
+          {
+              q: "'Not all the perfumes of Arabia will sweeten my little hand' is an example of",
+              o: [
+              "Litotes",
+              "Simile",
+              "Personification",
+              "Hyperbole"
+              ],
+              a: 3
+            },
+          {
+              q: "Tetrametre is a line of poetry containing",
+              o: [
+              "4 feet",
+              "3 feet",
+              "6 feet",
+              "8 feet"
+              ],
+              a: 0
+            },
+          {
+              q: "Which figure of speech is also known as 'echoism'?",
+              o: [
+              "Oxymoron",
+              "Onomatopoeia",
+              "Personification",
+              "Hyperbole"
+              ],
+              a: 1
+            },
+          {
+              q: "'I came, I saw, I conquered' is an example of",
+              o: [
+              "Antithesis",
+              "Thesis",
+              "Climax",
+              "Anticlimax"
+              ],
+              a: 2
+            },
+          {
+              q: "In which figure of speech are unpleasant things described in agreeable terms?",
+              o: [
+              "Euphemism",
+              "Aphorism",
+              "Epigram",
+              "Paradox"
+              ],
+              a: 0
+            },
+          {
+              q: "Irony can be defined as",
+              o: [
+              "The literal meaning of a statement",
+              "The sarcastic meaning of a statement",
+              "The opposite meaning of a statement",
+              "An exaggerated statement"
+              ],
+              a: 2
+            },
+          {
+              q: "Which of the following is not a type of irony?",
+              o: [
+              "Verbal irony",
+              "Dramatic irony",
+              "Cosmic irony",
+              "Allegorical irony"
+              ],
+              a: 3
+            },
+          {
+              q: "Irony of fate is also known as",
+              o: [
+              "Verbal irony",
+              "Romantic irony",
+              "Cosmic irony",
+              "Situational irony"
+              ],
+              a: 2
+            },
+          {
+              q: "Saying the opposite of what you mean is called",
+              o: [
+              "Dramatic irony",
+              "Cosmic irony",
+              "Situational irony",
+              "Verbal irony"
+              ],
+              a: 3
+            },
+          {
+              q: "When a writer lets the reader know something a character does not, the writer uses",
+              o: [
+              "Situational irony",
+              "Dramatic irony",
+              "Verbal irony",
+              "Cosmic irony"
+              ],
+              a: 1
+            },
+          {
+              q: "Who coined the phrase 'negative capability'?",
+              o: [
+              "Eliot",
+              "Keats",
+              "Arnold",
+              "Wordsworth"
+              ],
+              a: 1
+            },
+          {
+              q: "Who was said to possess negative capability most fully?",
+              o: [
+              "Chaucer",
+              "Dryden",
+              "Shakespeare",
+              "Gray"
+              ],
+              a: 2
+            },
+          {
+              q: "'When a man is capable of being in uncertainties, mysteries, doubts, without any irritable reaching after fact and reason' defines",
+              o: [
+              "Objective correlative",
+              "Touchstone method",
+              "Negative capability",
+              "Aphorism"
+              ],
+              a: 2
+            },
+          {
+              q: "'Rises the sun' is an example of",
+              o: [
+              "Juxtaposition",
+              "Inversion",
+              "Dactyl",
+              "Euphemism"
+              ],
+              a: 1
+            },
+          {
+              q: "Which of the following is a trochee?",
+              o: [
+              "daDUM",
+              "DADAdum",
+              "DAdum",
+              "dadaDUM"
+              ],
+              a: 2
+            },
+          {
+              q: "A universal lesson or message present throughout a literary piece is known as the",
+              o: [
+              "Attitude",
+              "Theme",
+              "Tone",
+              "Subject"
+              ],
+              a: 1
+            },
+          {
+              q: "Hexametre is a line of poetry containing",
+              o: [
+              "4 feet",
+              "3 feet",
+              "6 feet",
+              "8 feet"
+              ],
+              a: 2
+            },
+          {
+              q: "Identify the foot in which two unstressed syllables are followed by a stressed syllable",
+              o: [
+              "Iamb",
+              "Dactyl",
+              "Spondee",
+              "Anapest"
+              ],
+              a: 3
+            },
+          {
+              q: "What is the rhyme scheme of a Shakespearean sonnet?",
+              o: [
+              "ABAB CDCD EFEF GG",
+              "ABBAABBA CDECDE",
+              "ABAB CBCB DCDC EE",
+              "ABBA CDDC EFFE GG"
+              ],
+              a: 0
+            },
+          {
+              q: "What is the rhyme scheme of the Spenserian stanza?",
+              o: [
+              "ABBABCBCD",
+              "ABABBCBCC",
+              "ABABABABC",
+              "ABABCDCDE"
+              ],
+              a: 1
+            }
           ]
         },
-        {
+      {
           id: "u4",
           name: "Shakespeare, Milton, Donne, Pope",
           blurb: "Sonnet 116, On His Blindness, Present in Absence, Essay on Man.",
           questions: [
-            { q: "William Shakespeare was born on", o: ["22 April 1564", "23 April 1564", "24 April 1564", "25 April 1564"], a: 1 },
-            { q: "Shakespeare was born in", o: ["France", "London", "Stratford-upon-Avon", "Warwick"], a: 2 },
-            { q: "Shakespeare married a lady eight years older than him in 1582. She was", o: ["Elizabeth", "Mary", "Anne Hathaway", "Catherine"], a: 2 },
-            { q: "Shakespeare belongs to the", o: ["Elizabethan Age", "Neoclassical Age", "Modern Age", "Age of Chaucer"], a: 0 },
-            { q: "When did Shakespeare die?", o: ["23 April 1616", "24 April 1616", "25 April 1616", "26 April 1616"], a: 0 },
-            { q: "How many plays did Shakespeare write?", o: ["37", "38", "39", "40"], a: 0 },
-            { q: "How many sonnets did Shakespeare write?", o: ["155", "154", "156", "159"], a: 1 },
-            { q: "In which year were Shakespeare's sonnets published?", o: ["1609", "1610", "1611", "1612"], a: 0 },
-            { q: "The First Folio of Shakespeare was published in", o: ["1623", "1625", "1626", "1627"], a: 0 },
-            { q: "Which is not a play by Shakespeare?", o: ["Othello", "Macbeth", "Arms and the Man", "King Lear"], a: 2 },
-            { q: "'Let Me Not to the Marriage of True Minds' is a", o: ["Ballad", "Ode", "Allegory", "Sonnet"], a: 3 },
-            { q: "'Let Me Not to the Marriage of True Minds' is also known as", o: ["Sonnet 116", "Sonnet 117", "Sonnet 118", "Sonnet 119"], a: 0 },
-            { q: "What is the theme of 'Let Me Not to the Marriage of True Minds'?", o: ["Education", "Religion", "Morality", "Love"], a: 3 },
-            { q: "In the sonnet, true love is compared to", o: ["The sky", "The earth", "The pole star", "The sea"], a: 2 },
-            { q: "'Love is not love which alters when it alteration ...'", o: ["Meets", "Gets", "Finds", "Sees"], a: 2 },
-            { q: "Who is known as the Bard of Avon?", o: ["Shelley", "Pope", "Shakespeare", "Milton"], a: 2 },
-            { q: "Shakespeare's sonnets were printed by", o: ["Dryden", "Fletcher", "Thomas Thorpe", "Ben Jonson"], a: 2 },
-            { q: "Out of 154 sonnets, 28 were addressed to a", o: ["Old lady", "Young lady", "Dark lady", "Noble lady"], a: 2 },
-            { q: "The phrase 'small Latin and less Greek' was used for Shakespeare by", o: ["Ben Jonson", "Milton", "Spenser", "Keats"], a: 0 },
-            { q: "John Milton was born in", o: ["1601", "1606", "1608", "1609"], a: 2 },
-            { q: "Milton was born in", o: ["London", "France", "Spain", "Cambridge"], a: 0 },
-            { q: "Milton belongs to the", o: ["14th century", "15th century", "16th century", "17th century"], a: 3 },
-            { q: "Which college did Milton attend?", o: ["London College", "Balliol College", "Christ's College", "Trinity College"], a: 2 },
-            { q: "Who said 'Sonnet in Milton's hands became a trumpet'?", o: ["P.B. Shelley", "Shakespeare", "Wordsworth", "Dryden"], a: 2 },
-            { q: "Milton is said to be", o: ["The last Elizabethan", "The first Elizabethan", "The third Elizabethan", "The belated Elizabethan"], a: 3 },
-            { q: "Milton became totally blind in", o: ["1652", "1653", "1654", "1655"], a: 0 },
-            { q: "Milton followed the sonnet style of", o: ["Spenser", "Shakespeare", "Petrarch", "Wyatt"], a: 2 },
-            { q: "'On His Blindness' is an", o: ["English sonnet", "Italian sonnet", "Modern sonnet", "Irregular sonnet"], a: 1 },
-            { q: "What is 'lodged with me useless' according to Milton?", o: ["Strength", "Weakness", "Light", "Talent"], a: 3 },
-            { q: "'They also serve who only stand and ...'", o: ["Sing", "Wait", "Dance", "Pray"], a: 1 },
-            { q: "Milton's second wife was", o: ["Lucy", "Anne", "Catherine Woodcock", "Mary Powell"], a: 2 },
-            { q: "When was John Donne born?", o: ["1571", "1572", "1573", "1574"], a: 1 },
-            { q: "Who is the founder of metaphysical poetry?", o: ["John Donne", "Dryden", "Pope", "Herbert"], a: 0 },
-            { q: "John Donne became the Dean of", o: ["Cambridge", "Oxford", "St Paul's", "Westminster"], a: 2 },
-            { q: "Donne is considered the master of", o: ["Humour", "Pathos", "Irony", "Conceits"], a: 3 },
-            { q: "What was the name of Donne's wife?", o: ["Mary", "Anne More", "Anne Lamb", "Elizabeth"], a: 1 },
-            { q: "According to Dryden, who 'affects the metaphysics'?", o: ["Pope", "Wordsworth", "Shelley", "Donne"], a: 3 },
-            { q: "What is the style of the poem 'Present in Absence'?", o: ["Ode", "Elegy", "Metaphysical", "Pastoral"], a: 2 },
-            { q: "The poem 'Present in Absence' is dedicated to", o: ["Donne's sister", "Donne's daughter", "Donne's wife", "Donne's mother"], a: 2 },
-            { q: "Who coined the term 'metaphysical poetry'?", o: ["Dryden", "Coleridge", "Browning", "Samuel Johnson"], a: 3 },
-            { q: "Donne's father was a", o: ["Farmer", "Teacher", "Rich merchant", "Novelist"], a: 2 },
-            { q: "Alexander Pope was born in", o: ["1687", "1688", "1689", "1690"], a: 1 },
-            { q: "Pope's parents were", o: ["Catholics", "Protestants", "Puritans", "Quakers"], a: 0 },
-            { q: "Pope's poetry was more ... than emotional.", o: ["Humorous", "Intellectual", "Comic", "Satirical"], a: 1 },
-            { q: "Who is considered the master of the heroic couplet?", o: ["S.T. Coleridge", "William Wordsworth", "Alexander Pope", "P.B. Shelley"], a: 2 },
-            { q: "'An Essay on Man' is a philosophical poem written in", o: ["Terza rima", "Spenserian stanza", "Blank verse", "Heroic couplet"], a: 3 },
-            { q: "Pope's 'Essay on Man' was published in", o: ["1733", "1735", "1738", "1740"], a: 0 },
-            { q: "'If Pope is not a poet, where is poetry to be found?' Who said this?", o: ["Eliot", "W.B. Yeats", "Dr Johnson", "Ben Jonson"], a: 2 },
-            { q: "'The proper study of mankind is man' appears in", o: ["Essay on Man", "Present in Absence", "On His Blindness", "The Rape of the Lock"], a: 0 },
-            { q: "Pope's 'Essay on Man' comprises", o: ["Two epistles", "Four epistles", "Five epistles", "Six epistles"], a: 1 },
-            { q: "'The Rape of the Lock' is written by", o: ["Alexander Pope", "John Dryden", "Shakespeare", "Milton"], a: 0 },
-            { q: "Who said 'First follow Nature, and Homer is Nature, and Nature is Homer'?", o: ["William Wordsworth", "Coleridge", "P.B. Shelley", "Alexander Pope"], a: 3 }
+          {
+              q: "William Shakespeare was born on",
+              o: [
+              "22 April 1564",
+              "23 April 1564",
+              "24 April 1564",
+              "25 April 1564"
+              ],
+              a: 1
+            },
+          {
+              q: "Shakespeare was born in",
+              o: [
+              "France",
+              "London",
+              "Stratford-upon-Avon",
+              "Warwick"
+              ],
+              a: 2
+            },
+          {
+              q: "Shakespeare married a lady eight years older than him in 1582. She was",
+              o: [
+              "Elizabeth",
+              "Mary",
+              "Anne Hathaway",
+              "Catherine"
+              ],
+              a: 2
+            },
+          {
+              q: "Shakespeare belongs to the",
+              o: [
+              "Elizabethan Age",
+              "Neoclassical Age",
+              "Modern Age",
+              "Age of Chaucer"
+              ],
+              a: 0
+            },
+          {
+              q: "When did Shakespeare die?",
+              o: [
+              "23 April 1616",
+              "24 April 1616",
+              "25 April 1616",
+              "26 April 1616"
+              ],
+              a: 0
+            },
+          {
+              q: "How many plays did Shakespeare write?",
+              o: [
+              "37",
+              "38",
+              "39",
+              "40"
+              ],
+              a: 0
+            },
+          {
+              q: "How many sonnets did Shakespeare write?",
+              o: [
+              "155",
+              "154",
+              "156",
+              "159"
+              ],
+              a: 1
+            },
+          {
+              q: "In which year were Shakespeare's sonnets published?",
+              o: [
+              "1609",
+              "1610",
+              "1611",
+              "1612"
+              ],
+              a: 0
+            },
+          {
+              q: "The First Folio of Shakespeare was published in",
+              o: [
+              "1623",
+              "1625",
+              "1626",
+              "1627"
+              ],
+              a: 0
+            },
+          {
+              q: "Which is not a play by Shakespeare?",
+              o: [
+              "Othello",
+              "Macbeth",
+              "Arms and the Man",
+              "King Lear"
+              ],
+              a: 2
+            },
+          {
+              q: "'Let Me Not to the Marriage of True Minds' is a",
+              o: [
+              "Ballad",
+              "Ode",
+              "Allegory",
+              "Sonnet"
+              ],
+              a: 3
+            },
+          {
+              q: "'Let Me Not to the Marriage of True Minds' is also known as",
+              o: [
+              "Sonnet 116",
+              "Sonnet 117",
+              "Sonnet 118",
+              "Sonnet 119"
+              ],
+              a: 0
+            },
+          {
+              q: "What is the theme of 'Let Me Not to the Marriage of True Minds'?",
+              o: [
+              "Education",
+              "Religion",
+              "Morality",
+              "Love"
+              ],
+              a: 3
+            },
+          {
+              q: "In the sonnet, true love is compared to",
+              o: [
+              "The sky",
+              "The earth",
+              "The pole star",
+              "The sea"
+              ],
+              a: 2
+            },
+          {
+              q: "'Love is not love which alters when it alteration ...'",
+              o: [
+              "Meets",
+              "Gets",
+              "Finds",
+              "Sees"
+              ],
+              a: 2
+            },
+          {
+              q: "Who is known as the Bard of Avon?",
+              o: [
+              "Shelley",
+              "Pope",
+              "Shakespeare",
+              "Milton"
+              ],
+              a: 2
+            },
+          {
+              q: "Shakespeare's sonnets were printed by",
+              o: [
+              "Dryden",
+              "Fletcher",
+              "Thomas Thorpe",
+              "Ben Jonson"
+              ],
+              a: 2
+            },
+          {
+              q: "Out of 154 sonnets, 28 were addressed to a",
+              o: [
+              "Old lady",
+              "Young lady",
+              "Dark lady",
+              "Noble lady"
+              ],
+              a: 2
+            },
+          {
+              q: "The phrase 'small Latin and less Greek' was used for Shakespeare by",
+              o: [
+              "Ben Jonson",
+              "Milton",
+              "Spenser",
+              "Keats"
+              ],
+              a: 0
+            },
+          {
+              q: "John Milton was born in",
+              o: [
+              "1601",
+              "1606",
+              "1608",
+              "1609"
+              ],
+              a: 2
+            },
+          {
+              q: "Milton was born in",
+              o: [
+              "London",
+              "France",
+              "Spain",
+              "Cambridge"
+              ],
+              a: 0
+            },
+          {
+              q: "Milton belongs to the",
+              o: [
+              "14th century",
+              "15th century",
+              "16th century",
+              "17th century"
+              ],
+              a: 3
+            },
+          {
+              q: "Which college did Milton attend?",
+              o: [
+              "London College",
+              "Balliol College",
+              "Christ's College",
+              "Trinity College"
+              ],
+              a: 2
+            },
+          {
+              q: "Who said 'Sonnet in Milton's hands became a trumpet'?",
+              o: [
+              "P.B. Shelley",
+              "Shakespeare",
+              "Wordsworth",
+              "Dryden"
+              ],
+              a: 2
+            },
+          {
+              q: "Milton is said to be",
+              o: [
+              "The last Elizabethan",
+              "The first Elizabethan",
+              "The third Elizabethan",
+              "The belated Elizabethan"
+              ],
+              a: 3
+            },
+          {
+              q: "Milton became totally blind in",
+              o: [
+              "1652",
+              "1653",
+              "1654",
+              "1655"
+              ],
+              a: 0
+            },
+          {
+              q: "Milton followed the sonnet style of",
+              o: [
+              "Spenser",
+              "Shakespeare",
+              "Petrarch",
+              "Wyatt"
+              ],
+              a: 2
+            },
+          {
+              q: "'On His Blindness' is an",
+              o: [
+              "English sonnet",
+              "Italian sonnet",
+              "Modern sonnet",
+              "Irregular sonnet"
+              ],
+              a: 1
+            },
+          {
+              q: "What is 'lodged with me useless' according to Milton?",
+              o: [
+              "Strength",
+              "Weakness",
+              "Light",
+              "Talent"
+              ],
+              a: 3
+            },
+          {
+              q: "'They also serve who only stand and ...'",
+              o: [
+              "Sing",
+              "Wait",
+              "Dance",
+              "Pray"
+              ],
+              a: 1
+            },
+          {
+              q: "Milton's second wife was",
+              o: [
+              "Lucy",
+              "Anne",
+              "Catherine Woodcock",
+              "Mary Powell"
+              ],
+              a: 2
+            },
+          {
+              q: "When was John Donne born?",
+              o: [
+              "1571",
+              "1572",
+              "1573",
+              "1574"
+              ],
+              a: 1
+            },
+          {
+              q: "Who is the founder of metaphysical poetry?",
+              o: [
+              "John Donne",
+              "Dryden",
+              "Pope",
+              "Herbert"
+              ],
+              a: 0
+            },
+          {
+              q: "John Donne became the Dean of",
+              o: [
+              "Cambridge",
+              "Oxford",
+              "St Paul's",
+              "Westminster"
+              ],
+              a: 2
+            },
+          {
+              q: "Donne is considered the master of",
+              o: [
+              "Humour",
+              "Pathos",
+              "Irony",
+              "Conceits"
+              ],
+              a: 3
+            },
+          {
+              q: "What was the name of Donne's wife?",
+              o: [
+              "Mary",
+              "Anne More",
+              "Anne Lamb",
+              "Elizabeth"
+              ],
+              a: 1
+            },
+          {
+              q: "According to Dryden, who 'affects the metaphysics'?",
+              o: [
+              "Pope",
+              "Wordsworth",
+              "Shelley",
+              "Donne"
+              ],
+              a: 3
+            },
+          {
+              q: "What is the style of the poem 'Present in Absence'?",
+              o: [
+              "Ode",
+              "Elegy",
+              "Metaphysical",
+              "Pastoral"
+              ],
+              a: 2
+            },
+          {
+              q: "The poem 'Present in Absence' is dedicated to",
+              o: [
+              "Donne's sister",
+              "Donne's daughter",
+              "Donne's wife",
+              "Donne's mother"
+              ],
+              a: 2
+            },
+          {
+              q: "Who coined the term 'metaphysical poetry'?",
+              o: [
+              "Dryden",
+              "Coleridge",
+              "Browning",
+              "Samuel Johnson"
+              ],
+              a: 3
+            },
+          {
+              q: "Donne's father was a",
+              o: [
+              "Farmer",
+              "Teacher",
+              "Rich merchant",
+              "Novelist"
+              ],
+              a: 2
+            },
+          {
+              q: "Alexander Pope was born in",
+              o: [
+              "1687",
+              "1688",
+              "1689",
+              "1690"
+              ],
+              a: 1
+            },
+          {
+              q: "Pope's parents were",
+              o: [
+              "Catholics",
+              "Protestants",
+              "Puritans",
+              "Quakers"
+              ],
+              a: 0
+            },
+          {
+              q: "Pope's poetry was more ... than emotional.",
+              o: [
+              "Humorous",
+              "Intellectual",
+              "Comic",
+              "Satirical"
+              ],
+              a: 1
+            },
+          {
+              q: "Who is considered the master of the heroic couplet?",
+              o: [
+              "S.T. Coleridge",
+              "William Wordsworth",
+              "Alexander Pope",
+              "P.B. Shelley"
+              ],
+              a: 2
+            },
+          {
+              q: "'An Essay on Man' is a philosophical poem written in",
+              o: [
+              "Terza rima",
+              "Spenserian stanza",
+              "Blank verse",
+              "Heroic couplet"
+              ],
+              a: 3
+            },
+          {
+              q: "Pope's 'Essay on Man' was published in",
+              o: [
+              "1733",
+              "1735",
+              "1738",
+              "1740"
+              ],
+              a: 0
+            },
+          {
+              q: "'If Pope is not a poet, where is poetry to be found?' Who said this?",
+              o: [
+              "Eliot",
+              "W.B. Yeats",
+              "Dr Johnson",
+              "Ben Jonson"
+              ],
+              a: 2
+            },
+          {
+              q: "'The proper study of mankind is man' appears in",
+              o: [
+              "Essay on Man",
+              "Present in Absence",
+              "On His Blindness",
+              "The Rape of the Lock"
+              ],
+              a: 0
+            },
+          {
+              q: "Pope's 'Essay on Man' comprises",
+              o: [
+              "Two epistles",
+              "Four epistles",
+              "Five epistles",
+              "Six epistles"
+              ],
+              a: 1
+            },
+          {
+              q: "'The Rape of the Lock' is written by",
+              o: [
+              "Alexander Pope",
+              "John Dryden",
+              "Shakespeare",
+              "Milton"
+              ],
+              a: 0
+            },
+          {
+              q: "Who said 'First follow Nature, and Homer is Nature, and Nature is Homer'?",
+              o: [
+              "William Wordsworth",
+              "Coleridge",
+              "P.B. Shelley",
+              "Alexander Pope"
+              ],
+              a: 3
+            }
           ]
         },
-        {
+      {
           id: "u5",
           name: "Gray, Wordsworth, Keats",
           blurb: "Elegy in a Country Churchyard, The World is Too Much with Us, Ode on a Grecian Urn.",
           questions: [
-            { q: "When was Thomas Gray born?", o: ["26 December 1716", "16 December 1716", "26 December 1718", "16 December 1718"], a: 0 },
-            { q: "Thomas Gray was a", o: ["Restoration poet", "Romantic poet", "Transitional poet", "Victorian poet"], a: 2 },
-            { q: "Who refused the Poet Laureateship after the death of Colley Cibber?", o: ["Horace Walpole", "Richard West", "Thomas Gray", "William Wordsworth"], a: 2 },
-            { q: "Who among the following is not a Graveyard poet?", o: ["Coleridge", "Thomas Gray", "William Cowper", "Christopher Smart"], a: 0 },
-            { q: "Graveyard poets are also known as", o: ["Churchyard poets", "Court poets", "Popular poets", "University poets"], a: 0 },
-            { q: "Graveyard poets largely imitated the long poem 'The Grave'. Who wrote it?", o: ["Edward Young", "John Keats", "Thomas Gray", "Robert Blair"], a: 3 },
-            { q: "Graveyard poets mainly focused on", o: ["Life and religion", "Death and afterlife", "Tradition and culture", "Love and marriage"], a: 1 },
-            { q: "'Elegy Written in a Country Churchyard' was published in", o: ["1741", "1751", "1761", "1731"], a: 1 },
-            { q: "'Elegy Written in a Country Churchyard' is an", o: ["Personal elegy", "Epic", "Impersonal elegy", "Folk song"], a: 2 },
-            { q: "What is the rhyme scheme of 'Elegy Written in a Country Churchyard'?", o: ["ABAB", "ABBA", "ABAA", "ABCA"], a: 0 },
-            { q: "What is the metre of 'Elegy Written in a Country Churchyard'?", o: ["Iambic dimeter", "Iambic tetrameter", "Iambic pentameter", "Iambic hexameter"], a: 2 },
-            { q: "Which stanza form is used in 'Elegy Written in a Country Churchyard'?", o: ["Heroic couplet", "Terza rima", "Spenserian stanza", "Quatrain"], a: 3 },
-            { q: "The opening lines of the 'Elegy' are set at", o: ["Twilight", "Morning", "Noon", "Midnight"], a: 0 },
-            { q: "What is the central theme of the 'Elegy Written in a Country Churchyard'?", o: ["Death is partial", "Death is a punishment", "Death equalises all", "Death is the end of life"], a: 2 },
-            { q: "'The curfew tolls the knell of parting day' is the opening line of", o: ["Let Me Not to the Marriage of True Minds", "On His Blindness", "The World is Too Much with Us", "Elegy Written in a Country Churchyard"], a: 3 },
-            { q: "'Full many a flower is born to blush unseen' occurs in a poem by", o: ["Wordsworth", "Keats", "Gray", "Shakespeare"], a: 2 },
-            { q: "'The paths of glory lead but to the ...'", o: ["Fame", "Criticism", "Grave", "Grief"], a: 2 },
-            { q: "When was Wordsworth born?", o: ["7 April 1770", "7 March 1770", "7 May 1770", "7 June 1770"], a: 0 },
-            { q: "William Wordsworth was a", o: ["Restoration poet", "Romantic poet", "Transitional poet", "Victorian poet"], a: 1 },
-            { q: "Wordsworth was appointed Poet Laureate after the death of", o: ["Horace Walpole", "Richard West", "Thomas Gray", "Robert Southey"], a: 3 },
-            { q: "Who among the following is not a Lake poet?", o: ["Coleridge", "Keats", "William Wordsworth", "Robert Southey"], a: 1 },
-            { q: "Who collaborated with Wordsworth on 'Lyrical Ballads'?", o: ["Edward Young", "John Keats", "Coleridge", "Shelley"], a: 2 },
-            { q: "Who called Wordsworth 'the Lost Leader'?", o: ["Tennyson", "Browning", "Arnold", "Eliot"], a: 1 },
-            { q: "Who defined poetry as a 'spontaneous overflow of powerful feelings'?", o: ["William Wordsworth", "Coleridge", "Keats", "Thomas Gray"], a: 0 },
-            { q: "Which is the only play written by Wordsworth?", o: ["The Cenci", "Macbeth", "The Borderers", "Candida"], a: 2 },
-            { q: "'The World is Too Much with Us' was published in", o: ["1802", "1807", "1809", "1850"], a: 1 },
-            { q: "'The World is Too Much with Us' is a", o: ["Petrarchan sonnet", "Curtal sonnet", "Shakespearean sonnet", "Spenserian sonnet"], a: 0 },
-            { q: "'The World is Too Much with Us' has two parts:", o: ["Octave and sestet", "Two quatrains and a sestet", "Three quatrains and a couplet", "Two sestets"], a: 0 },
-            { q: "'This sea that bares her bosom to the moon' is an example of", o: ["Metaphor", "Simile", "Personification", "Hyperbole"], a: 2 },
-            { q: "Who are Proteus and Triton in 'The World is Too Much with Us'?", o: ["Sea beasts", "Sea animals", "Sea gods", "Sea goddesses"], a: 2 },
-            { q: "The theme of 'The World is Too Much with Us' is", o: ["Increased materialism", "Increased spiritualism", "Religious devotion", "Political reform"], a: 0 },
-            { q: "Who is known as the poet of the Lake District?", o: ["Shakespeare", "Chaucer", "William Wordsworth", "P.B. Shelley"], a: 2 },
-            { q: "When was Keats born?", o: ["7 April 1770", "31 October 1795", "7 May 1790", "31 June 1796"], a: 1 },
-            { q: "John Keats was a", o: ["Second-generation Romantic poet", "First-generation Romantic poet", "Transitional poet", "Victorian poet"], a: 0 },
-            { q: "John Keats died at the age of", o: ["30", "28", "25", "26"], a: 2 },
-            { q: "Which year is considered the most productive of Keats' poetic career?", o: ["1798", "1822", "1819", "1800"], a: 2 },
-            { q: "Which poem is written in the Spenserian stanza?", o: ["The Eve of St Agnes", "To Autumn", "Ode to a Nightingale", "Lamia"], a: 0 },
-            { q: "On whose tombstone is inscribed 'Here lies one whose name was written in water'?", o: ["Gray", "Larkin", "Arnold", "Keats"], a: 3 },
-            { q: "'Ode on a Grecian Urn' was written in", o: ["1819", "1818", "1820", "1822"], a: 0 },
-            { q: "'Ode on a Grecian Urn' is an", o: ["Horatian ode", "Irregular ode", "Regular ode", "Ballad"], a: 1 },
-            { q: "How many stanzas are there in 'Ode on a Grecian Urn'?", o: ["5", "6", "7", "4"], a: 0 },
-            { q: "'Thou still unravish'd bride of quietness' is the opening line of", o: ["The World is Too Much with Us", "Church Going", "Ode on a Grecian Urn", "Dover Beach"], a: 2 },
-            { q: "'Beauty is truth, truth beauty' occurs in a poem by", o: ["Wordsworth", "Keats", "Gray", "Eliot"], a: 1 }
+          {
+              q: "When was Thomas Gray born?",
+              o: [
+              "26 December 1716",
+              "16 December 1716",
+              "26 December 1718",
+              "16 December 1718"
+              ],
+              a: 0
+            },
+          {
+              q: "Thomas Gray was a",
+              o: [
+              "Restoration poet",
+              "Romantic poet",
+              "Transitional poet",
+              "Victorian poet"
+              ],
+              a: 2
+            },
+          {
+              q: "Who refused the Poet Laureateship after the death of Colley Cibber?",
+              o: [
+              "Horace Walpole",
+              "Richard West",
+              "Thomas Gray",
+              "William Wordsworth"
+              ],
+              a: 2
+            },
+          {
+              q: "Who among the following is not a Graveyard poet?",
+              o: [
+              "Coleridge",
+              "Thomas Gray",
+              "William Cowper",
+              "Christopher Smart"
+              ],
+              a: 0
+            },
+          {
+              q: "Graveyard poets are also known as",
+              o: [
+              "Churchyard poets",
+              "Court poets",
+              "Popular poets",
+              "University poets"
+              ],
+              a: 0
+            },
+          {
+              q: "Graveyard poets largely imitated the long poem 'The Grave'. Who wrote it?",
+              o: [
+              "Edward Young",
+              "John Keats",
+              "Thomas Gray",
+              "Robert Blair"
+              ],
+              a: 3
+            },
+          {
+              q: "Graveyard poets mainly focused on",
+              o: [
+              "Life and religion",
+              "Death and afterlife",
+              "Tradition and culture",
+              "Love and marriage"
+              ],
+              a: 1
+            },
+          {
+              q: "'Elegy Written in a Country Churchyard' was published in",
+              o: [
+              "1741",
+              "1751",
+              "1761",
+              "1731"
+              ],
+              a: 1
+            },
+          {
+              q: "'Elegy Written in a Country Churchyard' is an",
+              o: [
+              "Personal elegy",
+              "Epic",
+              "Impersonal elegy",
+              "Folk song"
+              ],
+              a: 2
+            },
+          {
+              q: "What is the rhyme scheme of 'Elegy Written in a Country Churchyard'?",
+              o: [
+              "ABAB",
+              "ABBA",
+              "ABAA",
+              "ABCA"
+              ],
+              a: 0
+            },
+          {
+              q: "What is the metre of 'Elegy Written in a Country Churchyard'?",
+              o: [
+              "Iambic dimeter",
+              "Iambic tetrameter",
+              "Iambic pentameter",
+              "Iambic hexameter"
+              ],
+              a: 2
+            },
+          {
+              q: "Which stanza form is used in 'Elegy Written in a Country Churchyard'?",
+              o: [
+              "Heroic couplet",
+              "Terza rima",
+              "Spenserian stanza",
+              "Quatrain"
+              ],
+              a: 3
+            },
+          {
+              q: "The opening lines of the 'Elegy' are set at",
+              o: [
+              "Twilight",
+              "Morning",
+              "Noon",
+              "Midnight"
+              ],
+              a: 0
+            },
+          {
+              q: "What is the central theme of the 'Elegy Written in a Country Churchyard'?",
+              o: [
+              "Death is partial",
+              "Death is a punishment",
+              "Death equalises all",
+              "Death is the end of life"
+              ],
+              a: 2
+            },
+          {
+              q: "'The curfew tolls the knell of parting day' is the opening line of",
+              o: [
+              "Let Me Not to the Marriage of True Minds",
+              "On His Blindness",
+              "The World is Too Much with Us",
+              "Elegy Written in a Country Churchyard"
+              ],
+              a: 3
+            },
+          {
+              q: "'Full many a flower is born to blush unseen' occurs in a poem by",
+              o: [
+              "Wordsworth",
+              "Keats",
+              "Gray",
+              "Shakespeare"
+              ],
+              a: 2
+            },
+          {
+              q: "'The paths of glory lead but to the ...'",
+              o: [
+              "Fame",
+              "Criticism",
+              "Grave",
+              "Grief"
+              ],
+              a: 2
+            },
+          {
+              q: "When was Wordsworth born?",
+              o: [
+              "7 April 1770",
+              "7 March 1770",
+              "7 May 1770",
+              "7 June 1770"
+              ],
+              a: 0
+            },
+          {
+              q: "William Wordsworth was a",
+              o: [
+              "Restoration poet",
+              "Romantic poet",
+              "Transitional poet",
+              "Victorian poet"
+              ],
+              a: 1
+            },
+          {
+              q: "Wordsworth was appointed Poet Laureate after the death of",
+              o: [
+              "Horace Walpole",
+              "Richard West",
+              "Thomas Gray",
+              "Robert Southey"
+              ],
+              a: 3
+            },
+          {
+              q: "Who among the following is not a Lake poet?",
+              o: [
+              "Coleridge",
+              "Keats",
+              "William Wordsworth",
+              "Robert Southey"
+              ],
+              a: 1
+            },
+          {
+              q: "Who collaborated with Wordsworth on 'Lyrical Ballads'?",
+              o: [
+              "Edward Young",
+              "John Keats",
+              "Coleridge",
+              "Shelley"
+              ],
+              a: 2
+            },
+          {
+              q: "Who called Wordsworth 'the Lost Leader'?",
+              o: [
+              "Tennyson",
+              "Browning",
+              "Arnold",
+              "Eliot"
+              ],
+              a: 1
+            },
+          {
+              q: "Who defined poetry as a 'spontaneous overflow of powerful feelings'?",
+              o: [
+              "William Wordsworth",
+              "Coleridge",
+              "Keats",
+              "Thomas Gray"
+              ],
+              a: 0
+            },
+          {
+              q: "Which is the only play written by Wordsworth?",
+              o: [
+              "The Cenci",
+              "Macbeth",
+              "The Borderers",
+              "Candida"
+              ],
+              a: 2
+            },
+          {
+              q: "'The World is Too Much with Us' was published in",
+              o: [
+              "1802",
+              "1807",
+              "1809",
+              "1850"
+              ],
+              a: 1
+            },
+          {
+              q: "'The World is Too Much with Us' is a",
+              o: [
+              "Petrarchan sonnet",
+              "Curtal sonnet",
+              "Shakespearean sonnet",
+              "Spenserian sonnet"
+              ],
+              a: 0
+            },
+          {
+              q: "'The World is Too Much with Us' has two parts:",
+              o: [
+              "Octave and sestet",
+              "Two quatrains and a sestet",
+              "Three quatrains and a couplet",
+              "Two sestets"
+              ],
+              a: 0
+            },
+          {
+              q: "'This sea that bares her bosom to the moon' is an example of",
+              o: [
+              "Metaphor",
+              "Simile",
+              "Personification",
+              "Hyperbole"
+              ],
+              a: 2
+            },
+          {
+              q: "Who are Proteus and Triton in 'The World is Too Much with Us'?",
+              o: [
+              "Sea beasts",
+              "Sea animals",
+              "Sea gods",
+              "Sea goddesses"
+              ],
+              a: 2
+            },
+          {
+              q: "The theme of 'The World is Too Much with Us' is",
+              o: [
+              "Increased materialism",
+              "Increased spiritualism",
+              "Religious devotion",
+              "Political reform"
+              ],
+              a: 0
+            },
+          {
+              q: "Who is known as the poet of the Lake District?",
+              o: [
+              "Shakespeare",
+              "Chaucer",
+              "William Wordsworth",
+              "P.B. Shelley"
+              ],
+              a: 2
+            },
+          {
+              q: "When was Keats born?",
+              o: [
+              "7 April 1770",
+              "31 October 1795",
+              "7 May 1790",
+              "31 June 1796"
+              ],
+              a: 1
+            },
+          {
+              q: "John Keats was a",
+              o: [
+              "Second-generation Romantic poet",
+              "First-generation Romantic poet",
+              "Transitional poet",
+              "Victorian poet"
+              ],
+              a: 0
+            },
+          {
+              q: "John Keats died at the age of",
+              o: [
+              "30",
+              "28",
+              "25",
+              "26"
+              ],
+              a: 2
+            },
+          {
+              q: "Which year is considered the most productive of Keats' poetic career?",
+              o: [
+              "1798",
+              "1822",
+              "1819",
+              "1800"
+              ],
+              a: 2
+            },
+          {
+              q: "Which poem is written in the Spenserian stanza?",
+              o: [
+              "The Eve of St Agnes",
+              "To Autumn",
+              "Ode to a Nightingale",
+              "Lamia"
+              ],
+              a: 0
+            },
+          {
+              q: "On whose tombstone is inscribed 'Here lies one whose name was written in water'?",
+              o: [
+              "Gray",
+              "Larkin",
+              "Arnold",
+              "Keats"
+              ],
+              a: 3
+            },
+          {
+              q: "'Ode on a Grecian Urn' was written in",
+              o: [
+              "1819",
+              "1818",
+              "1820",
+              "1822"
+              ],
+              a: 0
+            },
+          {
+              q: "'Ode on a Grecian Urn' is an",
+              o: [
+              "Horatian ode",
+              "Irregular ode",
+              "Regular ode",
+              "Ballad"
+              ],
+              a: 1
+            },
+          {
+              q: "How many stanzas are there in 'Ode on a Grecian Urn'?",
+              o: [
+              "5",
+              "6",
+              "7",
+              "4"
+              ],
+              a: 0
+            },
+          {
+              q: "'Thou still unravish'd bride of quietness' is the opening line of",
+              o: [
+              "The World is Too Much with Us",
+              "Church Going",
+              "Ode on a Grecian Urn",
+              "Dover Beach"
+              ],
+              a: 2
+            },
+          {
+              q: "'Beauty is truth, truth beauty' occurs in a poem by",
+              o: [
+              "Wordsworth",
+              "Keats",
+              "Gray",
+              "Eliot"
+              ],
+              a: 1
+            }
           ]
         },
-        {
+      {
           id: "u6",
           name: "Tennyson, E.B. Browning, Arnold, R. Browning",
           blurb: "Break Break Break, How Do I Love Thee, Dover Beach, My Last Duchess.",
           questions: [
-            { q: "Tennyson was born on", o: ["6 September 1810", "6 August 1809", "6 June 1811", "6 April 1811"], a: 1 },
-            { q: "Tennyson was educated at", o: ["Trinity College", "Christ's College", "St John's College", "Balliol College"], a: 0 },
-            { q: "Tennyson published 'Poems by Two Brothers' with his brother", o: ["Charles", "John", "Edmund", "Arthur"], a: 0 },
-            { q: "Tennyson belongs to the", o: ["Chaucerian Age", "Romantic Age", "Modern Age", "Victorian Age"], a: 3 },
-            { q: "Tennyson's wife was", o: ["Anne", "Mary", "Emily Sellwood", "Frances"], a: 2 },
-            { q: "Tennyson was appointed Poet Laureate in", o: ["1849", "1850", "1851", "1852"], a: 1 },
-            { q: "Tennyson was appointed Poet Laureate in succession to", o: ["Browning", "Keats", "Wordsworth", "Shelley"], a: 2 },
-            { q: "Tennyson's poetry represents", o: ["Victorian religion", "Victorian compromise", "Victorian despair", "Victorian satire"], a: 1 },
-            { q: "Tennyson's 'Break, Break, Break' was published in", o: ["1840", "1841", "1842", "1845"], a: 2 },
-            { q: "'Break, Break, Break' is written in", o: ["Three stanzas", "Four stanzas", "Six stanzas", "Five stanzas"], a: 1 },
-            { q: "Tennyson wrote 'Break, Break, Break' to express grief at the death of his friend", o: ["Arthur Hallam", "John Milton", "Keats", "Shelley"], a: 0 },
-            { q: "Elizabeth Barrett Browning was born on", o: ["6 March 1806", "8 March 1808", "10 March 1808", "6 March 1809"], a: 0 },
-            { q: "Elizabeth Barrett was the wife of", o: ["Milton", "Keats", "Robert Browning", "Matthew Arnold"], a: 2 },
-            { q: "Elizabeth Barrett Browning belongs to the", o: ["Romantic Age", "Victorian Age", "Modern Age", "Chaucerian Age"], a: 1 },
-            { q: "'How Do I Love Thee?' is a", o: ["Sonnet", "Ode", "Ballad", "Elegy"], a: 0 },
-            { q: "'How Do I Love Thee?' was published in", o: ["1851", "1850", "1840", "1852"], a: 1 },
-            { q: "In which collection was 'How Do I Love Thee?' published?", o: ["Poems in Two Volumes", "Poems in Three Volumes", "Sonnets from the Portuguese", "Aurora Leigh"], a: 2 },
-            { q: "'How Do I Love Thee?' is also known as", o: ["Sonnet 43", "Sonnet 44", "Sonnet 45", "Sonnet 46"], a: 0 },
-            { q: "What kind of love does the speaker express in 'How Do I Love Thee?'", o: ["Platonic or spiritual love", "Artificial love", "Material love", "Unrequited love"], a: 0 },
-            { q: "Elizabeth Barrett Browning died in", o: ["France", "Canada", "Italy", "Spain"], a: 2 },
-            { q: "Matthew Arnold was born on", o: ["24 December 1822", "25 December 1822", "26 December 1822", "24 December 1820"], a: 0 },
-            { q: "Matthew Arnold belongs to the", o: ["Age of Chaucer", "Romantic Age", "Victorian Age", "Modern Age"], a: 2 },
-            { q: "Matthew Arnold was educated at", o: ["Christ's College", "Balliol College", "St John's College", "Trinity College"], a: 1 },
-            { q: "Who called the 18th century 'The Age of Prose and Reason'?", o: ["William Wordsworth", "P.B. Shelley", "John Keats", "Matthew Arnold"], a: 3 },
-            { q: "The name of Matthew Arnold's father was", o: ["Chaucer Arnold", "Thomas Arnold", "George Arnold", "John Arnold"], a: 1 },
-            { q: "Arnold received his primary education at", o: ["Grammar School", "Christ's School", "Rugby School", "Harrow"], a: 2 },
-            { q: "'Dover Beach' was published in", o: ["1867", "1868", "1869", "1871"], a: 0 },
-            { q: "Which body of water is referred to in 'Dover Beach'?", o: ["English Channel", "Southern Ocean", "Pacific Ocean", "Arabian Sea"], a: 0 },
-            { q: "'Dover Beach' is Arnold's elegy on", o: ["His mother's death", "His friend's death", "Loss of religious faith", "Loss of talent"], a: 2 },
-            { q: "Who gave the touchstone method?", o: ["Shelley", "Keats", "Arnold", "Milton"], a: 2 },
-            { q: "Who said 'Poetry is the criticism of life'?", o: ["John Milton", "Chaucer", "Wordsworth", "Matthew Arnold"], a: 3 },
-            { q: "What is the tone of 'Dover Beach'?", o: ["Pessimistic", "Optimistic", "Pleasing", "Satirical"], a: 0 },
-            { q: "'The sea is calm tonight' appears in", o: ["Paradise Lost", "Paradise Regained", "Adonais", "Dover Beach"], a: 3 },
-            { q: "'Dover Beach' ends with", o: ["The sea of faith", "Come to the window", "Where ignorant armies clash by night", "The sea is calm tonight"], a: 2 },
-            { q: "Matthew Arnold won a prize at Rugby School for his poem", o: ["Thyrsis", "Adonais", "Alaric at Rome", "Empedocles on Etna"], a: 2 },
-            { q: "Robert Browning was born on", o: ["6 May 1812", "7 May 1812", "6 June 1811", "7 June 1811"], a: 1 },
-            { q: "Browning belongs to the", o: ["Modern Age", "Romantic Age", "Victorian Age", "Puritan Age"], a: 2 },
-            { q: "Browning is famous for the", o: ["Elegy", "Ballad", "Ode", "Dramatic monologue"], a: 3 },
-            { q: "Browning's first poem was", o: ["Prospice", "Sordello", "Pauline", "Paracelsus"], a: 2 },
-            { q: "Which country did Browning call 'my university'?", o: ["America", "India", "Italy", "England"], a: 2 },
-            { q: "'My Last Duchess' is written in", o: ["Heroic couplet", "Terza rima", "Iambic pentameter", "Free verse"], a: 2 },
-            { q: "'My Last Duchess' was published in", o: ["1840", "1842", "1841", "1843"], a: 1 },
-            { q: "'My Last Duchess' is set against a", o: ["American background", "French background", "Italian background", "Spanish background"], a: 2 },
-            { q: "In 'My Last Duchess', the Duke tells about the Duchess to", o: ["An envoy", "A friend", "A brother", "A painter"], a: 0 },
-            { q: "At the end of 'My Last Duchess', the Duke shows a bronze cast of", o: ["The god of war", "Diana", "Neptune", "Apollo"], a: 2 },
-            { q: "In 'My Last Duchess', the Duke is proud of his", o: ["900-year-old name", "100-year-old name", "500-year-old name", "Art collection only"], a: 0 },
-            { q: "'My Last Duchess' was published in 1842 in the collection", o: ["Sordello", "The Ring and the Book", "Dramatic Lyrics", "Men and Women"], a: 2 },
-            { q: "The phrase 'spot of joy' comes from the poem", o: ["Sordello", "My Last Duchess", "Prospice", "The Ring and the Book"], a: 1 }
+          {
+              q: "Tennyson was born on",
+              o: [
+              "6 September 1810",
+              "6 August 1809",
+              "6 June 1811",
+              "6 April 1811"
+              ],
+              a: 1
+            },
+          {
+              q: "Tennyson was educated at",
+              o: [
+              "Trinity College",
+              "Christ's College",
+              "St John's College",
+              "Balliol College"
+              ],
+              a: 0
+            },
+          {
+              q: "Tennyson published 'Poems by Two Brothers' with his brother",
+              o: [
+              "Charles",
+              "John",
+              "Edmund",
+              "Arthur"
+              ],
+              a: 0
+            },
+          {
+              q: "Tennyson belongs to the",
+              o: [
+              "Chaucerian Age",
+              "Romantic Age",
+              "Modern Age",
+              "Victorian Age"
+              ],
+              a: 3
+            },
+          {
+              q: "Tennyson's wife was",
+              o: [
+              "Anne",
+              "Mary",
+              "Emily Sellwood",
+              "Frances"
+              ],
+              a: 2
+            },
+          {
+              q: "Tennyson was appointed Poet Laureate in",
+              o: [
+              "1849",
+              "1850",
+              "1851",
+              "1852"
+              ],
+              a: 1
+            },
+          {
+              q: "Tennyson was appointed Poet Laureate in succession to",
+              o: [
+              "Browning",
+              "Keats",
+              "Wordsworth",
+              "Shelley"
+              ],
+              a: 2
+            },
+          {
+              q: "Tennyson's poetry represents",
+              o: [
+              "Victorian religion",
+              "Victorian compromise",
+              "Victorian despair",
+              "Victorian satire"
+              ],
+              a: 1
+            },
+          {
+              q: "Tennyson's 'Break, Break, Break' was published in",
+              o: [
+              "1840",
+              "1841",
+              "1842",
+              "1845"
+              ],
+              a: 2
+            },
+          {
+              q: "'Break, Break, Break' is written in",
+              o: [
+              "Three stanzas",
+              "Four stanzas",
+              "Six stanzas",
+              "Five stanzas"
+              ],
+              a: 1
+            },
+          {
+              q: "Tennyson wrote 'Break, Break, Break' to express grief at the death of his friend",
+              o: [
+              "Arthur Hallam",
+              "John Milton",
+              "Keats",
+              "Shelley"
+              ],
+              a: 0
+            },
+          {
+              q: "Elizabeth Barrett Browning was born on",
+              o: [
+              "6 March 1806",
+              "8 March 1808",
+              "10 March 1808",
+              "6 March 1809"
+              ],
+              a: 0
+            },
+          {
+              q: "Elizabeth Barrett was the wife of",
+              o: [
+              "Milton",
+              "Keats",
+              "Robert Browning",
+              "Matthew Arnold"
+              ],
+              a: 2
+            },
+          {
+              q: "Elizabeth Barrett Browning belongs to the",
+              o: [
+              "Romantic Age",
+              "Victorian Age",
+              "Modern Age",
+              "Chaucerian Age"
+              ],
+              a: 1
+            },
+          {
+              q: "'How Do I Love Thee?' is a",
+              o: [
+              "Sonnet",
+              "Ode",
+              "Ballad",
+              "Elegy"
+              ],
+              a: 0
+            },
+          {
+              q: "'How Do I Love Thee?' was published in",
+              o: [
+              "1851",
+              "1850",
+              "1840",
+              "1852"
+              ],
+              a: 1
+            },
+          {
+              q: "In which collection was 'How Do I Love Thee?' published?",
+              o: [
+              "Poems in Two Volumes",
+              "Poems in Three Volumes",
+              "Sonnets from the Portuguese",
+              "Aurora Leigh"
+              ],
+              a: 2
+            },
+          {
+              q: "'How Do I Love Thee?' is also known as",
+              o: [
+              "Sonnet 43",
+              "Sonnet 44",
+              "Sonnet 45",
+              "Sonnet 46"
+              ],
+              a: 0
+            },
+          {
+              q: "What kind of love does the speaker express in 'How Do I Love Thee?'",
+              o: [
+              "Platonic or spiritual love",
+              "Artificial love",
+              "Material love",
+              "Unrequited love"
+              ],
+              a: 0
+            },
+          {
+              q: "Elizabeth Barrett Browning died in",
+              o: [
+              "France",
+              "Canada",
+              "Italy",
+              "Spain"
+              ],
+              a: 2
+            },
+          {
+              q: "Matthew Arnold was born on",
+              o: [
+              "24 December 1822",
+              "25 December 1822",
+              "26 December 1822",
+              "24 December 1820"
+              ],
+              a: 0
+            },
+          {
+              q: "Matthew Arnold belongs to the",
+              o: [
+              "Age of Chaucer",
+              "Romantic Age",
+              "Victorian Age",
+              "Modern Age"
+              ],
+              a: 2
+            },
+          {
+              q: "Matthew Arnold was educated at",
+              o: [
+              "Christ's College",
+              "Balliol College",
+              "St John's College",
+              "Trinity College"
+              ],
+              a: 1
+            },
+          {
+              q: "Who called the 18th century 'The Age of Prose and Reason'?",
+              o: [
+              "William Wordsworth",
+              "P.B. Shelley",
+              "John Keats",
+              "Matthew Arnold"
+              ],
+              a: 3
+            },
+          {
+              q: "The name of Matthew Arnold's father was",
+              o: [
+              "Chaucer Arnold",
+              "Thomas Arnold",
+              "George Arnold",
+              "John Arnold"
+              ],
+              a: 1
+            },
+          {
+              q: "Arnold received his primary education at",
+              o: [
+              "Grammar School",
+              "Christ's School",
+              "Rugby School",
+              "Harrow"
+              ],
+              a: 2
+            },
+          {
+              q: "'Dover Beach' was published in",
+              o: [
+              "1867",
+              "1868",
+              "1869",
+              "1871"
+              ],
+              a: 0
+            },
+          {
+              q: "Which body of water is referred to in 'Dover Beach'?",
+              o: [
+              "English Channel",
+              "Southern Ocean",
+              "Pacific Ocean",
+              "Arabian Sea"
+              ],
+              a: 0
+            },
+          {
+              q: "'Dover Beach' is Arnold's elegy on",
+              o: [
+              "His mother's death",
+              "His friend's death",
+              "Loss of religious faith",
+              "Loss of talent"
+              ],
+              a: 2
+            },
+          {
+              q: "Who gave the touchstone method?",
+              o: [
+              "Shelley",
+              "Keats",
+              "Arnold",
+              "Milton"
+              ],
+              a: 2
+            },
+          {
+              q: "Who said 'Poetry is the criticism of life'?",
+              o: [
+              "John Milton",
+              "Chaucer",
+              "Wordsworth",
+              "Matthew Arnold"
+              ],
+              a: 3
+            },
+          {
+              q: "What is the tone of 'Dover Beach'?",
+              o: [
+              "Pessimistic",
+              "Optimistic",
+              "Pleasing",
+              "Satirical"
+              ],
+              a: 0
+            },
+          {
+              q: "'The sea is calm tonight' appears in",
+              o: [
+              "Paradise Lost",
+              "Paradise Regained",
+              "Adonais",
+              "Dover Beach"
+              ],
+              a: 3
+            },
+          {
+              q: "'Dover Beach' ends with",
+              o: [
+              "The sea of faith",
+              "Come to the window",
+              "Where ignorant armies clash by night",
+              "The sea is calm tonight"
+              ],
+              a: 2
+            },
+          {
+              q: "Matthew Arnold won a prize at Rugby School for his poem",
+              o: [
+              "Thyrsis",
+              "Adonais",
+              "Alaric at Rome",
+              "Empedocles on Etna"
+              ],
+              a: 2
+            },
+          {
+              q: "Robert Browning was born on",
+              o: [
+              "6 May 1812",
+              "7 May 1812",
+              "6 June 1811",
+              "7 June 1811"
+              ],
+              a: 1
+            },
+          {
+              q: "Browning belongs to the",
+              o: [
+              "Modern Age",
+              "Romantic Age",
+              "Victorian Age",
+              "Puritan Age"
+              ],
+              a: 2
+            },
+          {
+              q: "Browning is famous for the",
+              o: [
+              "Elegy",
+              "Ballad",
+              "Ode",
+              "Dramatic monologue"
+              ],
+              a: 3
+            },
+          {
+              q: "Browning's first poem was",
+              o: [
+              "Prospice",
+              "Sordello",
+              "Pauline",
+              "Paracelsus"
+              ],
+              a: 2
+            },
+          {
+              q: "Which country did Browning call 'my university'?",
+              o: [
+              "America",
+              "India",
+              "Italy",
+              "England"
+              ],
+              a: 2
+            },
+          {
+              q: "'My Last Duchess' is written in",
+              o: [
+              "Heroic couplet",
+              "Terza rima",
+              "Iambic pentameter",
+              "Free verse"
+              ],
+              a: 2
+            },
+          {
+              q: "'My Last Duchess' was published in",
+              o: [
+              "1840",
+              "1842",
+              "1841",
+              "1843"
+              ],
+              a: 1
+            },
+          {
+              q: "'My Last Duchess' is set against a",
+              o: [
+              "American background",
+              "French background",
+              "Italian background",
+              "Spanish background"
+              ],
+              a: 2
+            },
+          {
+              q: "In 'My Last Duchess', the Duke tells about the Duchess to",
+              o: [
+              "An envoy",
+              "A friend",
+              "A brother",
+              "A painter"
+              ],
+              a: 0
+            },
+          {
+              q: "At the end of 'My Last Duchess', the Duke shows a bronze cast of",
+              o: [
+              "The god of war",
+              "Diana",
+              "Neptune",
+              "Apollo"
+              ],
+              a: 2
+            },
+          {
+              q: "In 'My Last Duchess', the Duke is proud of his",
+              o: [
+              "900-year-old name",
+              "100-year-old name",
+              "500-year-old name",
+              "Art collection only"
+              ],
+              a: 0
+            },
+          {
+              q: "'My Last Duchess' was published in 1842 in the collection",
+              o: [
+              "Sordello",
+              "The Ring and the Book",
+              "Dramatic Lyrics",
+              "Men and Women"
+              ],
+              a: 2
+            },
+          {
+              q: "The phrase 'spot of joy' comes from the poem",
+              o: [
+              "Sordello",
+              "My Last Duchess",
+              "Prospice",
+              "The Ring and the Book"
+              ],
+              a: 1
+            }
           ]
         },
-        {
+      {
           id: "u7",
           name: "Eliot, Yeats, Larkin",
           blurb: "The Love Song of J. Alfred Prufrock, The Lake Isle of Innisfree, Church Going.",
           questions: [
-            { q: "When was T.S. Eliot born?", o: ["1888", "1898", "1889", "1891"], a: 0 },
-            { q: "What does the 'S' in T.S. Eliot stand for?", o: ["Thomas", "Stearns", "Samuel", "Sebastian"], a: 1 },
-            { q: "When was Eliot awarded the Nobel Prize in Literature?", o: ["1947", "1949", "1960", "1948"], a: 3 },
-            { q: "With which movement was T.S. Eliot associated?", o: ["Modernism", "Post-modernism", "Oxford Movement", "Symbolism"], a: 0 },
-            { q: "Which was the first published work of Eliot?", o: ["The Waste Land", "The Love Song of J. Alfred Prufrock", "The Hollow Men", "Ash-Wednesday"], a: 1 },
-            { q: "Who defined poetry as 'not a turning loose of emotion, but an escape from emotion'?", o: ["Arnold", "W.B. Yeats", "T.S. Eliot", "Philip Larkin"], a: 2 },
-            { q: "Who described himself as a 'classicist in literature, a royalist in politics, and Anglo-Catholic in religion'?", o: ["John Donne", "W.B. Yeats", "Thomas Gray", "T.S. Eliot"], a: 3 },
-            { q: "Which of the following is not a work by T.S. Eliot?", o: ["Tradition and the Individual Talent", "Four Quartets", "The Winding Stair", "Prufrock and Other Observations"], a: 2 },
-            { q: "When was 'The Love Song of J. Alfred Prufrock' published?", o: ["1915", "1918", "1919", "1922"], a: 0 },
-            { q: "'The Love Song of J. Alfred Prufrock' is a", o: ["Lyric", "Elegy", "Dramatic monologue", "Ballad"], a: 2 },
-            { q: "The opening lines of 'Prufrock' are set in the", o: ["Evening", "Morning", "Noon", "Midnight"], a: 0 },
-            { q: "The title of the Prufrock poem was derived from 'The Love Song of Har Dyal' written by", o: ["Sarojini Naidu", "Rabindranath Tagore", "W.B. Yeats", "Rudyard Kipling"], a: 3 },
-            { q: "The epigraph of 'Prufrock' is taken from", o: ["Homer's Odyssey", "Wordsworth's Lyrical Ballads", "Dante's Inferno", "Yeats' The Tower"], a: 2 },
-            { q: "'Let us go then, you and I' is the opening line of", o: ["On His Blindness", "The Love Song of J. Alfred Prufrock", "Dover Beach", "Elegy Written in a Country Churchyard"], a: 1 },
-            { q: "'I have measured out my life with coffee spoons' occurs in a poem by", o: ["T.S. Eliot", "Keats", "Gray", "Shakespeare"], a: 0 },
-            { q: "'The yellow fog that rubs its back upon the window-panes' employs", o: ["Epitaph", "Simile", "Personification", "Apostrophe"], a: 2 },
-            { q: "When was W.B. Yeats born?", o: ["13 June 1865", "13 June 1888", "13 June 1875", "13 June 1858"], a: 0 },
-            { q: "W.B. Yeats was an", o: ["American poet", "German poet", "Australian poet", "Irish poet"], a: 3 },
-            { q: "When was W.B. Yeats awarded the Nobel Prize in Literature?", o: ["1925", "1923", "1933", "1935"], a: 1 },
-            { q: "Which theatre was founded by Yeats and Lady Gregory?", o: ["Globe Theatre", "King's Theatre", "Abbey Theatre", "London Theatre"], a: 2 },
-            { q: "Which of the following is not a poem by W.B. Yeats?", o: ["Sailing to Byzantium", "The Unknown Citizen", "A Prayer for My Daughter", "The Lake Isle of Innisfree"], a: 1 },
-            { q: "Yeats is known for his", o: ["Satires", "Imagery", "Sensuousness", "Symbolism"], a: 3 },
-            { q: "'Cast a cold eye / On life, on death. / Horseman, pass by!' is the epitaph on whose grave?", o: ["Shelley", "Keats", "Yeats", "Wordsworth"], a: 2 },
-            { q: "How many lines does 'The Lake Isle of Innisfree' contain?", o: ["14", "15", "10", "12"], a: 3 },
-            { q: "What is the stanza form of 'The Lake Isle of Innisfree'?", o: ["Spenserian stanza", "Quatrain", "Couplet", "Heroic couplet"], a: 1 },
-            { q: "What is the rhyme scheme of 'The Lake Isle of Innisfree'?", o: ["ABAB CDCD EFEF", "ABAB ABAB CDEC", "ABAB BCBC CDCD", "ABBA ABBA CDEC"], a: 0 },
-            { q: "The poem 'The Lake Isle of Innisfree' was first published in", o: ["In the Seven Woods", "The Wind Among the Reeds", "The Tower", "The National Observer"], a: 3 },
-            { q: "What is symbolised by 'roadway' and 'pavements grey' in 'The Lake Isle of Innisfree'?", o: ["Life in nature", "Village life", "Urban life", "Spirituality"], a: 2 },
-            { q: "The opening clause 'I will arise and go' is taken from", o: ["Wordsworth's Lyrical Ballads", "The King James Bible", "Eliot's The Waste Land", "Shakespeare's Hamlet"], a: 1 },
-            { q: "Who was influenced by Rabindranath Tagore's 'Gitanjali'?", o: ["T.S. Eliot", "W.B. Yeats", "Philip Larkin", "Ezra Pound"], a: 1 },
-            { q: "When was Philip Larkin born?", o: ["1923", "1922", "1932", "1934"], a: 1 },
-            { q: "What is Philip Larkin's full name?", o: ["Philip Arthur Larkin", "Philip Stearns Larkin", "Philip Samuel Larkin", "Philip John Larkin"], a: 0 },
-            { q: "Philip Larkin was a", o: ["Romantic poet", "Victorian poet", "Classical poet", "Modern poet"], a: 3 },
-            { q: "Larkin's first novel 'Jill' was based on his life at", o: ["Dublin University", "Cambridge University", "University of Oxford", "University of Hull"], a: 2 },
-            { q: "Which of the following is not a work of Larkin?", o: ["Jill", "The Whitsun Weddings", "High Windows", "Ulysses"], a: 3 },
-            { q: "The epigraph on Larkin's memorial at Poets' Corner is taken from his poem", o: ["Church Going", "The Whitsun Weddings", "An Arundel Tomb", "Toads"], a: 2 },
-            { q: "Larkin served as a librarian at the", o: ["University of Oxford", "University of Hull", "Dublin University", "Cambridge University"], a: 1 },
-            { q: "'Church Going' was published in", o: ["1955", "1945", "1965", "1975"], a: 0 },
-            { q: "In which book was Larkin's 'Church Going' published?", o: ["Jill", "The Whitsun Weddings", "High Windows", "The Less Deceived"], a: 3 },
-            { q: "'Church Going' contains seven stanzas of how many lines each?", o: ["5", "6", "9", "4"], a: 2 },
-            { q: "What is the theme of 'Church Going'?", o: ["Church architecture", "The role of religion in society", "Death and immortality", "World war"], a: 1 },
-            { q: "'Once I am sure there's nothing going on' is the opening line of", o: ["Dover Beach", "Tintern Abbey", "Church Going", "The Waste Land"], a: 2 },
-            { q: "In 'Church Going', 'a serious house' means a", o: ["Temple", "Mosque", "Church", "Library"], a: 2 },
-            { q: "Which poem echoes the gloom of the Second World War?", o: ["True Beauty", "On His Blindness", "Church Going", "Dover Beach"], a: 2 },
-            { q: "'And what remains when disbelief has gone?' is an example of a", o: ["Apostrophe", "Hyperbole", "Innuendo", "Rhetorical question"], a: 3 }
+          {
+              q: "When was T.S. Eliot born?",
+              o: [
+              "1888",
+              "1898",
+              "1889",
+              "1891"
+              ],
+              a: 0
+            },
+          {
+              q: "What does the 'S' in T.S. Eliot stand for?",
+              o: [
+              "Thomas",
+              "Stearns",
+              "Samuel",
+              "Sebastian"
+              ],
+              a: 1
+            },
+          {
+              q: "When was Eliot awarded the Nobel Prize in Literature?",
+              o: [
+              "1947",
+              "1949",
+              "1960",
+              "1948"
+              ],
+              a: 3
+            },
+          {
+              q: "With which movement was T.S. Eliot associated?",
+              o: [
+              "Modernism",
+              "Post-modernism",
+              "Oxford Movement",
+              "Symbolism"
+              ],
+              a: 0
+            },
+          {
+              q: "Which was the first published work of Eliot?",
+              o: [
+              "The Waste Land",
+              "The Love Song of J. Alfred Prufrock",
+              "The Hollow Men",
+              "Ash-Wednesday"
+              ],
+              a: 1
+            },
+          {
+              q: "Who defined poetry as 'not a turning loose of emotion, but an escape from emotion'?",
+              o: [
+              "Arnold",
+              "W.B. Yeats",
+              "T.S. Eliot",
+              "Philip Larkin"
+              ],
+              a: 2
+            },
+          {
+              q: "Who described himself as a 'classicist in literature, a royalist in politics, and Anglo-Catholic in religion'?",
+              o: [
+              "John Donne",
+              "W.B. Yeats",
+              "Thomas Gray",
+              "T.S. Eliot"
+              ],
+              a: 3
+            },
+          {
+              q: "Which of the following is not a work by T.S. Eliot?",
+              o: [
+              "Tradition and the Individual Talent",
+              "Four Quartets",
+              "The Winding Stair",
+              "Prufrock and Other Observations"
+              ],
+              a: 2
+            },
+          {
+              q: "When was 'The Love Song of J. Alfred Prufrock' published?",
+              o: [
+              "1915",
+              "1918",
+              "1919",
+              "1922"
+              ],
+              a: 0
+            },
+          {
+              q: "'The Love Song of J. Alfred Prufrock' is a",
+              o: [
+              "Lyric",
+              "Elegy",
+              "Dramatic monologue",
+              "Ballad"
+              ],
+              a: 2
+            },
+          {
+              q: "The opening lines of 'Prufrock' are set in the",
+              o: [
+              "Evening",
+              "Morning",
+              "Noon",
+              "Midnight"
+              ],
+              a: 0
+            },
+          {
+              q: "The title of the Prufrock poem was derived from 'The Love Song of Har Dyal' written by",
+              o: [
+              "Sarojini Naidu",
+              "Rabindranath Tagore",
+              "W.B. Yeats",
+              "Rudyard Kipling"
+              ],
+              a: 3
+            },
+          {
+              q: "The epigraph of 'Prufrock' is taken from",
+              o: [
+              "Homer's Odyssey",
+              "Wordsworth's Lyrical Ballads",
+              "Dante's Inferno",
+              "Yeats' The Tower"
+              ],
+              a: 2
+            },
+          {
+              q: "'Let us go then, you and I' is the opening line of",
+              o: [
+              "On His Blindness",
+              "The Love Song of J. Alfred Prufrock",
+              "Dover Beach",
+              "Elegy Written in a Country Churchyard"
+              ],
+              a: 1
+            },
+          {
+              q: "'I have measured out my life with coffee spoons' occurs in a poem by",
+              o: [
+              "T.S. Eliot",
+              "Keats",
+              "Gray",
+              "Shakespeare"
+              ],
+              a: 0
+            },
+          {
+              q: "'The yellow fog that rubs its back upon the window-panes' employs",
+              o: [
+              "Epitaph",
+              "Simile",
+              "Personification",
+              "Apostrophe"
+              ],
+              a: 2
+            },
+          {
+              q: "When was W.B. Yeats born?",
+              o: [
+              "13 June 1865",
+              "13 June 1888",
+              "13 June 1875",
+              "13 June 1858"
+              ],
+              a: 0
+            },
+          {
+              q: "W.B. Yeats was an",
+              o: [
+              "American poet",
+              "German poet",
+              "Australian poet",
+              "Irish poet"
+              ],
+              a: 3
+            },
+          {
+              q: "When was W.B. Yeats awarded the Nobel Prize in Literature?",
+              o: [
+              "1925",
+              "1923",
+              "1933",
+              "1935"
+              ],
+              a: 1
+            },
+          {
+              q: "Which theatre was founded by Yeats and Lady Gregory?",
+              o: [
+              "Globe Theatre",
+              "King's Theatre",
+              "Abbey Theatre",
+              "London Theatre"
+              ],
+              a: 2
+            },
+          {
+              q: "Which of the following is not a poem by W.B. Yeats?",
+              o: [
+              "Sailing to Byzantium",
+              "The Unknown Citizen",
+              "A Prayer for My Daughter",
+              "The Lake Isle of Innisfree"
+              ],
+              a: 1
+            },
+          {
+              q: "Yeats is known for his",
+              o: [
+              "Satires",
+              "Imagery",
+              "Sensuousness",
+              "Symbolism"
+              ],
+              a: 3
+            },
+          {
+              q: "'Cast a cold eye / On life, on death. / Horseman, pass by!' is the epitaph on whose grave?",
+              o: [
+              "Shelley",
+              "Keats",
+              "Yeats",
+              "Wordsworth"
+              ],
+              a: 2
+            },
+          {
+              q: "How many lines does 'The Lake Isle of Innisfree' contain?",
+              o: [
+              "14",
+              "15",
+              "10",
+              "12"
+              ],
+              a: 3
+            },
+          {
+              q: "What is the stanza form of 'The Lake Isle of Innisfree'?",
+              o: [
+              "Spenserian stanza",
+              "Quatrain",
+              "Couplet",
+              "Heroic couplet"
+              ],
+              a: 1
+            },
+          {
+              q: "What is the rhyme scheme of 'The Lake Isle of Innisfree'?",
+              o: [
+              "ABAB CDCD EFEF",
+              "ABAB ABAB CDEC",
+              "ABAB BCBC CDCD",
+              "ABBA ABBA CDEC"
+              ],
+              a: 0
+            },
+          {
+              q: "The poem 'The Lake Isle of Innisfree' was first published in",
+              o: [
+              "In the Seven Woods",
+              "The Wind Among the Reeds",
+              "The Tower",
+              "The National Observer"
+              ],
+              a: 3
+            },
+          {
+              q: "What is symbolised by 'roadway' and 'pavements grey' in 'The Lake Isle of Innisfree'?",
+              o: [
+              "Life in nature",
+              "Village life",
+              "Urban life",
+              "Spirituality"
+              ],
+              a: 2
+            },
+          {
+              q: "The opening clause 'I will arise and go' is taken from",
+              o: [
+              "Wordsworth's Lyrical Ballads",
+              "The King James Bible",
+              "Eliot's The Waste Land",
+              "Shakespeare's Hamlet"
+              ],
+              a: 1
+            },
+          {
+              q: "Who was influenced by Rabindranath Tagore's 'Gitanjali'?",
+              o: [
+              "T.S. Eliot",
+              "W.B. Yeats",
+              "Philip Larkin",
+              "Ezra Pound"
+              ],
+              a: 1
+            },
+          {
+              q: "When was Philip Larkin born?",
+              o: [
+              "1923",
+              "1922",
+              "1932",
+              "1934"
+              ],
+              a: 1
+            },
+          {
+              q: "What is Philip Larkin's full name?",
+              o: [
+              "Philip Arthur Larkin",
+              "Philip Stearns Larkin",
+              "Philip Samuel Larkin",
+              "Philip John Larkin"
+              ],
+              a: 0
+            },
+          {
+              q: "Philip Larkin was a",
+              o: [
+              "Romantic poet",
+              "Victorian poet",
+              "Classical poet",
+              "Modern poet"
+              ],
+              a: 3
+            },
+          {
+              q: "Larkin's first novel 'Jill' was based on his life at",
+              o: [
+              "Dublin University",
+              "Cambridge University",
+              "University of Oxford",
+              "University of Hull"
+              ],
+              a: 2
+            },
+          {
+              q: "Which of the following is not a work of Larkin?",
+              o: [
+              "Jill",
+              "The Whitsun Weddings",
+              "High Windows",
+              "Ulysses"
+              ],
+              a: 3
+            },
+          {
+              q: "The epigraph on Larkin's memorial at Poets' Corner is taken from his poem",
+              o: [
+              "Church Going",
+              "The Whitsun Weddings",
+              "An Arundel Tomb",
+              "Toads"
+              ],
+              a: 2
+            },
+          {
+              q: "Larkin served as a librarian at the",
+              o: [
+              "University of Oxford",
+              "University of Hull",
+              "Dublin University",
+              "Cambridge University"
+              ],
+              a: 1
+            },
+          {
+              q: "'Church Going' was published in",
+              o: [
+              "1955",
+              "1945",
+              "1965",
+              "1975"
+              ],
+              a: 0
+            },
+          {
+              q: "In which book was Larkin's 'Church Going' published?",
+              o: [
+              "Jill",
+              "The Whitsun Weddings",
+              "High Windows",
+              "The Less Deceived"
+              ],
+              a: 3
+            },
+          {
+              q: "'Church Going' contains seven stanzas of how many lines each?",
+              o: [
+              "5",
+              "6",
+              "9",
+              "4"
+              ],
+              a: 2
+            },
+          {
+              q: "What is the theme of 'Church Going'?",
+              o: [
+              "Church architecture",
+              "The role of religion in society",
+              "Death and immortality",
+              "World war"
+              ],
+              a: 1
+            },
+          {
+              q: "'Once I am sure there's nothing going on' is the opening line of",
+              o: [
+              "Dover Beach",
+              "Tintern Abbey",
+              "Church Going",
+              "The Waste Land"
+              ],
+              a: 2
+            },
+          {
+              q: "In 'Church Going', 'a serious house' means a",
+              o: [
+              "Temple",
+              "Mosque",
+              "Church",
+              "Library"
+              ],
+              a: 2
+            },
+          {
+              q: "Which poem echoes the gloom of the Second World War?",
+              o: [
+              "True Beauty",
+              "On His Blindness",
+              "Church Going",
+              "Dover Beach"
+              ],
+              a: 2
+            },
+          {
+              q: "'And what remains when disbelief has gone?' is an example of a",
+              o: [
+              "Apostrophe",
+              "Hyperbole",
+              "Innuendo",
+              "Rhetorical question"
+              ],
+              a: 3
+            }
           ]
         }
       ]
     },
-    {
-      id: "eng-sem4",
-      semester: 4,
-      name: "Indian Literature in Translation",
-      status: "pending",
-      note: "The university question bank has this paper. Download it and add the questions to data/english.js.",
-      source: "https://prashnbank.csjmu.ac.in/indian-literature-in-translation-translation-practice/",
-      units: []
-    },
-    {
-      id: "eng-sem6",
-      semester: 6,
-      name: "Semester 6 English paper",
-      status: "pending",
-      note: "Paper name and code still to be confirmed.",
-      units: []
-    },
-    {
-      id: "eng-sem4-drama",
-      semester: 4,
-      name: "British and American Drama",
-      status: "ready",
-      note: "Source booklet labels this as B.A.-II (Semester III), course code A040301T; placed under Semester 4 for the app's even-semester grouping.",
-      source: "https://prashnbank.csjmu.ac.in/british-and-american-drama/",
-      units: [
-        {
-          id: "u1",
-          name: "Drama Types",
-          blurb: "Tragedy, comedy, tragi-comedy, expressionist drama, drama of ideas, poetic drama, closet drama, problem play, theatre of absurd",
-          questions: [
-              { q: "Which of the following is a characteristic of a closet drama?", o: ["Written to be performed on stage", "Written to be read rather than performed", "Contains no dialogue", "Focuses on musical elements"], a: 1 },
-              { q: "What distinguishes poetic drama from other types of drama?", o: ["It uses verse and poetic language", "It has no dialogue", "It focuses on slapstick humor", "It includes musical interludes"], a: 0 },
-              { q: "Which play is considered an example of a classical tragedy?", o: ["\"Much Ado About Nothing\"", "\"Oedipus Rex\"", "\"The Importance of Being Earnest\"", "\"Waiting for Godot\""], a: 1 },
-              { q: "What is the term for the tragic hero's fatal flaw in an Aristotelian tragedy?", o: ["Hubris", "Anagnorisis", "Hamartia", "Peripeteia"], a: 2 },
-              { q: "Which of the following is a characteristic of a modern tragedy?", o: ["Focuses on the nobility", "Includes a chorus", "Protagonist is an ordinary person", "Uses verse and rhyme"], a: 2 },
-              { q: "What type of comedy focuses on romantic relationships and often ends happily?", o: ["Dark comedy", "Satirical comedy", "Romantic comedy", "Farce"], a: 2 },
-              { q: "Which of the following is an example of a comedy of manners?", o: ["\"A Midsummer Night's Dream\"", "\"The Importance of Being Earnest\"", "\"Waiting for Godot\"", "\"Death of a Salesman\""], a: 1 },
-              { q: "What is the primary feature of a farce?", o: ["Serious, dramatic tone", "Exaggerated and improbable situations", "Focus on moral dilemmas", "Use of poetic language"], a: 1 },
-              { q: "How does dark comedy differ from other types of comedy?", o: ["It includes musical elements", "It uses humor to explore serious, morbid, or taboo subjects", "It always ends happily", "It focuses on slapstick humor"], a: 1 },
-              { q: "Which playwright is known for writing dramas of ideas?", o: ["William Shakespeare", "Henrik Ibsen", "Samuel Beckett", "Molière"], a: 1 },
-              { q: "What is the primary focus of a drama of ideas?", o: ["Physical comedy and gags", "Intellectual debates and social issues", "Musical interludes", "Elaborate set designs"], a: 1 },
-              { q: "Which play by George Bernard Shaw is considered a drama of ideas?", o: ["\"Pygmalion\"", "\"Hamlet\"", "\"Othello\"", "\"The Cherry Orchard\""], a: 0 },
-              { q: "What is a key characteristic of the Theatre of the Absurd?", o: ["Logical plot progression", "Focus on existential themes", "Happy endings", "Realistic dialogue"], a: 1 },
-              { q: "Which playwright is associated with the Theatre of the Absurd?", o: ["William Shakespeare", "Arthur Miller", "Samuel Beckett", "Tennessee Williams"], a: 2 },
-              { q: "What is Samuel Beckett's most famous absurdist play?", o: ["\"A Streetcar Named Desire\"", "\"Death of a Salesman\"", "\"Waiting for Godot\"", "\"The Glass Menagerie\""], a: 2 },
-              { q: "In the Theatre of the Absurd, how are dialogues typically characterized?", o: ["Logical and clear", "Disjointed and repetitive", "Poetic and rhythmic", "Minimal and silent"], a: 1 },
-              { q: "What type of drama addresses contemporary social issues without offering clear resolutions?", o: ["Comedy of manners", "Farce", "Problem play", "Romantic comedy"], a: 2 },
-              { q: "Who is considered the father of modern drama, particularly for his problem plays?", o: ["Sophocles", "Henrik Ibsen", "Bertolt Brecht", "George Bernard Shaw"], a: 1 },
-              { q: "Which of the following best describes a tragi-comedy?", o: ["A play that blends elements of both tragedy and comedy", "A play that focuses on romantic relationships", "A play with a purely tragic ending", "A play without any humorous elements"], a: 0 },
-              { q: "What is the main focus of expressionist drama?", o: ["Realistic depiction of everyday life", "The internal emotional experiences of characters", "Elaborate set designs and costumes", "Physical comedy and gags"], a: 1 }
-          ]
-        },
-        {
-          id: "u2",
-          name: "Elements of Drama",
-          blurb: "Authorial intrusion, cacophony, circumlocution, conflict, diction, epilogue, epithet, euphemism, euphony, malapropism",
-          questions: [
-              { q: "Which element of drama involves the sequence of events in a story?", o: ["Character", "Plot", "Theme", "Spectacle"], a: 1 },
-              { q: "What term describes the author's direct commentary or insight within a narrative?", o: ["Authorial Intrusion", "Diction", "Epilogue", "Epithet"], a: 0 },
-              { q: "What is the purpose of cacophony in literature?", o: ["To create a soothing effect", "To enhance harmony", "To convey chaos or tension", "To describe natural beauty"], a: 2 },
-              { q: "Which of the following describes the use of many words to avoid being direct?", o: ["Circumlocution", "Malapropism", "Euphony", "Conflict"], a: 0 },
-              { q: "What term refers to the struggle between opposing forces in a story?", o: ["Diction", "Conflict", "Epilogue", "Epithet"], a: 1 },
-              { q: "What does diction refer to in literature?", o: ["The underlying message of a story", "The choice of words and style", "The final section of a narrative", "A humorous misuse of words"], a: 1 },
-              { q: "What is the purpose of an epilogue in a literary work?", o: ["To introduce the story", "To resolve and reflect on the story", "To create tension", "To describe characters"], a: 1 },
-              { q: "Which term describes a descriptive phrase that highlights a characteristic of a person or thing?", o: ["Euphony", "Epithet", "Authorial Intrusion", "Cacophony"], a: 1 },
-              { q: "What is euphony used to create in literature?", o: ["Harsh, jarring sounds", "A pleasant, harmonious effect", "A sense of confusion", "Directness and clarity"], a: 1 },
-              { q: "What is the term for the humorous misuse of words that sound similar?", o: ["Euphony", "Cacophony", "Malapropism", "Circumlocution"], a: 2 },
-              { q: "Which element of drama encompasses the visual aspects of a performance, such as costumes and scenery?", o: ["Plot", "Character", "Spectacle", "Dialogue"], a: 2 },
-              { q: "How can authorial intrusion affect the reader's engagement with a story?", o: ["It always enhances immersion", "It provides background information", "It can disrupt the narrative flow", "It eliminates character conflict"], a: 2 },
-              { q: "In which type of conflict does a character struggle with their own emotions or thoughts?", o: ["External Conflict", "Internal Conflict", "Societal Conflict", "Physical Conflict"], a: 1 },
-              { q: "Which literary device is characterized by the use of harsh, discordant sounds to reflect disorder?", o: ["Euphony", "Cacophony", "Epilogue", "Diction"], a: 1 },
-              { q: "What is the effect of circumlocution on the narrative pacing?", o: ["It speeds up the story", "It has no impact", "It can slow down the pacing", "It eliminates conflict"], a: 2 },
-              { q: "Which term refers to the choice of words used to set a particular tone in a literary work?", o: ["Conflict", "Diction", "Epilogue", "Authorial Intrusion"], a: 1 },
-              { q: "What function does an epilogue serve at the end of a story?", o: ["To present new conflicts", "To introduce new characters", "To offer closure and resolution", "To extend the story"], a: 2 },
-              { q: "Which of the following is an example of euphony in literature?", o: ["“The clash of swords”", "“The soft murmuring of the brook”", "“The screech of tires”", "“The bang of a drum”"], a: 1 },
-              { q: "What effect does malapropism have on a character's portrayal in literature?", o: ["It makes the character seem intelligent", "It highlights the character’s educational level or ignorance", "It enhances the character’s seriousness", "It reveals the character’s inner thoughts"], a: 1 },
-              { q: "Which term describes a device used to create musicality and harmony in a piece of writing?", o: ["Cacophony", "Diction", "Euphony", "Authorial Intrusion"], a: 2 }
-          ]
-        },
-        {
-          id: "u3",
-          name: "Literary Terms (Drama) I",
-          blurb: "Flashback, foil, foreshadowing, hubris, hyperbaton, motif, nemesis, periphrasis, portmanteau, prologue",
-          questions: [
-              { q: "What is the purpose of a prologue in literature?", o: ["To provide closure to the narrative", "To introduce background information and set the stage", "To depict a character’s inner thoughts", "To resolve the main conflict"], a: 1 },
-              { q: "Which literary device involves a narrative that interrupts the chronological flow of a story to show past events?", o: ["Foreshadowing", "Flashback", "Hyperbaton", "Periphrasis"], a: 1 },
-              { q: "In literature, a character who contrasts with another character to highlight particular traits is known as a:", o: ["Foil", "Nemesis", "Protagonist", "Epilogue"], a: 0 },
-              { q: "What is foreshadowing used for in a narrative?", o: ["To provide a backstory", "To hint at future events", "To resolve the plot", "To describe a setting"], a: 1 },
-              { q: "Which term describes excessive pride that often leads to a character’s downfall?", o: ["Hubris", "Motif", "Portmanteau", "Foil"], a: 0 },
-              { q: "What does hyperbaton involve in terms of sentence structure?", o: ["Using indirect language", "Rearranging word order", "Creating new words", "Providing background information"], a: 1 },
-              { q: "A recurring element that reinforces a theme throughout a literary work is called a:", o: ["Foreshadowing", "Flashback", "Motif", "Hyperbaton"], a: 2 },
-              { q: "What role does nemesis play in a story?", o: ["Provides background information", "Acts as a force of retribution", "Introduces new characters", "Creates suspense"], a: 1 },
-              { q: "Which term refers to the use of more words than necessary to describe something?", o: ["Periphrasis", "Portmanteau", "Foil", "Hubris"], a: 0 },
-              { q: "What is a portmanteau word?", o: ["A word that combines parts of two or more words", "A device for arranging words", "A type of flashback", "A contrast between characters"], a: 0 },
-              { q: "How does an epilogue differ from a prologue?", o: ["The prologue concludes the narrative while the epilogue introduces it", "The prologue introduces the story while the epilogue provides closure", "The prologue describes a setting, while the epilogue provides background", "The prologue resolves conflicts, while the epilogue creates them"], a: 1 },
-              { q: "Which literary device is characterized by a sudden interruption to depict past events?", o: ["Foreshadowing", "Hyperbaton", "Flashback", "Foil"], a: 2 },
-              { q: "Which term best describes a character whose traits highlight the protagonist’s characteristics?", o: ["Protagonist", "Nemesis", "Foil", "Epilogue"], a: 2 },
-              { q: "What is the effect of foreshadowing in a story?", o: ["Provides background information", "Creates suspense and anticipation", "Reveals a character’s thoughts", "Concludes the narrative"], a: 1 },
-              { q: "In literature, hubris typically leads to:", o: ["The protagonist’s success", "A harmonious resolution", "The protagonist’s downfall", "The introduction of new characters"], a: 2 },
-              { q: "What does hyperbaton affect in a sentence?", o: ["Word meaning", "Sentence length", "Word order", "Narrative structure"], a: 2 },
-              { q: "Which literary device involves a recurring symbolic element?", o: ["Foreshadowing", "Motif", "Periphrasis", "Hyperbaton"], a: 1 },
-              { q: "How does nemesis typically interact with the protagonist in a story?", o: ["By providing advice", "By enacting retribution", "By creating conflicts", "By resolving conflicts"], a: 1 },
-              { q: "Periphrasis is used to:", o: ["Add complexity to the language", "Create new words", "Introduce a narrative", "Conclude a story"], a: 0 },
-              { q: "A portmanteau word is created by:", o: ["Combining parts of existing words", "Rearranging the order of words", "Using indirect language", "Providing a narrative introduction"], a: 0 }
-          ]
-        },
-        {
-          id: "u4",
-          name: "Literary Terms (Drama) II",
-          blurb: "Unity of time, place and action, setting, spoonerism, stage direction, syntax, theme, understatement, verisimilitude",
-          questions: [
-              { q: "What is the Unity of Time in drama?", o: ["A play should occur in a single physical location.", "A play should have multiple plotlines.", "A play should occur within a 24-hour period.", "A play should have various time periods."], a: 2 },
-              { q: "Which term describes the requirement that a play should have one main plotline?", o: ["Unity of Time", "Unity of Place", "Unity of Action", "Unity of Theme"], a: 2 },
-              { q: "What does setting refer to in a literary work?", o: ["The dialogue between characters.", "The time and place where the story occurs.", "The theme of the story.", "The use of syntax and diction."], a: 1 },
-              { q: "What is a spoonerism?", o: ["A narrative that breaks the fourth wall.", "An error in which initial consonants are swapped between words.", "A lengthy descriptive passage.", "A metaphor that spans an entire poem."], a: 1 },
-              { q: "What do stage directions in a play indicate?", o: ["The sequence of events in the plot.", "Instructions for the technical crew only.", "Instructions on movements, expressions, and actions for actors.", "The themes of the play."], a: 2 },
-              { q: "What is syntax in literature?", o: ["The author's choice of themes.", "The arrangement of words and phrases in sentences.", "The moral lesson of the story.", "The background setting."], a: 1 },
-              { q: "Which term defines the central topic or underlying message of a literary work?", o: ["Setting", "Theme", "Syntax", "Plot"], a: 1 },
-              { q: "How is understatement used in literature?", o: ["To exaggerate the significance of an event.", "To present something as less important than it actually is.", "To create a vivid and detailed description.", "To provide direct and explicit information."], a: 1 },
-              { q: "What does verisimilitude mean in a literary context?", o: ["The appearance of being true or real.", "A deliberate exaggeration for effect.", "The use of informal language.", "A shift in narrative perspective."], a: 0 },
-              { q: "Which of the following best describes the Unity of Place in drama?", o: ["The play takes place in multiple locations.", "The action of the play is confined to a single physical location.", "The play has multiple plotlines.", "The play spans several years."], a: 1 },
-              { q: "In which of the following scenarios is an understatement used?", o: ["Describing a massive storm as \"a bit of wind.\"", "Comparing two characters in detail.", "Providing a comprehensive backstory for a character.", "Using a long, detailed metaphor."], a: 0 },
-              { q: "What role does setting play in a narrative?", o: ["It provides dialogue for characters.", "It establishes the time and place of the story.", "It dictates the plot structure.", "It determines the literary genre."], a: 1 },
-              { q: "Which literary device involves switching the initial sounds of two words?", o: ["Metaphor", "Irony", "Spoonerism", "Hyperbole"], a: 2 },
-              { q: "Why are stage directions important in drama?", o: ["They provide the main dialogue of the play.", "They offer background information on the plot.", "They guide actors on how to move and behave on stage.", "They define the central theme of the play."], a: 2 },
-              { q: "What aspect of a literary work does syntax influence?", o: ["The central theme", "The time and place of the story", "The structure and style of sentences", "The moral lesson"], a: 2 },
-              { q: "How can themes be identified in a literary work?", o: ["By analyzing recurring motifs and symbols.", "By examining the author's biography.", "By looking at the sentence structure.", "By counting the number of characters."], a: 0 },
-              { q: "What is the effect of verisimilitude in literature?", o: ["It creates a humorous tone.", "It makes the story appear realistic and believable.", "It introduces fantastical elements.", "It simplifies complex narratives."], a: 1 },
-              { q: "Which principle ensures that a play's action occurs in one day?", o: ["Unity of Time", "Unity of Place", "Unity of Action", "Unity of Theme"], a: 0 },
-              { q: "What is the primary function of setting in literature?", o: ["To dictate the plot.", "To establish the context and atmosphere.", "To provide moral lessons.", "To introduce the main conflict."], a: 1 },
-              { q: "How does understatement differ from hyperbole?", o: ["Understatement makes something seem less important, while hyperbole exaggerates it.", "Understatement provides exact details, while hyperbole is vague.", "Understatement is used in dialogue, while hyperbole is used in narrative.", "Understatement is a type of syntax, while hyperbole is a theme."], a: 0 }
-          ]
-        },
-        {
-          id: "u5",
-          name: "British Drama I",
-          blurb: "William Shakespeare - Othello",
-          questions: [
-              { q: "Who is considered the greatest playwright in British drama?", o: ["Christopher Marlowe", "Ben Jonson", "William Shakespeare", "John Webster"], a: 2 },
-              { q: "What genre is Shakespeare’s \"Othello\"?", o: ["Comedy", "Tragedy", "History", "Romance"], a: 1 },
-              { q: "Who is the main antagonist in \"Othello\"?", o: ["Cassio", "Roderigo", "Iago", "Brabantio"], a: 2 },
-              { q: "What position does Othello hold in the Venetian army?", o: ["Lieutenant", "General", "Captain", "Sergeant"], a: 1 },
-              { q: "Who does Othello marry?", o: ["Emilia", "Bianca", "Desdemona", "Portia"], a: 2 },
-              { q: "What rank does Iago hold at the beginning of the play?", o: ["Captain", "Ensign", "Lieutenant", "General"], a: 1 },
-              { q: "Which item does Iago use to convince Othello of Desdemona’s infidelity?", o: ["A ring", "A necklace", "A handkerchief", "A letter"], a: 2 },
-              { q: "Where is most of the play \"Othello\" set?", o: ["Venice", "Cyprus", "Rome", "Athens"], a: 1 },
-              { q: "Who is Othello’s loyal lieutenant?", o: ["Cassio", "Roderigo", "Iago", "Brabantio"], a: 0 },
-              { q: "What is a major theme in \"Othello\"?", o: ["Ambition", "Revenge", "Jealousy", "Power"], a: 2 },
-              { q: "Which character provides comic relief in \"Othello\"?", o: ["Emilia", "The Clown", "Roderigo", "Bianca"], a: 1 },
-              { q: "Who is Desdemona’s father?", o: ["Brabantio", "Lodovico", "Gratiano", "Montano"], a: 0 },
-              { q: "What motivates Iago’s actions against Othello?", o: ["Love", "Envy and resentment", "Honor", "Friendship"], a: 1 },
-              { q: "Who kills Desdemona?", o: ["Cassio", "Iago", "Othello", "Roderigo"], a: 2 },
-              { q: "Who uncovers Iago’s deceit at the end of the play?", o: ["Cassio", "Emilia", "Roderigo", "Lodovico"], a: 1 },
-              { q: "How does Othello die?", o: ["He is killed by Iago", "He commits suicide", "He is killed in battle", "He is executed"], a: 1 },
-              { q: "What is the Duke of Venice’s role in \"Othello\"?", o: ["He accuses Othello of witchcraft", "He appoints Othello to lead the army in Cyprus", "He marries Desdemona", "He kills Iago"], a: 1 },
-              { q: "What causes Othello to become jealous?", o: ["Iago’s manipulation", "Desdemona’s behavior", "Cassio’s flirtations", "A letter from Roderigo"], a: 0 },
-              { q: "Which character is used by Iago to provoke Othello’s jealousy?", o: ["Roderigo", "Montano", "Cassio", "Lodovico"], a: 2 },
-              { q: "What is the significance of the handkerchief in \"Othello\"?", o: ["It is a family heirloom from Othello’s mother", "It symbolizes Othello’s love for Desdemona", "It becomes false evidence of Desdemona’s infidelity", "All of the above"], a: 3 }
-          ]
-        },
-        {
-          id: "u6",
-          name: "British Drama II",
-          blurb: "G.B. Shaw - Arms and the Man; Goldsmith - She Stoops to Conquer",
-          questions: [
-              { q: "Who is the playwright of \"Arms and the Man\"?", o: ["William Shakespeare", "George Bernard Shaw", "Oliver Goldsmith", "Noël Coward"], a: 1 },
-              { q: "What is the primary setting of \"Arms and the Man\"?", o: ["London", "Paris", "A Bulgarian country house", "A battlefield"], a: 2 },
-              { q: "Which character in \"Arms and the Man\" is known for carrying chocolates instead of ammunition?", o: ["Major Sergius Saranoff", "Raina Petkoff", "Captain Bluntschli", "Nicola"], a: 2 },
-              { q: "In \"She Stoops to Conquer,\" who is mistaken for an innkeeper by Marlow and Hastings?", o: ["Tony Lumpkin", "Mr. Hardcastle", "Mrs. Hardcastle", "Kate Hardcastle"], a: 1 },
-              { q: "What is Tony Lumpkin's primary role in \"She Stoops to Conquer\"?", o: ["A romantic hero", "A scheming stepbrother", "A wealthy landowner", "A naive suitor"], a: 1 },
-              { q: "Which play by Oliver Goldsmith is known for its exploration of social class and mistaken identity?", o: ["\"The Good-Natured Man\"", "\"She Stoops to Conquer\"", "\"The Vicar of Wakefield\"", "\"The Deserted Village\""], a: 1 },
-              { q: "What theme is primarily satirized in George Bernard Shaw’s \"Arms and the Man\"?", o: ["Marriage", "War and heroism", "Education", "Religion"], a: 1 },
-              { q: "Which character in \"She Stoops to Conquer\" pretends to be a barmaid to win the affection of Marlow?", o: ["Mrs. Hardcastle", "Constance Neville", "Kate Hardcastle", "Miss Neville"], a: 2 },
-              { q: "In \"Arms and the Man,\" who is engaged to Raina Petkoff at the beginning of the play?", o: ["Captain Bluntschli", "Sergius Saranoff", "Nicola", "Tony Lumpkin"], a: 1 },
-              { q: "How does Oliver Goldsmith’s \"She Stoops to Conquer\" challenge the social norms of its time?", o: ["By advocating for religious reforms", "By critiquing class distinctions and social pretenses", "By promoting scientific advancements", "By supporting political revolutions"], a: 1 },
-              { q: "Which character in \"Arms and the Man\" embodies the romanticized view of war and heroism?", o: ["Captain Bluntschli", "Raina Petkoff", "Major Sergius Saranoff", "Nicola"], a: 2 },
-              { q: "What is the main comedic device used in \"She Stoops to Conquer\"?", o: ["Farce", "Satire", "Irony", "Mistaken identity"], a: 3 },
-              { q: "Which of the following plays by George Bernard Shaw critiques the romantic idealization of war?", o: ["\"Pygmalion\"", "\"Saint Joan\"", "\"Arms and the Man\"", "\"Man and Superman\""], a: 2 },
-              { q: "What role does Mrs. Hardcastle play in the plot of \"She Stoops to Conquer\"?", o: ["The scheming antagonist", "The romantic heroine", "The comic relief", "The strict mother"], a: 3 },
-              { q: "In \"Arms and the Man,\" what does Captain Bluntschli think about war?", o: ["It is a noble and heroic endeavor.", "It is a necessary evil.", "It is an absurd and chaotic experience.", "It is a glorious adventure."], a: 2 },
-              { q: "Who is the father of Kate Hardcastle in \"She Stoops to Conquer\"?", o: ["Tony Lumpkin", "Mr. Hardcastle", "Sir Charles Marlow", "Hastings"], a: 1 },
-              { q: "Which playwright is known for blending satire with social critique in his works?", o: ["William Shakespeare", "Oliver Goldsmith", "George Bernard Shaw", "T.S. Eliot"], a: 2 },
-              { q: "What is a key characteristic of the humor in \"She Stoops to Conquer\"?", o: ["It relies on slapstick comedy.", "It uses complex language and puns.", "It involves clever deceptions and misunderstandings.", "It focuses on historical events."], a: 2 },
-              { q: "How does George Bernard Shaw’s \"Arms and the Man\" depict the contrast between romantic and realistic views of warfare?", o: ["Through dramatic monologues", "Through contrasting character perspectives", "Through poetic dialogues", "Through historical references"], a: 1 },
-              { q: "Which of the following themes is explored in both \"Arms and the Man\" and \"She Stoops to Conquer\"?", o: ["The impact of industrialization", "The nature of romantic relationships", "The absurdity of social pretensions", "The role of science in society"], a: 2 }
-          ]
-        },
-        {
-          id: "u7",
-          name: "American Drama I",
-          blurb: "T.S. Eliot - Murder in the Cathedral; Tennessee Williams - A Streetcar Named Desire",
-          questions: [
-              { q: "Who is the protagonist of Murder in the Cathedral?", o: ["King Henry II", "Thomas Becket", "The Chorus", "The Tempters"], a: 1 },
-              { q: "What historical event is the play Murder in the Cathedral based on?", o: ["The signing of the Magna Carta", "The assassination of Thomas Becket", "The Battle of Hastings", "The Black Death"], a: 1 },
-              { q: "When was Murder in the Cathedral first performed?", o: ["1925", "1935", "1945", "1955"], a: 1 },
-              { q: "What is the primary setting of the play?", o: ["London", "Canterbury Cathedral", "Westminster Abbey", "York Minster"], a: 1 },
-              { q: "Who are the four characters that attempt to tempt Becket?", o: ["The Knights", "The Priests", "The Tempters", "The Heralds"], a: 2 },
-              { q: "What is the central theme of Murder in the Cathedral?", o: ["Love and betrayal", "The conflict between temporal power and spiritual authority", "Political revolution", "Economic disparity"], a: 1 },
-              { q: "What literary form does Murder in the Cathedral predominantly use?", o: ["Novel", "Free verse", "Verse drama", "Prose drama"], a: 2 },
-              { q: "What does the Chorus in Murder in the Cathedral represent?", o: ["The knights who murder Becket", "The clergy of Canterbury", "The common people of Canterbury", "The kings of England"], a: 2 },
-              { q: "How does Thomas Becket react to the temptations offered by the Tempters?", o: ["He accepts them reluctantly", "He ignores them completely", "He rejects them firmly", "He is confused and unsure"], a: 2 },
-              { q: "What is the dramatic purpose of the Interlude in the play?", o: ["To introduce new characters", "To explore Becket’s inner conflicts and temptations", "To provide comic relief", "To transition to a new setting"], a: 1 },
-              { q: "Who is the antagonist in Murder in the Cathedral?", o: ["Thomas Becket", "King Henry II", "The Tempters", "The Chorus"], a: 1 },
-              { q: "How does Eliot use verse to convey the themes of the play?", o: ["By providing a casual tone", "By enhancing the formal and solemn atmosphere", "By making the dialogue humorous", "By simplifying the language"], a: 1 },
-              { q: "What is the ultimate outcome of Thomas Becket’s conflict with the King?", o: ["Becket is exiled", "Becket and the King reconcile", "Becket is murdered", "Becket is appointed as the King’s advisor"], a: 2 },
-              { q: "What role does the setting of Canterbury Cathedral play in the play?", o: ["It represents political power", "It is a symbol of spiritual conflict and sanctity", "It serves as a backdrop for comedy", "It symbolizes economic wealth"], a: 1 },
-              { q: "In Murder in the Cathedral, what is the primary function of the Chorus?", o: ["To narrate the story", "To provide background information", "To express the communal emotions and concerns of the people", "To give advice to Becket"], a: 2 },
-              { q: "What is the significance of Thomas Becket’s martyrdom in the play?", o: ["It represents his failure to achieve power", "It is an act of ultimate spiritual sacrifice and integrity", "It signifies his loss of faith", "It highlights his political ambitions"], a: 1 },
-              { q: "How does T.S. Eliot depict the political context in Murder in the Cathedral?", o: ["Through humorous dialogue", "By focusing on the internal affairs of the church", "By contrasting the spiritual realm with the political pressures from King Henry II", "Through a detailed historical account"], a: 2 },
-              { q: "What literary device does Eliot use to provide insight into Becket’s thoughts and emotions?", o: ["Monologue", "Dialogue", "Flashback", "Comic relief"], a: 0 },
-              { q: "How does the play’s structure contribute to its dramatic impact?", o: ["By focusing solely on Becket’s personal life", "By integrating a mix of soliloquies, Chorus, and dramatic dialogue to build tension", "By presenting the events in chronological order", "By avoiding the use of traditional dramatic forms"], a: 1 },
-              { q: "What philosophical question does Murder in the Cathedral raise about the nature of power and authority?", o: ["The efficacy of political power over spiritual matters", "The role of economic influence in spiritual leadership", "The impact of personal ambition on religious duty", "The effectiveness of military power in achieving spiritual goals"], a: 0 }
-          ]
-        },
-        {
-          id: "u8",
-          name: "American Drama II",
-          blurb: "Arthur Miller - The Price",
-          questions: [
-              { q: "Who is the author of A Streetcar Named Desire?", o: ["Arthur Miller", "Tennessee Williams", "Eugene O'Neill", "William Faulkner"], a: 1 },
-              { q: "What is the name of the streetcar Blanche DuBois takes to arrive in New Orleans?", o: ["Desire", "Ambition", "Passion", "Hope"], a: 0 },
-              { q: "Which character is Blanche's sister in the play?", o: ["Mitch", "Stella", "Eunice", "Laura"], a: 1 },
-              { q: "What is Stanley Kowalski’s profession?", o: ["Lawyer", "Teacher", "Truck driver", "Doctor"], a: 2 },
-              { q: "What does Blanche use to cover the harsh light of the naked bulb?", o: ["A curtain", "A scarf", "A paper lantern", "A painting"], a: 2 },
-              { q: "What is Mitch’s relationship with Blanche?", o: ["Her brother", "Her former lover", "Her potential suitor", "Her neighbor"], a: 2 },
-              { q: "What tragic event does Blanche reveal about her past?", o: ["Her husband’s suicide", "Her father’s death", "Her bankruptcy", "Her daughter’s death"], a: 0 },
-              { q: "How does Stanley ultimately reveal Blanche’s past to Mitch?", o: ["Through a letter", "By showing Mitch photographs", "By telling Mitch directly", "By exposing Blanche’s history during a confrontation"], a: 3 },
-              { q: "What is the final outcome for Blanche at the end of the play?", o: ["She leaves New Orleans voluntarily", "She is taken to a mental institution", "She reconciles with Stanley", "She starts a new life with Mitch"], a: 1 },
-              { q: "What does Stanley’s character represent in the context of the play?", o: ["The old South", "The new American working class", "The intellectual elite", "The artistic community"], a: 1 },
-              { q: "Who is the author of The Price?", o: ["Eugene O'Neill", "Arthur Miller", "Tennessee Williams", "August Wilson"], a: 1 },
-              { q: "What is the setting of The Price?", o: ["A country house", "An attic", "A hotel room", "A factory"], a: 1 },
-              { q: "What is Victor Franz’s occupation?", o: ["Lawyer", "Police officer", "Teacher", "Businessman"], a: 1 },
-              { q: "What is the main conflict in The Price?", o: ["A disagreement over a family vacation", "Negotiations over the sale of antique furniture", "A legal battle over a will", "A dispute over a family heirloom"], a: 1 },
-              { q: "How does Walter Franz’s attitude towards the sale of the furniture differ from Victor’s?", o: ["Walter is sentimental, while Victor is pragmatic", "Walter is practical, while Victor is sentimental", "Both are equally sentimental", "Both are equally pragmatic"], a: 1 },
-              { q: "What role does Gregory Solomon play in the play?", o: ["Victor’s business partner", "The antique dealer appraising the furniture", "A family friend", "A lawyer"], a: 1 },
-              { q: "What does the antique furniture symbolize in The Price?", o: ["Family wealth and status", "Personal memories and familial legacy", "Financial security", "Professional success"], a: 1 },
-              { q: "How does the play address the theme of sacrifice?", o: ["Through Victor’s financial losses", "Through Walter’s career achievements", "Through Victor’s personal sacrifices for his family", "Through Solomon’s career sacrifices"], a: 2 },
-              { q: "What emotional issues arise between Victor and Walter during the play?", o: ["Jealousy over financial success", "Regret over past decisions and responsibilities", "Disagreements about family traditions", "Conflicts over childhood memories"], a: 1 },
-              { q: "What is the ultimate resolution of the play The Price?", o: ["The brothers sell the furniture and move on", "The brothers reconcile and keep the furniture", "The brothers split the proceeds from the sale", "The brothers decide to donate the furniture"], a: 0 }
-          ]
-        }
-      ]
-    },
-    {
+  {
       id: "eng-sem6-indian-new",
       semester: 6,
       name: "Indian and New Literature in English",
@@ -612,975 +3032,3740 @@ window.SUBJECT_ENGLISH = {
       note: "Questions extracted from the CSJMU question bank (course code A040601T).",
       source: "https://prashnbank.csjmu.ac.in/indian-and-new-literature-in-english/",
       units: [
-        {
+      {
           id: "u1",
           name: "Prose I",
           blurb: "Mahatma Gandhi - Hind Swaraj; Urvashi Butalia - The Other Side of Silence",
           questions: [
-              { q: "Gandhi ji was born on-", o: ["October 2, 1869s", "October 2, 1879", "October 2,1959", "October 2, 1851"], a: 0 },
-              { q: "Gandhi ji was born in-", o: ["Punjab", "Gujrat", "Maharashtra", "Odisha"], a: 1 },
-              { q: "Gandhi ji was married at the age of -", o: ["11", "12", "14", "13"], a: 3 },
-              { q: "The name of Gandhi ji's wife was-", o: ["Kasturba Gandhi", "Meera Gandhi", "Laxmi Gandh", "None of these."], a: 0 },
-              { q: "Gandhi ji did a job in an Indian firm in–", o: ["Italy", "England", "South Africa", "America"], a: 2 },
-              { q: "Gandhi ji's father was well known as -", o: ["Guruji of Porbandar", "Prince of Porbandar", "Clerk of Porbandar.", "Diwan of Porbandar"], a: 3 },
-              { q: "Gandhi ji's mother and the fourth wife of his father was-", o: ["Putlibai", "Ramabai", "Heerabai", "None of these."], a: 0 },
-              { q: "Gandhi ji studied law at-", o: ["University college of London.", "Christ College", "St. Johns College", "St. Paul's College"], a: 0 },
-              { q: "Gandhi ji went to England in the year-", o: ["1889", "1886", "1888", "1880"], a: 2 },
-              { q: "Gandhi ji died on-", o: ["25 January 1948", "28 January 1948", "26 January 1948", "30 January 1948"], a: 3 },
-              { q: "Gandhi ji was the staunch follower of-", o: ["Non-violence", "Violence", "Western Civilization", "None of these."], a: 0 },
-              { q: "How many years did Gandhi ji spend in South Africa?", o: ["five years.", "Six years", "Ten years.", "Twenty one years."], a: 3 },
-              { q: "Gandhi ji returned from South Africa to India on -", o: ["1 January 1915", "9th January 1915", "4th June 1915", "6th April 1915"], a: 1 },
-              { q: "The date, 9th January, when Gandhi ji returned to India from South Africa, is observed as-", o: ["BhartiyaDiwas", "Pravasi Divas", "Pravasi Bhartiya Diwas", "Shaheed Diwas"], a: 2 },
-              { q: "The Book ‘Hind Swaraj’ is written by-", o: ["Tagore", "Gandhi ji", "M. R.Anand.", "Raja Rao"], a: 1 },
-              { q: "The book ‘Hind-Swaraj’ was originally written in-", o: ["Gujrati", "Punjabi", "Hindi", "English"], a: 0 },
-              { q: "According to the editor what is necessary for Swaraj?", o: ["Western Education", "Western civilization", "Eradication of English impact", "British rule."], a: 2 },
-              { q: "'Of religion, pity or love, is the root, as egotism of the body. Therefore, we should not abandon pity so long as we are alive'. Who says this in the essay 'Passive Resistance'?-", o: ["The editor", "The reader", "The manager", "None of these."], a: 0 },
-              { q: "The essay ‘Passive Resistance’ opens with the speech of -", o: ["The editor", "The reader", "The Student", "The clock."], a: 1 },
-              { q: "The force of love is the same as the force of the soul or....", o: ["Rock", "Sky", "Earth", "Truth"], a: 3 },
-              { q: "According to the editor ‘passive resistance’ is a method of securing rights by-", o: ["Suffering of others.", "Violence", "Personal suffering", "Torturing others."], a: 2 },
-              { q: "What is the title of 17th chapter of Hind Swaraj?", o: ["Passive Resistance.", "The Condition of India", "Civilization", "Education."], a: 0 },
-              { q: "According to Gandhi ji, every Indian should learn:-", o: ["French and Hindi", "German and English", "Hindi and Provincial language.", "None of these"], a: 2 },
-              { q: "Who was the first Indian ruler to introduce compulsory and free education in his state?", o: ["Maharaja Ranjeet Singh", "Maharaja Bheem Singh", "Maharaj Gopas Das.", "Maharaj Gaikwar"], a: 3 },
-              { q: "According to Mahatma Gandhi what does a child learn in primary education?", o: ["Reading and writing and arithmetic", "Singing", "Dancing", "None of these."], a: 0 },
-              { q: "According to Mahatma Gandhi, what is the meaning of education?", o: ["Knowledge of English", "Knowledge of French", "Knowledge of letters.", "Knowledge of various subjects"], a: 2 },
-              { q: "According to the editor, the foundation that Macaulay laid of education has-", o: ["Constructed us", "Enslaved us", "Brighten us", "None of these"], a: 1 },
-              { q: "According to Gandhi ji, a universal language for India should be-", o: ["Hindi", "English", "Marathi", "Urdu."], a: 0 },
-              { q: "What is the title of 18th chapter of the book Hind Swaraj?", o: ["Passive Resistance", "The Condition of India.", "Education", "Civilization"], a: 2 },
-              { q: "Urvashi Butalia was born in the year-", o: ["1951", "1952", "1953", "1955"], a: 1 },
-              { q: "Urvashi Butalia was born in-", o: ["Delhi", "Kolkata, Bengal", "Nagpur, Maharashtra", "Ambala, Haryana"], a: 3 },
-              { q: "Butalia obtained B. A. in English Literature from -", o: ["Miranda House", "Lady Shri Ram College.", "Daulatram College", "None of these"], a: 0 },
-              { q: "Butalia obtained Master's degree from –", o: ["Mumbai University", "Meerut University", "Delhi University.", "Punjab University"], a: 2 },
-              { q: "Butalia co-founded kali with-", o: ["Ritu Menon", "Anita Desai", "Shashi Deshpande", "None of these."], a: 0 },
-              { q: "Butalia's book ‘The Other Side of Silence’ focuses on-", o: ["Indian independence", "British rule", "Partition of India.", "Education"], a: 2 },
-              { q: "Which award was conferred to Butalia for her Contribution in literature and education?", o: ["Bharat Ratna", "Padma Shri", "Sahitya Akademi", "Padam Vibhushan"], a: 1 },
-              { q: "Which work of Butalia is a record of experiences of women during partition?", o: ["The Other Side of Silence", "Speaking Peace: Women Voices from Kashmir", "Inner Time", "None of these"], a: 0 },
-              { q: "‘The Other Side of Silence’ was published in -", o: ["1996", "1998", "1991", "1995"], a: 1 },
-              { q: "Butalia, in ‘The Other Side of Silence’, tries to give voice to the-", o: ["Marginalized and unheard experiences of women", "Experiences of freedom struggle.", "Struggle for education", "None of these."], a: 0 },
-              { q: "Butalia starts her essay ‘The Other side of Silence’ by quoting-", o: ["Two playwrights", "Two novelists", "Two poets", "Two emperors."], a: 2 },
-              { q: "How did the stories of the partition appear in Butalia's mind?", o: ["As a result of her education", "As a result of communal violence", "As a result of freedom Struggle", "None of these."], a: 1 },
-              { q: "Butalia describes the story of Shahnaz, who was formerly known as-", o: ["Harbhajan Kaur", "Seerat Kaur", "Manpreetkaur", "Harpreet Kaur."], a: 0 }
+          {
+              q: "Gandhi ji was born on-",
+              o: [
+              "October 2, 1869s",
+              "October 2, 1879",
+              "October 2,1959",
+              "October 2, 1851"
+              ],
+              a: 0
+            },
+          {
+              q: "Gandhi ji was born in-",
+              o: [
+              "Punjab",
+              "Gujrat",
+              "Maharashtra",
+              "Odisha"
+              ],
+              a: 1
+            },
+          {
+              q: "Gandhi ji was married at the age of -",
+              o: [
+              "11",
+              "12",
+              "14",
+              "13"
+              ],
+              a: 3
+            },
+          {
+              q: "The name of Gandhi ji's wife was-",
+              o: [
+              "Kasturba Gandhi",
+              "Meera Gandhi",
+              "Laxmi Gandh",
+              "None of these."
+              ],
+              a: 0
+            },
+          {
+              q: "Gandhi ji did a job in an Indian firm in–",
+              o: [
+              "Italy",
+              "England",
+              "South Africa",
+              "America"
+              ],
+              a: 2
+            },
+          {
+              q: "Gandhi ji's father was well known as -",
+              o: [
+              "Guruji of Porbandar",
+              "Prince of Porbandar",
+              "Clerk of Porbandar.",
+              "Diwan of Porbandar"
+              ],
+              a: 3
+            },
+          {
+              q: "Gandhi ji's mother and the fourth wife of his father was-",
+              o: [
+              "Putlibai",
+              "Ramabai",
+              "Heerabai",
+              "None of these."
+              ],
+              a: 0
+            },
+          {
+              q: "Gandhi ji studied law at-",
+              o: [
+              "University college of London.",
+              "Christ College",
+              "St. Johns College",
+              "St. Paul's College"
+              ],
+              a: 0
+            },
+          {
+              q: "Gandhi ji went to England in the year-",
+              o: [
+              "1889",
+              "1886",
+              "1888",
+              "1880"
+              ],
+              a: 2
+            },
+          {
+              q: "Gandhi ji died on-",
+              o: [
+              "25 January 1948",
+              "28 January 1948",
+              "26 January 1948",
+              "30 January 1948"
+              ],
+              a: 3
+            },
+          {
+              q: "Gandhi ji was the staunch follower of-",
+              o: [
+              "Non-violence",
+              "Violence",
+              "Western Civilization",
+              "None of these."
+              ],
+              a: 0
+            },
+          {
+              q: "How many years did Gandhi ji spend in South Africa?",
+              o: [
+              "five years.",
+              "Six years",
+              "Ten years.",
+              "Twenty one years."
+              ],
+              a: 3
+            },
+          {
+              q: "Gandhi ji returned from South Africa to India on -",
+              o: [
+              "1 January 1915",
+              "9th January 1915",
+              "4th June 1915",
+              "6th April 1915"
+              ],
+              a: 1
+            },
+          {
+              q: "The date, 9th January, when Gandhi ji returned to India from South Africa, is observed as-",
+              o: [
+              "BhartiyaDiwas",
+              "Pravasi Divas",
+              "Pravasi Bhartiya Diwas",
+              "Shaheed Diwas"
+              ],
+              a: 2
+            },
+          {
+              q: "The Book ‘Hind Swaraj’ is written by-",
+              o: [
+              "Tagore",
+              "Gandhi ji",
+              "M. R.Anand.",
+              "Raja Rao"
+              ],
+              a: 1
+            },
+          {
+              q: "The book ‘Hind-Swaraj’ was originally written in-",
+              o: [
+              "Gujrati",
+              "Punjabi",
+              "Hindi",
+              "English"
+              ],
+              a: 0
+            },
+          {
+              q: "According to the editor what is necessary for Swaraj?",
+              o: [
+              "Western Education",
+              "Western civilization",
+              "Eradication of English impact",
+              "British rule."
+              ],
+              a: 2
+            },
+          {
+              q: "'Of religion, pity or love, is the root, as egotism of the body. Therefore, we should not abandon pity so long as we are alive'. Who says this in the essay 'Passive Resistance'?-",
+              o: [
+              "The editor",
+              "The reader",
+              "The manager",
+              "None of these."
+              ],
+              a: 0
+            },
+          {
+              q: "The essay ‘Passive Resistance’ opens with the speech of -",
+              o: [
+              "The editor",
+              "The reader",
+              "The Student",
+              "The clock."
+              ],
+              a: 1
+            },
+          {
+              q: "The force of love is the same as the force of the soul or....",
+              o: [
+              "Rock",
+              "Sky",
+              "Earth",
+              "Truth"
+              ],
+              a: 3
+            },
+          {
+              q: "According to the editor ‘passive resistance’ is a method of securing rights by-",
+              o: [
+              "Suffering of others.",
+              "Violence",
+              "Personal suffering",
+              "Torturing others."
+              ],
+              a: 2
+            },
+          {
+              q: "What is the title of 17th chapter of Hind Swaraj?",
+              o: [
+              "Passive Resistance.",
+              "The Condition of India",
+              "Civilization",
+              "Education."
+              ],
+              a: 0
+            },
+          {
+              q: "According to Gandhi ji, every Indian should learn:-",
+              o: [
+              "French and Hindi",
+              "German and English",
+              "Hindi and Provincial language.",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "Who was the first Indian ruler to introduce compulsory and free education in his state?",
+              o: [
+              "Maharaja Ranjeet Singh",
+              "Maharaja Bheem Singh",
+              "Maharaj Gopas Das.",
+              "Maharaj Gaikwar"
+              ],
+              a: 3
+            },
+          {
+              q: "According to Mahatma Gandhi what does a child learn in primary education?",
+              o: [
+              "Reading and writing and arithmetic",
+              "Singing",
+              "Dancing",
+              "None of these."
+              ],
+              a: 0
+            },
+          {
+              q: "According to Mahatma Gandhi, what is the meaning of education?",
+              o: [
+              "Knowledge of English",
+              "Knowledge of French",
+              "Knowledge of letters.",
+              "Knowledge of various subjects"
+              ],
+              a: 2
+            },
+          {
+              q: "According to the editor, the foundation that Macaulay laid of education has-",
+              o: [
+              "Constructed us",
+              "Enslaved us",
+              "Brighten us",
+              "None of these"
+              ],
+              a: 1
+            },
+          {
+              q: "According to Gandhi ji, a universal language for India should be-",
+              o: [
+              "Hindi",
+              "English",
+              "Marathi",
+              "Urdu."
+              ],
+              a: 0
+            },
+          {
+              q: "What is the title of 18th chapter of the book Hind Swaraj?",
+              o: [
+              "Passive Resistance",
+              "The Condition of India.",
+              "Education",
+              "Civilization"
+              ],
+              a: 2
+            },
+          {
+              q: "Urvashi Butalia was born in the year-",
+              o: [
+              "1951",
+              "1952",
+              "1953",
+              "1955"
+              ],
+              a: 1
+            },
+          {
+              q: "Urvashi Butalia was born in-",
+              o: [
+              "Delhi",
+              "Kolkata, Bengal",
+              "Nagpur, Maharashtra",
+              "Ambala, Haryana"
+              ],
+              a: 3
+            },
+          {
+              q: "Butalia obtained B. A. in English Literature from -",
+              o: [
+              "Miranda House",
+              "Lady Shri Ram College.",
+              "Daulatram College",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "Butalia obtained Master's degree from –",
+              o: [
+              "Mumbai University",
+              "Meerut University",
+              "Delhi University.",
+              "Punjab University"
+              ],
+              a: 2
+            },
+          {
+              q: "Butalia co-founded kali with-",
+              o: [
+              "Ritu Menon",
+              "Anita Desai",
+              "Shashi Deshpande",
+              "None of these."
+              ],
+              a: 0
+            },
+          {
+              q: "Butalia's book ‘The Other Side of Silence’ focuses on-",
+              o: [
+              "Indian independence",
+              "British rule",
+              "Partition of India.",
+              "Education"
+              ],
+              a: 2
+            },
+          {
+              q: "Which award was conferred to Butalia for her Contribution in literature and education?",
+              o: [
+              "Bharat Ratna",
+              "Padma Shri",
+              "Sahitya Akademi",
+              "Padam Vibhushan"
+              ],
+              a: 1
+            },
+          {
+              q: "Which work of Butalia is a record of experiences of women during partition?",
+              o: [
+              "The Other Side of Silence",
+              "Speaking Peace: Women Voices from Kashmir",
+              "Inner Time",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "‘The Other Side of Silence’ was published in -",
+              o: [
+              "1996",
+              "1998",
+              "1991",
+              "1995"
+              ],
+              a: 1
+            },
+          {
+              q: "Butalia, in ‘The Other Side of Silence’, tries to give voice to the-",
+              o: [
+              "Marginalized and unheard experiences of women",
+              "Experiences of freedom struggle.",
+              "Struggle for education",
+              "None of these."
+              ],
+              a: 0
+            },
+          {
+              q: "Butalia starts her essay ‘The Other side of Silence’ by quoting-",
+              o: [
+              "Two playwrights",
+              "Two novelists",
+              "Two poets",
+              "Two emperors."
+              ],
+              a: 2
+            },
+          {
+              q: "How did the stories of the partition appear in Butalia's mind?",
+              o: [
+              "As a result of her education",
+              "As a result of communal violence",
+              "As a result of freedom Struggle",
+              "None of these."
+              ],
+              a: 1
+            },
+          {
+              q: "Butalia describes the story of Shahnaz, who was formerly known as-",
+              o: [
+              "Harbhajan Kaur",
+              "Seerat Kaur",
+              "Manpreetkaur",
+              "Harpreet Kaur."
+              ],
+              a: 0
+            }
           ]
         },
-        {
+      {
           id: "u2",
           name: "Poetry I",
           blurb: "Toru Dutt, Nissim Ezekiel, Jayant Mahapatra, Keki N. Daruwalla",
           questions: [
-              { q: "Toru Dutt was born on", o: ["4th March, 1856", "14th March, 1856", "20th June,1858", "25th April, 1859"], a: 0 },
-              { q: "Toru is often called the .... of the Indian English Literature-", o: ["Keats", "Shelley", "Shakespeare.", "Milton"], a: 0 },
-              { q: "Toru Dutt's father's name was-", o: ["Ramesh Chandra Dutt Magistrate. Oxford University", "Vyomchandra Dutt Doctor Cambridge University", "Govind Chandra Dutt Teacher France", "None of these. Clerk None of these."], a: 1 },
-              { q: "Toru died of Tuberculosis, on-", o: ["August 5, 1877", "June 6, 1876", "March 5, 1678", "August 30, 1877."], a: 3 },
-              { q: "Toru Dutt’s ‘Sheaf Gleaned in French Fields’ was published in-", o: ["1876", "1882", "1871", "1873"], a: 0 },
-              { q: "The poem ‘Lakshman’ based on the Indian epic-", o: ["The Ramayana", "The Mahabharata", "The Manu Smriti", "Paradise Lost."], a: 0 },
-              { q: "Who is addressed as Videhan Queen by Lakshman?", o: ["Sumitra", "Sita", "Urmila", "Mandavi"], a: 1 },
-              { q: "'One brother takes his Kingdom; one would take his.... - Fill in the blank space.", o: ["Crown Torture Sita Ram", "Sward Protect Sita Sita", "Wife Harm Sita Lakshman", "Mother None of these And – (B) 18-“Swift in decision, prompt in deed”, who is being described in this line? Ravan"], a: 2 },
-              { q: "“Is there a creature on earth that dares to work our hero harm?” In the above line who is referred as hero?", o: ["Ram Sita December 16, 1924.", "Lakshman Lakshman December, 18, 1925", "Bharat Ram December 6, 1926", "Ravan None of these December 5, 1922"], a: 0 },
-              { q: "Ezekiel was born in-", o: ["Kolkata", "Mumbai", "Gujrat", "Punjab"], a: 1 },
-              { q: "Ezekiel's father's name was -", o: ["Mahid Ezekiel.", "Said Ezekiel", "Moses Ezekiel", "None of these"], a: 2 },
-              { q: "Ezekiel obtained Master's degree in -", o: ["Sanskrit", "Hindi", "Urdu", "English Literature."], a: 3 },
-              { q: "Ezekiel belonged to-", o: ["Jewish community", "Muslim community", "Christian community", "None of these."], a: 0 },
-              { q: "Who worked for All India Radio?", o: ["Nissim Ezekiel", "Toru Dutt", "Aru Dutt", "Both B and C"], a: 0 },
-              { q: "Ezekiel served in University of Leeds and University of Chicago as -", o: ["Regular Professor", "Clerk", "Visiting Professor", "Writer"], a: 2 },
-              { q: "Ezekiel's first collection of poems is", o: ["Sixty Poems.", "A Time to Change", "Later Day Psalms", "The Third"], a: 1 },
-              { q: "In1983, Ezekiel won Sahitya Akademi award for his work-", o: ["A Time to change.", "Sixty Poems.", "Later Day Psalms", "The Unfinished Man."], a: 2 },
-              { q: "Ezekiel got Padma Shri award in", o: ["1988 10 June 2004", "1986 12 April 2005", "1987 9 January 2004", "1990 15 June, 2004"], a: 2 },
-              { q: "Who is known as ‘the father of modern Indian English poetry'?", o: ["A.K. Ramanujan", "Nissim Ezekiel", "Jayant Mahapatra", "K. N. Daruwalla."], a: 1 },
-              { q: "‘A Poem of Dedication’ is dedicated to -", o: ["Daisy Jacob", "Elizabeth", "His father", "His mother."], a: 1 },
-              { q: "Ezekiel begins the poem with the view from a-", o: ["Basement Room", "Garden", "Road", "Forest"], a: 0 },
-              { q: "‘A Time to act, a time to contemplate' appears in the poem-", o: ["Marriage", "Enterprize.", "A Poem of Dedication", "None of these."], a: 2 },
-              { q: "Jayant Mahapatra was born on-", o: ["12th October, 1921 Bengal. Physics Nissim Ezekiel Patna University 1985 2001 27th August 2023 His nets B) His food C) His daughter D) His Water bottle. 16 3 stanzas Need to drink 24th January, 1937 Mumbai Doctor 1950 Under Orion Under Orion Winter Poems Love and aging Pleasure", "2nd July, 1927 Punjab Botany Toru Dutt Allahabad University 1981 2005 15th July 2023 15 5 stanzas Money 16thJune, 1930 Lahore Teacher 1960 Landscapes. Winter Poems Landscapes Social issues Happiness", "3rd June, 1925 Cuttack Maths A.K. Ramanujan. Punjab University 1902 2006 1st June 2023 19 4 Stanzas Sexual gratification 15th July, 1937 Gujrat Manager 1958 Winter Poems. The Keeper of the Dead. The keeper of the Dead Nature Mourning", "22nd October, 1928 Mumbai English Jayant Mahapatra. Ans- D 44. Mahapatra completed M.Sc. in Physics from - Banaras Hindu University. 1988 2009 5th March 2023 21 6 stanzas. None of these. 2nd April, 1938 Punjab Police officer 1955 Fire Altar. Landscapes Under Orion None of these. Joy"], a: 2 },
-              { q: "In the poem ‘Mother’, poet talks about his mother's -", o: ["Old age", "Childhood.", "Behaviour", "Cooking"], a: 0 }
+          {
+              q: "Toru Dutt was born on",
+              o: [
+              "4th March, 1856",
+              "14th March, 1856",
+              "20th June,1858",
+              "25th April, 1859"
+              ],
+              a: 0
+            },
+          {
+              q: "Toru is often called the .... of the Indian English Literature-",
+              o: [
+              "Keats",
+              "Shelley",
+              "Shakespeare.",
+              "Milton"
+              ],
+              a: 0
+            },
+          {
+              q: "Toru Dutt's father's name was-",
+              o: [
+              "Ramesh Chandra Dutt Magistrate. Oxford University",
+              "Vyomchandra Dutt Doctor Cambridge University",
+              "Govind Chandra Dutt Teacher France",
+              "None of these. Clerk None of these."
+              ],
+              a: 1
+            },
+          {
+              q: "Toru died of Tuberculosis, on-",
+              o: [
+              "August 5, 1877",
+              "June 6, 1876",
+              "March 5, 1678",
+              "August 30, 1877."
+              ],
+              a: 3
+            },
+          {
+              q: "Toru Dutt’s ‘Sheaf Gleaned in French Fields’ was published in-",
+              o: [
+              "1876",
+              "1882",
+              "1871",
+              "1873"
+              ],
+              a: 0
+            },
+          {
+              q: "The poem ‘Lakshman’ based on the Indian epic-",
+              o: [
+              "The Ramayana",
+              "The Mahabharata",
+              "The Manu Smriti",
+              "Paradise Lost."
+              ],
+              a: 0
+            },
+          {
+              q: "Who is addressed as Videhan Queen by Lakshman?",
+              o: [
+              "Sumitra",
+              "Sita",
+              "Urmila",
+              "Mandavi"
+              ],
+              a: 1
+            },
+          {
+              q: "'One brother takes his Kingdom; one would take his.... - Fill in the blank space.",
+              o: [
+              "Crown Torture Sita Ram",
+              "Sward Protect Sita Sita",
+              "Wife Harm Sita Lakshman",
+              "Mother None of these And – (B) 18-“Swift in decision, prompt in deed”, who is being described in this line? Ravan"
+              ],
+              a: 2
+            },
+          {
+              q: "“Is there a creature on earth that dares to work our hero harm?” In the above line who is referred as hero?",
+              o: [
+              "Ram Sita December 16, 1924.",
+              "Lakshman Lakshman December, 18, 1925",
+              "Bharat Ram December 6, 1926",
+              "Ravan None of these December 5, 1922"
+              ],
+              a: 0
+            },
+          {
+              q: "Ezekiel was born in-",
+              o: [
+              "Kolkata",
+              "Mumbai",
+              "Gujrat",
+              "Punjab"
+              ],
+              a: 1
+            },
+          {
+              q: "Ezekiel's father's name was -",
+              o: [
+              "Mahid Ezekiel.",
+              "Said Ezekiel",
+              "Moses Ezekiel",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "Ezekiel obtained Master's degree in -",
+              o: [
+              "Sanskrit",
+              "Hindi",
+              "Urdu",
+              "English Literature."
+              ],
+              a: 3
+            },
+          {
+              q: "Ezekiel belonged to-",
+              o: [
+              "Jewish community",
+              "Muslim community",
+              "Christian community",
+              "None of these."
+              ],
+              a: 0
+            },
+          {
+              q: "Who worked for All India Radio?",
+              o: [
+              "Nissim Ezekiel",
+              "Toru Dutt",
+              "Aru Dutt",
+              "Both B and C"
+              ],
+              a: 0
+            },
+          {
+              q: "Ezekiel served in University of Leeds and University of Chicago as -",
+              o: [
+              "Regular Professor",
+              "Clerk",
+              "Visiting Professor",
+              "Writer"
+              ],
+              a: 2
+            },
+          {
+              q: "Ezekiel's first collection of poems is",
+              o: [
+              "Sixty Poems.",
+              "A Time to Change",
+              "Later Day Psalms",
+              "The Third"
+              ],
+              a: 1
+            },
+          {
+              q: "In1983, Ezekiel won Sahitya Akademi award for his work-",
+              o: [
+              "A Time to change.",
+              "Sixty Poems.",
+              "Later Day Psalms",
+              "The Unfinished Man."
+              ],
+              a: 2
+            },
+          {
+              q: "Ezekiel got Padma Shri award in",
+              o: [
+              "1988 10 June 2004",
+              "1986 12 April 2005",
+              "1987 9 January 2004",
+              "1990 15 June, 2004"
+              ],
+              a: 2
+            },
+          {
+              q: "Who is known as ‘the father of modern Indian English poetry'?",
+              o: [
+              "A.K. Ramanujan",
+              "Nissim Ezekiel",
+              "Jayant Mahapatra",
+              "K. N. Daruwalla."
+              ],
+              a: 1
+            },
+          {
+              q: "‘A Poem of Dedication’ is dedicated to -",
+              o: [
+              "Daisy Jacob",
+              "Elizabeth",
+              "His father",
+              "His mother."
+              ],
+              a: 1
+            },
+          {
+              q: "Ezekiel begins the poem with the view from a-",
+              o: [
+              "Basement Room",
+              "Garden",
+              "Road",
+              "Forest"
+              ],
+              a: 0
+            },
+          {
+              q: "‘A Time to act, a time to contemplate' appears in the poem-",
+              o: [
+              "Marriage",
+              "Enterprize.",
+              "A Poem of Dedication",
+              "None of these."
+              ],
+              a: 2
+            },
+          {
+              q: "Jayant Mahapatra was born on-",
+              o: [
+              "12th October, 1921 Bengal. Physics Nissim Ezekiel Patna University 1985 2001 27th August 2023 His nets B) His food C) His daughter D) His Water bottle. 16 3 stanzas Need to drink 24th January, 1937 Mumbai Doctor 1950 Under Orion Under Orion Winter Poems Love and aging Pleasure",
+              "2nd July, 1927 Punjab Botany Toru Dutt Allahabad University 1981 2005 15th July 2023 15 5 stanzas Money 16thJune, 1930 Lahore Teacher 1960 Landscapes. Winter Poems Landscapes Social issues Happiness",
+              "3rd June, 1925 Cuttack Maths A.K. Ramanujan. Punjab University 1902 2006 1st June 2023 19 4 Stanzas Sexual gratification 15th July, 1937 Gujrat Manager 1958 Winter Poems. The Keeper of the Dead. The keeper of the Dead Nature Mourning",
+              "22nd October, 1928 Mumbai English Jayant Mahapatra. Ans- D 44. Mahapatra completed M.Sc. in Physics from - Banaras Hindu University. 1988 2009 5th March 2023 21 6 stanzas. None of these. 2nd April, 1938 Punjab Police officer 1955 Fire Altar. Landscapes Under Orion None of these. Joy"
+              ],
+              a: 2
+            },
+          {
+              q: "In the poem ‘Mother’, poet talks about his mother's -",
+              o: [
+              "Old age",
+              "Childhood.",
+              "Behaviour",
+              "Cooking"
+              ],
+              a: 0
+            }
           ]
         },
-        {
+      {
           id: "u3",
           name: "Drama I",
           blurb: "Mahesh Dattani - Seven Steps Around the Fire; Asif Currimbhoy - The Doldrummers",
           questions: [
-              { q: "Mahesh Dattani was born on-", o: ["August 7, 1958", "June 8, 1957", "July 6, 1956", "April 5, 1958"], a: 0 },
-              { q: "Dattani was born in-", o: ["Mumbai", "Gujrat", "Bangalore", "Odisha"], a: 2 },
-              { q: "Which theatre was founded by Mahesh Dattani?", o: ["Globe", "Global", "Pluspen", "Playpen"], a: 3 },
-              { q: "Dattani’s first full length play was-", o: ["Where There is a will", "Tara", "Final Solutions", "Do the Needful"], a: 0 },
-              { q: "Who was the first Indian playwright to get the Sahitya Akademi award for drama?", o: ["Girish Karnad.", "Mahesh Dattani", "Asif Currimbhoy.", "None of these."], a: 1 },
-              { q: "Dattani got Sahitya Akademi award for his play-", o: ["Tara", "Do the Needful", "Final Solutions.", "Dance Like a Man."], a: 2 },
-              { q: "Dattani got Sahitya Akademi award in the year-", o: ["1990", "1995", "1998", "1999"], a: 2 },
-              { q: "Dattani’s theatre group Playpen was founded in -", o: ["1984", "1986", "1980", "1985"], a: 0 },
-              { q: "Uma Rao's father is a -", o: ["Doctor", "Vice-Chancellor", "Teacher", "Police officer"], a: 1 },
-              { q: "Who is Salim?", o: ["Anarkal’s fried", "Subbu’s friend", "Bodyguard of Mr. Sharma", "None of these"], a: 2 },
-              { q: "For her research, Uma takes interest in the murder mystery of-", o: ["Champa", "Anarkali", "Kamala", "None of these"], a: 2 },
-              { q: "In the play, \"Seven Steps Around the Fire' Kamala, a eunuch marries-", o: ["Mr. Sharma", "Subbu", "Suresh", "Munswami"], a: 1 },
-              { q: "In which section of jail, eunuch Anarkali is being kept in the play ‘Seven Steps Around the fire’?", o: ["Male Section", "Female Section", "Separate section", "None of these"], a: 0 },
-              { q: "The word Hijra means-", o: ["Male", "Female", "Neither male nor female", "Child"], a: 2 },
-              { q: "Who is falsely accused in kamala's murder case in ‘Seven Step Around the fire’?", o: ["Champa", "Anarkali", "Uma", "Suresh"], a: 1 },
-              { q: "Who is made the head hijra at the end of the play ‘Seven Steps Around the Fire’?", o: ["Anarkali", "Kamala", "Champa", "None of These"], a: 0 },
-              { q: "Who is Champa in the play ‘Seven Steps Around the fire’?", o: ["Teacher", "Constable", "Head Hijra", "Police officer"], a: 2 },
-              { q: "For Anarkali’s bail, Uma borrows fifty thousand rupees from -", o: ["Her friend", "Her father", "Her husband", "Her father in law"], a: 1 },
-              { q: "For Anarkali's bail Uma gives the money to -", o: ["Champa", "Anarkali", "Munswami", "Suresh"], a: 0 },
-              { q: "Who got Kamala burnt to death?", o: ["Mr. Sharma", "Subbu", "Anarkali", "Champa"], a: 0 },
-              { q: "Dattani's Seven Steps Around the Fire is a-", o: ["Comedy", "Tragi- comedy", "Radio Play", "Absurd play"], a: 2 },
-              { q: "Asif Currimbhoy was born in-", o: ["Kolkata", "Mumbai", "Bangalore", "Lahore"], a: 1 },
-              { q: "Why did Asif Currimbhoy join the Royal Academy of Dramatic Art?", o: ["To study playwriting", "To study poem writing", "To study Novel writing", "To study English Literature"], a: 0 },
-              { q: "Who worked in Burmah-Shell Oil Company?", o: ["Asif Currimbhoy", "Makesh Dattani", "K. N. Daruwalla", "Jayant Mahapatra"], a: 0 },
-              { q: "How many plays did Currimbhoy write?", o: ["11", "15", "20", "30"], a: 3 },
-              { q: "Asif Currimbhoy studied from-", o: ["Christ Church College", "St. Jhons College.", "St. Xavier's College", "None of these"], a: 2 },
-              { q: "The four characters in the play ‘The Doldrummers’ represent-", o: ["Struggle for fame", "Struggle for survival", "Struggle for study", "None of these"], a: 1 },
-              { q: "What is the theme of the play ‘The Doldrummers’?", o: ["Love and sex", "Feminism", "Spirituality", "Religion"], a: 0 },
-              { q: "The setting of the play 'The Doldrummers' is -", o: ["Kolkata", "Bombay", "Gujrat", "Punjab"], a: 1 },
-              { q: "The play ‘The Doldrummers’ was published in-", o: ["1970", "1960", "1958", "1956"], a: 1 },
-              { q: "The word Doldrummers means-", o: ["State of inactivity", "State of activity", "State of sleeplessness", "None of these"], a: 0 },
-              { q: "In the play ‘The Doldrummers’, who prefers the profession of prostitute?", o: ["Liza", "Rita", "Mary", "None of these"], a: 1 },
-              { q: "At the beginning of the play who is lying on the Hammock and playing guitar?", o: ["Joe", "Rita", "Liza", "Tony"], a: 3 },
-              { q: "Tony gets a watch from-", o: ["Joe", "Liza", "Rita", "None of thee"], a: 1 },
-              { q: "In the play ‘The Doldrummers’, who loves Tony passionately?", o: ["Liza", "Mary", "Rita", "None of These"], a: 2 },
-              { q: "Who commits suicide at the end of the play ‘The Doldrummers’?", o: ["Joe", "Tony", "Liza", "Rita"], a: 0 },
-              { q: "Who encourages Rita to adopt prostitution?", o: ["Joe", "Tony", "Liza", "None of these"], a: 0 },
-              { q: "Who is a misanthrope in the play ‘The Doldrummers'?", o: ["Tony", "Liza", "Rita", "Joe"], a: 3 },
-              { q: "Who is an illegitimate child in the play ‘The Doldrummers’?", o: ["Tony", "Joe", "Liza", "Rita"], a: 1 }
+          {
+              q: "Mahesh Dattani was born on-",
+              o: [
+              "August 7, 1958",
+              "June 8, 1957",
+              "July 6, 1956",
+              "April 5, 1958"
+              ],
+              a: 0
+            },
+          {
+              q: "Dattani was born in-",
+              o: [
+              "Mumbai",
+              "Gujrat",
+              "Bangalore",
+              "Odisha"
+              ],
+              a: 2
+            },
+          {
+              q: "Which theatre was founded by Mahesh Dattani?",
+              o: [
+              "Globe",
+              "Global",
+              "Pluspen",
+              "Playpen"
+              ],
+              a: 3
+            },
+          {
+              q: "Dattani’s first full length play was-",
+              o: [
+              "Where There is a will",
+              "Tara",
+              "Final Solutions",
+              "Do the Needful"
+              ],
+              a: 0
+            },
+          {
+              q: "Who was the first Indian playwright to get the Sahitya Akademi award for drama?",
+              o: [
+              "Girish Karnad.",
+              "Mahesh Dattani",
+              "Asif Currimbhoy.",
+              "None of these."
+              ],
+              a: 1
+            },
+          {
+              q: "Dattani got Sahitya Akademi award for his play-",
+              o: [
+              "Tara",
+              "Do the Needful",
+              "Final Solutions.",
+              "Dance Like a Man."
+              ],
+              a: 2
+            },
+          {
+              q: "Dattani got Sahitya Akademi award in the year-",
+              o: [
+              "1990",
+              "1995",
+              "1998",
+              "1999"
+              ],
+              a: 2
+            },
+          {
+              q: "Dattani’s theatre group Playpen was founded in -",
+              o: [
+              "1984",
+              "1986",
+              "1980",
+              "1985"
+              ],
+              a: 0
+            },
+          {
+              q: "Uma Rao's father is a -",
+              o: [
+              "Doctor",
+              "Vice-Chancellor",
+              "Teacher",
+              "Police officer"
+              ],
+              a: 1
+            },
+          {
+              q: "Who is Salim?",
+              o: [
+              "Anarkal’s fried",
+              "Subbu’s friend",
+              "Bodyguard of Mr. Sharma",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "For her research, Uma takes interest in the murder mystery of-",
+              o: [
+              "Champa",
+              "Anarkali",
+              "Kamala",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "In the play, \"Seven Steps Around the Fire' Kamala, a eunuch marries-",
+              o: [
+              "Mr. Sharma",
+              "Subbu",
+              "Suresh",
+              "Munswami"
+              ],
+              a: 1
+            },
+          {
+              q: "In which section of jail, eunuch Anarkali is being kept in the play ‘Seven Steps Around the fire’?",
+              o: [
+              "Male Section",
+              "Female Section",
+              "Separate section",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "The word Hijra means-",
+              o: [
+              "Male",
+              "Female",
+              "Neither male nor female",
+              "Child"
+              ],
+              a: 2
+            },
+          {
+              q: "Who is falsely accused in kamala's murder case in ‘Seven Step Around the fire’?",
+              o: [
+              "Champa",
+              "Anarkali",
+              "Uma",
+              "Suresh"
+              ],
+              a: 1
+            },
+          {
+              q: "Who is made the head hijra at the end of the play ‘Seven Steps Around the Fire’?",
+              o: [
+              "Anarkali",
+              "Kamala",
+              "Champa",
+              "None of These"
+              ],
+              a: 0
+            },
+          {
+              q: "Who is Champa in the play ‘Seven Steps Around the fire’?",
+              o: [
+              "Teacher",
+              "Constable",
+              "Head Hijra",
+              "Police officer"
+              ],
+              a: 2
+            },
+          {
+              q: "For Anarkali’s bail, Uma borrows fifty thousand rupees from -",
+              o: [
+              "Her friend",
+              "Her father",
+              "Her husband",
+              "Her father in law"
+              ],
+              a: 1
+            },
+          {
+              q: "For Anarkali's bail Uma gives the money to -",
+              o: [
+              "Champa",
+              "Anarkali",
+              "Munswami",
+              "Suresh"
+              ],
+              a: 0
+            },
+          {
+              q: "Who got Kamala burnt to death?",
+              o: [
+              "Mr. Sharma",
+              "Subbu",
+              "Anarkali",
+              "Champa"
+              ],
+              a: 0
+            },
+          {
+              q: "Dattani's Seven Steps Around the Fire is a-",
+              o: [
+              "Comedy",
+              "Tragi- comedy",
+              "Radio Play",
+              "Absurd play"
+              ],
+              a: 2
+            },
+          {
+              q: "Asif Currimbhoy was born in-",
+              o: [
+              "Kolkata",
+              "Mumbai",
+              "Bangalore",
+              "Lahore"
+              ],
+              a: 1
+            },
+          {
+              q: "Why did Asif Currimbhoy join the Royal Academy of Dramatic Art?",
+              o: [
+              "To study playwriting",
+              "To study poem writing",
+              "To study Novel writing",
+              "To study English Literature"
+              ],
+              a: 0
+            },
+          {
+              q: "Who worked in Burmah-Shell Oil Company?",
+              o: [
+              "Asif Currimbhoy",
+              "Makesh Dattani",
+              "K. N. Daruwalla",
+              "Jayant Mahapatra"
+              ],
+              a: 0
+            },
+          {
+              q: "How many plays did Currimbhoy write?",
+              o: [
+              "11",
+              "15",
+              "20",
+              "30"
+              ],
+              a: 3
+            },
+          {
+              q: "Asif Currimbhoy studied from-",
+              o: [
+              "Christ Church College",
+              "St. Jhons College.",
+              "St. Xavier's College",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "The four characters in the play ‘The Doldrummers’ represent-",
+              o: [
+              "Struggle for fame",
+              "Struggle for survival",
+              "Struggle for study",
+              "None of these"
+              ],
+              a: 1
+            },
+          {
+              q: "What is the theme of the play ‘The Doldrummers’?",
+              o: [
+              "Love and sex",
+              "Feminism",
+              "Spirituality",
+              "Religion"
+              ],
+              a: 0
+            },
+          {
+              q: "The setting of the play 'The Doldrummers' is -",
+              o: [
+              "Kolkata",
+              "Bombay",
+              "Gujrat",
+              "Punjab"
+              ],
+              a: 1
+            },
+          {
+              q: "The play ‘The Doldrummers’ was published in-",
+              o: [
+              "1970",
+              "1960",
+              "1958",
+              "1956"
+              ],
+              a: 1
+            },
+          {
+              q: "The word Doldrummers means-",
+              o: [
+              "State of inactivity",
+              "State of activity",
+              "State of sleeplessness",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "In the play ‘The Doldrummers’, who prefers the profession of prostitute?",
+              o: [
+              "Liza",
+              "Rita",
+              "Mary",
+              "None of these"
+              ],
+              a: 1
+            },
+          {
+              q: "At the beginning of the play who is lying on the Hammock and playing guitar?",
+              o: [
+              "Joe",
+              "Rita",
+              "Liza",
+              "Tony"
+              ],
+              a: 3
+            },
+          {
+              q: "Tony gets a watch from-",
+              o: [
+              "Joe",
+              "Liza",
+              "Rita",
+              "None of thee"
+              ],
+              a: 1
+            },
+          {
+              q: "In the play ‘The Doldrummers’, who loves Tony passionately?",
+              o: [
+              "Liza",
+              "Mary",
+              "Rita",
+              "None of These"
+              ],
+              a: 2
+            },
+          {
+              q: "Who commits suicide at the end of the play ‘The Doldrummers’?",
+              o: [
+              "Joe",
+              "Tony",
+              "Liza",
+              "Rita"
+              ],
+              a: 0
+            },
+          {
+              q: "Who encourages Rita to adopt prostitution?",
+              o: [
+              "Joe",
+              "Tony",
+              "Liza",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "Who is a misanthrope in the play ‘The Doldrummers'?",
+              o: [
+              "Tony",
+              "Liza",
+              "Rita",
+              "Joe"
+              ],
+              a: 3
+            },
+          {
+              q: "Who is an illegitimate child in the play ‘The Doldrummers’?",
+              o: [
+              "Tony",
+              "Joe",
+              "Liza",
+              "Rita"
+              ],
+              a: 1
+            }
           ]
         },
-        {
+      {
           id: "u4",
           name: "Fiction I",
           blurb: "Kamala Markandaya - Nectar in a Sieve; Mulk Raj Anand - Untouchable",
           questions: [
-              { q: "Mulk Raj Anand was born on-", o: ["December 12, 1905.", "December 25, 1903", "December 6, 1906", "November 8, 1905"], a: 0 },
-              { q: "Anand was born in-", o: ["Kolkata", "Punjab", "Gujrat", "Peshawar"], a: 3 },
-              { q: "Anand was a son of a.", o: ["Diwan", "Reporter", "Coppersmith", "None of these"], a: 2 },
-              { q: "Anand did PhD in philosophy from-", o: ["Oxford University", "Cambridge University", "Punjab University", "Mumbai University"], a: 1 },
-              { q: "Anand founded a fine art magazine, named-", o: ["Kali", "Patrika", "Marg", "Criterion"], a: 2 },
-              { q: "The writers known as “The Big Three\" were Mulk Raj Anand, R.K. Narayana and-", o: ["Raja Rao", "Tagore", "Anita Desai", "Kamala Markandaya."], a: 0 },
-              { q: "Anand published his short-stories in T. S. Eliot's magazine, its name was-", o: ["Marg", "Illustrated weakly", "Criterion", "None of These."], a: 2 },
-              { q: "Who worked as a broadcaster and scriptwriter for B.B.C. London?", o: ["Raja Rao", "Mulk Raj Anand", "K.N. Daruwalla", "None of these"], a: 1 },
-              { q: "Anand got the Sahitya Akademi award in the year-", o: ["1967", "1968", "1975", "1971"], a: 3 },
-              { q: "Mulk Raj Anand got Padam Bhushan in the year-", o: ["1971", "1976", "1967", "1974"], a: 2 },
-              { q: "Anand died on", o: ["September 28, 2004", "November 27, 2005", "June 6, 2004", "July 7, 2006"], a: 0 },
-              { q: "Who, among the following writers participated in the Non Violent Campaign?", o: ["Anita Desai", "Mulk Raj Anand", "Kamala Markandaya.", "R.K. Narayana."], a: 1 },
-              { q: "Anand lived in Sabarmati Ashram with Mahatma Gandhi, where he prepared the draft of his novel -", o: ["Coolie", "The Village", "Untouchable", "The Big Heart"], a: 2 },
-              { q: "Initially, Untouchable was rejected by -", o: ["19 British publishers.", "02 British publishers.", "05 British publishers", "None of these ."], a: 0 },
-              { q: "Anand passed away in Pune due to the disease of-", o: ["Pneumonia", "Cancer", "Tuberculosis", "None of these"], a: 0 },
-              { q: "Which of the following novel is not written by Mulk Raj-Anand ?", o: ["Untouchable.", "The Guide.", "The Big Heart", "Coolie"], a: 1 },
-              { q: "Which is the first novel written by Mulk Raj Anand?", o: ["Coolie", "Death of a Hero", "Untouchable", "The Big Heart"], a: 2 },
-              { q: "When was Anand's novel ‘Untouchable’ published?", o: ["1925", "1935", "1940", "1942"], a: 1 },
-              { q: "Who is the protagonist of the novel ' Untouchable'?", o: ["Bakha", "Lakha", "Rakha", "Pandit Kali Nath."], a: 0 },
-              { q: "What is the name of Bakha's town?", o: ["Ambala", "Bulashah", "Ludhiana", "None of these"], a: 1 },
-              { q: "What is the name of Bakha's father?", o: ["Rakha", "Kalicharan", "Kali Nath", "Lakha"], a: 3 },
-              { q: "Which novel of Anand represents the experience of an eighteen year old sweeper boy?", o: ["The Big Heart", "The Village", "Untouchable", "Coolie"], a: 2 },
-              { q: "What is the setting of the novel Untouchable?", o: ["Mumbai.", "Bulashah", "Gujrat", "None of these"], a: 1 },
-              { q: "Who is Waziro in the novel ‘Untouchable’?", o: ["The Weaver’s Wife", "Bakha’s friend", "Lakha’s friend", "Rakha’s friend"], a: 0 },
-              { q: "Who Promises Bakha to provide a hockey stick ?", o: ["Lakha", "Kali Nath", "Ram Charan", "Havildar Charat Singh"], a: 3 },
-              { q: "Who expresses explosive anger at Sohini ?", o: ["Lakha", "Bakha", "Gulabo", "Charat Singh"], a: 2 },
-              { q: "What English items does Bakha get from the rag-store?.", o: ["Shoes and hat", "Hockey Stick", "Bat and Ball", "Shirt and Cap"], a: 0 },
-              { q: "What is the age of Bakha?", o: ["Eighteen years.", "Fifteen years.", "Twenty years.", "Twenty one years."], a: 0 },
-              { q: "Bakha has strong fascination for-", o: ["Indian way of life", "Religion", "English way of life", "Spiritual way of life"], a: 2 },
-              { q: "Who in the chief of the Salvation Army in the novel ‘Untouchable’?", o: ["Ram Charan", "Pt. Kali Nath", "Rakha", "Colonel Hutchinson."], a: 3 },
-              { q: "Who Symbolises the hypocrisy of the high caste Hindus, in the novel Untouchable?", o: ["Pt. Kali Nath", "Ram Charan", "Charat Singh", "None of these."], a: 0 },
-              { q: "Which Character is a poet and an editor of a journal named Nawan Yug?", o: ["Pt. Kali Nath", "Iqbal Nath", "Charat Singh", "R.N.Basher"], a: 1 },
-              { q: "Who makes a brief appearance at the end of the novel ‘Untouchable’?", o: ["Raja Rao", "R.K. Narayana", "Mahatma Gandhi", "Rakha"], a: 2 },
-              { q: "Kamała Markandaya was born on-", o: ["23 June 1924", "21 June 1928", "8 July 1925", "6 June 1930"], a: 0 },
-              { q: "Kamala Purnaiya and Kamala Taylor are the pseudonyms of-", o: ["Kamala Das", "Kamala Markandaya", "Kamala Suraiya", "None of these"], a: 1 },
-              { q: "Kamala Markandaya's is a well known British Indian Novelist and -", o: ["Dramatist", "Playwright", "Teacher", "Journalist"], a: 3 },
-              { q: "Kamala Markandaya was born in-", o: ["Kolkata", "Mysore", "Mumbai", "Punjab"], a: 1 },
-              { q: "After the independence of India, Kamala moved to-", o: ["France", "Italy", "Britain", "America"], a: 2 },
-              { q: "Kamala Markarndaya's first novel was-", o: ["Some Inner Fury", "The Nowhere Mon", "Nectar in a Sieve", "The Golden Honeycomb"], a: 2 },
-              { q: "Markandaya's novel 'Nectar in a Sieve' got its title from", o: ["Shakespeare's poem.", "Shelley's poem.", "Keat’s poem", "Coleridge's poem."], a: 3 },
-              { q: "Rukmani marries Nathan at the age of -", o: ["12", "15", "13", "16"], a: 0 },
-              { q: "Who is Ira in the novel 'Nectar in a Sieve'?", o: ["Rukmani's sister", "Rukmani's friend", "Rukmani's daughter.", "Rukmani's mother."], a: 2 },
-              { q: "What is the profession of kennington, who is also known as Kenny in the novel ‘Nectar in a Sieve’?", o: ["Professor", "Doctor", "Clerk", "Police officer"], a: 1 }
+          {
+              q: "Mulk Raj Anand was born on-",
+              o: [
+              "December 12, 1905.",
+              "December 25, 1903",
+              "December 6, 1906",
+              "November 8, 1905"
+              ],
+              a: 0
+            },
+          {
+              q: "Anand was born in-",
+              o: [
+              "Kolkata",
+              "Punjab",
+              "Gujrat",
+              "Peshawar"
+              ],
+              a: 3
+            },
+          {
+              q: "Anand was a son of a.",
+              o: [
+              "Diwan",
+              "Reporter",
+              "Coppersmith",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "Anand did PhD in philosophy from-",
+              o: [
+              "Oxford University",
+              "Cambridge University",
+              "Punjab University",
+              "Mumbai University"
+              ],
+              a: 1
+            },
+          {
+              q: "Anand founded a fine art magazine, named-",
+              o: [
+              "Kali",
+              "Patrika",
+              "Marg",
+              "Criterion"
+              ],
+              a: 2
+            },
+          {
+              q: "The writers known as “The Big Three\" were Mulk Raj Anand, R.K. Narayana and-",
+              o: [
+              "Raja Rao",
+              "Tagore",
+              "Anita Desai",
+              "Kamala Markandaya."
+              ],
+              a: 0
+            },
+          {
+              q: "Anand published his short-stories in T. S. Eliot's magazine, its name was-",
+              o: [
+              "Marg",
+              "Illustrated weakly",
+              "Criterion",
+              "None of These."
+              ],
+              a: 2
+            },
+          {
+              q: "Who worked as a broadcaster and scriptwriter for B.B.C. London?",
+              o: [
+              "Raja Rao",
+              "Mulk Raj Anand",
+              "K.N. Daruwalla",
+              "None of these"
+              ],
+              a: 1
+            },
+          {
+              q: "Anand got the Sahitya Akademi award in the year-",
+              o: [
+              "1967",
+              "1968",
+              "1975",
+              "1971"
+              ],
+              a: 3
+            },
+          {
+              q: "Mulk Raj Anand got Padam Bhushan in the year-",
+              o: [
+              "1971",
+              "1976",
+              "1967",
+              "1974"
+              ],
+              a: 2
+            },
+          {
+              q: "Anand died on",
+              o: [
+              "September 28, 2004",
+              "November 27, 2005",
+              "June 6, 2004",
+              "July 7, 2006"
+              ],
+              a: 0
+            },
+          {
+              q: "Who, among the following writers participated in the Non Violent Campaign?",
+              o: [
+              "Anita Desai",
+              "Mulk Raj Anand",
+              "Kamala Markandaya.",
+              "R.K. Narayana."
+              ],
+              a: 1
+            },
+          {
+              q: "Anand lived in Sabarmati Ashram with Mahatma Gandhi, where he prepared the draft of his novel -",
+              o: [
+              "Coolie",
+              "The Village",
+              "Untouchable",
+              "The Big Heart"
+              ],
+              a: 2
+            },
+          {
+              q: "Initially, Untouchable was rejected by -",
+              o: [
+              "19 British publishers.",
+              "02 British publishers.",
+              "05 British publishers",
+              "None of these ."
+              ],
+              a: 0
+            },
+          {
+              q: "Anand passed away in Pune due to the disease of-",
+              o: [
+              "Pneumonia",
+              "Cancer",
+              "Tuberculosis",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "Which of the following novel is not written by Mulk Raj-Anand ?",
+              o: [
+              "Untouchable.",
+              "The Guide.",
+              "The Big Heart",
+              "Coolie"
+              ],
+              a: 1
+            },
+          {
+              q: "Which is the first novel written by Mulk Raj Anand?",
+              o: [
+              "Coolie",
+              "Death of a Hero",
+              "Untouchable",
+              "The Big Heart"
+              ],
+              a: 2
+            },
+          {
+              q: "When was Anand's novel ‘Untouchable’ published?",
+              o: [
+              "1925",
+              "1935",
+              "1940",
+              "1942"
+              ],
+              a: 1
+            },
+          {
+              q: "Who is the protagonist of the novel ' Untouchable'?",
+              o: [
+              "Bakha",
+              "Lakha",
+              "Rakha",
+              "Pandit Kali Nath."
+              ],
+              a: 0
+            },
+          {
+              q: "What is the name of Bakha's town?",
+              o: [
+              "Ambala",
+              "Bulashah",
+              "Ludhiana",
+              "None of these"
+              ],
+              a: 1
+            },
+          {
+              q: "What is the name of Bakha's father?",
+              o: [
+              "Rakha",
+              "Kalicharan",
+              "Kali Nath",
+              "Lakha"
+              ],
+              a: 3
+            },
+          {
+              q: "Which novel of Anand represents the experience of an eighteen year old sweeper boy?",
+              o: [
+              "The Big Heart",
+              "The Village",
+              "Untouchable",
+              "Coolie"
+              ],
+              a: 2
+            },
+          {
+              q: "What is the setting of the novel Untouchable?",
+              o: [
+              "Mumbai.",
+              "Bulashah",
+              "Gujrat",
+              "None of these"
+              ],
+              a: 1
+            },
+          {
+              q: "Who is Waziro in the novel ‘Untouchable’?",
+              o: [
+              "The Weaver’s Wife",
+              "Bakha’s friend",
+              "Lakha’s friend",
+              "Rakha’s friend"
+              ],
+              a: 0
+            },
+          {
+              q: "Who Promises Bakha to provide a hockey stick ?",
+              o: [
+              "Lakha",
+              "Kali Nath",
+              "Ram Charan",
+              "Havildar Charat Singh"
+              ],
+              a: 3
+            },
+          {
+              q: "Who expresses explosive anger at Sohini ?",
+              o: [
+              "Lakha",
+              "Bakha",
+              "Gulabo",
+              "Charat Singh"
+              ],
+              a: 2
+            },
+          {
+              q: "What English items does Bakha get from the rag-store?.",
+              o: [
+              "Shoes and hat",
+              "Hockey Stick",
+              "Bat and Ball",
+              "Shirt and Cap"
+              ],
+              a: 0
+            },
+          {
+              q: "What is the age of Bakha?",
+              o: [
+              "Eighteen years.",
+              "Fifteen years.",
+              "Twenty years.",
+              "Twenty one years."
+              ],
+              a: 0
+            },
+          {
+              q: "Bakha has strong fascination for-",
+              o: [
+              "Indian way of life",
+              "Religion",
+              "English way of life",
+              "Spiritual way of life"
+              ],
+              a: 2
+            },
+          {
+              q: "Who in the chief of the Salvation Army in the novel ‘Untouchable’?",
+              o: [
+              "Ram Charan",
+              "Pt. Kali Nath",
+              "Rakha",
+              "Colonel Hutchinson."
+              ],
+              a: 3
+            },
+          {
+              q: "Who Symbolises the hypocrisy of the high caste Hindus, in the novel Untouchable?",
+              o: [
+              "Pt. Kali Nath",
+              "Ram Charan",
+              "Charat Singh",
+              "None of these."
+              ],
+              a: 0
+            },
+          {
+              q: "Which Character is a poet and an editor of a journal named Nawan Yug?",
+              o: [
+              "Pt. Kali Nath",
+              "Iqbal Nath",
+              "Charat Singh",
+              "R.N.Basher"
+              ],
+              a: 1
+            },
+          {
+              q: "Who makes a brief appearance at the end of the novel ‘Untouchable’?",
+              o: [
+              "Raja Rao",
+              "R.K. Narayana",
+              "Mahatma Gandhi",
+              "Rakha"
+              ],
+              a: 2
+            },
+          {
+              q: "Kamała Markandaya was born on-",
+              o: [
+              "23 June 1924",
+              "21 June 1928",
+              "8 July 1925",
+              "6 June 1930"
+              ],
+              a: 0
+            },
+          {
+              q: "Kamala Purnaiya and Kamala Taylor are the pseudonyms of-",
+              o: [
+              "Kamala Das",
+              "Kamala Markandaya",
+              "Kamala Suraiya",
+              "None of these"
+              ],
+              a: 1
+            },
+          {
+              q: "Kamala Markandaya's is a well known British Indian Novelist and -",
+              o: [
+              "Dramatist",
+              "Playwright",
+              "Teacher",
+              "Journalist"
+              ],
+              a: 3
+            },
+          {
+              q: "Kamala Markandaya was born in-",
+              o: [
+              "Kolkata",
+              "Mysore",
+              "Mumbai",
+              "Punjab"
+              ],
+              a: 1
+            },
+          {
+              q: "After the independence of India, Kamala moved to-",
+              o: [
+              "France",
+              "Italy",
+              "Britain",
+              "America"
+              ],
+              a: 2
+            },
+          {
+              q: "Kamala Markarndaya's first novel was-",
+              o: [
+              "Some Inner Fury",
+              "The Nowhere Mon",
+              "Nectar in a Sieve",
+              "The Golden Honeycomb"
+              ],
+              a: 2
+            },
+          {
+              q: "Markandaya's novel 'Nectar in a Sieve' got its title from",
+              o: [
+              "Shakespeare's poem.",
+              "Shelley's poem.",
+              "Keat’s poem",
+              "Coleridge's poem."
+              ],
+              a: 3
+            },
+          {
+              q: "Rukmani marries Nathan at the age of -",
+              o: [
+              "12",
+              "15",
+              "13",
+              "16"
+              ],
+              a: 0
+            },
+          {
+              q: "Who is Ira in the novel 'Nectar in a Sieve'?",
+              o: [
+              "Rukmani's sister",
+              "Rukmani's friend",
+              "Rukmani's daughter.",
+              "Rukmani's mother."
+              ],
+              a: 2
+            },
+          {
+              q: "What is the profession of kennington, who is also known as Kenny in the novel ‘Nectar in a Sieve’?",
+              o: [
+              "Professor",
+              "Doctor",
+              "Clerk",
+              "Police officer"
+              ],
+              a: 1
+            }
           ]
         },
-        {
+      {
           id: "u5",
           name: "Prose II",
           blurb: "Frantz Fanon - Black Skin, White Masks; Nivedita Menon - Seeing Like a Feminist",
           questions: [
-              { q: "Frantz Fanon was born on-", o: ["July 20, 1925", "June 5, 1926", "April 10, 1929", "May 5, 1930"], a: 0 },
-              { q: "Frantz fanon was born in-", o: ["Italy", "India", "Martinique", "London."], a: 2 },
-              { q: "Fanon's father was a-", o: ["Teacher", "Doctor", "Actor", "Customs agents"], a: 3 },
-              { q: "Fanon joined Free French Army at the age of-", o: ["20", "18", "21", "25"], a: 1 },
-              { q: "Whose writings influenced post-colonial studies, critical theory and Marxism.?", o: ["Mulk Raj Anand", "Frantz Fanon", "R.K. Narayana", "None of these"], a: 1 },
-              { q: "At the age of 18, Fanon joined free French Army, during the time of-", o: ["World War II", "World War I", "French Revolution.", "None of these."], a: 0 },
-              { q: "Which work of Fanon was prepared as a doctoral dissertation but published as a book?", o: ["A Dying Colonialism", "Black Skin, White Masks.", "The Wretched of Earth.", "None of these."], a: 1 },
-              { q: "Fanon, completed his studies in psychiatry from the University of-", o: ["Lyon", "Oxford", "Cambridge", "London"], a: 0 },
-              { q: "Frantz Fanon served in a Hospital in -", o: ["Italy", "London", "Algeria", "India"], a: 2 },
-              { q: "Fanon died on-", o: ["July 2, 1970", "April 15, 1975", "May 8, 1972", "December 6, 1961"], a: 3 },
-              { q: "What was Fanon's age when he died?", o: ["40", "36", "30", "50"], a: 1 },
-              { q: "Fanon was buried in-", o: ["Martinique", "England", "Algeria", "America"], a: 2 },
-              { q: "Who supported the Algerian Liberation movements?", o: ["Nivedita Manon.", "Frantz fanon.", "Mulk Raj Anand", "None of these-"], a: 1 },
-              { q: "Who, among the following writers, was diagnosed with leukemia?", o: ["Pablo Neruda.", "Patric white", "Frantz Fanon", "Judith Wright."], a: 2 },
-              { q: "The name of Fanon's wife was?", o: ["Josie", "Raina", "Frida", "Mary"], a: 0 },
-              { q: "Who has been described as \"the most influential anti-colonial thinker of his time\"?", o: ["NiveditaManon", "Frantz Fenon", "Pablo Neruda", "Judith Wright"], a: 1 },
-              { q: "Fanon's first work which he wrote during completing his residency in France was-", o: ["A Dying Colonialism", "The Wretched of the Earth", "Black Skin White Masks", "None of these"], a: 2 },
-              { q: "Who served as an Ambassador to Ghana from the Provisional Algerian Government?", o: ["Frantz Fanon.", "Patrick white", "Pablo Neruda", "None of These."], a: 0 },
-              { q: "‘Black Skin, White Masks’ was first published in-", o: ["1955", "1956", "1952", "1960"], a: 2 },
-              { q: "In which language, ‘Black Skin, White Masks’ was originally published?", o: ["French", "Italian", "German", "English"], a: 0 },
-              { q: "Into which language Charles L. Markmann translated the book Black Skin, White masks?", o: ["French", "German", "Italian", "English"], a: 3 },
-              { q: "What is the title of chapter IV of the Book ‘Black Skin White Masks’?", o: ["Body", "Desire", "The so-called Dependency Complex of the Colonized", "Decolonization"], a: 2 },
-              { q: "Which chapter of the Book ‘Black Skin and White Masks’ is based on Octave Mannoni's work ‘Prospero and Caliban: the Psychology of colonization’?", o: ["Chapter one", "Chapter four", "Chapter six", "Chapter two"], a: 1 },
-              { q: "The English translation of The Book ‘Black Skin, White Masks’ was published in-", o: ["1967", "1970", "1965", "1972"], a: 0 },
-              { q: "What is Fanon’s term for desire to become whiter?", o: ["Lactification", "Dependency", "Imitation", "White mask"], a: 0 },
-              { q: "Which work of Fanon focuses on psychology and identity?", o: ["The Wretched of the Earth", "Black Skin, White Masks", "Seeing like a feminist", "Da Kink in my Hair"], a: 1 },
-              { q: "Who asserted that ‘society is either racist or it is not’?", o: ["Frantz Fanon", "Pablo Neruda", "Nivedita Menon", "None of these"], a: 0 },
-              { q: "According to Fanon who creates the feeling of inferiority in Black people?", o: ["Beautiful people", "Racist", "Intelligent people", "None of these"], a: 1 },
-              { q: "The colonized desire to be like the colonizer, this phenomenon is termed as-", o: ["Acting", "Dependency", "Responsibility", "Assimilation"], a: 3 },
-              { q: "Nivedita Menon was born in -", o: ["Punjab", "Kerala", "Pune", "Gujarat"], a: 2 },
-              { q: "Who worked as a teacher at Lady Shri Ram College for 15 years?", o: ["Anita Desai", "Nivedita Menon", "Kamala Markandaya", "Kamala das"], a: 1 },
-              { q: "In 2009, Menon joined as a professor in -", o: ["University of Allahabad", "University of Punjab", "Jawaharlal Nehru University", "Delhi University"], a: 2 },
-              { q: "Menon Completed her education in Political Science from -", o: ["Mumbai University", "Meerut University", "Delhi University", "Jawahar Lal Nehru University"], a: 3 },
-              { q: "Betty Friedan, Gloria Steinem and Germaine Greer influenced the works of -", o: ["Nivedita Menon", "Urvashi Butalia", "Kamala Markandeya", "None of these"], a: 0 },
-              { q: "Nivedita Menon, delivered her controversial speech on Nationalist ideals in -", o: ["2020", "2022", "2012", "2016"], a: 3 },
-              { q: "Menon’s controversial speech which she delivered in 2016 during J.N.U protest was about -", o: ["Kashmir inclusion in the Union of India", "Religion", "Exploitation of the marginalized", "Education"], a: 0 },
-              { q: "Which award was given to Menon, for her contribution in the field of translation?", o: ["Sahitya Akademy Award", "Padma Shri", "A.K. Ramanujan award", "Padma Vibhushan"], a: 2 },
-              { q: "Menon Received the A. K. Ramanujan award for her English translations of-", o: ["Hindi and Urdu works", "Hindi and Malayalam works", "Urdu and Punjabi works", "French and German works"], a: 1 },
-              { q: "Which work inspired the title of Menon’s book ‘Seeing Like a Feminist’?", o: ["A Vindication of the Rights of Woman by Mary Wollstonecraft", "A Room of One’s own by Virginia Woolf", "Seeing Like a State by James C. Scott", "None of these"], a: 2 },
-              { q: "Nivedita Menon’s book ‘Seeing Like a Feminist’ was published in -", o: ["2012", "2015", "2016", "2008"], a: 0 },
-              { q: "Menon's work, ‘Seeing Like a Feminist’ consists of-", o: ["Five chapters", "Eight chapters", "Six chapters", "Four chapters"], a: 2 },
-              { q: "What is the title of Chapter ‘2’ in Menon’s book ‘Seeing Like a Feminist’?", o: ["Desire", "Body", "Family", "Victims"], a: 1 },
-              { q: "In chapter ‘2’ of ‘Seeing Like a Feminist’, Menon has discussed Judith Butler’s significant work -", o: ["Gender Trouble", "A Room of One’s Own", "The Second Sex", "None of these"], a: 0 },
-              { q: "Who suggested that ‘gender’ as a category was not in existence in Pre- Colonial Yoruba and other African Countries?", o: ["Judith Butler", "Virginia Woolf", "Urvashi Butalia", "Oyeronke Oyewumi"], a: 3 },
-              { q: "Who coined the term ‘gender performativity’?", o: ["Oyeronke Oyewumi", "Judith Butler", "Virginia Woolf", "None of these"], a: 1 },
-              { q: "Who among the following is a bhakti-saint of Kashmir ?", o: ["A.K. Ramanujan", "Oyewumi", "Lalla Ded", "None of these"], a: 2 },
-              { q: "‘One is not born but becomes a woman’ who said ?", o: ["Nivedita Menon", "Judith Butler", "Virginia Woolf", "A.K. Ramanujan"], a: 1 },
-              { q: "What is the Central theme of Menon’s book ‘Seeing Like a Feminist’?", o: ["Religion", "Education", "Marriage", "Feminist theory and gender studies"], a: 3 }
+          {
+              q: "Frantz Fanon was born on-",
+              o: [
+              "July 20, 1925",
+              "June 5, 1926",
+              "April 10, 1929",
+              "May 5, 1930"
+              ],
+              a: 0
+            },
+          {
+              q: "Frantz fanon was born in-",
+              o: [
+              "Italy",
+              "India",
+              "Martinique",
+              "London."
+              ],
+              a: 2
+            },
+          {
+              q: "Fanon's father was a-",
+              o: [
+              "Teacher",
+              "Doctor",
+              "Actor",
+              "Customs agents"
+              ],
+              a: 3
+            },
+          {
+              q: "Fanon joined Free French Army at the age of-",
+              o: [
+              "20",
+              "18",
+              "21",
+              "25"
+              ],
+              a: 1
+            },
+          {
+              q: "Whose writings influenced post-colonial studies, critical theory and Marxism.?",
+              o: [
+              "Mulk Raj Anand",
+              "Frantz Fanon",
+              "R.K. Narayana",
+              "None of these"
+              ],
+              a: 1
+            },
+          {
+              q: "At the age of 18, Fanon joined free French Army, during the time of-",
+              o: [
+              "World War II",
+              "World War I",
+              "French Revolution.",
+              "None of these."
+              ],
+              a: 0
+            },
+          {
+              q: "Which work of Fanon was prepared as a doctoral dissertation but published as a book?",
+              o: [
+              "A Dying Colonialism",
+              "Black Skin, White Masks.",
+              "The Wretched of Earth.",
+              "None of these."
+              ],
+              a: 1
+            },
+          {
+              q: "Fanon, completed his studies in psychiatry from the University of-",
+              o: [
+              "Lyon",
+              "Oxford",
+              "Cambridge",
+              "London"
+              ],
+              a: 0
+            },
+          {
+              q: "Frantz Fanon served in a Hospital in -",
+              o: [
+              "Italy",
+              "London",
+              "Algeria",
+              "India"
+              ],
+              a: 2
+            },
+          {
+              q: "Fanon died on-",
+              o: [
+              "July 2, 1970",
+              "April 15, 1975",
+              "May 8, 1972",
+              "December 6, 1961"
+              ],
+              a: 3
+            },
+          {
+              q: "What was Fanon's age when he died?",
+              o: [
+              "40",
+              "36",
+              "30",
+              "50"
+              ],
+              a: 1
+            },
+          {
+              q: "Fanon was buried in-",
+              o: [
+              "Martinique",
+              "England",
+              "Algeria",
+              "America"
+              ],
+              a: 2
+            },
+          {
+              q: "Who supported the Algerian Liberation movements?",
+              o: [
+              "Nivedita Manon.",
+              "Frantz fanon.",
+              "Mulk Raj Anand",
+              "None of these-"
+              ],
+              a: 1
+            },
+          {
+              q: "Who, among the following writers, was diagnosed with leukemia?",
+              o: [
+              "Pablo Neruda.",
+              "Patric white",
+              "Frantz Fanon",
+              "Judith Wright."
+              ],
+              a: 2
+            },
+          {
+              q: "The name of Fanon's wife was?",
+              o: [
+              "Josie",
+              "Raina",
+              "Frida",
+              "Mary"
+              ],
+              a: 0
+            },
+          {
+              q: "Who has been described as \"the most influential anti-colonial thinker of his time\"?",
+              o: [
+              "NiveditaManon",
+              "Frantz Fenon",
+              "Pablo Neruda",
+              "Judith Wright"
+              ],
+              a: 1
+            },
+          {
+              q: "Fanon's first work which he wrote during completing his residency in France was-",
+              o: [
+              "A Dying Colonialism",
+              "The Wretched of the Earth",
+              "Black Skin White Masks",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "Who served as an Ambassador to Ghana from the Provisional Algerian Government?",
+              o: [
+              "Frantz Fanon.",
+              "Patrick white",
+              "Pablo Neruda",
+              "None of These."
+              ],
+              a: 0
+            },
+          {
+              q: "‘Black Skin, White Masks’ was first published in-",
+              o: [
+              "1955",
+              "1956",
+              "1952",
+              "1960"
+              ],
+              a: 2
+            },
+          {
+              q: "In which language, ‘Black Skin, White Masks’ was originally published?",
+              o: [
+              "French",
+              "Italian",
+              "German",
+              "English"
+              ],
+              a: 0
+            },
+          {
+              q: "Into which language Charles L. Markmann translated the book Black Skin, White masks?",
+              o: [
+              "French",
+              "German",
+              "Italian",
+              "English"
+              ],
+              a: 3
+            },
+          {
+              q: "What is the title of chapter IV of the Book ‘Black Skin White Masks’?",
+              o: [
+              "Body",
+              "Desire",
+              "The so-called Dependency Complex of the Colonized",
+              "Decolonization"
+              ],
+              a: 2
+            },
+          {
+              q: "Which chapter of the Book ‘Black Skin and White Masks’ is based on Octave Mannoni's work ‘Prospero and Caliban: the Psychology of colonization’?",
+              o: [
+              "Chapter one",
+              "Chapter four",
+              "Chapter six",
+              "Chapter two"
+              ],
+              a: 1
+            },
+          {
+              q: "The English translation of The Book ‘Black Skin, White Masks’ was published in-",
+              o: [
+              "1967",
+              "1970",
+              "1965",
+              "1972"
+              ],
+              a: 0
+            },
+          {
+              q: "What is Fanon’s term for desire to become whiter?",
+              o: [
+              "Lactification",
+              "Dependency",
+              "Imitation",
+              "White mask"
+              ],
+              a: 0
+            },
+          {
+              q: "Which work of Fanon focuses on psychology and identity?",
+              o: [
+              "The Wretched of the Earth",
+              "Black Skin, White Masks",
+              "Seeing like a feminist",
+              "Da Kink in my Hair"
+              ],
+              a: 1
+            },
+          {
+              q: "Who asserted that ‘society is either racist or it is not’?",
+              o: [
+              "Frantz Fanon",
+              "Pablo Neruda",
+              "Nivedita Menon",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "According to Fanon who creates the feeling of inferiority in Black people?",
+              o: [
+              "Beautiful people",
+              "Racist",
+              "Intelligent people",
+              "None of these"
+              ],
+              a: 1
+            },
+          {
+              q: "The colonized desire to be like the colonizer, this phenomenon is termed as-",
+              o: [
+              "Acting",
+              "Dependency",
+              "Responsibility",
+              "Assimilation"
+              ],
+              a: 3
+            },
+          {
+              q: "Nivedita Menon was born in -",
+              o: [
+              "Punjab",
+              "Kerala",
+              "Pune",
+              "Gujarat"
+              ],
+              a: 2
+            },
+          {
+              q: "Who worked as a teacher at Lady Shri Ram College for 15 years?",
+              o: [
+              "Anita Desai",
+              "Nivedita Menon",
+              "Kamala Markandaya",
+              "Kamala das"
+              ],
+              a: 1
+            },
+          {
+              q: "In 2009, Menon joined as a professor in -",
+              o: [
+              "University of Allahabad",
+              "University of Punjab",
+              "Jawaharlal Nehru University",
+              "Delhi University"
+              ],
+              a: 2
+            },
+          {
+              q: "Menon Completed her education in Political Science from -",
+              o: [
+              "Mumbai University",
+              "Meerut University",
+              "Delhi University",
+              "Jawahar Lal Nehru University"
+              ],
+              a: 3
+            },
+          {
+              q: "Betty Friedan, Gloria Steinem and Germaine Greer influenced the works of -",
+              o: [
+              "Nivedita Menon",
+              "Urvashi Butalia",
+              "Kamala Markandeya",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "Nivedita Menon, delivered her controversial speech on Nationalist ideals in -",
+              o: [
+              "2020",
+              "2022",
+              "2012",
+              "2016"
+              ],
+              a: 3
+            },
+          {
+              q: "Menon’s controversial speech which she delivered in 2016 during J.N.U protest was about -",
+              o: [
+              "Kashmir inclusion in the Union of India",
+              "Religion",
+              "Exploitation of the marginalized",
+              "Education"
+              ],
+              a: 0
+            },
+          {
+              q: "Which award was given to Menon, for her contribution in the field of translation?",
+              o: [
+              "Sahitya Akademy Award",
+              "Padma Shri",
+              "A.K. Ramanujan award",
+              "Padma Vibhushan"
+              ],
+              a: 2
+            },
+          {
+              q: "Menon Received the A. K. Ramanujan award for her English translations of-",
+              o: [
+              "Hindi and Urdu works",
+              "Hindi and Malayalam works",
+              "Urdu and Punjabi works",
+              "French and German works"
+              ],
+              a: 1
+            },
+          {
+              q: "Which work inspired the title of Menon’s book ‘Seeing Like a Feminist’?",
+              o: [
+              "A Vindication of the Rights of Woman by Mary Wollstonecraft",
+              "A Room of One’s own by Virginia Woolf",
+              "Seeing Like a State by James C. Scott",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "Nivedita Menon’s book ‘Seeing Like a Feminist’ was published in -",
+              o: [
+              "2012",
+              "2015",
+              "2016",
+              "2008"
+              ],
+              a: 0
+            },
+          {
+              q: "Menon's work, ‘Seeing Like a Feminist’ consists of-",
+              o: [
+              "Five chapters",
+              "Eight chapters",
+              "Six chapters",
+              "Four chapters"
+              ],
+              a: 2
+            },
+          {
+              q: "What is the title of Chapter ‘2’ in Menon’s book ‘Seeing Like a Feminist’?",
+              o: [
+              "Desire",
+              "Body",
+              "Family",
+              "Victims"
+              ],
+              a: 1
+            },
+          {
+              q: "In chapter ‘2’ of ‘Seeing Like a Feminist’, Menon has discussed Judith Butler’s significant work -",
+              o: [
+              "Gender Trouble",
+              "A Room of One’s Own",
+              "The Second Sex",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "Who suggested that ‘gender’ as a category was not in existence in Pre- Colonial Yoruba and other African Countries?",
+              o: [
+              "Judith Butler",
+              "Virginia Woolf",
+              "Urvashi Butalia",
+              "Oyeronke Oyewumi"
+              ],
+              a: 3
+            },
+          {
+              q: "Who coined the term ‘gender performativity’?",
+              o: [
+              "Oyeronke Oyewumi",
+              "Judith Butler",
+              "Virginia Woolf",
+              "None of these"
+              ],
+              a: 1
+            },
+          {
+              q: "Who among the following is a bhakti-saint of Kashmir ?",
+              o: [
+              "A.K. Ramanujan",
+              "Oyewumi",
+              "Lalla Ded",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "‘One is not born but becomes a woman’ who said ?",
+              o: [
+              "Nivedita Menon",
+              "Judith Butler",
+              "Virginia Woolf",
+              "A.K. Ramanujan"
+              ],
+              a: 1
+            },
+          {
+              q: "What is the Central theme of Menon’s book ‘Seeing Like a Feminist’?",
+              o: [
+              "Religion",
+              "Education",
+              "Marriage",
+              "Feminist theory and gender studies"
+              ],
+              a: 3
+            }
           ]
         },
-        {
+      {
           id: "u6",
           name: "Poetry II",
           blurb: "Pablo Neruda, Margaret Atwood, Patrick White, Judith Wright",
           questions: [
-              { q: "Nadin Gordimer was born on -", o: ["20th November, 1923.", "15th June, 1925", "30th July, 1926", "4th March, 1920"], a: 0 },
-              { q: "Gordimer was awarded the Nobel Prize in Literature in the year-", o: ["1991", "1995", "1998", "1988"], a: 0 },
-              { q: "Which University did Gordimer join but left it without completing her degree?", o: ["Cambridge University", "Oxford University", "University of Witwatersrand.", "None of these"], a: 2 },
-              { q: "Gordimer was awarded the Booker Prize for her novel 'The Conservationist’ in the year-", o: ["1974", "1991", "1998", "1999"], a: 0 },
-              { q: "Gordimer passed away on-", o: ["12th June 2013", "2nd April 2012", "13th July, 2014", "12th June 2012"], a: 2 },
-              { q: "The novel ‘A Guest of Honour' was published in the year-", o: ["1965", "1970", "1960", "1975"], a: 1 },
-              { q: "The protagonist of the novel 'A Guest of Honour' is-", o: ["Shinza", "Mweta", "Colonel Bray", "Rebecca"], a: 2 },
-              { q: "Colonel James Evelyn Bray, a 54 years old Englishman was a-", o: ["Colonial Civil Servant", "Clerk", "Writer", "Manager"], a: 0 },
-              { q: "Who invites Colonel Bray to join the independence celebrations in the novel 'A Guest of Honour' ?", o: ["Mweta", "Shinza", "Rebecca", "Olivia"], a: 0 },
-              { q: "Which character becomes the president of the newly independent African country in the novel?", o: ["Calonel Bray", "Shinza", "Mweta", "Rebecca"], a: 2 },
-              { q: "What role does Adamson Mweta offer to Colonel Bray?", o: ["Economic advisor.", "Leader of PIP", "President", "Educational advisor."], a: 3 },
-              { q: "V.S. Naipaul was born on", o: ["August 17, 1932", "June 18, 1930", "July 15, 1935", "None of these"], a: 0 },
-              { q: "V.S. Naipaul was born in -", o: ["Italy", "Trinidad", "Banaras", "Africa"], a: 1 },
-              { q: "Naipaul belonged to a family of -", o: ["Actors", "Playwrights", "Enslaved Labours", "Artists"], a: 2 },
-              { q: "Naipaul was awarded the Nobel Prize in Literature in the year -", o: ["2001", "1975", "1978", "1980"], a: 0 },
-              { q: "Naipaul was awarded the Booker Prize in the year-", o: ["2002", "2005", "1971", "1981"], a: 2 },
-              { q: "Naipaul won the Booker Prize for his work -", o: ["An Area of Darkness", "In a Free State", "The Mystic Masseur", "Miguel Street"], a: 1 },
-              { q: "Naipaul took his Bachelor of Arts’ degree from-", o: ["Oxford University", "Christ's College", "Cambridge University", "None of these"], a: 0 },
-              { q: "Naipaul's first novel, 'The Mystic Masseur' was published in-", o: ["1940", "1950", "1957", "1945"], a: 2 },
-              { q: "Naipaul's grandparents had emigrated to Trinidad from-", o: ["Italy", "India", "Spain", "France"], a: 1 },
-              { q: "Naipaul's father Seepersad Naipaul was a -", o: ["Clerk", "Teacher", "Journalist", "Doctor"], a: 2 },
-              { q: "Naipaul passed away on", o: ["5 June 2010", "11 August 2018", "10 May 2005", "20 March 2008"], a: 1 },
-              { q: "Naipaul's wife was his classmate from Oxford. Her name was-", o: ["Patricia Hale", "Anne", "Catherine", "None of these"], a: 0 },
-              { q: "V. S. Naipaul's novel 'A House for Mr. Biswas' was published in-", o: ["1950", "1955", "1961", "1965"], a: 2 },
-              { q: "The protagonist of the novel 'A House for Mr. Biswas’ is-", o: ["Mohun Biswas", "Shama Biswas", "Anand Biswal", "Savi Biswas"], a: 0 },
-              { q: "Mohun Biswas is an Indian who was born in-", o: ["France", "Trinidad", "Italy", "Germany"], a: 1 },
-              { q: "What is the profession of Jairam who gives the training of Pundit to Mr. Biswas-", o: ["Writer", "Doctor", "Clerk", "Teacher"], a: 3 },
-              { q: "Which character in the novel ‘A House for Mr. Biswas’ is talented at designing letters?", o: ["Alec", "Dehuta", "Mr. Biswas", "Ramchand"], a: 0 },
-              { q: "The residence of Tulsi family is known as -", o: ["Sweet home", "Shiv House", "Hanuman House", "Tulsi House"], a: 2 },
-              { q: "Where does Owad go to study in the novel ‘A House for Mr. Biswas’?", o: ["Oxford", "Cambridge", "India", "None of These"], a: 1 },
-              { q: "Indira Goswami was born on-", o: ["14th November, 1942", "15th March, 1940", "18th June, 1935", "5th May, 1930"], a: 0 },
-              { q: "Who is known by her pen-name Mamoni Raisom Goswami ?", o: ["Indira Goswami", "Judith weight", "Margaret Atwood", "Urvashi Butalia"], a: 0 },
-              { q: "Indira Goswami was born in -", o: ["Mumbai", "Punjab", "Assam", "Gujrat"], a: 2 },
-              { q: "Goswami was awarded the Sahitya Akademi award in the year-", o: ["1983", "1980", "1982", "1985"], a: 0 },
-              { q: "Goswami was awarded the Padma Shri award in the year-", o: ["2009", "2002", "2005", "2008"], a: 1 },
-              { q: "Goswami worked as a professor of Assamese in-", o: ["Jawahar Lal Nehru University", "Mumbai University", "Delhi University", "None of these."], a: 2 },
-              { q: "Goswami's novel ‘The Moth Eaten Howdah of the Tusker' was published in the year-", o: ["1980", "1985", "1986", "1987"], a: 2 },
-              { q: "In which language the novel 'The Moth Eaten Howdah of the Tusker' was originally written?", o: ["Marathi", "Punjabi", "Assamese", "Hindi"], a: 2 },
-              { q: "Goswami translated ‘The Moth Eaten Howdah of the Tusker’ in to English and it was published in -", o: ["2002", "2004", "2006", "2008"], a: 1 },
-              { q: "'The Moth Eaten Howdah of the Tusker' is a story about an Assamese Brahmin widow. Her name is-", o: ["Durga.", "Eliman", "Saru", "Giribala."], a: 3 },
-              { q: "The novel 'The Moth Eaten Howdah of a Tusker' was made into a film entitled-", o: ["Lajja", "Adajya", "Stri", "Sati"], a: 1 },
-              { q: "Who falls in love with Mark Sahab in the novel 'The Moth Eaten Howdah of the Tusker'?", o: ["Giribala", "Saru", "Durga", "None of these"], a: 0 }
+          {
+              q: "Nadin Gordimer was born on -",
+              o: [
+              "20th November, 1923.",
+              "15th June, 1925",
+              "30th July, 1926",
+              "4th March, 1920"
+              ],
+              a: 0
+            },
+          {
+              q: "Gordimer was awarded the Nobel Prize in Literature in the year-",
+              o: [
+              "1991",
+              "1995",
+              "1998",
+              "1988"
+              ],
+              a: 0
+            },
+          {
+              q: "Which University did Gordimer join but left it without completing her degree?",
+              o: [
+              "Cambridge University",
+              "Oxford University",
+              "University of Witwatersrand.",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "Gordimer was awarded the Booker Prize for her novel 'The Conservationist’ in the year-",
+              o: [
+              "1974",
+              "1991",
+              "1998",
+              "1999"
+              ],
+              a: 0
+            },
+          {
+              q: "Gordimer passed away on-",
+              o: [
+              "12th June 2013",
+              "2nd April 2012",
+              "13th July, 2014",
+              "12th June 2012"
+              ],
+              a: 2
+            },
+          {
+              q: "The novel ‘A Guest of Honour' was published in the year-",
+              o: [
+              "1965",
+              "1970",
+              "1960",
+              "1975"
+              ],
+              a: 1
+            },
+          {
+              q: "The protagonist of the novel 'A Guest of Honour' is-",
+              o: [
+              "Shinza",
+              "Mweta",
+              "Colonel Bray",
+              "Rebecca"
+              ],
+              a: 2
+            },
+          {
+              q: "Colonel James Evelyn Bray, a 54 years old Englishman was a-",
+              o: [
+              "Colonial Civil Servant",
+              "Clerk",
+              "Writer",
+              "Manager"
+              ],
+              a: 0
+            },
+          {
+              q: "Who invites Colonel Bray to join the independence celebrations in the novel 'A Guest of Honour' ?",
+              o: [
+              "Mweta",
+              "Shinza",
+              "Rebecca",
+              "Olivia"
+              ],
+              a: 0
+            },
+          {
+              q: "Which character becomes the president of the newly independent African country in the novel?",
+              o: [
+              "Calonel Bray",
+              "Shinza",
+              "Mweta",
+              "Rebecca"
+              ],
+              a: 2
+            },
+          {
+              q: "What role does Adamson Mweta offer to Colonel Bray?",
+              o: [
+              "Economic advisor.",
+              "Leader of PIP",
+              "President",
+              "Educational advisor."
+              ],
+              a: 3
+            },
+          {
+              q: "V.S. Naipaul was born on",
+              o: [
+              "August 17, 1932",
+              "June 18, 1930",
+              "July 15, 1935",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "V.S. Naipaul was born in -",
+              o: [
+              "Italy",
+              "Trinidad",
+              "Banaras",
+              "Africa"
+              ],
+              a: 1
+            },
+          {
+              q: "Naipaul belonged to a family of -",
+              o: [
+              "Actors",
+              "Playwrights",
+              "Enslaved Labours",
+              "Artists"
+              ],
+              a: 2
+            },
+          {
+              q: "Naipaul was awarded the Nobel Prize in Literature in the year -",
+              o: [
+              "2001",
+              "1975",
+              "1978",
+              "1980"
+              ],
+              a: 0
+            },
+          {
+              q: "Naipaul was awarded the Booker Prize in the year-",
+              o: [
+              "2002",
+              "2005",
+              "1971",
+              "1981"
+              ],
+              a: 2
+            },
+          {
+              q: "Naipaul won the Booker Prize for his work -",
+              o: [
+              "An Area of Darkness",
+              "In a Free State",
+              "The Mystic Masseur",
+              "Miguel Street"
+              ],
+              a: 1
+            },
+          {
+              q: "Naipaul took his Bachelor of Arts’ degree from-",
+              o: [
+              "Oxford University",
+              "Christ's College",
+              "Cambridge University",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "Naipaul's first novel, 'The Mystic Masseur' was published in-",
+              o: [
+              "1940",
+              "1950",
+              "1957",
+              "1945"
+              ],
+              a: 2
+            },
+          {
+              q: "Naipaul's grandparents had emigrated to Trinidad from-",
+              o: [
+              "Italy",
+              "India",
+              "Spain",
+              "France"
+              ],
+              a: 1
+            },
+          {
+              q: "Naipaul's father Seepersad Naipaul was a -",
+              o: [
+              "Clerk",
+              "Teacher",
+              "Journalist",
+              "Doctor"
+              ],
+              a: 2
+            },
+          {
+              q: "Naipaul passed away on",
+              o: [
+              "5 June 2010",
+              "11 August 2018",
+              "10 May 2005",
+              "20 March 2008"
+              ],
+              a: 1
+            },
+          {
+              q: "Naipaul's wife was his classmate from Oxford. Her name was-",
+              o: [
+              "Patricia Hale",
+              "Anne",
+              "Catherine",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "V. S. Naipaul's novel 'A House for Mr. Biswas' was published in-",
+              o: [
+              "1950",
+              "1955",
+              "1961",
+              "1965"
+              ],
+              a: 2
+            },
+          {
+              q: "The protagonist of the novel 'A House for Mr. Biswas’ is-",
+              o: [
+              "Mohun Biswas",
+              "Shama Biswas",
+              "Anand Biswal",
+              "Savi Biswas"
+              ],
+              a: 0
+            },
+          {
+              q: "Mohun Biswas is an Indian who was born in-",
+              o: [
+              "France",
+              "Trinidad",
+              "Italy",
+              "Germany"
+              ],
+              a: 1
+            },
+          {
+              q: "What is the profession of Jairam who gives the training of Pundit to Mr. Biswas-",
+              o: [
+              "Writer",
+              "Doctor",
+              "Clerk",
+              "Teacher"
+              ],
+              a: 3
+            },
+          {
+              q: "Which character in the novel ‘A House for Mr. Biswas’ is talented at designing letters?",
+              o: [
+              "Alec",
+              "Dehuta",
+              "Mr. Biswas",
+              "Ramchand"
+              ],
+              a: 0
+            },
+          {
+              q: "The residence of Tulsi family is known as -",
+              o: [
+              "Sweet home",
+              "Shiv House",
+              "Hanuman House",
+              "Tulsi House"
+              ],
+              a: 2
+            },
+          {
+              q: "Where does Owad go to study in the novel ‘A House for Mr. Biswas’?",
+              o: [
+              "Oxford",
+              "Cambridge",
+              "India",
+              "None of These"
+              ],
+              a: 1
+            },
+          {
+              q: "Indira Goswami was born on-",
+              o: [
+              "14th November, 1942",
+              "15th March, 1940",
+              "18th June, 1935",
+              "5th May, 1930"
+              ],
+              a: 0
+            },
+          {
+              q: "Who is known by her pen-name Mamoni Raisom Goswami ?",
+              o: [
+              "Indira Goswami",
+              "Judith weight",
+              "Margaret Atwood",
+              "Urvashi Butalia"
+              ],
+              a: 0
+            },
+          {
+              q: "Indira Goswami was born in -",
+              o: [
+              "Mumbai",
+              "Punjab",
+              "Assam",
+              "Gujrat"
+              ],
+              a: 2
+            },
+          {
+              q: "Goswami was awarded the Sahitya Akademi award in the year-",
+              o: [
+              "1983",
+              "1980",
+              "1982",
+              "1985"
+              ],
+              a: 0
+            },
+          {
+              q: "Goswami was awarded the Padma Shri award in the year-",
+              o: [
+              "2009",
+              "2002",
+              "2005",
+              "2008"
+              ],
+              a: 1
+            },
+          {
+              q: "Goswami worked as a professor of Assamese in-",
+              o: [
+              "Jawahar Lal Nehru University",
+              "Mumbai University",
+              "Delhi University",
+              "None of these."
+              ],
+              a: 2
+            },
+          {
+              q: "Goswami's novel ‘The Moth Eaten Howdah of the Tusker' was published in the year-",
+              o: [
+              "1980",
+              "1985",
+              "1986",
+              "1987"
+              ],
+              a: 2
+            },
+          {
+              q: "In which language the novel 'The Moth Eaten Howdah of the Tusker' was originally written?",
+              o: [
+              "Marathi",
+              "Punjabi",
+              "Assamese",
+              "Hindi"
+              ],
+              a: 2
+            },
+          {
+              q: "Goswami translated ‘The Moth Eaten Howdah of the Tusker’ in to English and it was published in -",
+              o: [
+              "2002",
+              "2004",
+              "2006",
+              "2008"
+              ],
+              a: 1
+            },
+          {
+              q: "'The Moth Eaten Howdah of the Tusker' is a story about an Assamese Brahmin widow. Her name is-",
+              o: [
+              "Durga.",
+              "Eliman",
+              "Saru",
+              "Giribala."
+              ],
+              a: 3
+            },
+          {
+              q: "The novel 'The Moth Eaten Howdah of a Tusker' was made into a film entitled-",
+              o: [
+              "Lajja",
+              "Adajya",
+              "Stri",
+              "Sati"
+              ],
+              a: 1
+            },
+          {
+              q: "Who falls in love with Mark Sahab in the novel 'The Moth Eaten Howdah of the Tusker'?",
+              o: [
+              "Giribala",
+              "Saru",
+              "Durga",
+              "None of these"
+              ],
+              a: 0
+            }
           ]
         },
-        {
+      {
           id: "u7",
           name: "Fiction II",
           blurb: "Nadine Gordimer, V. S. Naipaul / Indira Goswami",
           questions: [
-              { q: "Wole Soyinka was born on-", o: ["13th July , 1934", "14th April, 1935", "18th May, 1940", "30th June, 1945"], a: 0 },
-              { q: "Wole Soyinka was born in-", o: ["Spain", "France", "Nigeria", "Italy"], a: 2 },
-              { q: "Wole Soyinka, a poet, playwright and essayist, is a-", o: ["British", "Nigerian", "Indian", "None of These"], a: 1 },
-              { q: "Wole Soyinka went to study at-", o: ["Cambridge University", "Oxford University", "University of Leeds", "None of these"], a: 2 },
-              { q: "Who among the following writers was born in Yoruba family -", o: ["Nadin Gordimer", "Wole Soyinka", "Patrick White", "Trey Anthony"], a: 1 },
-              { q: "During the Nigerian Civil War, who was arrested and put into solitary confinement for two years?", o: ["Toru Dutt", "Patrick white", "Wole Soyinka", "Nadin Gordimer"], a: 2 },
-              { q: "What is Wole Soyinka's full name?", o: ["Oluwole Soyinka", "Akinwande Oluwole Babatunde Soyinka", "Oluwole Yoruba Soyinka", "Akinwande Charles Soyinka"], a: 1 },
-              { q: "Wole Soyinka got the Academy of Achievement Golden Plate Award in the year -", o: ["2010", "2009", "2015", "2020"], a: 1 },
-              { q: "In which Nigerian city was Wole Soyinka born?", o: ["Ibadan", "Lagos", "Zaria", "Abeokuta"], a: 3 },
-              { q: "Who wrote the play: The Lion and The Jewel?", o: ["Mulk Raj Anand", "Wole Soyinka", "Pablo Neruda", "V.S. Naipaul"], a: 1 },
-              { q: "The play 'The Lion and the Jewel' was first performed in 1959 in -", o: ["Ibadan", "France", "Italy", "Japan"], a: 0 },
-              { q: "'The Lion and the Jewel' staged in London at The Royal Court Theatre in the year -", o: ["1962", "1960", "1966", "1970"], a: 2 },
-              { q: "Which play of Wole Soyinka is divided into three parts: Morning, Noon, and Night?", o: ["The Invention", "The Swamp Dwellers", "The Strong Breed", "The Lion and the Jewel."], a: 3 },
-              { q: "What is the setting of ‘The Lion and the Jewel’?", o: ["Ilujinle", "Ibadan", "France", "None of these"], a: 0 },
-              { q: "Who is the most beautiful young woman of the Village Ilujinle in 'The Lion and the Jewel '?", o: ["Sadiku", "Sidi", "Savi", "None of These"], a: 1 },
-              { q: "Lakunle is twenty-three years old man who works as a -", o: ["Writer", "Clerk", "Manager", "School teacher"], a: 3 },
-              { q: "Who is Baroka in 'The Lion and The Jewel'?", o: ["Village leader", "Teacher", "Doctor", "Actor"], a: 0 },
-              { q: "Which character constantly looks for new wives in 'The Lion and the Jewel'?", o: ["Lakunle", "Ваroka", "The Wrestler", "None of these"], a: 1 },
-              { q: "Who is the chief wife of Baroka?", o: ["The favourite", "Sidi", "Sadiku", "None of these"], a: 2 },
-              { q: "Who proposes Sidi for marriage in 'The Lion and the Jewel’?", o: ["Lakunle", "Baroka", "Both 'A' and 'B'", "None of these"], a: 2 },
-              { q: "Who is referred to as 'The Jewel' in the play 'The Lion and the Jewel’?", o: ["Sidi", "Sadiku", "Ваroka", "Lakunle"], a: 0 },
-              { q: "What is the profession of the stranger in the play 'The Lion and the Jewel’?", o: ["Teacher", "Photographer", "Wrestler", "Player"], a: 1 },
-              { q: "Why does Sidi decline Baroka's proposal to marry him?", o: ["She finds him too old.", "She does not like his face", "She finds him too young", "She loves the stranger"], a: 0 },
-              { q: "At the end of the play' The Lion and the Jewel’, who wins Sidi ?", o: ["The stranger", "Lakunle", "Baroka", "None of these."], a: 2 },
-              { q: "Trey Anthony was born in the year -", o: ["1983", "1981", "1980", "1970"], a: 0 },
-              { q: "Trey was born in -", o: ["Italy", "London", "France", "America"], a: 1 },
-              { q: "Trey Anthony, moved to Canada with her mother, at the age of -", o: ["25years.", "20 years", "15 years.", "12 years"], a: 3 },
-              { q: "Where did Trey Anthony start to write her own sketch comedy shows?", o: ["Second City", "Christ Comedy club", "Lotus theatre", "None of these"], a: 0 },
-              { q: "What is the name of the production company founded by Trey Anthony?", o: ["Anthony’s theatre", "Trey's Studio", "Trey Anthony Studios", "None of these"], a: 2 },
-              { q: "Trey Anthony was awarded NAACP Theatre award in the year-", o: ["2007", "2010", "1999", "1998"], a: 0 },
-              { q: "Trey Anthony received Gemini award in the year-", o: ["2005", "2008", "2010", "2012"], a: 1 },
-              { q: "What is the name of Trey Anthony's brother, who is also a writer?", o: ["Darren Anthony", "Charles Anthony", "John Anthony", "Alec Anthony"], a: 0 },
-              { q: "Trey's play 'Da Kink in my Hair' was debuted at Toronto Fringe Festival in the year -", o: ["2005", "1999", "2001", "2008"], a: 2 },
-              { q: "The Central character of the play 'Da Kink in my Hair' is -", o: ["Novelette", "Suzy", "Patsy", "Sherelle"], a: 0 },
-              { q: "Who is the first Black Canadian woman to have her own prime time show on Canadian television?", o: ["Lorena Crale", "Carrie Best", "Kanika Ambrose", "Trey Anthony"], a: 3 },
-              { q: "Who is the narrator of the story in the play, 'Da Kink in My Hair' ?", o: ["Novelette", "Nia", "Jasmine", "Suzy"], a: 0 },
-              { q: "Who lost her son in the play, 'Da kink in my Hair' due to gun violence?", o: ["Novelette", "Suzy", "Patsy", "None of these"], a: 2 },
-              { q: "Which character is a television actress in the play ‘Da kink in my Hair’ ?", o: ["Suzi", "Sharmaine", "Patsy", "Nia"], a: 1 },
-              { q: "What is the setting of the play 'Da kink in my Hair' ?", o: ["A class room", "A college campus", "A hair salon", "A restaurant"], a: 2 },
-              { q: "Who tells that she has a date in the evening with an 87 year-old man, in the play 'Da kink in my Hair' ?", o: ["Patsy", "Miss Enid", "Suzy", "Nia"], a: 1 },
-              { q: "Which character faces interracial issues and racism in ‘Da Kink in my Hair’?", o: ["Nia", "Patsy", "Suzy", "Sherelle"], a: 2 },
-              { q: "Which character delivers a soliloquy at the end of Act- 2 ?", o: ["Novelette", "Patsy", "Miss Enid", "Nia"], a: 0 },
-              { q: "Which character reveals her romantic relationship with a woman?", o: ["Suzy", "Sharmaine", "Jasmine", "Miss Enid"], a: 1 },
-              { q: "What does Novelette Suggest women to do in concern to their truth in the play 'Da kink in My Hair' ?", o: ["Reject it", "Change it", "Embrace it", "None of these"], a: 2 }
+          {
+              q: "Wole Soyinka was born on-",
+              o: [
+              "13th July , 1934",
+              "14th April, 1935",
+              "18th May, 1940",
+              "30th June, 1945"
+              ],
+              a: 0
+            },
+          {
+              q: "Wole Soyinka was born in-",
+              o: [
+              "Spain",
+              "France",
+              "Nigeria",
+              "Italy"
+              ],
+              a: 2
+            },
+          {
+              q: "Wole Soyinka, a poet, playwright and essayist, is a-",
+              o: [
+              "British",
+              "Nigerian",
+              "Indian",
+              "None of These"
+              ],
+              a: 1
+            },
+          {
+              q: "Wole Soyinka went to study at-",
+              o: [
+              "Cambridge University",
+              "Oxford University",
+              "University of Leeds",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "Who among the following writers was born in Yoruba family -",
+              o: [
+              "Nadin Gordimer",
+              "Wole Soyinka",
+              "Patrick White",
+              "Trey Anthony"
+              ],
+              a: 1
+            },
+          {
+              q: "During the Nigerian Civil War, who was arrested and put into solitary confinement for two years?",
+              o: [
+              "Toru Dutt",
+              "Patrick white",
+              "Wole Soyinka",
+              "Nadin Gordimer"
+              ],
+              a: 2
+            },
+          {
+              q: "What is Wole Soyinka's full name?",
+              o: [
+              "Oluwole Soyinka",
+              "Akinwande Oluwole Babatunde Soyinka",
+              "Oluwole Yoruba Soyinka",
+              "Akinwande Charles Soyinka"
+              ],
+              a: 1
+            },
+          {
+              q: "Wole Soyinka got the Academy of Achievement Golden Plate Award in the year -",
+              o: [
+              "2010",
+              "2009",
+              "2015",
+              "2020"
+              ],
+              a: 1
+            },
+          {
+              q: "In which Nigerian city was Wole Soyinka born?",
+              o: [
+              "Ibadan",
+              "Lagos",
+              "Zaria",
+              "Abeokuta"
+              ],
+              a: 3
+            },
+          {
+              q: "Who wrote the play: The Lion and The Jewel?",
+              o: [
+              "Mulk Raj Anand",
+              "Wole Soyinka",
+              "Pablo Neruda",
+              "V.S. Naipaul"
+              ],
+              a: 1
+            },
+          {
+              q: "The play 'The Lion and the Jewel' was first performed in 1959 in -",
+              o: [
+              "Ibadan",
+              "France",
+              "Italy",
+              "Japan"
+              ],
+              a: 0
+            },
+          {
+              q: "'The Lion and the Jewel' staged in London at The Royal Court Theatre in the year -",
+              o: [
+              "1962",
+              "1960",
+              "1966",
+              "1970"
+              ],
+              a: 2
+            },
+          {
+              q: "Which play of Wole Soyinka is divided into three parts: Morning, Noon, and Night?",
+              o: [
+              "The Invention",
+              "The Swamp Dwellers",
+              "The Strong Breed",
+              "The Lion and the Jewel."
+              ],
+              a: 3
+            },
+          {
+              q: "What is the setting of ‘The Lion and the Jewel’?",
+              o: [
+              "Ilujinle",
+              "Ibadan",
+              "France",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "Who is the most beautiful young woman of the Village Ilujinle in 'The Lion and the Jewel '?",
+              o: [
+              "Sadiku",
+              "Sidi",
+              "Savi",
+              "None of These"
+              ],
+              a: 1
+            },
+          {
+              q: "Lakunle is twenty-three years old man who works as a -",
+              o: [
+              "Writer",
+              "Clerk",
+              "Manager",
+              "School teacher"
+              ],
+              a: 3
+            },
+          {
+              q: "Who is Baroka in 'The Lion and The Jewel'?",
+              o: [
+              "Village leader",
+              "Teacher",
+              "Doctor",
+              "Actor"
+              ],
+              a: 0
+            },
+          {
+              q: "Which character constantly looks for new wives in 'The Lion and the Jewel'?",
+              o: [
+              "Lakunle",
+              "Ваroka",
+              "The Wrestler",
+              "None of these"
+              ],
+              a: 1
+            },
+          {
+              q: "Who is the chief wife of Baroka?",
+              o: [
+              "The favourite",
+              "Sidi",
+              "Sadiku",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "Who proposes Sidi for marriage in 'The Lion and the Jewel’?",
+              o: [
+              "Lakunle",
+              "Baroka",
+              "Both 'A' and 'B'",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "Who is referred to as 'The Jewel' in the play 'The Lion and the Jewel’?",
+              o: [
+              "Sidi",
+              "Sadiku",
+              "Ваroka",
+              "Lakunle"
+              ],
+              a: 0
+            },
+          {
+              q: "What is the profession of the stranger in the play 'The Lion and the Jewel’?",
+              o: [
+              "Teacher",
+              "Photographer",
+              "Wrestler",
+              "Player"
+              ],
+              a: 1
+            },
+          {
+              q: "Why does Sidi decline Baroka's proposal to marry him?",
+              o: [
+              "She finds him too old.",
+              "She does not like his face",
+              "She finds him too young",
+              "She loves the stranger"
+              ],
+              a: 0
+            },
+          {
+              q: "At the end of the play' The Lion and the Jewel’, who wins Sidi ?",
+              o: [
+              "The stranger",
+              "Lakunle",
+              "Baroka",
+              "None of these."
+              ],
+              a: 2
+            },
+          {
+              q: "Trey Anthony was born in the year -",
+              o: [
+              "1983",
+              "1981",
+              "1980",
+              "1970"
+              ],
+              a: 0
+            },
+          {
+              q: "Trey was born in -",
+              o: [
+              "Italy",
+              "London",
+              "France",
+              "America"
+              ],
+              a: 1
+            },
+          {
+              q: "Trey Anthony, moved to Canada with her mother, at the age of -",
+              o: [
+              "25years.",
+              "20 years",
+              "15 years.",
+              "12 years"
+              ],
+              a: 3
+            },
+          {
+              q: "Where did Trey Anthony start to write her own sketch comedy shows?",
+              o: [
+              "Second City",
+              "Christ Comedy club",
+              "Lotus theatre",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "What is the name of the production company founded by Trey Anthony?",
+              o: [
+              "Anthony’s theatre",
+              "Trey's Studio",
+              "Trey Anthony Studios",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "Trey Anthony was awarded NAACP Theatre award in the year-",
+              o: [
+              "2007",
+              "2010",
+              "1999",
+              "1998"
+              ],
+              a: 0
+            },
+          {
+              q: "Trey Anthony received Gemini award in the year-",
+              o: [
+              "2005",
+              "2008",
+              "2010",
+              "2012"
+              ],
+              a: 1
+            },
+          {
+              q: "What is the name of Trey Anthony's brother, who is also a writer?",
+              o: [
+              "Darren Anthony",
+              "Charles Anthony",
+              "John Anthony",
+              "Alec Anthony"
+              ],
+              a: 0
+            },
+          {
+              q: "Trey's play 'Da Kink in my Hair' was debuted at Toronto Fringe Festival in the year -",
+              o: [
+              "2005",
+              "1999",
+              "2001",
+              "2008"
+              ],
+              a: 2
+            },
+          {
+              q: "The Central character of the play 'Da Kink in my Hair' is -",
+              o: [
+              "Novelette",
+              "Suzy",
+              "Patsy",
+              "Sherelle"
+              ],
+              a: 0
+            },
+          {
+              q: "Who is the first Black Canadian woman to have her own prime time show on Canadian television?",
+              o: [
+              "Lorena Crale",
+              "Carrie Best",
+              "Kanika Ambrose",
+              "Trey Anthony"
+              ],
+              a: 3
+            },
+          {
+              q: "Who is the narrator of the story in the play, 'Da Kink in My Hair' ?",
+              o: [
+              "Novelette",
+              "Nia",
+              "Jasmine",
+              "Suzy"
+              ],
+              a: 0
+            },
+          {
+              q: "Who lost her son in the play, 'Da kink in my Hair' due to gun violence?",
+              o: [
+              "Novelette",
+              "Suzy",
+              "Patsy",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "Which character is a television actress in the play ‘Da kink in my Hair’ ?",
+              o: [
+              "Suzi",
+              "Sharmaine",
+              "Patsy",
+              "Nia"
+              ],
+              a: 1
+            },
+          {
+              q: "What is the setting of the play 'Da kink in my Hair' ?",
+              o: [
+              "A class room",
+              "A college campus",
+              "A hair salon",
+              "A restaurant"
+              ],
+              a: 2
+            },
+          {
+              q: "Who tells that she has a date in the evening with an 87 year-old man, in the play 'Da kink in my Hair' ?",
+              o: [
+              "Patsy",
+              "Miss Enid",
+              "Suzy",
+              "Nia"
+              ],
+              a: 1
+            },
+          {
+              q: "Which character faces interracial issues and racism in ‘Da Kink in my Hair’?",
+              o: [
+              "Nia",
+              "Patsy",
+              "Suzy",
+              "Sherelle"
+              ],
+              a: 2
+            },
+          {
+              q: "Which character delivers a soliloquy at the end of Act- 2 ?",
+              o: [
+              "Novelette",
+              "Patsy",
+              "Miss Enid",
+              "Nia"
+              ],
+              a: 0
+            },
+          {
+              q: "Which character reveals her romantic relationship with a woman?",
+              o: [
+              "Suzy",
+              "Sharmaine",
+              "Jasmine",
+              "Miss Enid"
+              ],
+              a: 1
+            },
+          {
+              q: "What does Novelette Suggest women to do in concern to their truth in the play 'Da kink in My Hair' ?",
+              o: [
+              "Reject it",
+              "Change it",
+              "Embrace it",
+              "None of these"
+              ],
+              a: 2
+            }
           ]
         },
-        {
+      {
           id: "u8",
           name: "Drama II",
           blurb: "Wole Soyinka - The Lion and the Jewel; Trey Anthony - da Kink in My Hair",
           questions: [
-              { q: "Gandhi ji was born in-", o: ["Punjab", "Gujrat", "Maharashtra", "Odisha"], a: 1 },
-              { q: "Toru is often called the .... of Indian English Literature-", o: ["Keats", "Shelley", "Shakespeare.", "Milton"], a: 0 },
-              { q: "What role does Adamson Mweta offer to Colonel Bray in ‘The Guest of Honour’?", o: ["Economic advisor.", "Leader of PIP", "President", "Educational advisor."], a: 3 },
-              { q: "In which year Pablo Neruda won Noble Prize in Literature?", o: ["1971", "1975", "1973", "1978"], a: 0 },
-              { q: "The date, 9th January, when Gandhi ji returned to India from South Africa, is observed as-", o: ["BhartiyaDiwas", "Pravasi Divas", "Pravasi Bhartiya Diwas", "Shaheed Diwas"], a: 2 },
-              { q: "The Book Hind Swaraj is written by-", o: ["Tagore", "Gandhi ji", "M. R.Anand.", "Raja Rao"], a: 1 },
-              { q: "How did the stories of the partition appear in Butalia's mind?", o: ["As a result of her education", "As a result of communal violence", "As a result of freedom Struggle", "None of these."], a: 1 },
-              { q: "“Is there a creature on earth that dares to work our hero harm?” In the above line who is referred as hero?", o: ["Ram", "Lakshman", "Bharat", "Ravan"], a: 0 },
-              { q: "Who is known as ‘the father of modern Indian English poetry'?", o: ["A.K. Ramanujan", "Nissim Ezekiel", "Jayant Mahapatra", "K. N. Daruwalla."], a: 1 },
-              { q: "The poem 'Hunger' consists of -", o: ["3 stanzas", "5 stanzas", "4 Stanzas", "6 stanzas."], a: 2 },
-              { q: "According to the editor ‘passive resistance’ is a method of securing rights by-", o: ["Suffering of others.", "Violence", "Personal suffering", "Torturing others."], a: 2 },
-              { q: "What is the Central theme of Menon’s book ‘Seeing Like a Feminist’?", o: ["Religion", "Education", "Marriage", "Feminist theory and gender studies"], a: 3 },
-              { q: "Who was the first Indian ruler to introduce compulsory and free education in his state?", o: ["Maharaja Ranjeet Singh", "Maharaja Bheem Singh", "Maharaj Gopas Das.", "Maharaj Gaikwar"], a: 3 },
-              { q: "Daruwalla worked as a -", o: ["Doctor", "Teacher", "Manager", "Police officer"], a: 3 },
-              { q: "Who falls in love with Mark Sahab in the novel 'The Moth Eaten Howdah of the Tusker'?", o: ["Giribala", "Saru", "Durga", "None of these"], a: 0 },
-              { q: "Urvashi Butalia was born in-", o: ["Delhi", "Kolkata, Bengal", "Nagpur, Maharashtra", "Ambala, Haryana"], a: 3 },
-              { q: "What is the setting of the play 'Da kink in my Hair' ?", o: ["A class room", "A college campus", "A hair salon", "A restaurant"], a: 2 },
-              { q: "Colonel James Evelyn Bray, a 54 years old Englishman was a-", o: ["Colonial Civil Servant", "Clerk", "Writer", "Manager"], a: 0 },
-              { q: "Which work inspired the title of Menon’s book ‘Seeing Like a Feminist’?", o: ["A Vindication of the Rights of Woman by Mary Wollstonecraft", "A Room of One’s own by Virginia Woolf", "Seeing Like a State by James C. Scott", "None of these"], a: 2 },
-              { q: "Which work of Butalia is a record of experiences of women during partition?", o: ["The Other Side of Silence", "Speaking Peace: Women Voices from Kashmir", "Inner Time", "None of these"], a: 0 },
-              { q: "Who proposes Sidi for marriage in 'The Lion and the Jewel’?", o: ["Lakunle", "Baroka", "Both 'A' and 'B'", "None of these"], a: 2 },
-              { q: "Butalia, in ‘The Other Side of Silence’, tries to give voice to the-", o: ["Marginalized and unheard experiences of women", "Experiences of freedom struggle.", "Struggle for education", "None of these."], a: 0 },
-              { q: "The play 'The Lion and the Jewel' was first performed in 1959 in -", o: ["Ibadan", "France", "Italy", "Japan"], a: 0 },
-              { q: "Who was the first Australian to get the Noble Prize in Literature?", o: ["Patrick White", "Margaret Atwood", "A.D. Hope", "None of these"], a: 0 },
-              { q: "Who Promises Bakha to provide a hockey stick in the novel Untouchable ?", o: ["Lakha", "Kali Nath", "Ram Charan", "Havildar Charat Singh"], a: 3 },
-              { q: "What are the central themes of the poem ‘The Company of Lovers’?", o: ["Civilization and Education", "Love, mortality, human relationship", "Religion and education", "None of these"], a: 1 },
-              { q: "Who is the protagonist of the novel Voss?", o: ["Emmy Bonner", "Turner", "Harry Roberts", "Johann Ulrich Voss"], a: 3 },
-              { q: "The Poem ‘Spelling’ represents a conflict between a woman’s profession and-", o: ["Motherhood", "Wifehood", "Sisterhood", "None of these"], a: 0 },
-              { q: "In which language, Black Skin, White Masks was originally published?", o: ["French", "Italian", "German", "English"], a: 0 },
-              { q: "Who was the first Indian playwright to get the Sahitya Akademi award for drama?", o: ["Girish Karnad.", "Mahesh Dattani", "Asif Currimbhoy.", "None of these."], a: 1 },
-              { q: "Which book did Gandhi ji write during his journey from London to South Africa?", o: ["My Experiment with Truth", "Gitanjali Sita and Ram", "Hind-Swaraj Sita and Lakshman.", "None of these Ans -(C) (38)The poem Lakshman is a dialogue between - (A Sita and Ravana Sita and Bharat."], a: 2 },
-              { q: "What was Fanon's age when he died?", o: ["40", "36", "30", "50"], a: 1 },
-              { q: "“Is there a creature on earth that dares to work our hero harm?” In the above line who is referred as hero?", o: ["Ram", "Lakshman", "Bharat", "Ravan"], a: 0 },
-              { q: "The residence of Tulsi family is known as -", o: ["Sweet home", "Shiv House", "Hanuman House", "Tulsi House"], a: 2 },
-              { q: "Ezekiel was born in-", o: ["Kolkata", "Mumbai", "Gujrat", "Punjab"], a: 1 },
-              { q: "In which language the novel 'The Moth Eaten Howdah of the Tusker' was originally written?", o: ["Marathi", "Punjabi", "Assamese", "Hindi"], a: 2 },
-              { q: "Which work of Fanon was prepared as a doctoral dissertation but published as a book?", o: ["A Dying Colonialism", "Black Skin, White Masks.", "The Wretched of Earth.", "None of these."], a: 1 },
-              { q: "'One brother takes his Kingdom; one would take his.... - Fill in the blank space.", o: ["Crown", "Sward", "Wife", "Mother"], a: 2 },
-              { q: "In1983, Ezekiel won Sahitya Akademi award for his work-", o: ["A Time to change.", "Sixty Poems.", "Later Day Psalms", "The Unfinished Man."], a: 2 },
-              { q: "In the play, \"Seven Steps Around the Fire' Kamala, a eunuch marries-", o: ["Mr. Sharma", "Subbu", "Suresh", "Munswami"], a: 1 },
-              { q: "For Anarkali’s bail, Uma borrows fifty thousand rupees from -", o: ["Her friend", "Her father", "Her husband", "Her father in law"], a: 1 },
-              { q: "Mulk Raj Anand lived in Sabarmati Ashram with Mahatma Gandhi, where he prepared the draft of his novel -", o: ["Coolie", "The Village", "Untouchable", "The Big Heart"], a: 2 },
-              { q: "Which character faces interracial issues and racism in the play Da Kink in My Hair?", o: ["Nia", "Patsy", "Suzy", "Sherelle"], a: 2 },
-              { q: "A Time to act, a time to contemplate' appears in the poem-", o: ["Marriage", "Enterprize.", "A Poem of Dedication", "None of these."], a: 2 },
-              { q: "Which character constantly looks for new wives in 'The Lion and the Jewel'?", o: ["Lakunle", "Ваroka", "The Wrestler", "None of these"], a: 1 },
-              { q: "Who tells that she has a date in the evening with an 87 year-old man, in the play 'Da kink in my Hair' ?", o: ["Patsy", "Miss Enid", "Suzy", "Nia"], a: 1 },
-              { q: "What is the age of fisherman's daughter in the poem ‘Hunger’?", o: ["16", "15", "19", "21"], a: 1 },
-              { q: "Who is falsely accused in kamala's murder case in Seven Step Around the fire?", o: ["Champa", "Anarkali", "Uma", "Suresh"], a: 1 },
-              { q: "Ezekiel served in University of Leeds and University of Chicago as -", o: ["Regular Professor", "Clerk", "Visiting Professor", "Writer"], a: 2 },
-              { q: "Who among the following writers was born in Yoruba family -", o: ["Nadin Gordimer", "Wole Soyinka", "Patrick White", "Trey Anthony"], a: 1 },
-              { q: "Daruwalla's first collection of poems was", o: ["Under Orion", "Landscapes.", "Winter Poems.", "Fire Altar."], a: 0 },
-              { q: "Daruwalla won Sahitya Akademi award in 1984, for-", o: ["Under Orion", "Winter Poems", "The Keeper of the Dead.", "Landscapes"], a: 2 },
-              { q: "Atwood was awarded the Booker prize for 'The Blind Assassin’ in the year-", o: ["2005", "2000", "2006", "2008"], a: 1 },
-              { q: "Which theatre was founded by Mahesh Dattani?", o: ["Globe", "Global", "Pluspen", "Playpen"], a: 3 },
-              { q: "Ezekiel begins The Poem of Dedication with the view from a-", o: ["Basement Room", "Garden", "Road", "Forest"], a: 0 },
-              { q: "What is the setting of the novel Voss?", o: ["Glorious revolution", "17th century England", "19th century Australia", "14th century England"], a: 2 },
-              { q: "Dattani’s theatre group Playpen was founded in -", o: ["1984", "1986", "1980", "1985"], a: 0 },
-              { q: "Wole Soyinka, a poet, playwright and essayist, is a-", o: ["British", "Nigerian", "Indian", "None of These"], a: 1 },
-              { q: "In the novel Voss, which character was an orphan and settled in Australia with her uncle and aunt?", o: ["Laura Trevelyan", "Emmy", "Belle", "Rose"], a: 0 },
-              { q: "Trey Anthony was awarded NAACP Theatre award in the year-", o: ["2007", "2010", "1999", "1998"], a: 0 },
-              { q: "Who encourages Rita to adopt prostitution?", o: ["Joe", "Tony", "Liza", "None of these"], a: 0 },
-              { q: "The writers known as “The Big Three\" were Mulk Raj Anand, R.K. Narayana and-", o: ["Raja Rao", "Tagore", "Anita Desai", "Kamala Markandaya."], a: 0 },
-              { q: "In the novel Untouchable Bakha has strong fascination for-", o: ["Indian way of life", "Religion", "English way of life", "Spiritual way of life"], a: 2 },
-              { q: "Dattani's Seven Steps Around the Fire is a-", o: ["Comedy", "Tragi- comedy", "Radio Play", "Absurd play"], a: 2 },
-              { q: "Which is not a play by Asif Currimbhoy?", o: ["Goa", "Tara", "The Refugee", "The Hungry Ones"], a: 1 },
-              { q: "Kamala Purnaiya and Kamala Taylor are the pseudonyms of-", o: ["Kamala Das", "Kamala Markandaya", "Kamala Suraiya", "None of these"], a: 1 },
-              { q: "‘A child is not a poem, a poem is not a child’, this line appears in the poem-", o: ["The Company of Lovers", "Mother", "Hunger", "Spelling"], a: 3 },
-              { q: "The four characters in the play ‘The Doldrummers’ represent-", o: ["Struggle for fame", "Struggle for survival", "Struggle for study", "None of these"], a: 1 },
-              { q: "Which play of Wole Soyinka is divided into three parts: Morning, Noon, and Night?", o: ["The Invention", "The Swamp Dwellers", "The Strong Breed", "The Lion and the Jewel."], a: 3 },
-              { q: "Anand founded a fine art magazine, named-", o: ["Kali", "Patrika", "Marg", "Criterion"], a: 2 },
-              { q: "Markandaya's novel 'Nectar in a Sieve' got its title from-", o: ["Shakespeare's poem.", "Shelley's poem.", "Keat’s poem", "Coleridge's poem."], a: 3 },
-              { q: "Frantz fanon was born in-", o: ["Italy", "India", "Martinique", "London."], a: 2 },
-              { q: "Who is an illegitimate child in the play The Doldrummers?", o: ["Tony", "Joe", "Liza", "Rita"], a: 1 },
-              { q: "What is the title of chapter IV of the Book ‘Black Skin White Masks’?", o: ["Body", "Desire", "The so-called Dependency Complex of the Colonized", "Decolonization"], a: 2 },
-              { q: "Menon’s controversial speech which she delivered in 2016 during J.N.U protest was about -", o: ["Kashmir inclusion in the Union of India", "Religion", "Exploitation of the marginalized", "Education"], a: 0 },
-              { q: "Who is the protagonist of the novel ' Untouchable'?", o: ["Bakha", "Lakha", "Rakha", "Pandit Kali Nath."], a: 0 },
-              { q: "In which section of jail, eunuch Anarkali is being kept in the play Seven Steps Around the fire?", o: ["Male Section", "Female Section", "Separate section", "None of these"], a: 0 },
-              { q: "Who worked in Burmah-Shell Oil Company?", o: ["Asif Currimbhoy", "Makesh Dattani", "K. N. Daruwalla", "Jayant Mahapatra"], a: 0 },
-              { q: "What is Fanon’s term for desire to become whiter?", o: ["Lactification", "Dependency", "Imitation", "White mask"], a: 0 },
-              { q: "Nivedita Menon, delivered her controversial speech on Nationalist ideals in -", o: ["2020", "2022", "2012", "2016"], a: 3 },
-              { q: "What is the profession of kennington, who is also known as Kenny in the novel Nectar in a Sieve?", o: ["Professor", "Doctor", "Clerk", "Police officer"], a: 1 },
-              { q: "Who Symbolises the hypocrisy of the high caste Hindus, in the novel Untouchable?", o: ["Pt. Kali Nath", "Ram Charan", "Charat Singh", "None of these."], a: 0 },
-              { q: "Which chapter of the Book ‘Black Skin and White Masks’ is based on Octave Mannoni's work Prospero and Caliban: the Psychology of colonization?", o: ["Chapter one", "Chapter four", "Chapter six", "Chapter two"], a: 1 }
+          {
+              q: "Gandhi ji was born in-",
+              o: [
+              "Punjab",
+              "Gujrat",
+              "Maharashtra",
+              "Odisha"
+              ],
+              a: 1
+            },
+          {
+              q: "Toru is often called the .... of Indian English Literature-",
+              o: [
+              "Keats",
+              "Shelley",
+              "Shakespeare.",
+              "Milton"
+              ],
+              a: 0
+            },
+          {
+              q: "What role does Adamson Mweta offer to Colonel Bray in ‘The Guest of Honour’?",
+              o: [
+              "Economic advisor.",
+              "Leader of PIP",
+              "President",
+              "Educational advisor."
+              ],
+              a: 3
+            },
+          {
+              q: "In which year Pablo Neruda won Noble Prize in Literature?",
+              o: [
+              "1971",
+              "1975",
+              "1973",
+              "1978"
+              ],
+              a: 0
+            },
+          {
+              q: "The date, 9th January, when Gandhi ji returned to India from South Africa, is observed as-",
+              o: [
+              "BhartiyaDiwas",
+              "Pravasi Divas",
+              "Pravasi Bhartiya Diwas",
+              "Shaheed Diwas"
+              ],
+              a: 2
+            },
+          {
+              q: "The Book Hind Swaraj is written by-",
+              o: [
+              "Tagore",
+              "Gandhi ji",
+              "M. R.Anand.",
+              "Raja Rao"
+              ],
+              a: 1
+            },
+          {
+              q: "How did the stories of the partition appear in Butalia's mind?",
+              o: [
+              "As a result of her education",
+              "As a result of communal violence",
+              "As a result of freedom Struggle",
+              "None of these."
+              ],
+              a: 1
+            },
+          {
+              q: "“Is there a creature on earth that dares to work our hero harm?” In the above line who is referred as hero?",
+              o: [
+              "Ram",
+              "Lakshman",
+              "Bharat",
+              "Ravan"
+              ],
+              a: 0
+            },
+          {
+              q: "Who is known as ‘the father of modern Indian English poetry'?",
+              o: [
+              "A.K. Ramanujan",
+              "Nissim Ezekiel",
+              "Jayant Mahapatra",
+              "K. N. Daruwalla."
+              ],
+              a: 1
+            },
+          {
+              q: "The poem 'Hunger' consists of -",
+              o: [
+              "3 stanzas",
+              "5 stanzas",
+              "4 Stanzas",
+              "6 stanzas."
+              ],
+              a: 2
+            },
+          {
+              q: "According to the editor ‘passive resistance’ is a method of securing rights by-",
+              o: [
+              "Suffering of others.",
+              "Violence",
+              "Personal suffering",
+              "Torturing others."
+              ],
+              a: 2
+            },
+          {
+              q: "What is the Central theme of Menon’s book ‘Seeing Like a Feminist’?",
+              o: [
+              "Religion",
+              "Education",
+              "Marriage",
+              "Feminist theory and gender studies"
+              ],
+              a: 3
+            },
+          {
+              q: "Who was the first Indian ruler to introduce compulsory and free education in his state?",
+              o: [
+              "Maharaja Ranjeet Singh",
+              "Maharaja Bheem Singh",
+              "Maharaj Gopas Das.",
+              "Maharaj Gaikwar"
+              ],
+              a: 3
+            },
+          {
+              q: "Daruwalla worked as a -",
+              o: [
+              "Doctor",
+              "Teacher",
+              "Manager",
+              "Police officer"
+              ],
+              a: 3
+            },
+          {
+              q: "Who falls in love with Mark Sahab in the novel 'The Moth Eaten Howdah of the Tusker'?",
+              o: [
+              "Giribala",
+              "Saru",
+              "Durga",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "Urvashi Butalia was born in-",
+              o: [
+              "Delhi",
+              "Kolkata, Bengal",
+              "Nagpur, Maharashtra",
+              "Ambala, Haryana"
+              ],
+              a: 3
+            },
+          {
+              q: "What is the setting of the play 'Da kink in my Hair' ?",
+              o: [
+              "A class room",
+              "A college campus",
+              "A hair salon",
+              "A restaurant"
+              ],
+              a: 2
+            },
+          {
+              q: "Colonel James Evelyn Bray, a 54 years old Englishman was a-",
+              o: [
+              "Colonial Civil Servant",
+              "Clerk",
+              "Writer",
+              "Manager"
+              ],
+              a: 0
+            },
+          {
+              q: "Which work inspired the title of Menon’s book ‘Seeing Like a Feminist’?",
+              o: [
+              "A Vindication of the Rights of Woman by Mary Wollstonecraft",
+              "A Room of One’s own by Virginia Woolf",
+              "Seeing Like a State by James C. Scott",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "Which work of Butalia is a record of experiences of women during partition?",
+              o: [
+              "The Other Side of Silence",
+              "Speaking Peace: Women Voices from Kashmir",
+              "Inner Time",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "Who proposes Sidi for marriage in 'The Lion and the Jewel’?",
+              o: [
+              "Lakunle",
+              "Baroka",
+              "Both 'A' and 'B'",
+              "None of these"
+              ],
+              a: 2
+            },
+          {
+              q: "Butalia, in ‘The Other Side of Silence’, tries to give voice to the-",
+              o: [
+              "Marginalized and unheard experiences of women",
+              "Experiences of freedom struggle.",
+              "Struggle for education",
+              "None of these."
+              ],
+              a: 0
+            },
+          {
+              q: "The play 'The Lion and the Jewel' was first performed in 1959 in -",
+              o: [
+              "Ibadan",
+              "France",
+              "Italy",
+              "Japan"
+              ],
+              a: 0
+            },
+          {
+              q: "Who was the first Australian to get the Noble Prize in Literature?",
+              o: [
+              "Patrick White",
+              "Margaret Atwood",
+              "A.D. Hope",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "Who Promises Bakha to provide a hockey stick in the novel Untouchable ?",
+              o: [
+              "Lakha",
+              "Kali Nath",
+              "Ram Charan",
+              "Havildar Charat Singh"
+              ],
+              a: 3
+            },
+          {
+              q: "What are the central themes of the poem ‘The Company of Lovers’?",
+              o: [
+              "Civilization and Education",
+              "Love, mortality, human relationship",
+              "Religion and education",
+              "None of these"
+              ],
+              a: 1
+            },
+          {
+              q: "Who is the protagonist of the novel Voss?",
+              o: [
+              "Emmy Bonner",
+              "Turner",
+              "Harry Roberts",
+              "Johann Ulrich Voss"
+              ],
+              a: 3
+            },
+          {
+              q: "The Poem ‘Spelling’ represents a conflict between a woman’s profession and-",
+              o: [
+              "Motherhood",
+              "Wifehood",
+              "Sisterhood",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "In which language, Black Skin, White Masks was originally published?",
+              o: [
+              "French",
+              "Italian",
+              "German",
+              "English"
+              ],
+              a: 0
+            },
+          {
+              q: "Who was the first Indian playwright to get the Sahitya Akademi award for drama?",
+              o: [
+              "Girish Karnad.",
+              "Mahesh Dattani",
+              "Asif Currimbhoy.",
+              "None of these."
+              ],
+              a: 1
+            },
+          {
+              q: "Which book did Gandhi ji write during his journey from London to South Africa?",
+              o: [
+              "My Experiment with Truth",
+              "Gitanjali Sita and Ram",
+              "Hind-Swaraj Sita and Lakshman.",
+              "None of these Ans -(C) (38)The poem Lakshman is a dialogue between - (A Sita and Ravana Sita and Bharat."
+              ],
+              a: 2
+            },
+          {
+              q: "What was Fanon's age when he died?",
+              o: [
+              "40",
+              "36",
+              "30",
+              "50"
+              ],
+              a: 1
+            },
+          {
+              q: "“Is there a creature on earth that dares to work our hero harm?” In the above line who is referred as hero?",
+              o: [
+              "Ram",
+              "Lakshman",
+              "Bharat",
+              "Ravan"
+              ],
+              a: 0
+            },
+          {
+              q: "The residence of Tulsi family is known as -",
+              o: [
+              "Sweet home",
+              "Shiv House",
+              "Hanuman House",
+              "Tulsi House"
+              ],
+              a: 2
+            },
+          {
+              q: "Ezekiel was born in-",
+              o: [
+              "Kolkata",
+              "Mumbai",
+              "Gujrat",
+              "Punjab"
+              ],
+              a: 1
+            },
+          {
+              q: "In which language the novel 'The Moth Eaten Howdah of the Tusker' was originally written?",
+              o: [
+              "Marathi",
+              "Punjabi",
+              "Assamese",
+              "Hindi"
+              ],
+              a: 2
+            },
+          {
+              q: "Which work of Fanon was prepared as a doctoral dissertation but published as a book?",
+              o: [
+              "A Dying Colonialism",
+              "Black Skin, White Masks.",
+              "The Wretched of Earth.",
+              "None of these."
+              ],
+              a: 1
+            },
+          {
+              q: "'One brother takes his Kingdom; one would take his.... - Fill in the blank space.",
+              o: [
+              "Crown",
+              "Sward",
+              "Wife",
+              "Mother"
+              ],
+              a: 2
+            },
+          {
+              q: "In1983, Ezekiel won Sahitya Akademi award for his work-",
+              o: [
+              "A Time to change.",
+              "Sixty Poems.",
+              "Later Day Psalms",
+              "The Unfinished Man."
+              ],
+              a: 2
+            },
+          {
+              q: "In the play, \"Seven Steps Around the Fire' Kamala, a eunuch marries-",
+              o: [
+              "Mr. Sharma",
+              "Subbu",
+              "Suresh",
+              "Munswami"
+              ],
+              a: 1
+            },
+          {
+              q: "For Anarkali’s bail, Uma borrows fifty thousand rupees from -",
+              o: [
+              "Her friend",
+              "Her father",
+              "Her husband",
+              "Her father in law"
+              ],
+              a: 1
+            },
+          {
+              q: "Mulk Raj Anand lived in Sabarmati Ashram with Mahatma Gandhi, where he prepared the draft of his novel -",
+              o: [
+              "Coolie",
+              "The Village",
+              "Untouchable",
+              "The Big Heart"
+              ],
+              a: 2
+            },
+          {
+              q: "Which character faces interracial issues and racism in the play Da Kink in My Hair?",
+              o: [
+              "Nia",
+              "Patsy",
+              "Suzy",
+              "Sherelle"
+              ],
+              a: 2
+            },
+          {
+              q: "A Time to act, a time to contemplate' appears in the poem-",
+              o: [
+              "Marriage",
+              "Enterprize.",
+              "A Poem of Dedication",
+              "None of these."
+              ],
+              a: 2
+            },
+          {
+              q: "Which character constantly looks for new wives in 'The Lion and the Jewel'?",
+              o: [
+              "Lakunle",
+              "Ваroka",
+              "The Wrestler",
+              "None of these"
+              ],
+              a: 1
+            },
+          {
+              q: "Who tells that she has a date in the evening with an 87 year-old man, in the play 'Da kink in my Hair' ?",
+              o: [
+              "Patsy",
+              "Miss Enid",
+              "Suzy",
+              "Nia"
+              ],
+              a: 1
+            },
+          {
+              q: "What is the age of fisherman's daughter in the poem ‘Hunger’?",
+              o: [
+              "16",
+              "15",
+              "19",
+              "21"
+              ],
+              a: 1
+            },
+          {
+              q: "Who is falsely accused in kamala's murder case in Seven Step Around the fire?",
+              o: [
+              "Champa",
+              "Anarkali",
+              "Uma",
+              "Suresh"
+              ],
+              a: 1
+            },
+          {
+              q: "Ezekiel served in University of Leeds and University of Chicago as -",
+              o: [
+              "Regular Professor",
+              "Clerk",
+              "Visiting Professor",
+              "Writer"
+              ],
+              a: 2
+            },
+          {
+              q: "Who among the following writers was born in Yoruba family -",
+              o: [
+              "Nadin Gordimer",
+              "Wole Soyinka",
+              "Patrick White",
+              "Trey Anthony"
+              ],
+              a: 1
+            },
+          {
+              q: "Daruwalla's first collection of poems was",
+              o: [
+              "Under Orion",
+              "Landscapes.",
+              "Winter Poems.",
+              "Fire Altar."
+              ],
+              a: 0
+            },
+          {
+              q: "Daruwalla won Sahitya Akademi award in 1984, for-",
+              o: [
+              "Under Orion",
+              "Winter Poems",
+              "The Keeper of the Dead.",
+              "Landscapes"
+              ],
+              a: 2
+            },
+          {
+              q: "Atwood was awarded the Booker prize for 'The Blind Assassin’ in the year-",
+              o: [
+              "2005",
+              "2000",
+              "2006",
+              "2008"
+              ],
+              a: 1
+            },
+          {
+              q: "Which theatre was founded by Mahesh Dattani?",
+              o: [
+              "Globe",
+              "Global",
+              "Pluspen",
+              "Playpen"
+              ],
+              a: 3
+            },
+          {
+              q: "Ezekiel begins The Poem of Dedication with the view from a-",
+              o: [
+              "Basement Room",
+              "Garden",
+              "Road",
+              "Forest"
+              ],
+              a: 0
+            },
+          {
+              q: "What is the setting of the novel Voss?",
+              o: [
+              "Glorious revolution",
+              "17th century England",
+              "19th century Australia",
+              "14th century England"
+              ],
+              a: 2
+            },
+          {
+              q: "Dattani’s theatre group Playpen was founded in -",
+              o: [
+              "1984",
+              "1986",
+              "1980",
+              "1985"
+              ],
+              a: 0
+            },
+          {
+              q: "Wole Soyinka, a poet, playwright and essayist, is a-",
+              o: [
+              "British",
+              "Nigerian",
+              "Indian",
+              "None of These"
+              ],
+              a: 1
+            },
+          {
+              q: "In the novel Voss, which character was an orphan and settled in Australia with her uncle and aunt?",
+              o: [
+              "Laura Trevelyan",
+              "Emmy",
+              "Belle",
+              "Rose"
+              ],
+              a: 0
+            },
+          {
+              q: "Trey Anthony was awarded NAACP Theatre award in the year-",
+              o: [
+              "2007",
+              "2010",
+              "1999",
+              "1998"
+              ],
+              a: 0
+            },
+          {
+              q: "Who encourages Rita to adopt prostitution?",
+              o: [
+              "Joe",
+              "Tony",
+              "Liza",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "The writers known as “The Big Three\" were Mulk Raj Anand, R.K. Narayana and-",
+              o: [
+              "Raja Rao",
+              "Tagore",
+              "Anita Desai",
+              "Kamala Markandaya."
+              ],
+              a: 0
+            },
+          {
+              q: "In the novel Untouchable Bakha has strong fascination for-",
+              o: [
+              "Indian way of life",
+              "Religion",
+              "English way of life",
+              "Spiritual way of life"
+              ],
+              a: 2
+            },
+          {
+              q: "Dattani's Seven Steps Around the Fire is a-",
+              o: [
+              "Comedy",
+              "Tragi- comedy",
+              "Radio Play",
+              "Absurd play"
+              ],
+              a: 2
+            },
+          {
+              q: "Which is not a play by Asif Currimbhoy?",
+              o: [
+              "Goa",
+              "Tara",
+              "The Refugee",
+              "The Hungry Ones"
+              ],
+              a: 1
+            },
+          {
+              q: "Kamala Purnaiya and Kamala Taylor are the pseudonyms of-",
+              o: [
+              "Kamala Das",
+              "Kamala Markandaya",
+              "Kamala Suraiya",
+              "None of these"
+              ],
+              a: 1
+            },
+          {
+              q: "‘A child is not a poem, a poem is not a child’, this line appears in the poem-",
+              o: [
+              "The Company of Lovers",
+              "Mother",
+              "Hunger",
+              "Spelling"
+              ],
+              a: 3
+            },
+          {
+              q: "The four characters in the play ‘The Doldrummers’ represent-",
+              o: [
+              "Struggle for fame",
+              "Struggle for survival",
+              "Struggle for study",
+              "None of these"
+              ],
+              a: 1
+            },
+          {
+              q: "Which play of Wole Soyinka is divided into three parts: Morning, Noon, and Night?",
+              o: [
+              "The Invention",
+              "The Swamp Dwellers",
+              "The Strong Breed",
+              "The Lion and the Jewel."
+              ],
+              a: 3
+            },
+          {
+              q: "Anand founded a fine art magazine, named-",
+              o: [
+              "Kali",
+              "Patrika",
+              "Marg",
+              "Criterion"
+              ],
+              a: 2
+            },
+          {
+              q: "Markandaya's novel 'Nectar in a Sieve' got its title from-",
+              o: [
+              "Shakespeare's poem.",
+              "Shelley's poem.",
+              "Keat’s poem",
+              "Coleridge's poem."
+              ],
+              a: 3
+            },
+          {
+              q: "Frantz fanon was born in-",
+              o: [
+              "Italy",
+              "India",
+              "Martinique",
+              "London."
+              ],
+              a: 2
+            },
+          {
+              q: "Who is an illegitimate child in the play The Doldrummers?",
+              o: [
+              "Tony",
+              "Joe",
+              "Liza",
+              "Rita"
+              ],
+              a: 1
+            },
+          {
+              q: "What is the title of chapter IV of the Book ‘Black Skin White Masks’?",
+              o: [
+              "Body",
+              "Desire",
+              "The so-called Dependency Complex of the Colonized",
+              "Decolonization"
+              ],
+              a: 2
+            },
+          {
+              q: "Menon’s controversial speech which she delivered in 2016 during J.N.U protest was about -",
+              o: [
+              "Kashmir inclusion in the Union of India",
+              "Religion",
+              "Exploitation of the marginalized",
+              "Education"
+              ],
+              a: 0
+            },
+          {
+              q: "Who is the protagonist of the novel ' Untouchable'?",
+              o: [
+              "Bakha",
+              "Lakha",
+              "Rakha",
+              "Pandit Kali Nath."
+              ],
+              a: 0
+            },
+          {
+              q: "In which section of jail, eunuch Anarkali is being kept in the play Seven Steps Around the fire?",
+              o: [
+              "Male Section",
+              "Female Section",
+              "Separate section",
+              "None of these"
+              ],
+              a: 0
+            },
+          {
+              q: "Who worked in Burmah-Shell Oil Company?",
+              o: [
+              "Asif Currimbhoy",
+              "Makesh Dattani",
+              "K. N. Daruwalla",
+              "Jayant Mahapatra"
+              ],
+              a: 0
+            },
+          {
+              q: "What is Fanon’s term for desire to become whiter?",
+              o: [
+              "Lactification",
+              "Dependency",
+              "Imitation",
+              "White mask"
+              ],
+              a: 0
+            },
+          {
+              q: "Nivedita Menon, delivered her controversial speech on Nationalist ideals in -",
+              o: [
+              "2020",
+              "2022",
+              "2012",
+              "2016"
+              ],
+              a: 3
+            },
+          {
+              q: "What is the profession of kennington, who is also known as Kenny in the novel Nectar in a Sieve?",
+              o: [
+              "Professor",
+              "Doctor",
+              "Clerk",
+              "Police officer"
+              ],
+              a: 1
+            },
+          {
+              q: "Who Symbolises the hypocrisy of the high caste Hindus, in the novel Untouchable?",
+              o: [
+              "Pt. Kali Nath",
+              "Ram Charan",
+              "Charat Singh",
+              "None of these."
+              ],
+              a: 0
+            },
+          {
+              q: "Which chapter of the Book ‘Black Skin and White Masks’ is based on Octave Mannoni's work Prospero and Caliban: the Psychology of colonization?",
+              o: [
+              "Chapter one",
+              "Chapter four",
+              "Chapter six",
+              "Chapter two"
+              ],
+              a: 1
+            }
           ]
         }
       ]
     },
-    {
-      id: "eng-sem6-film-media",
+  {
+      id: "eng-sem5-classical-history",
+      semester: 5,
+      name: "Classical Literature and History of English Literature",
+      status: "pending",
+      note: "Sugra's Semester 5 paper (A040501T). No MCQ question bank or past paper with answer key found yet.",
+      source: "https://csjmu.ac.in/booklets/",
+      units: []
+    },
+  {
+      id: "eng-sem5-fiction",
+      semester: 5,
+      name: "Fiction",
+      status: "pending",
+      note: "Sugra's Semester 5 paper (A040502T). No MCQ question bank or past paper with answer key found yet.",
+      source: "https://csjmu.ac.in/booklets/",
+      units: []
+    },
+  {
+      id: "eng-sem6-media-journalistic",
       semester: 6,
-      name: "Literature in Film and Media Studies",
-      status: "ready",
-      note: "Questions extracted from the CSJMU question bank (course code A040602T).",
-      source: "https://prashnbank.csjmu.ac.in/literature-in-film-media-studies/",
-      units: [
-        {
-          id: "u1",
-          name: "The Language of Film",
-          blurb: "James Monaco - signs, syntax, visual and auditory language of film",
-          questions: [
-              { q: "Which of the following is NOT a book written by James Monaco?", o: ["\"How to Read a Film\"", "\"The Language of Film: Signs and Syntax\"", "\"Understanding Movies\"", "\"The Art of Film: An Introduction\""], a: 3 },
-              { q: "James Monaco is best known for his work in which field?", o: ["Literature", "Film studies", "Psychology", "Philosophy"], a: 1 },
-              { q: "In which book does James Monaco explore the intricate language of film?", o: ["\"How to Read a Film\"", "\"Understanding Movies\"", "\"The Language of Film: Signs and Syntax\"", "\"The Art of Film: An Introduction\""], a: 2 },
-              { q: "Which aspect of filmmaking does James Monaco emphasize in his writing?", o: ["Acting techniques", "Special effects", "Cinematic language and syntax", "Costume design"], a: 2 },
-              { q: "Which of the following terms is NOT associated with James Monaco's writing?", o: ["Signs", "Syntax", "Semiotics", "Spectacle"], a: 3 },
-              { q: "What is the main focus of James Monaco's \"The Language of Film\"?", o: ["Analyzing film genres", "Exploring the history of cinema", "Understanding the visual and auditory elements of filmmaking", "Critiquing famous directors"], a: 2 },
-              { q: "In Monaco's book, what does he emphasize regarding the language of film?", o: ["The importance of dialogue in storytelling", "The significance of special effects in modern cinema", "The use of visual and auditory elements to convey meaning and evoke emotions", "The role of actors in portraying characters on screen"], a: 2 },
-              { q: "According to Monaco, why is understanding the language of film important?", o: ["To appreciate the popularity of blockbuster movies", "To critique the technical aspects of filmmaking", "To analyze how filmmakers communicate messages and evoke emotions", "To predict the box office success of upcoming films"], a: 2 },
-              { q: "What term does Monaco use to describe the grammar and structure of cinematic language?", o: ["Syntax", "Semiotics", "Spectacle", "Cinematography"], a: 0 },
-              { q: "What aspect of filmmaking does Monaco explore in \"The Language of Film\"?", o: ["Directing techniques", "Cinematic sound design", "Visual storytelling elements", "Marketing strategies for films"], a: 2 },
-              { q: "What is the primary focus of James Monaco's book \"The Language of Film: Signs and Syntax\"?", o: ["Acting techniques in films", "Special effects in films", "Visual and auditory elements in film language", "Film distribution strategies"], a: 2 },
-              { q: "In the context of Monaco's theme, what does \"signs\" refer to?", o: ["Symbols used in film titles", "Visual and auditory elements that convey meaning in films", "Instructions given to actors by the director", "Cinematic locations and settings"], a: 1 },
-              { q: "Which of the following is an example of a \"sign\" in film, according to Monaco's theme?", o: ["A character's costume", "The director's biography", "The film's release date", "The actor's salary"], a: 0 },
-              { q: "What does Monaco mean by \"syntax\" in the language of film?", o: ["The grammar and structure of cinematic language", "The language spoken by characters in films", "The film's marketing strategy", "The genre of the film"], a: 0 },
-              { q: "According to Monaco's theme, why is understanding the language of film important?", o: ["To critique film directors' personal lives", "To appreciate the technical aspects of filmmaking", "To analyze how filmmakers communicate messages and evoke emotions", "To predict box office success"], a: 2 },
-              { q: "What does James Monaco emphasize regarding visual elements in \"The Language of Film\"?", o: ["Their role in marketing films", "Their importance in creating realistic sets", "Their ability to convey meaning and evoke emotions", "Their impact on actors' performances"], a: 2 },
-              { q: "In Monaco's book, what role do auditory elements play in filmmaking?", o: ["They provide background noise for scenes", "They enhance the visual experience for audiences", "They are solely responsible for conveying dialogue", "They are not as important as visual elements"], a: 1 },
-              { q: "According to Monaco, how do visual elements contribute to storytelling in film?", o: ["They provide entertainment value", "They serve as a backdrop for action sequences", "They help establish mood, tone, and atmosphere", "They distract from the narrative structure"], a: 2 },
-              { q: "Which of the following is an example of a visual element in film, as discussed by Monaco?", o: ["Background music", "Dialogue delivery", "Lighting and color schemes", "Scriptwriting techniques"], a: 2 },
-              { q: "How do auditory elements, such as sound effects and music, enhance the cinematic experience according to Monaco?", o: ["By providing visual cues to the audience", "By conveying information about the characters' backgrounds", "By evoking emotions and heightening tension", "By distracting from the visual narrative"], a: 2 },
-              { q: "What does James Monaco mean by \"syntax of film\" in \"The Language of Film\"?", o: ["The language spoken by characters in movies", "The grammar and structure of cinematic language", "The setting and location of a film's scenes", "The historical context of filmmaking"], a: 1 },
-              { q: "According to Monaco, what role does editing play in the syntax of film?", o: ["It determines the film's genre", "It controls the pacing and rhythm of the narrative", "It influences the lighting and color schemes", "It dictates the actors' performances"], a: 1 },
-              { q: "How does Monaco describe the significance of shot sequencing in the syntax of film?", o: ["It establishes the film's budget", "It shapes the narrative structure and visual flow", "It determines the film's distribution strategy", "It influences the choice of film locations"], a: 1 },
-              { q: "Which of the following terms is closely associated with the syntax of film, as discussed by Monaco?", o: ["Special effects", "Cinematic language", "Costume design", "Film criticism"], a: 1 },
-              { q: "In Monaco's analysis, what is the purpose of understanding the syntax of film?", o: ["To predict the box office success of movies", "To appreciate the technical aspects of filmmaking", "To analyze how filmmakers construct narratives and convey meaning", "To assess the popularity of film genres"], a: 2 },
-              { q: "What does James Monaco refer to when discussing shot sequencing in \"The Language of Film\"?", o: ["The order in which scenes are filmed during production", "The arrangement of shots to create visual coherence and narrative flow", "The selection of camera angles for each scene", "The process of adding special effects to shots in post-production"], a: 1 },
-              { q: "In the context of shot sequencing, what is meant by \"establishing shot\"?", o: ["A close-up of a character's face to convey emotion", "A shot that introduces the setting or location of a scene", "A long take without any cuts", "A shot used to transition between different scenes"], a: 1 },
-              { q: "How does Monaco describe the role of shot sequencing in shaping narrative pacing?", o: ["It has no impact on pacing", "It can create a sense of urgency or slow down the narrative, affecting the viewer's experience", "It only affects the visual aspects of a film, not the pacing", "It influences the choice of actors for specific roles"], a: 1 },
-              { q: "Which of the following is an example of a shot sequencing technique used to build tension?", o: ["Cross-cutting between two different locations", "A long take showing characters engaged in dialogue", "A fade-in transition between scenes", "A close-up of a character's face"], a: 0 },
-              { q: "According to Monaco's analysis, why is understanding shot sequencing important for filmmakers?", o: ["To predict the box office success of movies", "To appreciate the costume design in films", "To analyze how filmmakers construct narratives and control the visual flow", "To critique the performances of actors"], a: 2 },
-              { q: "What does James Monaco mean by \"narrative technique\" in the context of film?", o: ["The use of lighting to create mood and atmosphere", "The arrangement of shots to convey a story or plot", "The dialogue delivery by actors", "The selection of film locations"], a: 1 },
-              { q: "How does Monaco describe the role of narrative structure in filmmaking?", o: ["It has no impact on the viewer's experience", "It determines the film's genre", "It shapes the story and engages the audience", "It influences the choice of camera angles"], a: 2 },
-              { q: "Which of the following is an example of a nonlinear narrative technique?", o: ["Flashback", "Continuity editing", "Match cut", "Long take"], a: 0 },
-              { q: "In the context of narrative technique, what is meant by \"voice-over\"?", o: ["A character speaking off-screen", "A narrator's commentary heard alongside the action", "A camera movement following characters through a scene", "A type of special effect used to enhance dialogue scenes"], a: 1 },
-              { q: "According to Monaco's analysis, why is understanding narrative technique important for filmmakers?", o: ["To appreciate the costume design in films", "To predict the box office success of movies", "To analyze how filmmakers construct narratives and engage audiences", "To critique the performances of actors"], a: 2 },
-              { q: "What does James Monaco refer to when discussing the visual and auditory language of film?", o: ["The use of text overlays in movies", "The grammar and structure of cinematic communication", "The languages spoken by characters in films", "The choice of film locations"], a: 1 },
-              { q: "How does Monaco describe the role of visual elements in conveying meaning in films?", o: ["They have no significant impact on storytelling", "They provide entertainment value for audiences", "They serve as a backdrop for action sequences", "They help establish mood, tone, and atmosphere"], a: 3 },
-              { q: "According to Monaco, what purpose do auditory elements serve in filmmaking?", o: ["They provide background noise for scenes", "They enhance the visual experience for audiences", "They are solely responsible for conveying dialogue", "They distract from the narrative structure"], a: 1 },
-              { q: "Which of the following terms best describes the visual and auditory elements collectively in film, as discussed by Monaco?", o: ["Semiotics", "Spectacle", "Syntax", "Aesthetics"], a: 0 },
-              { q: "In Monaco's analysis, why is understanding the visual and auditory language of film important?", o: ["To critique the technical aspects of filmmaking", "To analyze how filmmakers construct narratives and convey meaning", "To predict the box office success of movies", "To appreciate the popularity of specific film genres"], a: 1 },
-              { q: "In \"How to Read a Film,\" what does Monaco emphasize regarding the process of watching films?", o: ["Simply enjoying the entertainment value", "Critiquing the performances of actors", "Developing critical thinking skills to analyze and interpret films", "Memorizing famous film quotes"], a: 2 },
-              { q: "According to Monaco, why is it important to understand the language of film?", o: ["To predict the box office success of movies", "To critique the technical aspects of filmmaking", "To appreciate the artistic and communicative qualities of films", "To memorize the names of famous directors"], a: 2 },
-              { q: "Which of the following topics is NOT covered in \"How to Read a Film\"?", o: ["Cinematic techniques and styles", "Film theory and criticism", "History of film distribution", "Analysis of specific film examples"], a: 2 },
-              { q: "What is the primary goal of \"How to Read a Film\"?", o: ["To provide a step-by-step guide on how to make movies", "To help readers develop skills to interpret and appreciate the language of film", "To promote the author's personal film preferences", "To list trivia about famous films and filmmakers"], a: 1 },
-              { q: "What is the main objective of James Monaco's book \"How to Read a Film\"?", o: ["To teach readers how to become filmmakers", "To provide a guide for deciphering and understanding the language of film", "To explore the history of cinema from its inception to the present day", "To critique famous films and directors"], a: 1 },
-              { q: "In \"How to Read a Film,\" what does Monaco emphasize regarding film analysis?", o: ["The importance of memorizing famous film quotes", "The need to appreciate films solely for their entertainment value", "The development of critical thinking skills to interpret and evaluate films", "The reliance on others' opinions rather than forming one's own perspectives"], a: 2 },
-              { q: "According to Monaco, why is it important to learn how to read a film?", o: ["To analyze the technical aspects of filmmaking", "To predict which films will win awards", "To appreciate the artistic and communicative qualities of films", "To identify the most popular film genres"], a: 2 },
-              { q: "What distinguishes \"How to Read a Film\" from other film-related books?", o: ["Its focus on behind-the-scenes stories of famous movies", "Its emphasis on teaching readers how to create special effects", "Its comprehensive approach to teaching film analysis and interpretation", "Its exclusive exploration of one specific film genre"], a: 2 },
-              { q: "What does James Monaco refer to when discussing the syntax of the language of film?", o: ["The arrangement of shots to convey a story or plot", "The grammar and structure of cinematic communication", "The languages spoken by characters in films", "The choice of film locations"], a: 1 },
-              { q: "How does Monaco describe the role of syntax in shaping the narrative structure of a film?", o: ["It has no impact on the viewer's experience", "It determines the film's genre", "It influences the pacing and rhythm of the narrative", "It solely dictates the choice of camera angles"], a: 2 },
-              { q: "Which of the following is an example of a syntactical element in film?", o: ["The development of character arcs", "The use of lighting to create mood", "The arrangement of shots in a montage sequence", "The selection of film genres"], a: 2 },
-              { q: "In the context of film syntax, what is meant by \"mise-en-scène\"?", o: ["The movement of the camera during a shot", "The overall look and feel of a scene, including its setting, props, and actors' positions", "The process of adding special effects to shots in post-production", "The narrative structure of a film"], a: 1 },
-              { q: "According to Monaco's analysis, why is understanding the syntax of film important for filmmakers?", o: ["To predict the box office success of movies", "To appreciate the costume design in films", "To analyze how filmmakers construct narratives and control the visual flow", "To critique the performances of actors"], a: 2 }
-          ]
-        },
-        {
-          id: "u2",
-          name: "The Comedy of Errors / Angoor",
-          blurb: "Shakespeare's The Comedy of Errors and Gulzar's Angoor",
-          questions: [
-              { q: "When was William Shakespeare born?", o: ["1564", "1601", "1599", "1623"], a: 0 },
-              { q: "Which genre of plays did Shakespeare NOT write?", o: ["Tragedy", "Comedy", "Romance", "Science fiction"], a: 3 },
-              { q: "Which of the following is NOT one of Shakespeare's tragedies?", o: ["Macbeth", "Romeo and Juliet", "A Midsummer Night's Dream", "Hamlet"], a: 2 },
-              { q: "Which of Shakespeare's plays is set in the mythical kingdom of Elsinore?", o: ["Macbeth", "Hamlet", "Othello", "The Tempest"], a: 1 },
-              { q: "In which play do the characters Rosalind and Orlando fall in love in the Forest of Arden?", o: ["Twelfth Night", "As You Like It", "Much Ado About Nothing", "Love's Labour's Lost"], a: 1 },
-              { q: "Which of the following characters is NOT from Shakespeare's \"A Midsummer Night's Dream\"?", o: ["Romeo", "Puck", "Hermia", "Titania"], a: 0 },
-              { q: "Shakespeare's plays were performed at which famous London theater?", o: ["The Globe Theatre", "The Royal Shakespeare Theatre", "The West End Theatre", "The National Theatre"], a: 0 },
-              { q: "Which of Shakespeare's plays features the line \"To be, or not to be: that is the question\"?", o: ["Hamlet", "Macbeth", "Romeo and Juliet", "King Lear"], a: 0 },
-              { q: "Where does \"The Comedy of Errors\" take place?", o: ["Athens", "Ephesus", "Rome", "Milan"], a: 1 },
-              { q: "How many sets of twins are there in \"The Comedy of Errors\"?", o: ["One", "Two", "Three", "Four"], a: 1 },
-              { q: "What is the main source of confusion in \"The Comedy of Errors\"?", o: ["Mistaken identities between twins", "Love triangles among the characters", "Political intrigue and power struggles", "Supernatural elements such as ghosts"], a: 0 },
-              { q: "Who is the master of the twin servants, Dromio of Ephesus and Dromio of Syracuse?", o: ["Antipholus of Ephesus", "Antipholus of Syracuse", "Egeon", "Angelo"], a: 3 },
-              { q: "Who is Egeon in \"The Comedy of Errors\"?", o: ["A merchant from Syracuse", "A servant to Antipholus of Ephesus", "A duke of Ephesus", "A magician who causes confusion with spells"], a: 0 },
-              { q: "Who is Adriana in \"The Comedy of Errors\"?", o: ["Antipholus of Ephesus's wife", "Dromio of Ephesus's lover", "Antipholus of Syracuse's wife", "A courtesan in Ephesus"], a: 0 },
-              { q: "What is the resolution of the confusion in \"The Comedy of Errors\"?", o: ["The characters undergo therapy to resolve their misunderstandings", "Egeon reveals the truth about the twin brothers' identities", "The characters all magically switch places and return to their rightful homes", "The twins are reunited with their families and the truth is revealed"], a: 3 },
-              { q: "\"The Comedy of Errors\" is often classified as which genre of play?", o: ["Tragedy", "Comedy", "History", "Romance"], a: 1 },
-              { q: "Which character in \"The Comedy of Errors\" is arrested and condemned to death at the beginning of the play?", o: ["Antipholus of Ephesus", "Antipholus of Syracuse", "Egeon", "Dromio of Ephesus"], a: 2 },
-              { q: "Who is the protagonist of \"The Comedy of Errors\"?", o: ["Antipholus of Syracuse", "Antipholus of Ephesus", "Dromio of Syracuse", "Dromio of Ephesus"], a: 0 },
-              { q: "Who is the twin brother of Antipholus of Ephesus?", o: ["Dromio of Syracuse", "Dromio of Ephesus", "Antipholus of Syracuse", "Aegeon"], a: 0 },
-              { q: "Which character is the father of the twin brothers, Antipholus of Ephesus and Antipholus of Syracuse?", o: ["Duke Solinus", "Egeon", "Angelo", "Antipholus of Ephesus"], a: 1 },
-              { q: "Who is the wife of Antipholus of Ephesus?", o: ["Adriana", "Luciana", "Emilia", "Courtesan"], a: 0 },
-              { q: "Who is Luciana in \"The Comedy of Errors\"?", o: ["The wife of Antipholus of Syracuse", "The sister of Antipholus of Ephesus", "The sister of Adriana", "The servant of Antipholus of Syracuse"], a: 2 },
-              { q: "Which character is a merchant from Syracuse and the father of Antipholus of Syracuse?", o: ["Antipholus of Ephesus", "Dromio of Syracuse", "Aegeon", "Angelo"], a: 2 },
-              { q: "Who is the master of the twin servant, Dromio of Ephesus?", o: ["Antipholus of Ephesus", "Antipholus of Syracuse", "Adriana", "Duke Solinus"], a: 0 },
-              { q: "Who is the duke of Ephesus in \"The Comedy of Errors\"?", o: ["Duke Solinus", "Duke Antipholus", "Duke Angelo", "Duke Aegeon"], a: 0 },
-              { q: "Which character is arrested and condemned to death at the beginning of the play?", o: ["Antipholus of Ephesus", "Antipholus of Syracuse", "Egeon", "Dromio of Ephesus"], a: 2 },
-              { q: "Who is the courtesan in \"The Comedy of Errors\"?", o: ["Adriana", "Luciana", "Emilia", "The wife of Antipholus of Ephesus"], a: 3 },
-              { q: "Who directed the Bollywood movie \"Angoor,\" an adaptation of Shakespeare's \"The Comedy of Errors\"?", o: ["Sanjay Leela Bhansali", "Gulzar", "Karan Johar", "Yash Chopra"], a: 1 },
-              { q: "When was the Bollywood movie \"Angoor\" released?", o: ["1975", "1982", "1990", "2000"], a: 1 },
-              { q: "Which Bollywood actor played the dual roles of Ashok and Bgagwant in \"Angoor\"?", o: ["Amitabh Bachchan", "Rajesh Khanna", "Sanjeev Kumar", "Dharmendra"], a: 2 },
-              { q: "In \"Angoor,\" who plays the dual roles of Bahadur and Ranjit, the twin servants?", o: ["Amitabh Bachchan", "Sanjeev Kumar", "Deven Verma", "Dharmendra"], a: 2 },
-              { q: "What is the central theme of \"Angoor,\" similar to Shakespeare's \"The Comedy of Errors\"?", o: ["Revenge", "Mistaken identities", "Forbidden love", "Political intrigue"], a: 1 },
-              { q: "What is the setting of the Bollywood movie \"Angoor\"?", o: ["Ancient Greece", "Renaissance Italy", "Modern-day India", "Medieval England"], a: 2 },
-              { q: "Who is the female lead in \"Angoor,\" who plays the love interest of one of the twin brothers?", o: ["Saira Banu", "Hema Malini", "Jaya Bachchan", "Moushumi Chatterjee"], a: 3 },
-              { q: "What is the name of the character who serves as the master of the twin servants in \"Angoor\"?", o: ["Ashok", "Bahadur", "Ranjit", "Bhagwant"], a: 0 },
-              { q: "In \"Angoor,\" who portrays the character of the local goon, another source of comedic confusion?", o: ["Amitabh Bachchan", "Sanjeev Kumar", "Deven Verma", "Utpal Dutt"], a: 3 },
-              { q: "Which character in \"Angoor\" is similar to Shakespeare's Dromio, the witty servant?", o: ["Bhagwant", "Ranjit", "Ashok", "Bahadur"], a: 3 },
-              { q: "What is the name of the character who aids in resolving the confusion in \"Angoor,\" similar to the role of Duke Solinus in Shakespeare's play?", o: ["Bhagwant", "Ranjit", "Ashok", "Bahadur"], a: 2 },
-              { q: "What comedic device is prominently featured in \"Angoor\" as characters navigate their mistaken identities?", o: ["Puns and wordplay", "High-stakes drama", "Romance", "Tragic irony"], a: 0 },
-              { q: "In \"Angoor,\" what adds to the confusion and chaos when characters mistake each other for their counterparts?", o: ["Magic spells", "Supernatural elements", "Coincidences", "Disguises"], a: 2 },
-              { q: "Who wrote the screenplay for the Bollywood adaptation \"Angoor\"?", o: ["Satyajit Ray", "Javed Akhtar", "Gulzar", "Salim Khan"], a: 2 },
-              { q: "What element of Indian culture is integrated into \"Angoor,\" giving it a unique flavor?", o: ["Family Relations", "Traditional Indian music", "Festivals and celebrations", "All of the above"], a: 3 },
-              { q: "How does \"Angoor\" adapt Shakespeare's original dialogue into Hindi while retaining the essence of the play?", o: ["By translating the dialogue word for word", "By modernizing the language and incorporating colloquial expressions", "By omitting the dialogue altogether", "By hiring Shakespearean scholars to rewrite the dialogue"], a: 1 },
-              { q: "What aspect of Indian society is satirized or parodied in \"Angoor,\" similar to Shakespeare's social commentary?", o: ["The caste system", "Arranged marriages", "Political corruption", "Religious practices"], a: 0 }
-          ]
-        },
-        {
-          id: "u3",
-          name: "Train to Pakistan",
-          blurb: "Khushwant Singh's novel and Pamela Rooks' film",
-          questions: [
-              { q: "What was Khushwant Singh's full name?", o: ["Khushwant Pal Singh", "Khushwant Rajpal Singh", "Khushwant Singh Bedi", "Khushwant Singh"], a: 2 },
-              { q: "In which year was Khushwant Singh born?", o: ["1915", "1920", "1925", "1930"], a: 0 },
-              { q: "Which Indian state was Khushwant Singh born in?", o: ["Punjab", "Rajasthan", "Haryana", "Uttar Pradesh"], a: 0 },
-              { q: "Khushwant Singh's first novel, \"Train to Pakistan,\" was published in which year?", o: ["1947", "1950", "1955", "1960"], a: 1 },
-              { q: "What was the profession of Khushwant Singh before he became a full-time writer?", o: ["Lawyer", "Doctor", "Teacher", "Journalist"], a: 3 },
-              { q: "Khushwant Singh served as the editor of which prominent Indian magazine for many years?", o: ["The Hindustan Times", "India Today", "The Illustrated Weekly of India", "Outlook"], a: 2 },
-              { q: "Which prestigious award did Khushwant Singh receive for his contribution to Indian literature?", o: ["Sahitya Akademi Award", "Jnanpith Award", "Padma Bhushan", "Booker Prize"], a: 0 },
-              { q: "Khushwant Singh's autobiography, published in 2011, is titled:", o: ["\"Truth, Love & a Little Malice\"", "\"The Company of Women\"", "\"With Malice towards One and All\"", "\"The Sunset Club\""], a: 0 },
-              { q: "Which of the following is NOT a work of fiction written by Khushwant Singh?", o: ["\"The Guide\"", "\"Delhi: A Novel\"", "\"History of the Sikhs\"", "\"The Good, the Bad and the Ridiculous\""], a: 2 },
-              { q: "In which year did Khushwant Singh pass away?", o: ["2000", "2010", "2012", "2014"], a: 2 },
-              { q: "Khushwant Singh was known for his witty and irreverent style of writing. Which column did he famously write for The Hindustan Times?", o: ["\"With Malice towards One and All\"", "\"This Above All\"", "\"Talking Straight\"", "\"With Love and Regards\""], a: 0 },
-              { q: "Khushwant Singh's novel \"The Company of Women\" explores the life of a:", o: ["Lawyer", "Doctor", "Journalist", "Diplomat"], a: 1 },
-              { q: "Which of the following is a collection of short stories by Khushwant Singh?", o: ["\"Train to Pakistan\"", "\"The Company of Women\"", "\"Delhi: A Novel\"", "\"The Portrait of a Lady\""], a: 3 },
-              { q: "Khushwant Singh was known for his keen interest in which subject, reflected in many of his writings?", o: ["History", "Mathematics", "Physics", "Astronomy"], a: 0 },
-              { q: "What was the subject of Khushwant Singh's non-fiction book \"The History of Sikhs\"?", o: ["Indian independence movement", "Sikh religion and history", "Indian politics", "Partition of India"], a: 1 },
-              { q: "Khushwant Singh was awarded the Padma Bhushan by the Government of India in which year?", o: ["1957", "1974", "1984", "1999"], a: 2 },
-              { q: "Khushwant Singh's writing often reflected his:", o: ["Optimism", "Cynicism", "Romanticism", "Idealism"], a: 1 },
-              { q: "What year was \"Train to Pakistan\" published?", o: ["1947", "1950", "1960", "1970"], a: 1 },
-              { q: "In which fictional village is \"Train to Pakistan\" set?", o: ["Mano Majra", "Amritsar", "Lahore", "Chandigarh"], a: 0 },
-              { q: "What is the primary historical event depicted in \"Train to Pakistan\"?", o: ["Indian Independence", "Partition of India", "World War II", "Quit India Movement"], a: 1 },
-              { q: "Who is the author of \"Train to Pakistan\"?", o: ["R.K. Narayan", "Salman Rushdie", "Khushwant Singh", "Arundhati Roy"], a: 2 },
-              { q: "What role does Jugga play in the village of Mano Majra?", o: ["Village Headman", "Priest", "Police Officer", "Farmer"], a: 0 },
-              { q: "Which two religious communities are depicted in \"Train to Pakistan\"?", o: ["Hindus and Sikhs", "Sikhs and Muslims", "Hindus and Muslims", "Christians and Sikhs"], a: 2 },
-              { q: "What is the name of the young Sikh boy who is falsely accused of a crime?", o: ["Jugga", "Iqbal", "Nooran", "Meet Singh"], a: 3 },
-              { q: "What is the profession of the protagonist, Iqbal, in \"Train to Pakistan\"?", o: ["Lawyer", "Doctor", "Teacher", "Journalist"], a: 3 },
-              { q: "Which neighboring country does the train in the novel travel to?", o: ["India", "Pakistan", "Bangladesh", "Afghanistan"], a: 1 },
-              { q: "Who is the Muslim girl that Jugga falls in love with?", o: ["Nooran", "Haseena", "Zeenat", "Ameena"], a: 0 },
-              { q: "Which character is responsible for the murder of the dacoit in the novel?", o: ["Jugga", "Iqbal", "Meet Singh", "Hukum Chand"], a: 2 },
-              { q: "What event triggers the outbreak of violence in Mano Majra?", o: ["A train carrying refugees arrives", "A religious procession turns violent", "A local temple is desecrated", "A political rally is attacked"], a: 0 },
-              { q: "Who is ultimately held responsible for the violence in Mano Majra?", o: ["Jugga", "Hukum Chand", "Iqbal", "Meet Singh"], a: 1 },
-              { q: "Which character serves as the voice of reason and compassion in the novel?", o: ["Jugga", "Iqbal", "Hukum Chand", "Meet Singh"], a: 1 },
-              { q: "What role does Hukum Chand play in the village?", o: ["Village Headman", "Police Officer", "Moneylender", "Government Official"], a: 3 },
-              { q: "Who is the author of \"Train to Pakistan\" based on real-life incidents?", o: ["Khushwant Singh", "Salman Rushdie", "Arundhati Roy", "Vikram Seth"], a: 0 },
-              { q: "Which community is primarily targeted during the violence in \"Train to Pakistan\"?", o: ["Sikhs", "Muslims", "Hindus", "Christians"], a: 1 },
-              { q: "What is the fate of the village of Mano Majra by the end of the novel?", o: ["It is completely destroyed", "It remains untouched by violence", "It becomes a refuge for displaced people", "It is abandoned by its residents"], a: 0 },
-              { q: "What is the significance of the title \"Train to Pakistan\"?", o: ["It symbolizes hope for a better future", "It represents the journey of partition", "It is a metaphor for escape", "It highlights the importance of transportation"], a: 1 },
-              { q: "Who directed the film adaptation of \"Train to Pakistan\"?", o: ["Mira Nair", "Deepa Mehta", "Pamela Rooks", "Gurinder Chadha"], a: 2 },
-              { q: "When was the film adaptation of \"Train to Pakistan\" released?", o: ["1990", "2000", "2009", "2015"], a: 2 },
-              { q: "In which language was the film adaptation primarily made?", o: ["English", "Hindi", "Punjabi", "Urdu"], a: 2 },
-              { q: "Which of the following is NOT a central character in the film adaptation?", o: ["Jugga", "Iqbal", "Nooran", "Hukum Chand"], a: 3 },
-              { q: "Where was the film adaptation of \"Train to Pakistan\" primarily shot?", o: ["Punjab, India", "Sindh, Pakistan", "Gujarat, India", "Rajasthan, India"], a: 0 },
-              { q: "Who played the role of Jugga in the film adaptation?", o: ["Irrfan Khan", "Jimmy Shergill", "Manoj Bajpayee", "Randeep Hooda"], a: 1 },
-              { q: "Which prestigious film festival did the film adaptation premiere at?", o: ["Cannes Film Festival", "Berlin International Film Festival", "Venice Film Festival", "Sundance Film Festival"], a: 1 },
-              { q: "Who portrayed the character of Iqbal in the film adaptation?", o: ["Irrfan Khan", "Manoj Bajpayee", "Kay Kay Menon", "Siddharth"], a: 0 },
-              { q: "Which of the following themes is explored in the film adaptation?", o: ["Love and romance", "Religious harmony", "Political intrigue", "Family drama"], a: 1 },
-              { q: "What role does the train play in the film adaptation?", o: ["It symbolizes hope and progress", "It represents the journey of partition", "It serves as a mode of transportation", "It is a central character in the story"], a: 1 },
-              { q: "Which character serves as the voice of reason and compassion in the film adaptation?", o: ["Jugga", "Iqbal", "Nooran", "Meet Singh"], a: 1 },
-              { q: "What is the primary conflict depicted in the film adaptation?", o: ["A love triangle", "Communal violence", "Political corruption", "Economic disparity"], a: 1 },
-              { q: "Who played the role of Nooran in the film adaptation?", o: ["Sonam Kapoor", "Priyanka Chopra", "Kangana Ranaut", "Nandita Das"], a: 3 },
-              { q: "What was the critical reception of the film adaptation?", o: ["Panned by critics", "Received mixed reviews", "Widely acclaimed", "Ignored by critics"], a: 2 },
-              { q: "Which aspect of the film adaptation received particular praise?", o: ["Direction", "Performances", "Cinematography", "Screenplay"], a: 2 },
-              { q: "What was the runtime of the film adaptation?", o: ["90 minutes", "120 minutes", "150 minutes", "180 minutes"], a: 1 },
-              { q: "Who composed the music for the film adaptation?", o: ["A.R. Rahman", "Vishal Bhardwaj", "Shankar-Ehsaan-Loy", "Pritam"], a: 1 },
-              { q: "What is the significance of the title \"Train to Pakistan\" in the film adaptation?", o: ["It symbolizes hope for a better future", "It represents the journey of partition", "It is a metaphor for escape", "It highlights the importance of transportation"], a: 1 },
-              { q: "Which award did the film adaptation win at the Berlin International Film Festival?", o: ["Golden Bear", "Silver Lion", "Golden Palm", "Silver Bear"], a: 3 },
-              { q: "What is the overall tone of the film adaptation?", o: ["Tragic", "Romantic", "Comic", "Inspirational"], a: 0 }
-          ]
-        },
-        {
-          id: "u4",
-          name: "Kabuliwala",
-          blurb: "Rabindranath Tagore's story and Hemen Gupta's film",
-          questions: [
-              { q: "What was Rabindranath’s full name?", o: ["Rabindranath Bose", "Rabindranath Thakur", "Rabindranath Majumdar", "Rabindranath Tagore"], a: 3 },
-              { q: "In which year was Rabindranath Tagore born?", o: ["1861", "1871", "1881", "1891"], a: 0 },
-              { q: "Which literary movement is Rabindranath Tagore associated with?", o: ["Romanticism", "Modernism", "Realism", "Postcolonialism"], a: 1 },
-              { q: "What is the title of Rabindranath Tagore's collection of short stories?", o: ["\"Gitanjali\"", "\"Kabuliwala\"", "\"Gora\"", "\"Galpaguchchha\""], a: 3 },
-              { q: "Which language did Rabindranath Tagore originally write his short stories in?", o: ["Hindi", "Bengali", "Urdu", "English"], a: 1 },
-              { q: "What prestigious literary award did Rabindranath Tagore win for his collection of poems, \"Gitanjali\"?", o: ["Nobel Prize in Literature", "Booker Prize", "Pulitzer Prize", "Sahitya Akademi Award"], a: 0 },
-              { q: "What is the English translation of Rabindranath Tagore's short story collection \"Galpaguchchha\"?", o: ["\"Fruit-Gatherer\"", "\"Broken Nest\"", "\"Home and the World\"", "\"The Wreck\""], a: 0 },
-              { q: "Which of the following is NOT a theme commonly explored in Rabindranath Tagore's short stories?", o: ["Love and longing", "Social reform", "Colonialism", "Nature and spirituality"], a: 2 },
-              { q: "What is the name of the protagonist in Tagore's short story \"The Kabuliwala\"?", o: ["Mini", "Haldar", "Kabuliwala", "Gurudev"], a: 2 },
-              { q: "Where is the setting of Rabindranath Tagore's short story \"The Kabuliwala\"?", o: ["Kolkata", "Delhi", "Mumbai", "Dhaka"], a: 0 },
-              { q: "Which of the following short stories by Rabindranath Tagore explores the theme of identity and self- discovery?", o: ["\"The Postmaster\"", "\"The Kabuliwala\"", "\"The Homecoming\"", "\"The Hungry Stones\""], a: 0 },
-              { q: "What is the central conflict in Rabindranath Tagore's short story \"The Homecoming\"?", o: ["Man vs. Nature", "Man vs. Society", "Man vs. Himself", "Man vs. Technology"], a: 1 },
-              { q: "In which year did Rabindranath Tagore pass away?", o: ["1937", "1941", "1945", "1951"], a: 3 },
-              { q: "What is the English translation of Rabindranath Tagore's short story \"Nastanirh\"?", o: ["\"The Broken Nest\"", "\"The Wreck\"", "\"The Home and the World\"", "\"The Golden Boat\""], a: 0 },
-              { q: "Which of Rabindranath Tagore's short stories explores the theme of social inequality and injustice?", o: ["\"The Kabuliwala\"", "\"The Hungry Stones\"", "\"The Homecoming\"", "\"The Postmaster\""], a: 1 },
-              { q: "What was Rabindranath Tagore's profession besides being a writer?", o: ["Lawyer", "Doctor", "Teacher", "Painter"], a: 3 },
-              { q: "Which of Rabindranath Tagore's short stories portrays the relationship between a young girl and a wandering monk?", o: ["\"The Kabuliwala\"", "\"The Postmaster\"", "\"The Hungry Stones\"", "\"The Homecoming\""], a: 1 },
-              { q: "What is the English translation of Rabindranath Tagore's short story \"Kshudhita Pashan\"?", o: ["\"The Postmaster\"", "\"The Kabuliwala\"", "\"The Hungry Stones\"", "\"The Hungry Stones\""], a: 2 },
-              { q: "Which of Rabindranath Tagore's short stories explores the conflict between tradition and modernity?", o: ["\"The Postmaster\"", "\"The Kabuliwala\"", "\"The Homecoming\"", "\"The Wreck\""], a: 2 },
-              { q: "Rabindranath Tagore's short stories are known for their:", o: ["Realism", "Surrealism", "Romanticism", "Modernism"], a: 2 },
-              { q: "What is the setting of Rabindranath Tagore's short story \"Kabuliwala\"?", o: ["Kolkata", "Delhi", "Kabul", "Lahore"], a: 0 },
-              { q: "What is the profession of the protagonist, Rehmat, in \"Kabuliwala\"?", o: ["Fruit-seller", "Teacher", "Farmer", "Carpenter"], a: 0 },
-              { q: "What is the name of the protagonist's daughter in \"Kabuliwala\"?", o: ["Amina", "Mini", "Nooran", "Haseena"], a: 2 },
-              { q: "What does the term \"Kabuliwala\" mean?", o: ["Fruit-seller", "Carpenter", "Cloth-seller", "Trader from Kabul"], a: 3 },
-              { q: "How does Mini's father react when he sees the Kabuliwala with Mini?", o: ["He becomes angry and scolds the Kabuliwala.", "He is indifferent.", "He becomes nostalgic and emotional.", "He feels jealous."], a: 2 },
-              { q: "What gift does the Kabuliwala give to Mini?", o: ["Fruits and nuts", "A shawl", "A doll", "A book"], a: 0 },
-              { q: "What does the Kabuliwala do when he returns to his homeland?", o: ["He forgets about Mini.", "He starts a new business.", "He is imprisoned.", "He reunites with his daughter."], a: 2 },
-              { q: "What does Mini's father find in the Kabuliwala's bag after he is released from prison?", o: ["A knife", "Money", "Fruits and nuts", "Clothes"], a: 0 },
-              { q: "What is the Kabuliwala's reaction when Mini's father confronts him?", o: ["He denies any wrongdoing.", "He admits to having a knife but says it's for protection.", "He becomes violent.", "He apologizes and leaves."], a: 1 },
-              { q: "How does the Kabuliwala react when he sees Mini as a grown woman?", o: ["He is overjoyed and embraces her.", "He doesn't recognize her.", "He feels sad and nostalgic.", "He feels angry and betrayed."], a: 2 },
-              { q: "What is the primary theme of \"Kabuliwala\"?", o: ["Father-daughter relationships", "Cultural differences", "Friendship and empathy", "Social injustice"], a: 2 },
-              { q: "What does Mini represent to the Kabuliwala?", o: ["His own daughter", "A source of income", "A friend", "A reminder of his homeland"], a: 0 },
-              { q: "What does the Kabuliwala's relationship with Mini symbolize?", o: ["The bond between fathers and daughters", "The clash of cultures", "Economic inequality", "The passage of time"], a: 0 },
-              { q: "Where does the Kabuliwala come from?", o: ["Afghanistan", "Pakistan", "Iran", "Turkey"], a: 0 },
-              { q: "What is Mini's initial reaction to the Kabuliwala?", o: ["Fearful", "Indifferent", "Curious", "Hostile"], a: 2 },
-              { q: "How does Mini's family react to her friendship with the Kabuliwala?", o: ["They encourage it.", "They are suspicious.", "They forbid her from interacting with him.", "They are indifferent."], a: 0 },
-              { q: "What does the Kabuliwala do for a living?", o: ["Sells fruits and nuts", "Sells clothes", "Works as a carpenter", "Drives a taxi"], a: 0 },
-              { q: "Why does the Kabuliwala go to jail?", o: ["For stealing", "For assaulting someone", "For not paying taxes", "For smuggling"], a: 1 },
-              { q: "In Rabindranath Tagore's short story \"Kabuliwala,\" where is the Kabuliwala from?", o: ["Kabul", "Kandahar", "Karachi", "Kashmir"], a: 0 },
-              { q: "What is the profession of the Kabuliwala?", o: ["Carpenter", "Fruit-seller", "Cloth merchant", "Taxi driver"], a: 1 },
-              { q: "What is the name of the little girl who befriends the Kabuliwala?", o: ["Mina", "Nooran", "Mini", "Amina"], a: 2 },
-              { q: "What gift does the Kabuliwala often bring for Mini?", o: ["Flowers", "Sweets", "Fruits and nuts", "Toys"], a: 2 },
-              { q: "Where does the Kabuliwala reunite with Mini after many years?", o: ["In her house", "In the marketplace", "On the street", "At a wedding"], a: 0 },
-              { q: "How does the Kabuliwala react when he sees Mini as a grown woman?", o: ["He is overjoyed and embraces her.", "He doesn't recognize her.", "He feels sad and nostalgic.", "He feels angry and betrayed."], a: 2 },
-              { q: "What is the primary theme of Rabindranath Tagore's \"Kabuliwala\"?", o: ["Father-daughter relationships", "Cultural differences", "Friendship and empathy", "Social injustice"], a: 2 }
-          ]
-        },
-        {
-          id: "u5",
-          name: "Macbeth / Maqbool",
-          blurb: "Shakespeare's Macbeth and Vishal Bhardwaj's Maqbool",
-          questions: [
-              { q: "When was William Shakespeare born?", o: ["1564", "1588", "1601", "1623"], a: 0 },
-              { q: "Where was Shakespeare born?", o: ["London, England", "Stratford-upon-Avon, England", "Edinburgh, Scotland", "Bristol, England"], a: 1 },
-              { q: "What was Shakespeare's father's occupation?", o: ["Merchant", "Lawyer", "Glover", "Actor"], a: 2 },
-              { q: "Shakespeare married whom?", o: ["Anne Hathaway", "Juliet Capulet", "Ophelia", "Lady Macbeth"], a: 0 },
-              { q: "How many children did Shakespeare have?", o: ["Two", "Four", "Six", "Eight"], a: 0 },
-              { q: "What was the name of the acting company Shakespeare was associated with?", o: ["The King's Men", "The Globe Theatre Company", "The Stratford Players", "The Royal Shakespeare Company"], a: 0 },
-              { q: "What was the name of the theater Shakespeare was part-owner of?", o: ["The Rose Theatre", "The Globe Theatre", "The Royal Shakespeare Theatre", "The Swan Theatre"], a: 1 },
-              { q: "Which monarch was ruling England during most of Shakespeare's career?", o: ["Queen Elizabeth I", "b) King Henry VIII", "c) King James I", "d) Queen Victoria"], a: 2 },
-              { q: "How many plays did Shakespeare write?", o: ["33", "37", "42", "47"], a: 1 },
-              { q: "When did Shakespeare die?", o: ["1616", "1623", "1635", "1642"], a: 0 },
-              { q: "In which century did William Shakespeare live and write?", o: ["15th century", "16th century", "17th century", "18th century"], a: 1 },
-              { q: "What genre is \"Macbeth\" classified as?", o: ["Tragedy", "Comedy", "History", "Romance"], a: 0 },
-              { q: "Which monarch was ruling England during Shakespeare's time?", o: ["King Henry VIII", "Queen Elizabeth I", "King James I", "Queen Victoria"], a: 2 },
-              { q: "What inspired Shakespeare to write \"Macbeth\"?", o: ["A historical event", "A dream", "A personal experience", "A fairy tale"], a: 0 },
-              { q: "Who is Banquo's son and a significant character in \"Macbeth\"?", o: ["Macduff", "Fleance", "Malcolm", "Donalbain"], a: 1 },
-              { q: "What does Lady Macbeth convince Macbeth to do in order to become king?", o: ["Kill Duncan", "Kill Banquo", "Kill Macduff", "Kill Malcolm"], a: 0 },
-              { q: "Who is Duncan's heir and rightful king of Scotland?", o: ["Macbeth", "Banquo", "Malcolm", "Macduff"], a: 2 },
-              { q: "What title does Macbeth hold at the beginning of the play?", o: ["Thane of Cawdor", "Thane of Glamis", "Thane of Fife", "Thane of Ross"], a: 1 },
-              { q: "Which character provides comic relief in \"Macbeth\"?", o: ["Lady Macbeth", "Macbeth", "The Porter", "Hecate"], a: 2 },
-              { q: "What is the famous line spoken by Macbeth when he hears of Lady Macbeth's death?", o: ["\"Out, out, brief candle!\"", "\"Tomorrow, and tomorrow, and tomorrow.\"", "\"Is this a dagger which I see before me?\"", "\"She should have died hereafter.\""], a: 1 },
-              { q: "Who is the protagonist of \"Macbeth\"?", o: ["Macbeth", "Lady Macbeth", "Banquo", "Duncan"], a: 0 },
-              { q: "What does the three witches first predict for Macbeth?", o: ["Kingship", "Death", "Victory in battle", "Banishment"], a: 2 },
-              { q: "What is the name of Macbeth's castle?", o: ["Dunsinane", "Cawdor", "Glamis", "Inverness"], a: 3 },
-              { q: "Who becomes king at the end of the play?", o: ["Macbeth", "Malcolm", "Duncan", "Macduff"], a: 1 },
-              { q: "Who is the king of Scotland at the beginning of the play?", o: ["Macbeth", "Duncan", "Malcolm", "Macduff"], a: 1 },
-              { q: "Which character is not killed by Macbeth?", o: ["Banquo", "Lady Macbeth", "Malcolm", "Macduff"], a: 2 },
-              { q: "Who kills Macbeth?", o: ["Macduff", "Malcolm", "Banquo", "Lady Macbeth"], a: 0 },
-              { q: "What ultimately causes Lady Macbeth's death?", o: ["Guilt", "A fever", "Suicide", "Murder"], a: 0 },
-              { q: "What is the significance of Birnam Wood in the play?", o: ["It's where Macbeth is crowned king.", "It's where the final battle takes place.", "It's where the witches meet Macbeth.", "It's where Lady Macbeth dies."], a: 1 },
-              { q: "What does Macbeth see floating before him before he kills Duncan?", o: ["A dagger", "A crown", "A ghost", "A skull"], a: 0 },
-              { q: "Who plays the titular character Maqbool in the movie?", o: ["Irrfan Khan", "Nawazuddin Siddiqui", "Pankaj Kapur", "Om Puri"], a: 0 },
-              { q: "Which character in \"Maqbool\" corresponds to Lady Macbeth in Shakespeare's play?", o: ["Nimmi", "Sameera", "Billu", "Abbaji"], a: 0 },
-              { q: "What is the occupation of Maqbool and his associates in the movie?", o: ["Police officers", "Gangsters", "Lawyers", "Doctors"], a: 1 },
-              { q: "Who plays the character of Abbaji, corresponding to King Duncan in \"Macbeth\"?", o: ["Pankaj Kapur", "Naseeruddin Shah", "Om Puri", "Irrfan Khan"], a: 0 },
-              { q: "Which character in \"Maqbool\" is based on Banquo from \"Macbeth\"?", o: ["Guddu", "Kaka", "Inspector Pandit", "Miyan Maqbool"], a: 1 },
-              { q: "What significant role does the character Miyan Maqbool play in the story?", o: ["He is the protagonist's confidant.", "He is the primary antagonist.", "He is a rival gang leader.", "He is a corrupt politician."], a: 0 },
-              { q: "What is the setting of the movie \"Maqbool\"?", o: ["Mumbai", "Delhi", "Kolkata", "Bangalore"], a: 0 },
-              { q: "Who directed the movie \"Maqbool\"?", o: ["Anurag Kashyap", "Vishal Bhardwaj", "Dibakar Banerjee", "Anurag Basu"], a: 1 },
-              { q: "What tragic flaw ultimately leads to Maqbool's downfall in the movie?", o: ["Ambition", "Love", "Loyalty", "Greed"], a: 0 },
-              { q: "Which actress portrayed the character Nimmi, corresponding to Lady Macbeth in Shakespeare's play?", o: ["Tabu", "Konkona Sen Sharma", "Aishwarya Rai Bachchan", "Rani Mukerji"], a: 0 },
-              { q: "Who composed the music for the film \"Maqbool\"?", o: ["A. R. Rahman", "Vishal Bhardwaj", "Shankar-Ehsaan-Loy", "Amit Trivedi"], a: 1 },
-              { q: "Which actor portrayed the character kaka in the film?", o: ["Piyush Mishra", "Irrfan Khan", "Pankaj Kapur", "Om Puri"], a: 0 },
-              { q: "Who wrote the screenplay for \"Maqbool\" along with Vishal Bhardwaj?", o: ["Gulzar", "Javed Akhtar", "Anurag Kashyap", "Abbas Tyrewala"], a: 3 },
-              { q: "Which actor portrayed the Witch (Weird Sisters) in the film?", o: ["Piyush Mishra", "Irrfan Khan", "Pankaj Kapur", "Om Puri"], a: 3 },
-              { q: "Which movie character portrayed Macbeth in the film?", o: ["Miyan Maqbool", "Jahangir Khan", "Inspector Pandit", "Kaka"], a: 0 },
-              { q: "Which movie character portrayed Lady Macbeth in the film?", o: ["Nimmi", "Sameera", "Riyaz Boti's wife", "Mohini Prasad"], a: 0 },
-              { q: "Maqbool movie is based on…….", o: ["Macbeth", "Othello", "Merchant of Venice", "Julius Caesar"], a: 0 },
-              { q: "Language of film Maqbool is…………………", o: ["Marathi", "English", "Hindi", "Tamil"], a: 2 },
-              { q: "The film Maqbool had its North American premiere at the Year…….", o: ["2006", "2016", "2009", "2003"], a: 3 }
-          ]
-        },
-        {
-          id: "u6",
-          name: "The 3 Mistakes of My Life / Kai Po Che",
-          blurb: "Chetan Bhagat's novel and Abhishek Kapoor's Kai Po Che",
-          questions: [
-              { q: "What is Chetan Bhagat primarily known for?", o: ["Acting", "Writing", "Directing", "Singing"], a: 1 },
-              { q: "Which of the following is not a book written by Chetan Bhagat?", o: ["Five Point Someone 2004", "The White Tiger 2006", "One Night @ the Call Center 2008", "2 States:The Story of My Marriage 2010"], a: 0 },
-              { q: "Which of the following novels by Chetan Bhagat was adapted into a Bollywood movie?", o: ["Revolution 2020", "Half Girlfriend", "2 States: The Story of My Marriage", "The 3 Mistakes of My Life"], a: 2 },
-              { q: "Which Indian Institute of Technology (IIT) did Chetan Bhagat attend?", o: ["IIT Bombay Govind Patel Delhi Bookstore", "IIT Delhi Ishan Bhatt Mumbai Sports shop", "IIT Madras Omi Sharma Kolkata Cafe", "IIT Kharagpur Ali Hashmi Ahmedabad Travel agency"], a: 2 },
-              { q: "What is the political backdrop against which the story unfolds?", o: ["Gujarat riots", "Mumbai blasts", "Bihar elections", "Punjab insurgency"], a: 0 },
-              { q: "Who is the love interest of Govind, the protagonist?", o: ["Vidya", "Ishaan's sister", "Omi's cousin", "Ali's girlfriend"], a: 0 },
-              { q: "What does the title \"The 3 Mistakes of My Life\" refer to?", o: ["Personal regrets of the protagonist", "Business failures of the protagonist", "Political errors in judgment", "Mistakes made by the supporting characters"], a: 0 },
-              { q: "What tragic event occurs during a cricket match that changes the course of the story?", o: ["Riot", "Earthquake", "Bomb blast", "Flood"], a: 2 },
-              { q: "What is the name of the religious place that becomes a significant setting in the story?", o: ["Haridwar", "Varanasi", "Ayodhya", "Somnath"], a: 1 },
-              { q: "Who betrays the protagonist and his friends, leading to a major conflict in the story?", o: ["Govind", "Vidya", "Omi", "Ishan"], a: 2 },
-              { q: "Who directed the movie \"Kai Po Che\"?", o: ["Rajkumar Hirani", "Abhishek Kapoor", "Anurag Kashyap", "Sanjay Leela Bhansali"], a: 1 },
-              { q: "Which novel is \"Kai Po Che\" based on?", o: ["Five Point Someone", "The 3 Mistakes of My Life", "2 States: The Story of My Marriage", "Half Girlfriend"], a: 1 },
-              { q: "What is the meaning of the phrase \"Kai Po Che\"?", o: ["Let's go!", "I have cut you off!", "I have failed!", "Be alert!"], a: 0 },
-              { q: "In which Indian state is the majority of the story set?", o: ["Gujarat", "Maharashtra", "Rajasthan", "Punjab"], a: 0 },
-              { q: "What is the main profession of the three friends in the movie?", o: ["Teachers", "Cricket coaches", "Businessmen", "Farmers"], a: 1 },
-              { q: "Who among the three friends is passionate about cricket coaching?", o: ["Govind Wedding Rajkummar Rao Friendship", "Ishaan Riot Sushant Singh Rajput Competition", "Omi Earthquake Amit Sadh Celebration", "Ali Cricket match Arjun Kapoor Victory"], a: 0 },
-              { q: "Which character in the novel is passionate about cricket and dreams of nurturing a talented young cricketer?", o: ["Govind", "Omi", "Ishan", "Vidya"], a: 0 },
-              { q: "Who is Omi's religious mentor and leads him into a radical path?", o: ["Ali", "Maulana Abdul", "Ali's father", "Maulana Ismail"], a: 1 },
-              { q: "Whom does Govind fall in love with, causing complications within their friendship circle?", o: ["Ishan", "Vidya", "Omi", "Priya"], a: 1 },
-              { q: "Which character in the novel suffers from an identity crisis due to his mixed heritage?", o: ["Govind", "Vidya", "Ishan", "Omi"], a: 2 },
-              { q: "Who becomes involved in political activism and ultimately dies tragically in the Godhra train burning incident?", o: ["Ishan", "Omi", "Vidya", "Govind"], a: 1 },
-              { q: "Which character in the novel struggles with his father's expectations of him and his own aspirations?", o: ["Omi", "Ishan", "Vidya", "Govind"], a: 0 },
-              { q: "Who is the sister of Omi and love interest of Govind?", o: ["Vidya", "Priya", "Ishita", "Ananya"], a: 1 },
-              { q: "Who is the son of a Hindu priest and a close friend of Govind and Ishaan, who gets involved in religious and political activities?", o: ["Govind Patel", "Ishaan Bhatt", "Omi Shastri", "Ali"], a: 2 },
-              { q: "Which character in the movie tragically dies in the Godhra train burning incident?", o: ["Govind Patel", "Ishaan Bhatt", "Omi Shastri", "Ali"], a: 3 },
-              { q: "Who is the mentor figure in the movie, guiding Govind, Ishaan, and Omi through their trials and triumphs?", o: ["Bittu Mama", "Bishan Singh Bedi", "Raghu Bhai", "Ali's Father"], a: 0 },
-              { q: "Which character in the movie is a cricket coach who recognizes Ishaan's talent and helps him pursue his cricketing dreams?", o: ["Bittu Mama", "Bishan Singh Bedi", "Raghu Bhai", "Ali's Father"], a: 1 },
-              { q: "What is one of the central themes explored in \"Three Mistakes of My Life\"?", o: ["Adventure", "Friendship", "Romance", "Mystery"], a: 1 },
-              { q: "Which of the following best describes the novel's exploration of friendship?", o: ["Betrayal and revenge", "Loyalty and support", "Competition and rivalry", "Deception and manipulation"], a: 1 },
-              { q: "How does the novel address the theme of ambition?", o: ["Through characters striving for success in their careers", "Through characters seeking personal fulfillment and happiness", "Through characters pursuing power and dominance", "Through characters navigating societal expectations and norms"], a: 0 },
-              { q: "Which theme is evident in Govind's entrepreneurial endeavors and subsequent failures?", o: ["Success and achievement", "Risk-taking and innovation", "Failure and resilience", "Wealth and luxury"], a: 2 },
-              { q: "What role does societal and cultural conflict play in the novel's narrative?", o: ["It serves as the primary focus of the story", "It creates tension and challenges for the characters", "It is largely ignored in favor of personal drama", "It leads to resolution and harmony among the characters"], a: 1 },
-              { q: "How does the theme of redemption manifest in the novel?", o: ["Through characters seeking forgiveness for their mistakes", "Through characters finding inner peace and acceptance", "Through characters striving to overcome past failures", "Through characters achieving their goals and aspirations"], a: 2 },
-              { q: "Which theme is highlighted through the character arcs of Omi and Ishan?", o: ["Betrayal and forgiveness", "Family and tradition", "Religion and extremism", "Courage and sacrifice"], a: 2 },
-              { q: "What lesson about life is conveyed through the characters' experiences in the novel?", o: ["Success comes easily to those who work hard", "Mistakes are opportunities for growth and learning", "Friendship is more important than personal ambitions", "Love conquers all obstacles and challenges"], a: 1 },
-              { q: "Which actor played the role of Govind Patel in the movie?", o: ["Sushant Singh Rajput", "Rajkummar Rao", "Amit Sadh", "Manav Kaul"], a: 0 },
-              { q: "Who portrayed the character of Ishaan Bhatt in \"Kai Po Che\"?", o: ["Sushant Singh Rajput", "Rajkummar Rao", "Amit Sadh", "Manav Kaul"], a: 1 },
-              { q: "Who composed the music for the movie \"Kai Po Che\"?", o: ["A.R. Rahman", "Shankar-Ehsaan-Loy", "Amit Trivedi", "Pritam Chakraborty"], a: 2 },
-              { q: "Which character in the movie was played by actor Amrita Puri?", o: ["Vidya", "Ishita", "Priya", "Ananya"], a: 0 },
-              { q: "Who was the cinematographer for \"Kai Po Che\"?", o: ["Anil Mehta", "Ravi K. Chandran", "Anay Goswami", "Mahesh Limaye"], a: 2 },
-              { q: "Who wrote the screenplay for the movie adaptation of Chetan Bhagat's novel \"Three Mistakes of My Life\"?", o: ["Rajkumar Hirani", "Abhishek Kapoor", "Chetan Bhagat", "Anurag Kashyap"], a: 1 }
-          ]
-        },
-        {
-          id: "u7",
-          name: "Script and Dialogue Writing",
-          blurb: "Script format, story structure, dialogue writing",
-          questions: [
-              { q: "What is the purpose of a script?", o: ["To entertain the audience", "To guide actors and directors in performing a story", "To provide instructions for set design", "All of the above"], a: 3 },
-              { q: "Which of the following is NOT typically found in a script?", o: ["Dialogue", "Stage directions", "Character analysis", "Musical score"], a: 3 },
-              { q: "What is a slug line in a screenplay?", o: ["A character's name written in all capital letters", "A brief description of a scene's location and time of day", "A line of dialogue spoken by a protagonist", "A technical term used by directors"], a: 1 },
-              { q: "Which of the following software is commonly used for script writing?", o: ["Microsoft Word", "Final Draft", "Adobe Photoshop", "Excel"], a: 1 },
-              { q: "What is the purpose of formatting a script?", o: ["To make it visually appealing and easy to read", "To impress producers and directors", "To ensure consistency and clarity in presentation", "All of the above"], a: 3 },
-              { q: "What is the purpose of establishing a clear protagonist in a script?", o: ["To provide a foil for the antagonist", "To give the audience someone to root for or relate to", "To create conflict within the story", "To confuse the audience"], a: 1 },
-              { q: "What does the term \"inciting incident\" refer to in script writing?", o: ["The climax of the story", "The moment when the protagonist faces their greatest challenge", "The event that sets the main action of the story in motion", "The resolution of the conflict"], a: 2 },
-              { q: "What is subtext in dialogue?", o: ["The literal meaning of what a character says", "The underlying or implied meaning beneath what a character says", "The stage directions accompanying the dialogue", "The character's internal monologue"], a: 1 },
-              { q: "What does the term \"show, don't tell\" mean in script writing?", o: ["To explicitly explain everything to the audience through dialogue", "To use visual and auditory cues to convey information and emotions", "To rely solely on narration to move the story forward", "To avoid using dialogue altogether"], a: 1 },
-              { q: "Which of the following is a common script writing technique for building suspense?", o: ["Revealing the resolution early in the story", "Providing too much information to the audience", "Using cliffhangers at the end of scenes", "Avoiding conflict between characters"], a: 2 },
-              { q: "Which of the following elements is typically included in a script's header?", o: ["Title of the script", "Writer's contact information", "Page number", "All of the above"], a: 3 },
-              { q: "What is the standard font size and type used in screenplay formatting?", o: ["12-point Courier", "14-point Arial", "10-point Times New Roman", "16-point Comic Sans"], a: 0 },
-              { q: "What does the term \"action line\" refer to in a script?", o: ["A line of dialogue spoken by a character", "Descriptions of character actions and movement", "Stage directions indicating how a scene should be performed", "Subtext within dialogue"], a: 1 },
-              { q: "How are character names typically formatted in a script?", o: ["In all capital letters, centered on the page", "In bold and italicized font", "In the bottom right corner of the page", "In parentheses next to the dialogue"], a: 0 },
-              { q: "What is the purpose of the parenthetical in script dialogue?", o: ["To indicate the character's emotional state or tone of voice", "To provide additional stage directions", "To clarify the meaning of the dialogue", "To show subtext within the dialogue"], a: 0 },
-              { q: "Which of the following media formats typically requires a script?", o: ["Podcasts", "Paintings", "Sculptures", "None of the above"], a: 0 },
-              { q: "In addition to dialogue, what other elements might be included in a script for a video game?", o: ["Character descriptions", "Level design instructions", "Player choices and branching paths", "All of the above"], a: 3 },
-              { q: "What is a storyboard used for in script writing for animation?", o: ["To record voiceovers", "To visualize the sequence of events and shots", "To design costumes for characters", "To create musical scores"], a: 1 },
-              { q: "Which of the following elements is unique to script writing for theater?", o: ["Camera angles", "Audience reactions", "Lighting cues", "Special effects"], a: 1 },
-              { q: "What is a treatment in script writing for film and television?", o: ["A synopsis or summary of the story", "A list of potential actors for each role", "A detailed breakdown of production costs", "A storyboard for each scene"], a: 0 },
-              { q: "What is the primary purpose of dialogue in a script?", o: ["To convey information to the audience", "To reveal the characters' thoughts and emotions", "To advance the plot", "All of the above"], a: 3 },
-              { q: "Which of the following is a technique for writing natural-sounding dialogue?", o: ["Avoid using contractions", "Use long, complex sentences", "Mimic real-life speech patterns and rhythms", "Stick to formal language at all times"], a: 2 },
-              { q: "What is subtext in dialogue?", o: ["The literal meaning of what a character says", "The underlying or implied meaning beneath what a character says", "The character's internal monologue", "The stage directions accompanying the dialogue"], a: 1 },
-              { q: "What is the purpose of using dialogue tags (e.g., \"he said,\" \"she exclaimed\")?", o: ["To indicate who is speaking", "To add variety to the writing", "To replace dialogue entirely", "To confuse the reader"], a: 0 },
-              { q: "Which of the following is a technique for creating engaging dialogue?", o: ["Avoiding conflict between characters", "Using dialogue to reveal character traits and relationships", "Keeping dialogue strictly factual", "Having characters speak in long monologues"], a: 1 },
-              { q: "What is the purpose of scene description in a script?", o: ["To provide detailed instructions for the set designer", "To give actors a sense of the environment", "To guide the director in visualizing the scene", "All of the above"], a: 3 },
-              { q: "Which of the following elements is typically included in scene description?", o: ["Character emotions", "Camera angles", "Dialogue", "All of the above"], a: 1 },
-              { q: "What does the term \"establishing shot\" refer to in script writing?", o: ["The final shot of a scene", "A wide-angle shot that sets the scene and location", "A close-up shot of a character's face", "A shot that follows the action of a scene"], a: 1 },
-              { q: "What is the purpose of using specific and vivid language in scene description?", o: ["To make the script more visually appealing", "To convey the mood and atmosphere of the scene", "To help the director and production team understand the vision", "All of the above"], a: 3 },
-              { q: "Which of the following is a technique for effective scene description?", o: ["Keeping descriptions brief and minimal", "Avoiding sensory details", "Using passive voice", "Including relevant sensory details to immerse the reader in the scene"], a: 3 },
-              { q: "What is the purpose of a screenplay in movie production?", o: ["To provide a detailed budget for the film", "To serve as a blueprint for the film's story, dialogue, and scenes", "To outline the marketing strategy for the film", "To design costumes and set pieces"], a: 1 },
-              { q: "What is the typical length of a feature film screenplay?", o: ["30 pages", "100 pages or more", "10 pages", "50 pages"], a: 1 },
-              { q: "What does the term \"spec script\" refer to in the movie industry?", o: ["A script written by a specialist in a particular genre", "A script written without a contract or commission", "A script written specifically for a particular actor", "A script written for a specific studio's specifications"], a: 1 },
-              { q: "What is a logline in script writing for movies?", o: ["A summary of the script's plot in one or two sentences", "A list of characters' names and descriptions", "A detailed breakdown of production costs", "A description of the film's setting and locations"], a: 0 },
-              { q: "Which of the following is NOT typically included in a movie script?", o: ["Dialogue", "Character descriptions", "Camera angles and shot composition", "Musical score"], a: 3 },
-              { q: "What role does a script play in the development of a video game?", o: ["It guides the programming of the game mechanics.", "It provides instructions for designing the game's graphics.", "It establishes the narrative, dialogue, and characters.", "It determines the hardware requirements for playing the game."], a: 2 },
-              { q: "Which of the following elements is typically included in a video game script?", o: ["Level design instructions", "Programming code for game mechanics", "Voice-over dialogue for cut scenes", "All of the above"], a: 3 },
-              { q: "What is branching dialogue in video game script writing?", o: ["Dialogue that branches out into multiple options based on player choices.", "Dialogue that focuses solely on the game's main story arc.", "Dialogue that changes depending on the player's performance.", "Dialogue that introduces new characters and plot twists."], a: 0 },
-              { q: "How does a script writer for video games collaborate with game designers?", o: ["By creating the visual assets for the game.", "By writing the code for gameplay mechanics.", "By integrating narrative elements with game mechanics and level design.", "By composing the game's soundtrack."], a: 2 },
-              { q: "What is the purpose of using dynamic dialogue in video games?", o: ["To create memorable catchphrases for characters.", "To adapt dialogue based on the player's actions and choices.", "To maintain a consistent tone throughout the game.", "To minimize the need for voice acting."], a: 1 },
-              { q: "What is the purpose of a script in theatrical production?", o: ["To design costumes and set pieces", "To outline the marketing strategy for the play", "To provide actors with their lines and stage directions", "To determine the ticket prices for the performance"], a: 2 },
-              { q: "Which of the following elements is typically included in a play script?", o: ["Descriptions of lighting cues", "Camera angles", "Voice-over narration", "All of the above"], a: 0 },
-              { q: "What does the term \"stage directions\" refer to in a play script?", o: ["The dialogue spoken by characters", "The physical actions and movements of characters on stage", "Instructions for designing the set and props", "A list of characters' names and descriptions"], a: 1 },
-              { q: "What is a monologue in script writing for plays?", o: ["A conversation between two or more characters", "A speech delivered by a single character to the audience or other characters", "A musical interlude between scenes", "A scene that takes place in a single location"], a: 1 },
-              { q: "Which of the following is a common format for organizing scenes in a play script?", o: ["Chapters", "Acts and scenes", "Episodes", "Verses"], a: 1 },
-              { q: "What is subtext in dialogue writing?", o: ["The text formatting used in screenplays", "The hidden meaning or underlying emotions conveyed beneath the surface of the dialogue", "The dialogue spoken by background characters", "The stage directions provided for actors"], a: 1 },
-              { q: "Which technique involves writing dialogue that reveals information gradually rather than explicitly stating it?", o: ["Direct exposition", "Subtext", "Monologue", "Indirect speech"], a: 1 },
-              { q: "What does \"show, don't tell\" mean in dialogue writing?", o: ["Writing dialogue that directly explains the plot", "Writing dialogue that reveals character traits through action and interaction", "Writing lengthy monologues with minimal interaction", "Using technical jargon in dialogue"], a: 1 },
-              { q: "How can writers create distinct voices for each character in their dialogue?", o: ["By making all characters speak in a similar manner", "By giving each character a unique speech pattern, vocabulary, and tone", "By avoiding dialogue altogether", "By using indirect speech for all characters"], a: 1 },
-              { q: "Which technique involves using pauses, silences, and non-verbal cues in dialogue to convey meaning?", o: ["Direct exposition movie review is an evaluation or critique of a film, typically written by a reviewer or critic. It assesses various aspects such as acting, direction, cinematography, plot, themes, and overall entertainment value, providing insights and opinions to help others decide whether to watch the movie. Editing in the context of movies refers to the process of selecting, arranging, and manipulating raw footage to create a coherent and engaging final product. It involves cutting, trimming, and arranging shots, as well as adding transitions, visual effects, sound effects, and music to enhance the storytelling and overall impact of the film. Good editing can significantly influence the pace, tone, and emotional resonance of a movie. Narration refers to the act of telling a story or describing events, typically through spoken words. In the context of movies or literature, narration can take various forms, such as a voice-over by a character, a third-person omniscient narrator, or even a first-person perspective. Narration serves to provide context, convey information, and guide the audience through the story, shaping their understanding and emotional engagement with the narrative.", "Subtext", "Monologue", "Pacing"], a: 1 }
-          ]
-        },
-        {
-          id: "u8",
-          name: "Movie Review, Editing, Narration",
-          blurb: "Review writing, editing, narration techniques",
-          questions: [
-              { q: "What is the purpose of a movie review?", o: ["To summarize the plot", "To evaluate and critique the film", "To promote the movie", "To provide trivia about the cast and crew"], a: 1 },
-              { q: "Which of the following aspects are typically evaluated in a movie review?", o: ["Acting", "Soundtrack", "Visual effects", "All of the above"], a: 3 },
-              { q: "Who usually writes movie reviews?", o: ["Movie directors", "Actors", "Reviewers or critics", "Screenwriters"], a: 2 },
-              { q: "What does a positive movie review indicate?", o: ["The movie has high production costs", "The movie is visually appealing", "The reviewer enjoyed the movie and recommends it", "The movie has a complex plot"], a: 2 },
-              { q: "How do movie reviews help audiences?", o: ["By providing spoilers", "By giving a detailed synopsis of the movie", "By offering insights and opinions to help decide whether to watch the movie", "By revealing behind-the-scenes secrets"], a: 2 },
-              { q: "What do editors use to transition between scenes smoothly?", o: ["Jump cuts", "Fade-ins and fade-outs", "Continuity errors", "Sudden changes in tone"], a: 1 },
-              { q: "How does editing contribute to the storytelling in a film?", o: ["By adding unnecessary scenes", "By creating confusion among the audience", "By organizing the footage to convey the plot effectively", "By focusing solely on visual effects"], a: 2 },
-              { q: "Which of the following is an example of narration in a film?", o: ["A character's inner thoughts expressed through voice-over", "Background music playing during a scene", "A dramatic fight sequence", "Visual effects used to create a futuristic setting"], a: 0 },
-              { q: "What role does narration serve in literature?", o: ["To provide stage directions for actors", "To engage the reader and convey information", "To create special effects", "To design costumes for characters"], a: 1 },
-              { q: "Who is typically responsible for narration in a movie?", o: ["The director", "The producer", "The screenwriter", "The narrator"], a: 3 },
-              { q: "How does narration contribute to the storytelling process?", o: ["By confusing the audience with contradictory information", "By distracting from the main plot", "By guiding the audience through the story and providing context", "By emphasizing visual effects over plot development"], a: 2 },
-              { q: "Which form of narration involves a character within the story recounting events from their perspective?", o: ["Third-person limited", "First-person", "Second-person", "Third-person omniscient"], a: 1 },
-              { q: "In which form of narration does the narrator know the thoughts and feelings of all characters?", o: ["First-person", "Second-person", "Third-person limited", "Third-person omniscient"], a: 3 },
-              { q: "What distinguishes third-person limited narration from third-person omniscient narration?", o: ["Third-person limited only reveals one character's thoughts and feelings.", "Third-person limited involves multiple narrators.", "Third-person omniscient is written in the present tense.", "Third-person omniscient focuses on the narrator's personal experiences."], a: 0 },
-              { q: "Which form of narration is often used in choose-your-own-adventure books?", o: ["First-person", "Second-person", "Third-person limited", "Third-person omniscient"], a: 1 },
-              { q: "What is the primary advantage of second-person narration?", o: ["It allows for deep exploration of a character's psyche.", "It creates distance between the narrator and the reader.", "It directly involves the reader in the narrative.", "It provides multiple perspectives on the story."], a: 2 },
-              { q: "Which of the following aspects are typically evaluated in a film critique?", o: ["The director's personal life", "The film's box office earnings", "Acting, direction, cinematography, plot, and themes", "The length of the movie"], a: 2 },
-              { q: "Who usually writes film critiques?", o: ["Movie directors", "Actors", "Reviewers or critics", "Screenwriters"], a: 2 },
-              { q: "What does a positive film critique indicate?", o: ["The film has high production costs", "The reviewer found no flaws in the movie", "The reviewer appreciated the film's merits and recommends it", "The film is suitable for children"], a: 2 },
-              { q: "How do film critiques help audiences?", o: ["By providing spoilers", "By giving a detailed synopsis of the movie", "By offering insights and opinions to help assess the film's quality and decide whether to watch it", "By revealing behind-the-scenes secrets"], a: 2 },
-              { q: "What is the primary goal of good editing in filmmaking?", o: ["To increase the production budget", "To make the film longer", "To enhance storytelling and visual coherence", "To add unnecessary visual effects"], a: 2 },
-              { q: "Which of the following is a characteristic of good editing?", o: ["Choppy transitions between scenes", "Inconsistent pacing throughout the film", "Smooth transitions and seamless flow between shots", "Overuse of special effects"], a: 2 },
-              { q: "How does good editing contribute to the overall impact of a film?", o: ["It confuses the audience", "It detracts from the storyline", "It enhances the emotional resonance and engagement of the audience", "It makes the film appear disjointed"], a: 2 },
-              { q: "What role does pacing play in good editing?", o: ["It remains constant throughout the film", "It varies to create tension, suspense, or emotional impact", "It slows down the film's progression", "It accelerates the film's progression"], a: 1 },
-              { q: "What distinguishes good editing from poor editing?", o: ["Good editing focuses solely on visual effects", "Good editing enhances the storytelling and visual coherence of the film, while poor editing detracts from it", "Good editing includes excessive jump cuts", "Good editing ignores continuity errors"], a: 1 },
-              { q: "Which technique involves providing a brief summary of the movie's plot without revealing spoilers?", o: ["Comparative analysis", "Spoiler-free synopsis", "Character study", "Genre classification"], a: 1 },
-              { q: "What does comparative analysis in a movie review involve?", o: ["Comparing the movie to other movies by the same director", "Comparing the movie to other movies in the same genre", "Comparing the movie's box office earnings to other movies", "Comparing the movie's soundtrack to other movies' soundtracks"], a: 1 },
-              { q: "Which technique involves analyzing the themes and messages conveyed in the movie?", o: ["Visual effects assessment", "Character study", "Theme exploration", "Dialogue analysis"], a: 2 },
-              { q: "What does a character study in a movie review focus on?", o: ["The film's setting and location", "The development and portrayal of characters", "The director's personal life", "The movie's costume design"], a: 1 },
-              { q: "What technique involves discussing the technical aspects of the film, such as cinematography, editing, and sound design?", o: ["Comparative analysis", "Genre classification", "Technical analysis", "Spoiler-free synopsis"], a: 2 },
-              { q: "Which technique involves a narrator who is not a character in the story and knows the thoughts and feelings of all characters?", o: ["First-person narration", "Second-person narration", "Third-person limited narration", "Third-person omniscient narration"], a: 3 },
-              { q: "What is a characteristic of third-person limited narration?", o: ["The narrator addresses the reader directly", "The narrator knows the thoughts and feelings of all characters", "The narrator is a character in the story", "The narrator only reveals one character's thoughts and feelings"], a: 3 },
-              { q: "What role does the choice of narration technique play in shaping the reader's experience?", o: ["It has no impact on the reader's experience", "It determines the length of the story", "It influences the reader's perspective and understanding of the events", "It adds complexity to the plot"], a: 2 },
-              { q: "Which editing technique involves the abrupt transition from one shot to another, creating a disorienting effect?", o: ["Cross-cutting", "Montage", "Jump cut", "Match cut"], a: 2 },
-              { q: "What is the primary purpose of continuity editing?", o: ["To create a sense of disorientation", "To maintain visual coherence and smooth flow between shots", "To juxtapose unrelated scenes", "To emphasize the passage of time"], a: 1 },
-              { q: "Which editing technique involves assembling a series of short shots to condense time or convey information quickly?", o: ["Cross-cutting", "Montage", "Jump cut", "Match cut"], a: 1 },
-              { q: "What does the technique of parallel editing involve?", o: ["Cutting between two or more related actions happening simultaneously", "Merging two unrelated scenes", "Reordering shots to disrupt chronological order", "Fading between scenes to indicate a change in location"], a: 0 },
-              { q: "How does the use of rhythm and pacing contribute to effective editing?", o: ["By slowing down the progression of the film", "By adding unnecessary visual effects", "By creating a sense of urgency or tension", "By removing dialogue from the film"], a: 2 },
-              { q: "What is the primary goal of film editing?", o: ["To increase the production budget", "To make the film longer", "To enhance storytelling and visual coherence", "To add unnecessary visual effects"], a: 2 },
-              { q: "What role does pacing play in film editing?", o: ["It remains constant throughout the film", "It varies to create tension, suspense, or emotional impact", "It slows down the film's progression", "It accelerates the film's progression"], a: 1 },
-              { q: "Which editing technique involves the use of abrupt transitions between shots to create a disorienting effect?", o: ["Fade-in/fade-out", "Cross-cutting", "Jump cut", "Match cut"], a: 2 },
-              { q: "How does film editing contribute to the overall impact of a movie?", o: ["By confusing the audience with contradictory information", "By detracting from the storyline", "By enhancing the emotional resonance and engagement of the audience", "By focusing solely on visual effects"], a: 2 },
-              { q: "Which of the following is NOT a book written by James Monaco?", o: ["\"How to Read a Film\"", "\"The Language of Film: Signs and Syntax\"", "\"Understanding Movies\"", "\"The Art of Film: An Introduction\""], a: 3 },
-              { q: "James Monaco is best known for his work in which field?", o: ["Literature", "Film studies", "Psychology", "Philosophy"], a: 1 },
-              { q: "What does Monaco mean by \"syntax\" in the language of film?", o: ["The grammar and structure of cinematic language", "The language spoken by characters in films", "The film's marketing strategy", "The genre of the film"], a: 0 },
-              { q: "According to Monaco's theme, why is understanding the language of film important?", o: ["To critique film directors' personal lives", "To appreciate the technical aspects of filmmaking", "To analyze how filmmakers communicate messages and evoke emotions", "To predict box office success"], a: 2 },
-              { q: "What does James Monaco emphasize regarding visual elements in \"The Language of Film\"?", o: ["Their role in marketing films", "Their importance in creating realistic sets", "Their ability to convey meaning and evoke emotions", "Their impact on actors' performances"], a: 2 },
-              { q: "According to Monaco, what role does editing play in the syntax of film?", o: ["It determines the film's genre", "It controls the pacing and rhythm of the narrative", "It influences the lighting and color schemes", "It dictates the actors' performances"], a: 1 },
-              { q: "How does Monaco describe the significance of shot sequencing in the syntax of film?", o: ["It establishes the film's budget", "It shapes the narrative structure and visual flow", "It determines the film's distribution strategy", "It influences the choice of film locations"], a: 1 },
-              { q: "What does James Monaco mean by \"narrative technique\" in the context of film?", o: ["The use of lighting to create mood and atmosphere", "The arrangement of shots to convey a story or plot", "The dialogue delivery by actors", "The selection of film locations"], a: 1 },
-              { q: "How does Monaco describe the role of narrative structure in filmmaking?", o: ["It has no impact on the viewer's experience", "It determines the film's genre", "It shapes the story and engages the audience", "It influences the choice of camera angles"], a: 2 },
-              { q: "Which of the following is an example of a nonlinear narrative technique?", o: ["Flashback", "Continuity editing", "Match cut", "Long take"], a: 0 },
-              { q: "What is the main objective of James Monaco's book \"How to Read a Film\"?", o: ["To teach readers how to become filmmakers", "To provide a guide for deciphering and understanding the language of film", "To explore the history of cinema from its inception to the present day", "To critique famous films and directors"], a: 1 },
-              { q: "In \"How to Read a Film,\" what does Monaco emphasize regarding film analysis?", o: ["The importance of memorizing famous film quotes", "The need to appreciate films solely for their entertainment value", "The development of critical thinking skills to interpret and evaluate films", "The reliance on others' opinions rather than forming one's own perspectives"], a: 2 },
-              { q: "According to Monaco, why is it important to learn how to read a film?", o: ["To analyze the technical aspects of filmmaking", "To predict which films will win awards", "To appreciate the artistic and communicative qualities of films", "To identify the most popular film genres"], a: 2 },
-              { q: "In the context of film syntax, what is meant by \"mise-en-scène\"?", o: ["The movement of the camera during a shot", "The overall look and feel of a scene, including its setting, props, and actors' positions", "The process of adding special effects to shots in post-production", "The narrative structure of a film"], a: 1 },
-              { q: "According to Monaco's analysis, why is understanding the syntax of film important for filmmakers?", o: ["To predict the box office success of movies", "To appreciate the costume design in films", "To analyze how filmmakers construct narratives and control the visual flow", "To critique the performances of actors"], a: 2 },
-              { q: "Where does \"The Comedy of Errors\" take place?", o: ["Athens", "Ephesus", "Rome", "Milan"], a: 1 },
-              { q: "How many sets of twins are there in \"The Comedy of Errors\"?", o: ["One", "Two", "Three", "Four"], a: 1 },
-              { q: "What is the main source of confusion in \"The Comedy of Errors\"?", o: ["Mistaken identities between twins", "Love triangles among the characters", "Political intrigue and power struggles", "Supernatural elements such as ghosts"], a: 0 },
-              { q: "Who is the master of the twin servants, Dromio of Ephesus and Dromio of Syracuse?", o: ["Antipholus of Ephesus", "Antipholus of Syracuse", "Egeon", "Angelo"], a: 3 },
-              { q: "Who is the protagonist of \"The Comedy of Errors\"?", o: ["Antipholus of Syracuse", "Antipholus of Ephesus", "Dromio of Syracuse", "Dromio of Ephesus"], a: 0 },
-              { q: "Who is the twin brother of Antipholus of Ephesus?", o: ["Dromio of Syracuse", "Dromio of Ephesus", "Antipholus of Syracuse", "Aegeon"], a: 0 },
-              { q: "Which character is the father of the twin brothers, Antipholus of Ephesus and Antipholus of Syracuse?", o: ["Duke Solinus", "Egeon", "Angelo", "Antipholus of Ephesus"], a: 1 },
-              { q: "Who directed the Bollywood movie \"Angoor,\" an adaptation of Shakespeare's \"The Comedy of Errors\"?", o: ["Sanjay Leela Bhansali", "Gulzar", "Karan Johar", "Yash Chopra"], a: 1 },
-              { q: "When was the Bollywood movie \"Angoor\" released?", o: ["1975", "1982", "1990", "2000"], a: 1 },
-              { q: "What is the central theme of \"Angoor,\" similar to Shakespeare's \"The Comedy of Errors\"?", o: ["Revenge", "Mistaken identities", "Forbidden love", "Political intrigue"], a: 1 },
-              { q: "What is the setting of the Bollywood movie \"Angoor\"?", o: ["Ancient Greece", "Renaissance Italy", "Modern-day India", "Medieval England"], a: 2 },
-              { q: "Who is the female lead in \"Angoor,\" who plays the love interest of one of the twin brothers?", o: ["Saira Banu", "Hema Malini", "Jaya Bachchan", "Moushumi Chatterjee"], a: 3 },
-              { q: "How does \"Angoor\" adapt Shakespeare's original dialogue into Hindi while retaining the essence of the play?", o: ["By translating the dialogue word for word", "By modernizing the language and incorporating colloquial expressions", "By omitting the dialogue altogether", "By hiring Shakespearean scholars to rewrite the dialogue"], a: 1 },
-              { q: "What aspect of Indian society is satirized or parodied in \"Angoor,\" similar to Shakespeare's social commentary?", o: ["The caste system", "Arranged marriages", "Political corruption", "Religious practices"], a: 0 },
-              { q: "What was Khushwant Singh's full name?", o: ["Khushwant Pal Singh", "Khushwant Rajpal Singh", "Khushwant Singh Bedi", "Khushwant Singh"], a: 2 },
-              { q: "In which year was Khushwant Singh born?", o: ["1915", "1920", "1925", "1930"], a: 0 },
-              { q: "Which Indian state was Khushwant Singh born in?", o: ["Punjab", "Rajasthan", "Haryana", "Uttar Pradesh"], a: 0 },
-              { q: "Khushwant Singh was known for his witty and irreverent style of writing. Which column did he famously write for The Hindustan Times?", o: ["\"With Malice towards One and All\"", "\"This Above All\"", "\"Talking Straight\"", "\"With Love and Regards\""], a: 0 },
-              { q: "Khushwant Singh's novel \"The Company of Women\" explores the life of a:", o: ["Lawyer", "Doctor", "Journalist", "Diplomat"], a: 1 },
-              { q: "Which of the following is a collection of short stories by Khushwant Singh?", o: ["\"Train to Pakistan\"", "\"The Company of Women\"", "\"Delhi: A Novel\"", "\"The Portrait of a Lady\""], a: 3 },
-              { q: "Khushwant Singh was known for his keen interest in which subject, reflected in many of his writings?", o: ["History", "Mathematics", "Physics", "Astronomy"], a: 0 },
-              { q: "Who is the author of \"Train to Pakistan\" based on real-life incidents?", o: ["Khushwant Singh", "Salman Rushdie", "Arundhati Roy", "Vikram Seth"], a: 0 },
-              { q: "Which community is primarily targeted during the violence in \"Train to Pakistan\"?", o: ["Sikhs", "Muslims", "Hindus", "Christians"], a: 1 },
-              { q: "What is the fate of the village of Mano Majra by the end of the novel?", o: ["It is completely destroyed", "It remains untouched by violence", "It becomes a refuge for displaced people", "It is abandoned by its residents"], a: 0 },
-              { q: "What is the significance of the title \"Train to Pakistan\"?", o: ["It symbolizes hope for a better future", "It represents the journey of partition", "It is a metaphor for escape", "It highlights the importance of transportation"], a: 1 },
-              { q: "Where was the film adaptation of \"Train to Pakistan\" primarily shot?", o: ["Punjab, India", "Sindh, Pakistan", "Gujarat, India", "Rajasthan, India"], a: 0 },
-              { q: "Who played the role of Jugga in the film adaptation?", o: ["Irrfan Khan", "Jimmy Shergill", "Manoj Bajpayee", "Randeep Hooda"], a: 1 },
-              { q: "Which prestigious film festival did the film adaptation premiere at?", o: ["Cannes Film Festival", "Berlin International Film Festival", "Venice Film Festival", "Sundance Film Festival"], a: 1 },
-              { q: "Who portrayed the character of Iqbal in the film adaptation?", o: ["Irrfan Khan", "Manoj Bajpayee", "Kay Kay Menon", "Siddharth"], a: 0 },
-              { q: "Which literary movement is Rabindranath Tagore associated with?", o: ["Romanticism", "Modernism", "Realism", "Postcolonialism"], a: 1 },
-              { q: "What is the title of Rabindranath Tagore's collection of short stories?", o: ["\"Gitanjali\"", "\"Kabuliwala\"", "\"Gora\"", "\"Galpaguchchha\""], a: 3 },
-              { q: "Which language did Rabindranath Tagore originally write his short stories in?", o: ["Hindi", "Bengali", "Urdu", "English"], a: 1 },
-              { q: "What is the name of the protagonist in Tagore's short story \"The Kabuliwala\"?", o: ["Mini", "Haldar", "Kabuliwala", "Gurudev"], a: 2 },
-              { q: "Where is the setting of Rabindranath Tagore's short story \"The Kabuliwala\"?", o: ["Kolkata", "Delhi", "Mumbai", "Dhaka"], a: 0 },
-              { q: "Which of the following short stories by Rabindranath Tagore explores the theme of identity and self- discovery?", o: ["\"The Postmaster\"", "\"The Kabuliwala\"", "\"The Homecoming\"", "\"The Hungry Stones\""], a: 0 },
-              { q: "What is the profession of the protagonist, Rehmat, in \"Kabuliwala\"?", o: ["Fruit-seller", "Teacher", "Farmer", "Carpenter"], a: 0 },
-              { q: "What is the name of the protagonist's daughter in \"Kabuliwala\"?", o: ["Amina", "Mini", "Nooran", "Haseena"], a: 2 },
-              { q: "What does the term \"Kabuliwala\" mean?", o: ["Fruit-seller", "Carpenter", "Cloth-seller", "Trader from Kabul"], a: 3 },
-              { q: "What is the primary theme of \"Kabuliwala\"?", o: ["Father-daughter relationships", "Cultural differences", "Friendship and empathy", "Social injustice"], a: 2 },
-              { q: "What does Mini represent to the Kabuliwala?", o: ["His own daughter", "A source of income", "A friend", "A reminder of his homeland"], a: 0 },
-              { q: "What does the Kabuliwala's relationship with Mini symbolize?", o: ["The bond between fathers and daughters", "The clash of cultures", "Economic inequality", "The passage of time"], a: 0 },
-              { q: "Where was Shakespeare born?", o: ["London, England", "Stratford-upon-Avon, England", "Edinburgh, Scotland", "Bristol, England"], a: 1 },
-              { q: "How many children did Shakespeare have?", o: ["Two", "Four", "Six", "Eight"], a: 0 },
-              { q: "What was the name of the acting company Shakespeare was associated with?", o: ["The King's Men", "The Globe Theatre Company", "The Stratford Players", "The Royal Shakespeare Company"], a: 0 },
-              { q: "What genre is \"Macbeth\" classified as?", o: ["Tragedy", "Comedy", "History", "Romance"], a: 0 },
-              { q: "Which monarch was ruling England during Shakespeare's time?", o: ["King Henry VIII", "Queen Elizabeth I", "King James I", "Queen Victoria"], a: 2 },
-              { q: "What inspired Shakespeare to write \"Macbeth\"?", o: ["A historical event", "A dream", "A personal experience", "A fairy tale"], a: 0 },
-              { q: "What is the famous line spoken by Macbeth when he hears of Lady Macbeth's death?", o: ["\"Out, out, brief candle!\"", "\"Tomorrow, and tomorrow, and tomorrow.\"", "\"Is this a dagger which I see before me?\"", "\"She should have died hereafter.\""], a: 1 },
-              { q: "Who is the protagonist of \"Macbeth\"?", o: ["Macbeth", "Lady Macbeth", "Banquo", "Duncan"], a: 0 },
-              { q: "What does the three witches first predict for Macbeth?", o: ["Kingship", "Death", "Victory in battle", "Banishment"], a: 2 },
-              { q: "Which character in \"Maqbool\" corresponds to Lady Macbeth in Shakespeare's play?", o: ["Nimmi", "Sameera", "Billu", "Abbaji"], a: 0 },
-              { q: "What is the occupation of Maqbool and his associates in the movie?", o: ["Police officers", "Gangsters", "Lawyers", "Doctors"], a: 1 },
-              { q: "Who directed the movie \"Maqbool\"?", o: ["Anurag Kashyap", "Vishal Bhardwaj", "Dibakar Banerjee", "Anurag Basu"], a: 1 },
-              { q: "What tragic flaw ultimately leads to Maqbool's downfall in the movie?", o: ["Ambition", "Love", "Loyalty", "Greed"], a: 0 },
-              { q: "Which actress portrayed the character Nimmi, corresponding to Lady Macbeth in Shakespeare's play?", o: ["Tabu", "Konkona Sen Sharma", "Aishwarya Rai Bachchan", "Rani Mukerji"], a: 0 },
-              { q: "Who composed the music for the film \"Maqbool\"?", o: ["A. R. Rahman", "Vishal Bhardwaj", "Shankar-Ehsaan-Loy", "Amit Trivedi"], a: 1 },
-              { q: "Which of the following is not a book written by Chetan Bhagat?", o: ["Five Point Someone", "The White Tiger", "One Night @ the Call Center", "2 States:The Story of My Marriage"], a: 1 },
-              { q: "In which year was Chetan Bhagat's debut novel \"Five Point Someone\" published?", o: ["2004", "2006", "2008", "2010"], a: 0 },
-              { q: "Who is the love interest of Govind, the protagonist?", o: ["Vidya", "Ishaan's sister", "Omi's cousin", "Ali's girlfriend"], a: 0 },
-              { q: "What does the title \"The 3 Mistakes of My Life\" refer to?", o: ["Personal regrets of the protagonist", "Business failures of the protagonist", "Political errors in judgment", "Mistakes made by the supporting characters"], a: 0 },
-              { q: "What tragic event occurs during a cricket match that changes the course of the story?", o: ["Riot", "Earthquake", "Bomb blast", "Flood"], a: 2 },
-              { q: "Who among the three friends is passionate about cricket coaching?", o: ["Govind Wedding Rajkummar Rao", "Ishaan Riot Sushant Singh Rajput", "Omi Earthquake Amit Sadh", "Ali Cricket match Arjun Kapoor"], a: 2 },
-              { q: "Which theme is evident in Govind's entrepreneurial endeavors and subsequent failures?", o: ["Success and achievement", "Risk-taking and innovation", "Failure and resilience", "Wealth and luxury"], a: 2 },
-              { q: "What role does societal and cultural conflict play in the novel's narrative?", o: ["It serves as the primary focus of the story", "It creates tension and challenges for the characters", "It is largely ignored in favor of personal drama", "It leads to resolution and harmony among the characters"], a: 1 },
-              { q: "How does the theme of redemption manifest in the novel?", o: ["Through characters seeking forgiveness for their mistakes", "Through characters finding inner peace and acceptance", "Through characters striving to overcome past failures", "Through characters achieving their goals and aspirations"], a: 2 },
-              { q: "What is the purpose of a script?", o: ["To entertain the audience", "To guide actors and directors in performing a story", "To provide instructions for set design", "All of the above"], a: 3 },
-              { q: "Which of the following is NOT typically found in a script?", o: ["Dialogue", "Stage directions", "Character analysis", "Musical score"], a: 3 },
-              { q: "What is subtext in dialogue?", o: ["The literal meaning of what a character says", "The underlying or implied meaning beneath what a character says", "The stage directions accompanying the dialogue", "The character's internal monologue"], a: 1 },
-              { q: "What does the term \"show, don't tell\" mean in script writing?", o: ["To explicitly explain everything to the audience through dialogue", "To use visual and auditory cues to convey information and emotions", "To rely solely on narration to move the story forward", "To avoid using dialogue altogether"], a: 1 },
-              { q: "Which of the following is a common script writing technique for building suspense?", o: ["Revealing the resolution early in the story", "Providing too much information to the audience", "Using cliffhangers at the end of scenes", "Avoiding conflict between characters"], a: 2 },
-              { q: "What is the primary purpose of dialogue in a script?", o: ["To convey information to the audience", "To reveal the characters' thoughts and emotions", "To advance the plot", "All of the above"], a: 3 },
-              { q: "Which of the following is a technique for writing natural-sounding dialogue?", o: ["Avoid using contractions", "Use long, complex sentences", "Mimic real-life speech patterns and rhythms", "Stick to formal language at all times"], a: 2 },
-              { q: "Which of the following is a technique for effective scene description?", o: ["Keeping descriptions brief and minimal", "Avoiding sensory details", "Using passive voice", "Including relevant sensory details to immerse the reader in the scene"], a: 3 },
-              { q: "What is the purpose of a screenplay in movie production?", o: ["To provide a detailed budget for the film", "To serve as a blueprint for the film's story, dialogue, and scenes", "To outline the marketing strategy for the film", "To design costumes and set pieces"], a: 1 },
-              { q: "What is the typical length of a feature film screenplay?", o: ["30 pages", "100 pages or more", "10 pages", "50 pages"], a: 1 },
-              { q: "How can writers create distinct voices for each character in their dialogue?", o: ["By making all characters speak in a similar manner", "By giving each character a unique speech pattern, vocabulary, and tone", "By avoiding dialogue altogether", "By using indirect speech for all characters"], a: 1 },
-              { q: "Which technique involves using pauses, silences, and non-verbal cues in dialogue to convey meaning?", o: ["Direct exposition", "Subtext", "Monologue", "Pacing"], a: 1 },
-              { q: "What is the purpose of a movie review?", o: ["To summarize the plot", "To evaluate and critique the film", "To promote the movie", "To provide trivia about the cast and crew"], a: 1 },
-              { q: "Which of the following aspects are typically evaluated in a movie review?", o: ["Acting", "Soundtrack", "Visual effects", "All of the above"], a: 3 },
-              { q: "What do editors use to transition between scenes smoothly?", o: ["Jump cuts", "Fade-ins and fade-outs", "Continuity errors", "Sudden changes in tone"], a: 1 },
-              { q: "How does narration contribute to the storytelling process?", o: ["By confusing the audience with contradictory information", "By distracting from the main plot", "By guiding the audience through the story and providing context", "By emphasizing visual effects over plot development"], a: 2 },
-              { q: "Which form of narration involves a character within the story recounting events from their perspective?", o: ["Third-person limited", "First-person", "Second-person", "Third-person omniscient"], a: 1 },
-              { q: "Which of the following aspects are typically evaluated in a film critique?", o: ["The director's personal life", "The film's box office earnings", "Acting, direction, cinematography, plot, and themes", "The length of the movie"], a: 2 },
-              { q: "Who usually writes film critiques?", o: ["Movie directors", "Actors", "Reviewers or critics", "Screenwriters"], a: 2 },
-              { q: "What technique involves discussing the technical aspects of the film, such as cinematography, editing, and sound design?", o: ["Comparative analysis", "Genre classification", "Technical analysis", "Spoiler-free synopsis"], a: 2 },
-              { q: "Which technique involves a narrator who is not a character in the story and knows the thoughts and feelings of all characters?", o: ["First-person narration", "Second-person narration", "Third-person limited narration", "Third-person omniscient narration"], a: 3 }
-          ]
-        }
-      ]
+      name: "Media and Journalistic Writing",
+      status: "pending",
+      note: "Sugra's Semester 6 paper (A040603T). Past exam booklet found, but no official answer key is available yet.",
+      source: "https://csjmu.ac.in/wp-content/uploads/booklets/booklets-apr-2026/28-04-2026/A040603T_A.pdf",
+      units: []
     }
   ]
 };
