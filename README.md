@@ -2,7 +2,7 @@
 
 A daily MCQ practice app for CSJM University BA papers. Static site, no build step, no dependencies.
 
-Currently loaded: **385 questions** (296 English, 89 Economics). Sociology is scaffolded but empty.
+Currently loaded: **1,533 questions** (296 English, 89 Economics, 1,148 Sociology).
 
 ## Deploy to Vercel
 
@@ -59,13 +59,19 @@ Units sit inside papers:
 }
 ```
 
-To fill in Sociology, download these three from the university question bank. Each PDF has the questions and a full answer key at the end of every unit.
+Sociology is now filled in from the university question bank:
+
+- Society in India: 383 questions
+- Basic Research Methodology and Statistics: 368 questions
+- Social Problems and Social Development: 397 questions
+
+Source links:
 
 - Society in India: https://prashnbank.csjmu.ac.in/society-in-india-structure-organization-change/
 - Basic Research Methodology and Statistics: https://prashnbank.csjmu.ac.in/basic-research-methodology-and-statistics/
 - Social Problems and Social Development: https://prashnbank.csjmu.ac.in/social-problem-and-social-development/
 
-Paste the content into `data/sociology.js` in the same shape as `data/english.js`, and change `status: "pending"` to `status: "ready"`. Redeploy and it appears.
+The pending Economics papers still need an official or worked-out answer key before their questions can be added safely.
 
 ## Where the questions came from
 

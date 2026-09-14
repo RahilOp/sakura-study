@@ -148,8 +148,8 @@ window.SUBJECT_ECONOMICS = {
       semester: 4,
       name: "Money, Banking and Public Finance",
       status: "pending",
-      note: "Not in the university question bank. Find past papers by paper code in the booklet archive.",
-      source: "https://csjmu.ac.in/booklets/",
+      note: "Past paper found in the booklet archive, but it does not include an official answer key. Answers would need to be worked out before adding.",
+      source: "https://csjmu.ac.in/wp-content/uploads/booklets/booklets-apr-2026/21-04-2026/A080401T-A.pdf",
       units: []
     },
     {

@@ -246,8 +246,8 @@ Sociology is the main gap: three papers are scaffolded with source URLs in `data
 
 - English: 296 questions ready (`eng-sem2`, English Poetry).
 - Economics: 89 questions ready (`eco-sem2`, Principles of Macro Economics).
-- Sociology: scaffolded, 0 questions.
-- Pending Economics papers: Money/Banking/Public Finance (sem 4), Financial Literacy (sem 4), Sem 6 Economics.
+- Sociology: 1,148 questions ready across all three papers (`soc-sem2`, `soc-sem2-research`, `soc-sem4`).
+- Pending Economics papers: Money/Banking/Public Finance (sem 4 — past paper found but no official answer key), Financial Literacy (sem 4), Sem 6 Economics.
 
 ---
 
