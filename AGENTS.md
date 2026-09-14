@@ -244,10 +244,11 @@ Sociology is the main gap: three papers are scaffolded with source URLs in `data
 
 ## 14. Current content status
 
-- English: 296 questions ready (`eng-sem2`, English Poetry).
+- English: 1,302 questions ready (`eng-sem2`, English Poetry; `eng-sem4-drama`, British and American Drama; `eng-sem6-indian-new`, Indian and New Literature in English; `eng-sem6-film-media`, Literature in Film and Media Studies).
 - Economics: 89 questions ready (`eco-sem2`, Principles of Macro Economics).
 - Sociology: 1,148 questions ready across all three papers (`soc-sem2`, `soc-sem2-research`, `soc-sem4`).
 - Pending Economics papers: Money/Banking/Public Finance (sem 4 — past paper found but no official answer key), Financial Literacy (sem 4), Sem 6 Economics.
+- Economics International (sem 5, course code A080503T) was found but contains no MCQs in the downloaded booklet, only notes and short/long questions.
 
 ---
 
