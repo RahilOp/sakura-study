@@ -17,7 +17,7 @@
 
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 
-html,body{margin:0;padding:0}
+html,body{margin:0;padding:0;overflow-x:hidden}
 
 body{
   background:var(--kinari);
@@ -73,6 +73,7 @@ p{margin:0}
 .card{
   background:var(--card);border:1px solid var(--line);
   border-radius:var(--radius);padding:18px;margin-bottom:12px;
+  max-width:100%;overflow-wrap:break-word;word-wrap:break-word;
 }
 
 /* today's practice — the one loud element */
@@ -186,21 +187,26 @@ button.ghost{
 .reslist a{color:var(--koubai);text-decoration:none}
 .reslist a:hover{text-decoration:underline}
 
-.notes-md h1,.notes-md h2,.notes-md h3,.notes-md h4{font-family:var(--serif);margin:18px 0 8px;color:var(--ink)}
-.notes-md h1{font-size:1.25rem}
-.notes-md h2{font-size:1.1rem}
-.notes-md h3{font-size:1rem}
-.notes-md p{margin:8px 0;line-height:1.6}
-.notes-md ul{margin:8px 0;padding-left:18px}
-.notes-md li{margin-bottom:4px}
-.notes-md a{color:var(--koubai);text-decoration:none}
-.notes-md a:hover{text-decoration:underline}
+.notes-html h1,.notes-html h2,.notes-html h3,.notes-html h4{font-family:var(--serif);margin:18px 0 8px;color:var(--ink)}
+.notes-html h1{font-size:1.25rem}
+.notes-html h2{font-size:1.1rem}
+.notes-html h3{font-size:1rem}
+.notes-html p{margin:8px 0;line-height:1.6}
+.notes-html ul{margin:8px 0;padding-left:18px}
+.notes-html li{margin-bottom:4px}
+.notes-html a{color:var(--koubai);text-decoration:none}
+.notes-html a:hover{text-decoration:underline}
 
-.pageview{min-height:180px;cursor:grab;user-select:none}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;margin:10px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:.9rem}
+.table-wrap th,.table-wrap td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+.table-wrap th{background:var(--sakura);font-weight:600}
+
+.pageview{min-height:180px;cursor:grab;user-select:none;max-width:100%;overflow-wrap:break-word;word-wrap:break-word}
 .pagecount{font-weight:400;font-size:.85rem;color:var(--ink-soft);margin-left:8px}
 .pagenav{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:10px}
-.pagenav button{flex:0 0 auto;margin-top:0;padding:8px 14px}
-.pagedots{display:flex;gap:6px;justify-content:center;flex:1}
+.pagenav button{flex:0 0 auto;margin-top:0;padding:8px 16px;font-size:1.1rem;line-height:1}
+.pagedots{display:flex;gap:6px;justify-content:center;flex:1;flex-wrap:wrap}
 .pagedot{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer}
 .pagedot.active{background:var(--koubai)}
 

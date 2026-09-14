@@ -136,25 +136,7 @@
     });
   }
 
-  /* Lightweight markdown → HTML for study notes */
-  function mdToHtml(md) {
-    var html = esc(md)
-      .replace(/^###### (.*$)/gim, "<h6>$1</h6>")
-      .replace(/^##### (.*$)/gim, "<h5>$1</h5>")
-      .replace(/^#### (.*$)/gim, "<h4>$1</h4>")
-      .replace(/^### (.*$)/gim, "<h3>$1</h3>")
-      .replace(/^## (.*$)/gim, "<h2>$1</h2>")
-      .replace(/^# (.*$)/gim, "<h1>$1</h1>")
-      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-      .replace(/\*(.*?)\*/g, "<em>$1</em>")
-      .replace(/^\s*[-*] (.*$)/gim, "<li>$1</li>")
-      .replace(/^(\d+)\.\s+(.*$)/gim, "<li>$2</li>")
-      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
-    html = html.replace(/(<li>.*<\/li>)/gs, function (m) {
-      return "<ul>" + m + "</ul>";
-    });
-    return "<div class=\"notes-md\">" + html.replace(/\n/g, "<br>") + "</div>";
-  }
+
 
   function el(html) {
     var d = document.createElement("div");
@@ -298,7 +280,7 @@
   }
 
   function screenStudy(unit, paper) {
-    var notePath = "notes/" + paper.id + "/" + unit.id + ".md";
+    var notePath = "notes/" + paper.id + "/" + unit.id + ".html";
     var html = "<h1>" + esc(unit.name) + "</h1>" +
       '<p class="lede">' + esc(unit.blurb || "") + "</p>" +
       '<div class="card" id="notesCard"><h3>Notes</h3>' +
@@ -319,17 +301,18 @@
     fetch(notePath)
       .then(function (r) { return r.ok ? r.text() : Promise.reject(r.status); })
       .then(function (text) {
-        var pages = text.split(/\n---\s*\n/).map(function (p) { return p.trim(); }).filter(function (p) { return p; });
+        var rawPages = text.split(/<hr\s+class="page-break"\s*\/?>/i);
+        var pages = rawPages.map(function (p) { return p.trim(); }).filter(function (p) { return p; });
         if (pages.length === 0) pages = [text.trim()];
         var pageIndex = 0;
 
         function showPage() {
           notesCard.innerHTML = '<h3>Notes <span class="pagecount">' + (pageIndex + 1) + " / " + pages.length + "</span></h3>" +
-            '<div class="pageview" id="pageView">' + mdToHtml(pages[pageIndex]) + "</div>" +
+            '<div class="pageview" id="pageView">' + pages[pageIndex] + "</div>" +
             '<div class="pagenav">' +
-            '<button class="ghost" id="pagePrev">&#8249; Previous</button>' +
+            '<button class="ghost" id="pagePrev" aria-label="Previous page">&#8249;</button>' +
             '<div class="pagedots" id="pageDots"></div>' +
-            '<button class="ghost" id="pageNext">Next &#8250;</button>' +
+            '<button class="ghost" id="pageNext" aria-label="Next page">&#8250;</button>' +
             "</div>";
           document.getElementById("pagePrev").disabled = pageIndex === 0;
           document.getElementById("pageNext").disabled = pageIndex === pages.length - 1;

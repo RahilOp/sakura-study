@@ -87,7 +87,8 @@ Rules:
 - Every question must have exactly four options.
 - `status: "pending"` papers are scaffolded but have no questions; the UI disables them and may show a source link.
 - Keep ids stable. A question's identity is `uid(paperId, unitId, questionIndex)`. If questions are reordered, the index changes and progress for that question is effectively lost.
-- Study notes live in `notes/<paperId>/<unitId>.md` and are fetched at runtime; `unit.resources` can still link to source PDFs or videos.
+- Study notes live in `notes/<paperId>/<unitId>.md`. The app loads the pre-rendered `notes/<paperId>/<unitId>.html` files at runtime.
+- To regenerate HTML files after editing markdown, run `python3 scripts/build-notes.py` (requires the `markdown` Python package).
 
 ---
 

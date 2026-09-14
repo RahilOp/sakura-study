@@ -1,0 +1,142 @@
+<div class="notes-html"><h1>Correlation and Chi-Square tests</h1>
+<h2>Correlation</h2>
+<h3>Meaning</h3>
+<ul>
+<li><strong>Correlation</strong> measures the strength and direction of relationship between two variables.</li>
+<li>It does <strong>not</strong> prove causation.</li>
+</ul>
+<h3>Direction</h3>
+<ul>
+<li><strong>Positive correlation</strong>: both variables increase together.</li>
+<li><strong>Negative correlation</strong>: one variable increases while the other decreases.</li>
+<li><strong>Zero correlation</strong>: no linear relationship.</li>
+</ul>
+<h3>Strength</h3>
+<ul>
+<li>Values range from <strong>−1</strong> to <strong>+1</strong>.</li>
+<li><strong>+1</strong> = perfect positive correlation.</li>
+<li><strong>−1</strong> = perfect negative correlation.</li>
+<li><strong>0</strong> = no correlation.</li>
+</ul>
+<h3>Pearson's correlation coefficient (r)</h3>
+<ul>
+<li>Used for <strong>interval/ratio</strong> data.</li>
+<li>Measures linear relationship.</li>
+<li>Requires approximately normal distribution.</li>
+</ul>
+<h3>Spearman's rank correlation (rho)</h3>
+<ul>
+<li>Used for <strong>ordinal</strong> data or when assumptions of Pearson are not met.</li>
+<li>Based on ranked data rather than raw scores.</li>
+</ul>
+<h3>Important caution</h3>
+<ul>
+<li><strong>Correlation does not imply causation.</strong></li>
+<li>A third variable may explain the relationship.</li>
+</ul>
+<hr class="page-break" />
+<h2>Interpreting correlation</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Value of r</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.00 to 0.19</td>
+<td>Very weak</td>
+</tr>
+<tr>
+<td>0.20 to 0.39</td>
+<td>Weak</td>
+</tr>
+<tr>
+<td>0.40 to 0.59</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>0.60 to 0.79</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>0.80 to 1.00</td>
+<td>Very strong</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>Same scale applies to negative values.</li>
+</ul>
+<hr class="page-break" />
+<h2>Chi-Square test</h2>
+<h3>Purpose</h3>
+<ul>
+<li>Tests whether there is a significant association between two <strong>categorical variables</strong>.</li>
+<li>Non-parametric: does not assume normal distribution.</li>
+</ul>
+<h3>Steps</h3>
+<ol>
+<li>State null and alternative hypotheses.</li>
+<li>Create a contingency table of observed frequencies.</li>
+<li>Calculate expected frequencies for each cell.</li>
+<li>Compute Chi-Square statistic.</li>
+<li>Compare to critical value or use p-value.</li>
+</ol>
+<h3>Expected frequency</h3>
+<ul>
+<li><strong>Expected = (row total × column total) / grand total</strong>.</li>
+<li>Expected frequencies should generally be at least 5 in most cells.</li>
+</ul>
+<h3>Degrees of freedom</h3>
+<ul>
+<li><strong>df = (rows − 1) × (columns − 1)</strong>.</li>
+</ul>
+<h3>Interpretation</h3>
+<ul>
+<li>A significant Chi-Square result means the variables are associated.</li>
+<li>It does not indicate the strength or direction of the association.</li>
+</ul>
+<hr class="page-break" />
+<h2>When to use which test</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Two interval/ratio variables, linear relationship</td>
+<td>Pearson's r</td>
+</tr>
+<tr>
+<td>Two ordinal variables or non-normal data</td>
+<td>Spearman's rho</td>
+</tr>
+<tr>
+<td>Two categorical variables, association</td>
+<td>Chi-Square</td>
+</tr>
+<tr>
+<td>Compare sample mean to population mean</td>
+<td>One-sample t-test</td>
+</tr>
+<tr>
+<td>Compare means of two groups</td>
+<td>Independent t-test</td>
+</tr>
+</tbody>
+</table></div>
+<hr class="page-break" />
+<h2>Exam checklist</h2>
+<ul>
+<li>Correlation measures relationship, not causation.</li>
+<li>Pearson's r = interval/ratio linear correlation.</li>
+<li>Spearman's rho = rank correlation for ordinal data.</li>
+<li>Chi-Square = test of association for categorical variables.</li>
+<li>Expected frequency ≥ 5 for most Chi-Square tests.</li>
+<li>df = (rows − 1) × (columns − 1).</li>
+</ul></div>
