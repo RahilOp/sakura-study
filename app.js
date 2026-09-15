@@ -4,7 +4,7 @@
 (function () {
   "use strict";
 
-  var SUBJECTS = [window.SUBJECT_SOCIOLOGY, window.SUBJECT_ENGLISH, window.SUBJECT_ECONOMICS];
+  var SUBJECTS = [window.SUBJECT_SOCIOLOGY, window.SUBJECT_ENGLISH, window.SUBJECT_ECONOMICS, window.SUBJECT_PSYCHOLOGY];
   var DAILY_COUNT = 15;
   var KEY = "sakura-study-v1";
 
@@ -204,10 +204,10 @@
     SUBJECTS.forEach(function (sub) {
       if (!sub) return;
       var n = readyCount(sub);
-      html += '<button class="rowlink" data-sub="' + sub.id + '"' + (n ? "" : " disabled") + ">" +
+      html += '<button class="rowlink" data-sub="' + sub.id + '">' +
         '<span class="semtag">' + esc(sub.name.slice(0, 3)) + "</span>" +
         '<span class="body"><span class="title">' + esc(sub.name) + "</span>" +
-        '<span class="sub">' + (n ? n + " questions ready" : "No questions added yet") + "</span></span>" +
+        '<span class="sub">' + (n ? n + " questions ready" : "Notes / resources only") + "</span></span>" +
         '<span class="chev">&#8250;</span></button>';
     });
 
@@ -234,10 +234,11 @@
         if (!sub) return;
         sub.papers.filter(function (p) { return p.semester === sem; }).forEach(function (p) {
           var n = paperQuestions(p).length;
-          rows += '<button class="rowlink" data-paper="' + p.id + '"' + (n ? "" : " disabled") + ">" +
+          var hasContent = n > 0 || p.units.length > 0 || p.source;
+          rows += '<button class="rowlink" data-paper="' + p.id + '"' + (hasContent ? "" : " disabled") + ">" +
             '<span class="semtag">' + sem + "</span>" +
             '<span class="body"><span class="title">' + esc(p.name) + "</span>" +
-            '<span class="sub">' + esc(sub.name) + " &middot; " + (n ? n + " questions" : "not added yet") + "</span></span>" +
+            '<span class="sub">' + esc(sub.name) + " &middot; " + (n ? n + " questions" : "notes / resources") + "</span></span>" +
             '<span class="chev">&#8250;</span></button>';
         });
       });
@@ -251,7 +252,8 @@
     var html = "<h1>" + esc(sub.name) + "</h1><p class=\"lede\">Papers in semester order.</p>";
     sub.papers.forEach(function (p) {
       var n = paperQuestions(p).length;
-      html += '<button class="rowlink" data-paper="' + p.id + '"' + (n ? "" : " disabled") + ">" +
+      var hasContent = n > 0 || p.units.length > 0 || p.source;
+      html += '<button class="rowlink" data-paper="' + p.id + '"' + (hasContent ? "" : " disabled") + ">" +
         '<span class="semtag">' + p.semester + "</span>" +
         '<span class="body"><span class="title">' + esc(p.name) + "</span>" +
         '<span class="sub">' + (n ? n + " questions" : esc(p.note || "not added yet")) + "</span></span>" +
@@ -364,44 +366,40 @@
     var html = "<h1>" + esc(paper.name) + "</h1>" +
       '<p class="lede">Semester ' + paper.semester + (paper.note ? " &middot; " + esc(paper.note) : "") + "</p>";
 
-    if (!qs.length) {
-      html += '<div class="card" style="margin-top:18px"><div class="empty">Questions for this paper haven\'t been added yet.' +
-        (paper.source ? '<br><br><a href="' + esc(paper.source) + '" target="_blank" rel="noopener">Open the source</a>' : "") +
+    if (qs.length) {
+      html += '<div class="card" style="margin-top:18px">' +
+        "<h3>Practise the whole paper</h3>" +
+        '<p class="lede">' + qs.length + " questions, shuffled.</p>" +
+        '<button class="primary" id="wholePaper" style="margin-top:14px">Start</button>' +
+        '<button class="ghost" id="mockExam">Mock exam &middot; 75 questions, 90 minutes</button>' +
+        "</div>";
+    } else if (paper.source) {
+      html += '<div class="card" style="margin-top:18px"><div class="empty">Questions for this paper haven\'t been added yet.<br><br>' +
+        '<a href="' + esc(paper.source) + '" target="_blank" rel="noopener">Open the source</a>' +
         "</div></div>";
-      render(html);
-      return;
     }
 
-    html += '<div class="card" style="margin-top:18px">' +
-      "<h3>Practise the whole paper</h3>" +
-      '<p class="lede">' + qs.length + " questions, shuffled.</p>" +
-      '<button class="primary" id="wholePaper" style="margin-top:14px">Start</button>' +
-      '<button class="ghost" id="mockExam">Mock exam &middot; 75 questions, 90 minutes</button>' +
-      "</div>";
-
-    html += '<h2 class="sectiontitle">Units</h2>';
-    paper.units.forEach(function (u) {
-      var n = (u.questions || []).length;
-      var done = 0;
-      (u.questions || []).forEach(function (q, i) { if (S.seen[uid(paper.id, u.id, i)]) done++; });
-      html += '<button class="rowlink" data-unit="' + u.id + '">' +
-        '<span class="body"><span class="title">' + esc(u.name) + "</span>" +
-        '<span class="sub">' + esc(u.blurb || "") + "</span>" +
-        '<span class="bar"><i style="width:' + (n ? Math.round(done / n * 100) : 0) + '%"></i></span></span>' +
-        '<span class="chev">&#8250;</span></button>';
-      if (u.notes || (u.resources && u.resources.length)) {
+    if (paper.units && paper.units.length) {
+      html += '<h2 class="sectiontitle">Units</h2>';
+      paper.units.forEach(function (u) {
+        var n = (u.questions || []).length;
+        var done = 0;
+        (u.questions || []).forEach(function (q, i) { if (S.seen[uid(paper.id, u.id, i)]) done++; });
+        html += '<button class="rowlink" data-unit="' + u.id + '"' + (n ? "" : " disabled") + '>' +
+          '<span class="body"><span class="title">' + esc(u.name) + "</span>" +
+          '<span class="sub">' + esc(u.blurb || "") + "</span>" +
+          '<span class="bar"><i style="width:' + (n ? Math.round(done / n * 100) : 0) + '%"></i></span></span>' +
+          '<span class="chev">&#8250;</span></button>';
         html += '<div class="study-bar"><button class="ghost study-btn" data-study="' + u.id + '">Study notes</button></div>';
-      }
-    });
+      });
+    }
 
     render(html);
 
-    document.getElementById("wholePaper").onclick = function () {
-      go(function () { screenQuiz(shuffle(qs), paper.name); });
-    };
-    document.getElementById("mockExam").onclick = function () {
-      go(function () { screenQuiz(shuffle(qs).slice(0, 75), paper.name + " &middot; mock", 90 * 60); });
-    };
+    var whole = document.getElementById("wholePaper");
+    if (whole) whole.onclick = function () { go(function () { screenQuiz(shuffle(qs), paper.name); }); };
+    var mock = document.getElementById("mockExam");
+    if (mock) mock.onclick = function () { go(function () { screenQuiz(shuffle(qs).slice(0, 75), paper.name + " &middot; mock", 90 * 60); }); };
     app.querySelectorAll("[data-unit]").forEach(function (btn) {
       btn.onclick = function () {
         var u = paper.units.filter(function (x) { return x.id === btn.dataset.unit; })[0];
