@@ -4,7 +4,7 @@
 (function () {
   "use strict";
 
-  var SUBJECTS = [window.SUBJECT_SOCIOLOGY, window.SUBJECT_ENGLISH, window.SUBJECT_ECONOMICS, window.SUBJECT_PSYCHOLOGY];
+  var SUBJECTS = [window.SUBJECT_SOCIOLOGY, window.SUBJECT_ENGLISH, window.SUBJECT_ECONOMICS, window.SUBJECT_PSYCHOLOGY, window.SUBJECT_VOCATIONAL];
   var DAILY_COUNT = 15;
   var KEY = "sakura-study-v1";
 

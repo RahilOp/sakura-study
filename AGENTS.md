@@ -259,6 +259,7 @@ Sociology is the main gap: three papers are scaffolded with source URLs in `data
 - Economics: 189 questions ready (`eco-sem2`, Principles of Macro Economics; `eco-sem4-money`, Money/Banking/Public Finance). The Semester 4 paper answers are worked out from the exam booklet (Set A) without an official key. Sugra’s Semester 5 papers Economic Growth and Development (A080501T) and International Economics (A080503T), and her Semester 6 papers Indian Economy & Economy of Uttar Pradesh (A080601T) and Agriculture Economics (A080602T), are pending. The International Economics booklet has notes/short questions but no MCQs; the others have not been located in the question bank or booklet archive.
 - Sociology: 1,148 questions ready across all three papers (`soc-sem2`, `soc-sem2-research`, `soc-sem4`).
 - Psychology: `psy-sem4-psychopathology` (Psychopathology / Abnormal Psychology) is added as a notes-only pending paper. No MCQ question bank has been found, so it has study notes from the CSJMU B.A. Psychology syllabus but no questions yet.
+- Vocational: `voc-ai-arts-humanities-social-science` (AI for Arts, Humanities and Social Science, course code VOC161) is added as a notes-only pending vocational paper with notes from the official CSJMU vocational syllabus.
 
 ---
 
