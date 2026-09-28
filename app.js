@@ -283,7 +283,14 @@
     var admin = document.getElementById("adminBtn");
     if (admin) admin.onclick = function () { go(screenAdmin); };
     var logout = document.getElementById("logoutBtn");
-    if (logout) logout.onclick = function () { fbAuth.signOut(); };
+    if (logout) logout.onclick = function () {
+      if (fbAuth) fbAuth.signOut();
+      else {
+        currentUser = null;
+        isAdmin = false;
+        go(screenHome);
+      }
+    };
 
     app.querySelectorAll("[data-sub]").forEach(function (btn) {
       btn.onclick = function () {
@@ -725,6 +732,10 @@
   }
 
   function screenGrammarToday() {
+    if (!fbDb) {
+      render('<div class="card"><div class="empty">Grammar exercises need Firebase. Please check that firebase-config.js is present.</div></div>');
+      return;
+    }
     var dateStr = grammarDateString(new Date());
     var id = "grammar-" + dateStr;
     render('<div class="card"><div class="empty">Loading today\'s grammar exercise…</div></div>');
@@ -742,6 +753,10 @@
   }
 
   function screenGrammarPast() {
+    if (!fbDb) {
+      render('<h1>Past Grammar Exercises</h1><div class="card"><div class="empty">Grammar exercises need Firebase. Please check that firebase-config.js is present.</div></div>');
+      return;
+    }
     render('<h1>Past Grammar Exercises</h1><p class="lede">Pick any day to re-attempt.</p>');
     fbDb.collection("grammar_exercises").orderBy("date", "desc").get().then(function (snap) {
       var html = "";
@@ -842,7 +857,7 @@
   }
 
   function screenAdmin() {
-    if (!isAdmin) { go(screenHome); return; }
+    if (!isAdmin || !fbDb) { go(screenHome); return; }
     render('<h1>Admin Dashboard</h1><p class="lede">Track Sugra\'s progress.</p>' +
       '<div class="card"><div class="empty">Loading…</div></div>');
 
@@ -969,6 +984,8 @@
           go(screenHome);
         });
       } else {
+        currentUser = null;
+        isAdmin = false;
         screenLogin();
       }
     });
