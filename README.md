@@ -1,8 +1,8 @@
 # Sakura Study
 
-A daily MCQ practice app for CSJM University BA papers. Static site, no build step, no dependencies.
+A daily MCQ practice app for CSJM University BA papers. Static site, no build step.
 
-Currently loaded: **2,098 questions** (761 English, 189 Economics, 1,148 Sociology).
+Currently loaded: **2,098 subject questions** (761 English, 189 Economics, 1,148 Sociology) plus daily ICSE-style English grammar MCQs.
 
 ## Deploy to Vercel
 
@@ -28,19 +28,36 @@ There is no framework to select and no build command.
 
 Tell her to open the URL on her phone and use **Add to Home Screen**. It then behaves like an app.
 
+## Firebase setup
+
+1. Create a Firebase project at https://console.firebase.google.com/.
+2. Enable **Email/Password** authentication.
+3. Create two users:
+   - `ksugra17@gmail.com` (Sugra)
+   - `rahilrizvi0786110@gmail.com` (admin)
+4. Create a **Cloud Firestore** database in production mode.
+5. Paste the rules from `scripts/firestore-rules.txt` into Firestore Security Rules.
+6. Set `rahilrizvi0786110@gmail.com` as an admin using the Admin SDK custom claims, or rely on the hard-coded admin check in `app.js`.
+7. Copy `firebase-config.template.js` to `firebase-config.js` and fill in your Firebase project keys.
+8. Add GitHub secrets for the daily grammar generator:
+   - `FIREBASE_PROJECT_ID`
+   - `FIREBASE_SERVICE_ACCOUNT` (the contents of a service-account JSON with Firestore write permission)
+
 ## What's in it
 
-- **Today** — 15 questions a day, drawn from what she hasn't seen yet. Tracks a daily streak.
+- **Today** — 15 subject questions a day, drawn from what she hasn't seen yet. Tracks a daily streak.
+- **English Grammar Daily** — 20 ICSE-style MCQs every day (prepositions, tenses, direct/indirect, active/passive, phrasal verbs, error correction). Past exercises can be re-attempted.
 - **Course** — every paper in semester order, 2 then 4 then 6.
 - **Review** — every question she has answered wrong, collected automatically. A question leaves the list once she gets it right.
 - **Progress** — accuracy, coverage per paper, days practised.
 - **Mock exam** — inside any paper: 75 questions, 90-minute countdown, matching the real format.
+- **Admin dashboard** — for `rahilrizvi0786110@gmail.com` to track Sugra's subject progress and grammar exercise scores.
 
-Progress is stored in the browser on her device. It does not sync between phone and laptop, and clearing browser data wipes it.
+Progress is stored in **Firebase Firestore** and synced locally. She can use the app from any device after logging in.
 
 ## Adding questions
 
-Everything lives in `data/`. Three files, one per subject. The format is:
+Everything lives in `data/`. The format is:
 
 ```js
 { q: "Question text", o: ["option A", "option B", "option C", "option D"], a: 2 }
@@ -48,52 +65,13 @@ Everything lives in `data/`. Three files, one per subject. The format is:
 
 `a` is the index of the correct option, counting from 0. So `a: 2` means option C.
 
-Units sit inside papers:
-
-```js
-{
-  id: "u1",
-  name: "Unit name",
-  blurb: "One line describing what it covers.",
-  questions: [ ...  ]
-}
-```
-
-Sociology is now filled in from the university question bank:
-
-- Society in India: 383 questions
-- Basic Research Methodology and Statistics: 368 questions
-- Social Problems and Social Development: 397 questions
-
-Source links:
-
-- Society in India: https://prashnbank.csjmu.ac.in/society-in-india-structure-organization-change/
-- Basic Research Methodology and Statistics: https://prashnbank.csjmu.ac.in/basic-research-methodology-and-statistics/
-- Social Problems and Social Development: https://prashnbank.csjmu.ac.in/social-problem-and-social-development/
-
-The pending Economics papers still need an official or worked-out answer key before their questions can be added safely.
-
-## English question sources
-
-Sugra’s current papers:
+## Source notes
 
 - **English Poetry** — CSJMU Prashn Bank, course code A020201T (Semester 2).
 - **Indian and New Literature in English** — CSJMU Prashn Bank, course code A040601T (Semester 6).
 - **Media and Journalistic Writing** — B.A. Semester 6 exam booklet (Set A), course code A040603T. Answers are worked out, not from an official key.
-- **Classical Literature and History of English Literature** (A040501T) and **Fiction** (A040502T) are listed as pending — no MCQ question bank or answer key has been found yet.
+- **Principles of Macro Economics** — real Sem II exam paper, code A080201T. Answers worked out.
+- **Money, Banking and Public Finance** — real Sem IV exam paper, code A080401T (Set A). Answers worked out.
+- **Sociology** — CSJMU Prashn Bank for all three papers.
 
-## Where the questions came from
-
-**English Poetry** — CSJMU Prashn Bank, the university's own question bank, written by Dr Shilpi Mishra and Dr Nidhish Kumar Singh. Answers are the ones printed in the bank's own answer keys.
-
-**Principles of Macro Economics** — the real Sem II exam paper, code A080201T. The university did not publish an answer key for it, so **these answers were worked out rather than taken from an official source**.
-
-**Money, Banking and Public Finance** — the real Sem IV exam paper, code A080401T (Set A). The university did not publish an answer key for it, so these answers are also worked out.
-
-In both Economics papers, the answers are reliable for study, but if one ever contradicts a teacher or textbook, trust that source instead.
-
-One thing worth knowing: the Prashn Bank contains a few internal errors. Its Unit II key marks blank verse as rhymed, which is wrong, and it gives two different answers for the stanza form of Gray's Elegy in two different units. I left those questions out. Treat the bank as a very good predictor of what the exam will ask, not as a final authority on fact.
-
-## Adding learning materials later
-
-Each unit object already has a `blurb` field. The simplest next step is to add a `notes` field with the unit's text, and a "Read the notes" button on the unit row before practice starts. The Prashn Bank PDFs contain written notes for every unit, so that content already exists and just needs moving across.
+Pending papers (no MCQ source found): English Sem 5 Classical Literature & History and Fiction; Economics Sem 5/6 papers; Psychology Psychopathology; Vocational AI for Arts/Humanities/Social Science.

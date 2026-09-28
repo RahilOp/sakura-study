@@ -20,13 +20,16 @@ sakura-study/
 ├── index.html             # entry point
 ├── styles.css
 ├── app.js
+├── firebase-config.template.js   # copy to firebase-config.js and fill in
 ├── vercel.json
 ├── README.md
 ├── .gitignore
 ├── data/
 │   ├── english.js         # canonical English data
 │   ├── economics.js       # canonical Economics data
-│   └── sociology.js       # canonical Sociology scaffold
+│   ├── sociology.js       # canonical Sociology scaffold
+│   ├── psychology.js      # pending notes-only paper
+│   └── vocational.js      # pending vocational notes
 └── notes/                 # exam-style markdown notes per unit
     └── <paper-id>/
         └── <unit-id>.md
@@ -126,7 +129,7 @@ Tabs and their root screens:
 
 | Tab button | Screen function | Purpose |
 |------------|-----------------|---------|
-| Today      | `screenHome`    | Daily set, subject list, review shortcut |
+| Today      | `screenHome`    | Daily set, subject list, review shortcut, grammar exercise |
 | Course     | `screenCourse`  | All papers grouped by semester |
 | Review     | `screenReview`  | Wrong-answer list |
 | Progress   | `screenProgress`| Stats and reset |
@@ -139,8 +142,10 @@ Tabs and their root screens:
 - Shows today's practice card with counts: seen / new / to revisit.
 - Button starts a 15-question daily set (see algorithm below).
 - If questions have been answered today, card says "Practice done for today".
+- English Grammar Daily card with "Start today's grammar exercise" and "Past grammar exercises" buttons.
 - Lists subjects as row links; tapping opens `screenSubject`.
 - If there are wrong answers, shows "Review the N you got wrong" ghost button.
+- Shows "Admin dashboard" for `rahilrizvi0786110@gmail.com`.
 
 ### `screenSubject(subject)`
 - Lists papers for that subject with semester tags.
@@ -174,6 +179,15 @@ Tabs and their root screens:
 - Updates `seen`, `total`, `correct`, `wrong` in state.
 - If `seconds` is provided, shows a countdown in the header; time-up forces finish.
 - Finish screen shows score, percentage, and a motivational message.
+
+### `screenQuizGrammar(items, title, exerciseId, exerciseDate)`
+- Simplified quiz for grammar exercises fetched from Firestore.
+- Records an attempt document in `grammar_attempts` on finish.
+
+### `screenAdmin`
+- Visible only when logged in as `rahilrizvi0786110@gmail.com`.
+- Reads all `progress` and `grammar_attempts` documents.
+- Shows accuracy, coverage, days, and grammar scores per date.
 
 ---
 
@@ -249,8 +263,6 @@ Be careful not to break this when editing `index.html`. It is intentionally sepa
 2. Keep the four-option format and zero-based `a` index.
 3. Keep `status: "ready"` for papers that have questions.
 
-Sociology is the main gap: three papers are scaffolded with source URLs in `data/sociology.js`.
-
 ---
 
 ## 14. Current content status
@@ -263,7 +275,38 @@ Sociology is the main gap: three papers are scaffolded with source URLs in `data
 
 ---
 
-## 15. Common extension points
+## 15. Firebase backend
+
+The app now uses Firebase for cloud progress, authentication, admin tracking, and the daily grammar exercise.
+
+### Required files
+
+- `firebase-config.js` (created from `firebase-config.template.js`) — loaded in `index.html`. Do not commit it; it is in `.gitignore`.
+- `firebase-service-account.json` — used by GitHub Actions to upload exercises. Do not commit it; add it as `FIREBASE_SERVICE_ACCOUNT` secret.
+
+### Firestore collections
+
+| Collection | Purpose |
+|------------|---------|
+| `progress/{userId}` | User's subject quiz progress (`seen`, `wrong`, `days`, `streak`, `total`, `correct`). |
+| `grammar_exercises/{grammar-YYYY-MM-DD}` | Daily generated 20-question grammar exercise. |
+| `grammar_attempts/{autoId}` | Each grammar exercise attempt (`userId`, `exerciseId`, `date`, `score`, `total`, `percentage`, `answeredAt`). |
+
+### Security rules
+
+Use the rules in `scripts/firestore-rules.txt`.
+
+### GitHub Actions
+
+`.github/workflows/daily-grammar.yml` runs `scripts/grammar_generator.py --upload --count 20` every day at 5 AM IST.
+
+### Admin account
+
+Set `rahilrizvi0786110@gmail.com` as an admin in Firebase Authentication custom claims, or rely on the hard-coded email check in `app.js` plus security rules using `request.auth.token.admin == true`.
+
+---
+
+## 16. Common extension points
 
 If the user asks to add a feature, prefer the simplest path:
 
@@ -276,7 +319,7 @@ If the user asks to add a feature, prefer the simplest path:
 
 ---
 
-## 16. Things to preserve
+## 17. Things to preserve
 
 - Keep the app static and dependency-free unless there is a strong reason not to.
 - Match the existing ES5/IIFE style in `app.js`.
@@ -287,7 +330,7 @@ If the user asks to add a feature, prefer the simplest path:
 
 ---
 
-## 17. Testing locally
+## 18. Testing locally
 
 Because there is no build step, open `index.html` directly in a browser or serve the project root with any static server, e.g.:
 
@@ -296,3 +339,15 @@ python3 -m http.server 8000
 ```
 
 Then visit `http://localhost:8000`.
+
+To regenerate notes after editing markdown:
+
+```bash
+python3 scripts/build-notes.py
+```
+
+To test the grammar generator locally:
+
+```bash
+python3 scripts/grammar_generator.py --count 20 --output /tmp/grammar.json
+```

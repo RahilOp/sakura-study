@@ -1,0 +1,31 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Users can read/write only their own progress document.
+    match /progress/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Grammar exercises are public (read-only) for logged-in users.
+    match /grammar_exercises/{exerciseId} {
+      allow read: if request.auth != null;
+      allow write: if false; // only server-side scripts can create exercises
+    }
+
+    // Grammar attempt history: users can create/read their own.
+    match /grammar_attempts/{attemptId} {
+      allow read: if request.auth != null && resource.data.userId == request.auth.uid;
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if false;
+    }
+
+    // Admin users can read any progress or attempt.
+    match /progress/{userId} {
+      allow read: if request.auth != null && request.auth.token.admin == true;
+    }
+    match /grammar_attempts/{attemptId} {
+      allow read: if request.auth != null && request.auth.token.admin == true;
+    }
+  }
+}

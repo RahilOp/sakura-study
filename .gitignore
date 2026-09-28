@@ -2,6 +2,8 @@
 token.txt
 .env
 .env.local
+firebase-config.js
+firebase-service-account.json
 
 # OS / editor noise
 .DS_Store

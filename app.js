@@ -1,28 +1,46 @@
 /* Sakura Study — daily MCQ practice
-   Static app, no build step. State lives in localStorage. */
+   Static frontend backed by Firebase Auth + Firestore. */
 
 (function () {
   "use strict";
 
   var SUBJECTS = [window.SUBJECT_SOCIOLOGY, window.SUBJECT_ENGLISH, window.SUBJECT_ECONOMICS, window.SUBJECT_PSYCHOLOGY, window.SUBJECT_VOCATIONAL];
   var DAILY_COUNT = 15;
-  var KEY = "sakura-study-v1";
+  var LOCAL_KEY = "sakura-study-v1";
 
   var app = document.getElementById("app");
   var backBtn = document.getElementById("backBtn");
   var streakChip = document.getElementById("streakChip");
 
-  /* ---------- state ---------- */
+  /* ---------- Firebase ---------- */
+
+  var fbApp = null;
+  var fbAuth = null;
+  var fbDb = null;
+  var currentUser = null;
+  var isAdmin = false;
+
+  function initFirebase() {
+    if (!window.FIREBASE_CONFIG) {
+      console.warn("Firebase config not found. Running in local-only mode.");
+      return false;
+    }
+    fbApp = firebase.initializeApp(window.FIREBASE_CONFIG);
+    fbAuth = firebase.auth();
+    fbDb = firebase.firestore();
+    return true;
+  }
 
   function blank() {
     return { seen: {}, wrong: {}, days: {}, streak: 0, lastDay: null, total: 0, correct: 0 };
   }
 
-  var S = load();
+  var S = loadLocal();
+  var syncTimer = null;
 
-  function load() {
+  function loadLocal() {
     try {
-      var raw = localStorage.getItem(KEY);
+      var raw = localStorage.getItem(LOCAL_KEY);
       if (!raw) return blank();
       var p = JSON.parse(raw);
       var b = blank();
@@ -33,9 +51,37 @@
     }
   }
 
-  function save() {
-    try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {}
+  function saveLocal() {
+    try { localStorage.setItem(LOCAL_KEY, JSON.stringify(S)); } catch (e) {}
   }
+
+  function markDirty() {
+    saveLocal();
+    if (!fbDb || !currentUser) return;
+    if (syncTimer) clearTimeout(syncTimer);
+    syncTimer = setTimeout(syncProgress, 1500);
+  }
+
+  function syncProgress() {
+    if (!fbDb || !currentUser) return;
+    fbDb.collection("progress").doc(currentUser.uid).set(S, { merge: true });
+  }
+
+  function loadProgressFromCloud(uid) {
+    return new Promise(function (resolve) {
+      if (!fbDb) { resolve(); return; }
+      fbDb.collection("progress").doc(uid).get().then(function (doc) {
+        if (doc.exists) {
+          var data = doc.data();
+          for (var k in data) S[k] = data[k];
+          saveLocal();
+        }
+        resolve();
+      }).catch(function () { resolve(); });
+    });
+  }
+
+  function save() { markDirty(); }
 
   function today() {
     var d = new Date();
@@ -200,6 +246,13 @@
       (wrongN ? '<button class="ghost" id="startWrong">Review the ' + wrongN + " you got wrong</button>" : "") +
       "</section>";
 
+    html += '<div class="card" style="margin-bottom:16px">' +
+      '<h3>English Grammar Daily</h3>' +
+      '<p class="lede">20 ICSE-style MCQs: tenses, prepositions, active-passive, direct-indirect and more.</p>' +
+      '<button class="primary" id="startGrammar">Start today\'s grammar exercise</button>' +
+      '<button class="ghost" id="pastGrammar">Past grammar exercises</button>' +
+      '</div>';
+
     html += '<h2 class="sectiontitle">Subjects</h2>';
     SUBJECTS.forEach(function (sub) {
       if (!sub) return;
@@ -211,12 +264,26 @@
         '<span class="chev">&#8250;</span></button>';
     });
 
+    if (isAdmin) {
+      html += '<button class="ghost" id="adminBtn" style="margin-top:18px">Admin dashboard</button>';
+    }
+
+    html += '<button class="ghost" id="logoutBtn" style="margin-top:10px">Log out</button>';
+
     render(html);
 
     var b = document.getElementById("startDaily");
     if (b) b.onclick = function () { var set = dailySet(); if (set.length) go(function () { screenQuiz(set, "Today's practice"); }); };
     var w = document.getElementById("startWrong");
     if (w) w.onclick = function () { var set = shuffle(wrongSet()); if (set.length) go(function () { screenQuiz(set, "Review"); }); };
+    var g = document.getElementById("startGrammar");
+    if (g) g.onclick = function () { go(screenGrammarToday); };
+    var p = document.getElementById("pastGrammar");
+    if (p) p.onclick = function () { go(screenGrammarPast); };
+    var admin = document.getElementById("adminBtn");
+    if (admin) admin.onclick = function () { go(screenAdmin); };
+    var logout = document.getElementById("logoutBtn");
+    if (logout) logout.onclick = function () { fbAuth.signOut(); };
 
     app.querySelectorAll("[data-sub]").forEach(function (btn) {
       btn.onclick = function () {
@@ -635,6 +702,189 @@
     draw();
   }
 
+  /* ---------- grammar ---------- */
+
+  function grammarDateString(d) {
+    return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+  }
+
+  function screenLogin() {
+    render('<div class="card"><h2>Welcome to Sakura Study</h2>' +
+      '<p class="lede">Log in with your email and password to continue.</p>' +
+      '<input type="email" id="loginEmail" class="field" placeholder="Email">' +
+      '<input type="password" id="loginPass" class="field" placeholder="Password">' +
+      '<button class="primary" id="loginBtn">Log in</button>' +
+      '<div id="loginErr" class="empty" style="margin-top:10px;color:var(--koubai)"></div></div>');
+    document.getElementById("loginBtn").onclick = function () {
+      var email = document.getElementById("loginEmail").value.trim();
+      var pass = document.getElementById("loginPass").value;
+      fbAuth.signInWithEmailAndPassword(email, pass).catch(function (err) {
+        document.getElementById("loginErr").textContent = err.message;
+      });
+    };
+  }
+
+  function screenGrammarToday() {
+    var dateStr = grammarDateString(new Date());
+    var id = "grammar-" + dateStr;
+    render('<div class="card"><div class="empty">Loading today\'s grammar exercise…</div></div>');
+    fbDb.collection("grammar_exercises").doc(id).get().then(function (doc) {
+      if (!doc.exists) {
+        render('<div class="card"><div class="empty">Today\'s exercise is not ready yet. It is generated daily at 5 AM IST.</div></div>');
+        return;
+      }
+      var ex = doc.data();
+      var items = ex.questions.map(function (q, i) { return { id: ex.id + "/" + i, q: q }; });
+      screenQuizGrammar(items, ex.title, ex.id, ex.date);
+    }).catch(function () {
+      render('<div class="card"><div class="empty">Could not load today\'s exercise. Please check your connection.</div></div>');
+    });
+  }
+
+  function screenGrammarPast() {
+    render('<h1>Past Grammar Exercises</h1><p class="lede">Pick any day to re-attempt.</p>');
+    fbDb.collection("grammar_exercises").orderBy("date", "desc").get().then(function (snap) {
+      var html = "";
+      if (snap.empty) {
+        html += '<div class="card"><div class="empty">No past exercises yet.</div></div>';
+      } else {
+        snap.forEach(function (doc) {
+          var ex = doc.data();
+          html += '<button class="rowlink" data-gid="' + ex.id + '">' +
+            '<span class="body"><span class="title">' + esc(ex.title) + "</span>" +
+            '<span class="sub">' + ex.count + " questions</span></span>" +
+            '<span class="chev">&#8250;</span></button>';
+        });
+      }
+      render('<h1>Past Grammar Exercises</h1><p class="lede">Pick any day to re-attempt.</p>' + html);
+      app.querySelectorAll("[data-gid]").forEach(function (btn) {
+        btn.onclick = function () {
+          var gid = btn.dataset.gid;
+          fbDb.collection("grammar_exercises").doc(gid).get().then(function (doc) {
+            var ex = doc.data();
+            var items = ex.questions.map(function (q, i) { return { id: ex.id + "/" + i, q: q }; });
+            screenQuizGrammar(items, ex.title, ex.id, ex.date);
+          });
+        };
+      });
+    });
+  }
+
+  function screenQuizGrammar(items, title, exerciseId, exerciseDate) {
+    var i = 0, score = 0;
+    var answers = new Array(items.length).fill(null);
+    var corrects = new Array(items.length).fill(null);
+
+    function recordAttempt() {
+      if (!fbDb || !currentUser) return;
+      var pct = Math.round(score / items.length * 100);
+      fbDb.collection("grammar_attempts").add({
+        userId: currentUser.uid,
+        exerciseId: exerciseId,
+        date: exerciseDate,
+        score: score,
+        total: items.length,
+        percentage: pct,
+        answeredAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+    }
+
+    function finish() {
+      recordAttempt();
+      var pct = Math.round(score / items.length * 100);
+      render('<div class="result"><div class="score">' + score + "</div>" +
+        '<div class="of">out of ' + items.length + " &middot; " + pct + "%</div>" +
+        "<h2>" + (pct >= 80 ? "Excellent work." : pct >= 60 ? "Good effort." : "Keep practising.") + "</h2></div>" +
+        '<button class="primary" id="againBtn" style="margin-top:24px">Try again</button>' +
+        '<button class="ghost" id="homeBtn">Back to today</button>');
+      document.getElementById("againBtn").onclick = function () { screenQuizGrammar(items, title, exerciseId, exerciseDate); };
+      document.getElementById("homeBtn").onclick = function () { stack = []; go(screenHome); setTab("home"); };
+    }
+
+    function draw() {
+      if (i >= items.length) return finish();
+      var q = items[i].q;
+      var html = '<div class="qhead"><span>' + (i + 1) + " of " + items.length + "</span><span>" + esc(title) + "</span></div>" +
+        '<span class="bar"><i style="width:' + Math.round(i / items.length * 100) + '%"></i></span>' +
+        '<p class="qtext">' + esc(q.q) + "</p>" +
+        '<div id="opts">';
+      q.o.forEach(function (o, n) {
+        html += '<button class="opt" data-n="' + n + '"><span class="letter">' + "ABCD"[n] + "</span>" + esc(o) + "</button>";
+      });
+      html += '</div><div id="after"></div>';
+      render(html);
+
+      app.querySelectorAll(".opt").forEach(function (btn) {
+        btn.onclick = function () {
+          if (answers[i] !== null) return;
+          var n = parseInt(btn.dataset.n, 10);
+          var ok = n === q.a;
+          answers[i] = n;
+          corrects[i] = ok;
+          if (ok) score++;
+
+          app.querySelectorAll(".opt").forEach(function (b) {
+            var bn = parseInt(b.dataset.n, 10);
+            b.disabled = true;
+            if (bn === q.a) b.classList.add("correct");
+            else if (bn === n) b.classList.add("wrong");
+          });
+          document.getElementById("after").innerHTML = '<p class="verdict ' + (ok ? "ok" : "no") + '">' +
+            (ok ? "Correct." : "Not this time. The answer is " + "ABCD"[q.a] + ": " + esc(q.o[q.a]) + ".") + "</p>" +
+            '<button class="primary" id="nextBtn">' + (i === items.length - 1 ? "See result" : "Next question") + "</button>";
+          document.getElementById("nextBtn").onclick = function () { i++; draw(); };
+          document.getElementById("nextBtn").focus();
+        };
+      });
+    }
+
+    draw();
+  }
+
+  function screenAdmin() {
+    if (!isAdmin) { go(screenHome); return; }
+    render('<h1>Admin Dashboard</h1><p class="lede">Track Sugra\'s progress.</p>' +
+      '<div class="card"><div class="empty">Loading…</div></div>');
+
+    Promise.all([
+      fbDb.collection("progress").get(),
+      fbDb.collection("grammar_attempts").orderBy("answeredAt", "desc").get()
+    ]).then(function (results) {
+      var progressSnap = results[0];
+      var attemptsSnap = results[1];
+
+      var html = '<h2 class="sectiontitle">Subject Progress</h2>';
+      progressSnap.forEach(function (doc) {
+        var data = doc.data();
+        var acc = data.total ? Math.round(data.correct / data.total * 100) : 0;
+        var seen = Object.keys(data.seen || {}).length;
+        var wrong = Object.keys(data.wrong || {}).length;
+        var days = Object.keys(data.days || {}).length;
+        html += '<div class="card"><h3>' + (data.email || doc.id) + "</h3>" +
+          '<div class="todaymeta" style="border-top:none;padding-top:0;margin:0;flex-wrap:wrap;gap:22px">' +
+          '<div><span class="n">' + acc + '%</span><span class="k">accuracy</span></div>' +
+          '<div><span class="n">' + seen + "</span><span class=\"k\">seen</span></div>" +
+          '<div><span class="n">' + wrong + "</span><span class=\"k\">wrong</span></div>" +
+          '<div><span class="n">' + days + "</span><span class=\"k\">days</span></div>" +
+          "</div></div>";
+      });
+
+      html += '<h2 class="sectiontitle">Grammar Attempts</h2>';
+      if (attemptsSnap.empty) {
+        html += '<div class="card"><div class="empty">No grammar attempts yet.</div></div>';
+      } else {
+        attemptsSnap.forEach(function (doc) {
+          var a = doc.data();
+          html += '<div class="card"><h3>' + esc(a.date || "Unknown date") + "</h3>" +
+            '<p class="lede">Score: ' + a.score + "/" + a.total + " &middot; " + a.percentage + "%</p></div>";
+        });
+      }
+      render(html);
+    }).catch(function (err) {
+      render('<h1>Admin Dashboard</h1><p class="lede">Could not load data.</p><div class="card"><div class="empty">' + esc(err.message) + "</div></div>");
+    });
+  }
+
   /* ---------- tabs ---------- */
 
   var TABS = { home: screenHome, course: screenCourse, review: screenReview, progress: screenProgress };
@@ -702,6 +952,27 @@
 
   /* ---------- boot ---------- */
 
-  updateStreak();
-  go(screenHome);
+  function boot() {
+    var hasFirebase = initFirebase();
+    if (!hasFirebase) {
+      updateStreak();
+      go(screenHome);
+      return;
+    }
+
+    fbAuth.onAuthStateChanged(function (user) {
+      if (user) {
+        currentUser = user;
+        isAdmin = user.email === "rahilrizvi0786110@gmail.com";
+        loadProgressFromCloud(user.uid).then(function () {
+          updateStreak();
+          go(screenHome);
+        });
+      } else {
+        screenLogin();
+      }
+    });
+  }
+
+  boot();
 })();
