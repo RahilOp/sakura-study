@@ -76,6 +76,22 @@ p{margin:0}
   max-width:100%;overflow-wrap:break-word;word-wrap:break-word;
 }
 
+.login-card{
+  max-width:360px;margin:10vh auto 0;text-align:center;padding:28px 24px 32px;
+}
+.login-card h2{font-size:1.35rem;margin-bottom:6px}
+.login-card .lede{margin-bottom:22px}
+.field{
+  width:100%;display:block;
+  border:1.5px solid var(--line);border-radius:11px;
+  padding:14px 15px;margin-bottom:12px;
+  font-family:var(--sans);font-size:1rem;color:var(--ink);
+  background:#fff;
+}
+.field:focus{outline:none;border-color:var(--koubai)}
+.login-card .primary{margin-top:6px}
+.login-error{color:var(--koubai);font-size:.9rem;margin-top:12px}
+
 /* today's practice — the one loud element */
 .today{
   background:linear-gradient(158deg,#FFF6F6 0%,var(--sakura) 100%);
@@ -99,12 +115,22 @@ button.primary{
   padding:15px 18px;border-radius:11px;
 }
 button.primary:disabled{background:var(--ink-faint);cursor:default}
+button.primary:not(:disabled):hover{background:#B04E5F}
+button.primary:not(:disabled):active{transform:translateY(1px)}
 button.ghost{
   width:100%;cursor:pointer;background:transparent;
   border:1px solid var(--sakura-deep);color:var(--ink);
   font-family:var(--sans);font-size:.93rem;font-weight:500;
   padding:13px 18px;border-radius:11px;margin-top:9px;
 }
+button.ghost:hover{background:rgba(242,220,222,.45)}
+button.ghost.danger{color:var(--koubai)}
+.linkbtn{
+  border:none;background:none;cursor:pointer;padding:6px 2px;
+  font-family:var(--sans);font-size:.88rem;font-weight:700;color:var(--koubai);
+}
+.linkbtn:hover{text-decoration:underline}
+.linkbtn:disabled{color:var(--ink-faint);cursor:default;text-decoration:none}
 
 .rowlink{
   display:flex;align-items:center;gap:13px;width:100%;
@@ -116,7 +142,12 @@ button.ghost{
 .rowlink .title{font-weight:500;display:block}
 .rowlink .sub{font-size:.8rem;color:var(--ink-faint);display:block;margin-top:2px}
 .rowlink .chev{color:var(--sakura-deep);font-size:1.3rem;line-height:1}
+.rowlink{transition:border-color .15s ease,box-shadow .15s ease}
+.rowlink:not([disabled]):not(.static):hover{border-color:var(--sakura-deep);box-shadow:0 4px 14px rgba(194,90,107,.08)}
+.rowlink:not([disabled]):not(.static):hover .chev{color:var(--koubai)}
 .rowlink[disabled]{opacity:.55;cursor:default}
+.rowlink.static{cursor:default}
+.rowlink .unitcount{margin-top:6px}
 
 .semtag{
   font-family:var(--serif);font-weight:700;font-size:.82rem;
@@ -124,8 +155,19 @@ button.ghost{
   border-radius:8px;padding:6px 9px;min-width:40px;text-align:center;
 }
 
-.bar{height:5px;background:var(--sakura);border-radius:99px;overflow:hidden;margin-top:9px}
-.bar i{display:block;height:100%;background:var(--koubai);border-radius:99px}
+.grammarcard{margin-bottom:6px}
+.grammarcard .primary{margin-top:14px}
+.statcard .todaymeta{border-top:none;padding-top:0;margin:0;flex-wrap:wrap;gap:18px 26px}
+.statcard h3 + .lede{margin:2px 0 14px}
+.account{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin-top:28px;padding-top:14px;border-top:1px solid var(--line);
+  font-size:.85rem;color:var(--ink-faint);
+}
+.account span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.bar{display:block;height:5px;background:var(--sakura);border-radius:99px;overflow:hidden;margin-top:9px}
+.bar i{display:block;height:100%;background:var(--koubai);border-radius:99px;transition:width .3s ease}
 
 /* quiz */
 .quiz-layout{display:flex;flex-direction:column;gap:16px}
@@ -137,6 +179,7 @@ button.ghost{
   border:1.5px solid var(--line);background:var(--card);border-radius:8px;
   padding:8px 2px;font-size:.85rem;font-weight:600;color:var(--ink);cursor:pointer;
 }
+.qgrid-btn:hover{border-color:var(--sakura-deep)}
 .qgrid-btn.current{border-color:var(--koubai);color:var(--koubai)}
 .qgrid-btn.grid-ok{border-color:var(--matcha);background:#F3F6F1;color:var(--matcha)}
 .qgrid-btn.grid-no{border-color:var(--koubai);background:#FCF2F3;color:var(--koubai)}
@@ -144,6 +187,10 @@ button.ghost{
 .quiz-nav button{flex:1;margin-top:0}
 
 .qhead{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;color:var(--ink-soft);margin-bottom:8px}
+.qclock{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink)}
+.qclock.low{color:var(--koubai)}
+.qtopic{font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--koubai);margin-top:14px}
+.qtopic + .qtext{margin-top:6px}
 .qtext{font-family:var(--serif);font-size:1.2rem;line-height:1.5;margin:16px 0 20px}
 
 .opt{
@@ -159,7 +206,10 @@ button.ghost{
 .opt.correct .letter{color:var(--matcha)}
 .opt.wrong{border-color:var(--koubai);background:#FCF2F3}
 .opt.wrong .letter{color:var(--koubai)}
-.opt[disabled]{cursor:default}
+.opt{transition:border-color .15s ease,background .15s ease}
+.opt:not([disabled]):hover{border-color:var(--sakura-deep);background:#FFFBFB}
+.opt[disabled]{cursor:default;color:var(--ink)}
+.opt[disabled]:not(.correct):not(.wrong){opacity:.7}
 
 .verdict{
   font-family:var(--serif);font-weight:700;font-size:1rem;margin:14px 0 4px;
@@ -207,9 +257,10 @@ button.ghost{
 .pagenav{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:10px}
 .pagenav button{width:auto;flex:0 0 auto;margin-top:0;padding:8px 16px;font-size:1.1rem;line-height:1}
 .pagedots{display:flex;gap:6px;justify-content:center;flex:1;flex-wrap:wrap}
-.pagedot{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer}
+.pagedot{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer;border:none;padding:0}
 .pagedot.active{background:var(--koubai)}
 
+.tabbar[hidden]{display:none}
 .tabbar{
   position:fixed;left:0;right:0;bottom:0;z-index:30;
   display:grid;grid-template-columns:repeat(4,1fr);
@@ -221,8 +272,16 @@ button.ghost{
   border:none;background:none;cursor:pointer;
   font-family:var(--sans);font-size:.78rem;font-weight:500;
   color:var(--ink-faint);padding:0;height:var(--tab-h);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  position:relative;
 }
+.tabicon{font-size:1.05rem;line-height:1}
+.tab:hover{color:var(--ink-soft)}
 .tab.is-on{color:var(--koubai);font-weight:700}
+.tab.is-on::before{
+  content:"";position:absolute;top:0;left:30%;right:30%;height:2.5px;
+  background:var(--koubai);border-radius:0 0 3px 3px;
+}
 
 :focus-visible{outline:2.5px solid var(--koubai);outline-offset:2px;border-radius:6px}
 

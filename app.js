@@ -6,11 +6,16 @@
 
   var SUBJECTS = [window.SUBJECT_SOCIOLOGY, window.SUBJECT_ENGLISH, window.SUBJECT_ECONOMICS, window.SUBJECT_PSYCHOLOGY, window.SUBJECT_VOCATIONAL];
   var DAILY_COUNT = 15;
+  var MOCK_COUNT = 75;
+  var MOCK_SECONDS = 90 * 60;
   var LOCAL_KEY = "sakura-study-v1";
+  var OWNER_KEY = "sakura-study-owner";
+  var ADMIN_EMAIL = "rahilrizvi0786110@gmail.com";
 
   var app = document.getElementById("app");
   var backBtn = document.getElementById("backBtn");
   var streakChip = document.getElementById("streakChip");
+  var tabbar = document.getElementById("tabbar");
 
   /* ---------- Firebase ---------- */
 
@@ -21,8 +26,8 @@
   var isAdmin = false;
 
   function initFirebase() {
-    if (!window.FIREBASE_CONFIG) {
-      console.warn("Firebase config not found. Running in local-only mode.");
+    if (!window.FIREBASE_CONFIG || typeof firebase === "undefined") {
+      console.warn("Firebase not available. Running in local-only mode.");
       return false;
     }
     fbApp = firebase.initializeApp(window.FIREBASE_CONFIG);
@@ -63,22 +68,57 @@
   }
 
   function syncProgress() {
-    if (!fbDb || !currentUser) return;
-    fbDb.collection("progress").doc(currentUser.uid).set(S, { merge: true });
+    if (syncTimer) { clearTimeout(syncTimer); syncTimer = null; }
+    if (!fbDb || !currentUser) return Promise.resolve();
+    var payload = {
+      seen: S.seen,
+      wrong: S.wrong,
+      days: S.days,
+      streak: S.streak,
+      lastDay: S.lastDay,
+      total: S.total,
+      correct: S.correct,
+      email: currentUser.email,
+      updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+    };
+    // No merge: a merge would keep map keys we deleted (wrong answers put right, a reset).
+    return fbDb.collection("progress").doc(currentUser.uid).set(payload).catch(function (err) {
+      console.error("syncProgress failed", err);
+    });
   }
 
+  /* Cloud wins unless this device holds newer answers for the same user
+     (total only ever grows, so the larger total is the newer copy). */
   function loadProgressFromCloud(uid) {
+    var owner = null;
+    try { owner = localStorage.getItem(OWNER_KEY); } catch (e) {}
+    // Progress from before accounts existed (no owner) belongs to whoever logs in first.
+    var localIsMine = !owner || owner === uid;
+    if (!localIsMine) S = blank();
+    try { localStorage.setItem(OWNER_KEY, uid); } catch (e) {}
+
     return new Promise(function (resolve) {
       if (!fbDb) { resolve(); return; }
       fbDb.collection("progress").doc(uid).get().then(function (doc) {
-        if (doc.exists) {
-          var data = doc.data();
-          for (var k in data) S[k] = data[k];
+        var cloud = doc.exists ? doc.data() : null;
+        if (cloud && (cloud.total || 0) >= (S.total || 0)) {
+          var b = blank();
+          for (var k in b) S[k] = k in cloud ? cloud[k] : b[k];
           saveLocal();
+        } else if (S.total) {
+          syncProgress();
         }
         resolve();
       }).catch(function () { resolve(); });
     });
+  }
+
+  function clearLocalProgress() {
+    S = blank();
+    try {
+      localStorage.removeItem(LOCAL_KEY);
+      localStorage.removeItem(OWNER_KEY);
+    } catch (e) {}
   }
 
   function save() { markDirty(); }
@@ -88,12 +128,20 @@
     return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
   }
 
+  function yesterday() {
+    var y = new Date(); y.setDate(y.getDate() - 1);
+    return y.getFullYear() + "-" + (y.getMonth() + 1) + "-" + y.getDate();
+  }
+
+  /* The stored streak only counts while it is still unbroken. */
+  function liveStreak() {
+    return S.lastDay === today() || S.lastDay === yesterday() ? S.streak : 0;
+  }
+
   function markDay() {
     var t = today();
     if (S.lastDay === t) return;
-    var y = new Date(); y.setDate(y.getDate() - 1);
-    var ystr = y.getFullYear() + "-" + (y.getMonth() + 1) + "-" + y.getDate();
-    S.streak = S.lastDay === ystr ? S.streak + 1 : 1;
+    S.streak = S.lastDay === yesterday() ? S.streak + 1 : 1;
     S.lastDay = t;
     S.days[t] = true;
     save();
@@ -174,6 +222,11 @@
     return allQuestions().filter(function (x) { return S.wrong[x.id]; });
   }
 
+  /* Count only ids that still exist, so edited data can't skew the numbers. */
+  function seenCount(list) {
+    return list.filter(function (x) { return S.seen[x.id]; }).length;
+  }
+
   /* ---------- view helpers ---------- */
 
   function esc(s) {
@@ -196,8 +249,18 @@
   }
 
   var stack = [];
+  var quizTimer = null; // mock-exam countdown; must stop when the quiz screen is left
+
+  function stopQuizTimer() {
+    if (quizTimer) { clearInterval(quizTimer); quizTimer = null; }
+  }
+
+  // Bumped on every navigation so late async results don't overwrite a newer screen.
+  var navId = 0;
 
   function go(fn, push) {
+    stopQuizTimer();
+    navId++;
     if (push !== false) stack.push(fn);
     fn();
     backBtn.hidden = stack.length <= 1;
@@ -205,15 +268,23 @@
   }
 
   backBtn.addEventListener("click", function () {
+    stopQuizTimer();
+    navId++;
     stack.pop();
     var prev = stack[stack.length - 1];
-    if (prev) { prev(); backBtn.hidden = stack.length <= 1; }
+    if (prev) { prev(); backBtn.hidden = stack.length <= 1; updateStreak(); }
   });
 
+  function setChrome(show) {
+    tabbar.hidden = !show;
+    if (!show) { backBtn.hidden = true; streakChip.hidden = true; }
+  }
+
   function updateStreak() {
-    if (S.streak > 0) {
+    var n = liveStreak();
+    if (n > 0 && !tabbar.hidden) {
       streakChip.hidden = false;
-      streakChip.textContent = S.streak + (S.streak === 1 ? " day" : " days") + " running";
+      streakChip.textContent = n + (n === 1 ? " day" : " days") + " running";
     } else {
       streakChip.hidden = true;
     }
@@ -223,8 +294,8 @@
 
   function screenHome() {
     var all = allQuestions();
-    var seenN = Object.keys(S.seen).length;
-    var wrongN = Object.keys(S.wrong).length;
+    var seenN = seenCount(all);
+    var wrongN = wrongSet().length;
     var doneToday = S.days[today()];
 
     var html = '<section class="today">' +
@@ -246,12 +317,14 @@
       (wrongN ? '<button class="ghost" id="startWrong">Review the ' + wrongN + " you got wrong</button>" : "") +
       "</section>";
 
-    html += '<div class="card" style="margin-bottom:16px">' +
-      '<h3>English Grammar Daily</h3>' +
-      '<p class="lede">20 ICSE-style MCQs: tenses, prepositions, active-passive, direct-indirect and more.</p>' +
-      '<button class="primary" id="startGrammar">Start today\'s grammar exercise</button>' +
-      '<button class="ghost" id="pastGrammar">Past grammar exercises</button>' +
-      '</div>';
+    if (fbDb) {
+      html += '<div class="card grammarcard">' +
+        '<h3>English Grammar Daily</h3>' +
+        '<p class="lede">20 ICSE-style MCQs: tenses, prepositions, active-passive, direct-indirect and more.</p>' +
+        '<button class="primary" id="startGrammar">Start today\'s grammar exercise</button>' +
+        '<button class="ghost" id="pastGrammar">Past grammar exercises</button>' +
+        '</div>';
+    }
 
     html += '<h2 class="sectiontitle">Subjects</h2>';
     SUBJECTS.forEach(function (sub) {
@@ -268,7 +341,10 @@
       html += '<button class="ghost" id="adminBtn" style="margin-top:18px">Admin dashboard</button>';
     }
 
-    html += '<button class="ghost" id="logoutBtn" style="margin-top:10px">Log out</button>';
+    if (currentUser) {
+      html += '<div class="account"><span>Signed in as ' + esc(currentUser.email || "") + '</span>' +
+        '<button class="linkbtn" id="logoutBtn">Log out</button></div>';
+    }
 
     render(html);
 
@@ -284,12 +360,14 @@
     if (admin) admin.onclick = function () { go(screenAdmin); };
     var logout = document.getElementById("logoutBtn");
     if (logout) logout.onclick = function () {
-      if (fbAuth) fbAuth.signOut();
-      else {
-        currentUser = null;
-        isAdmin = false;
-        go(screenHome);
-      }
+      if (!confirm("Log out of Sakura Study?")) return;
+      logout.disabled = true;
+      // Flush pending answers first, then wipe this device so the next account starts clean.
+      // onAuthStateChanged shows the login screen.
+      syncProgress().then(function () {
+        clearLocalProgress();
+        return fbAuth.signOut();
+      });
     };
 
     app.querySelectorAll("[data-sub]").forEach(function (btn) {
@@ -302,18 +380,18 @@
 
   function screenCourse() {
     var html = "<h1>Course</h1><p class=\"lede\">Every paper, in semester order. Work through them from the top.</p>";
-    [2, 4, 6].forEach(function (sem) {
+    var sems = [];
+    SUBJECTS.forEach(function (sub) {
+      if (!sub) return;
+      sub.papers.forEach(function (p) { if (sems.indexOf(p.semester) < 0) sems.push(p.semester); });
+    });
+    sems.sort(function (a, b) { return a - b; });
+    sems.forEach(function (sem) {
       var rows = "";
       SUBJECTS.forEach(function (sub) {
         if (!sub) return;
         sub.papers.filter(function (p) { return p.semester === sem; }).forEach(function (p) {
-          var n = paperQuestions(p).length;
-          var hasContent = n > 0 || p.units.length > 0 || p.source;
-          rows += '<button class="rowlink" data-paper="' + p.id + '"' + (hasContent ? "" : " disabled") + ">" +
-            '<span class="semtag">' + sem + "</span>" +
-            '<span class="body"><span class="title">' + esc(p.name) + "</span>" +
-            '<span class="sub">' + esc(sub.name) + " &middot; " + (n ? n + " questions" : "notes / resources") + "</span></span>" +
-            '<span class="chev">&#8250;</span></button>';
+          rows += paperRow(p, sem, esc(sub.name) + " &middot; ");
         });
       });
       if (rows) html += '<h2 class="sectiontitle">Semester ' + sem + "</h2>" + rows;
@@ -324,17 +402,26 @@
 
   function screenSubject(sub) {
     var html = "<h1>" + esc(sub.name) + "</h1><p class=\"lede\">Papers in semester order.</p>";
-    sub.papers.forEach(function (p) {
-      var n = paperQuestions(p).length;
-      var hasContent = n > 0 || p.units.length > 0 || p.source;
-      html += '<button class="rowlink" data-paper="' + p.id + '"' + (hasContent ? "" : " disabled") + ">" +
-        '<span class="semtag">' + p.semester + "</span>" +
-        '<span class="body"><span class="title">' + esc(p.name) + "</span>" +
-        '<span class="sub">' + (n ? n + " questions" : esc(p.note || "not added yet")) + "</span></span>" +
-        '<span class="chev">&#8250;</span></button>';
+    sub.papers.slice().sort(function (a, b) { return a.semester - b.semester; }).forEach(function (p) {
+      html += paperRow(p, p.semester, "");
     });
     render(html);
     bindPaperRows();
+  }
+
+  /* One paper row with a coverage bar. Papers with nothing to open are disabled. */
+  function paperRow(p, sem, prefix) {
+    var qs = paperQuestions(p);
+    var n = qs.length;
+    var hasContent = n > 0 || (p.units || []).length > 0 || p.source;
+    var sub = n ? n + " questions" : (p.units || []).length ? "Study notes only" : "Not added yet";
+    return '<button class="rowlink" data-paper="' + p.id + '"' + (hasContent ? "" : " disabled") + ">" +
+      '<span class="semtag">' + sem + "</span>" +
+      '<span class="body"><span class="title">' + esc(p.name) + "</span>" +
+      '<span class="sub">' + prefix + sub + "</span>" +
+      (n ? '<span class="bar"><i style="width:' + Math.round(seenCount(qs) / n * 100) + '%"></i></span>' : "") +
+      "</span>" +
+      '<span class="chev">&#8250;</span></button>';
   }
 
   function findPaper(id) {
@@ -370,13 +457,16 @@
       html += "</ul></div>";
     }
 
-    html += '<button class="primary" id="studyStart">Practice this unit</button>';
+    var unitQs = unitQuestions(paper, unit);
+    if (unitQs.length) html += '<button class="primary" id="studyStart">Practise this unit &middot; ' + unitQs.length + " questions</button>";
     render(html);
 
     var notesCard = document.getElementById("notesCard");
+    var nav = navId;
     fetch(notePath)
       .then(function (r) { return r.ok ? r.text() : Promise.reject(r.status); })
       .then(function (text) {
+        if (nav !== navId) return;
         var rawPages = text.split(/<hr\s+class="page-break"\s*\/?>/i);
         var pages = rawPages.map(function (p) { return p.trim(); }).filter(function (p) { return p; });
         if (pages.length === 0) pages = [text.trim()];
@@ -400,38 +490,54 @@
           var next = document.getElementById("pageNext");
           var view = document.getElementById("pageView");
           var dots = document.getElementById("pageDots");
-          if (prev) prev.onclick = function () { if (pageIndex > 0) { pageIndex--; showPage(); } };
-          if (next) next.onclick = function () { if (pageIndex < pages.length - 1) { pageIndex++; showPage(); } };
+          if (prev) prev.onclick = function () { if (pageIndex > 0) { pageIndex--; turnPage(); } };
+          if (next) next.onclick = function () { if (pageIndex < pages.length - 1) { pageIndex++; turnPage(); } };
           if (dots) {
             dots.innerHTML = "";
             pages.forEach(function (_, n) {
-              var d = document.createElement("span");
+              var d = document.createElement("button");
               d.className = "pagedot" + (n === pageIndex ? " active" : "");
-              d.onclick = function () { pageIndex = n; showPage(); };
+              d.setAttribute("aria-label", "Page " + (n + 1));
+              d.onclick = function () { pageIndex = n; turnPage(); };
               dots.appendChild(d);
             });
           }
           if (view) {
-            var startX = null;
-            view.addEventListener("touchstart", function (e) { startX = e.changedTouches[0].screenX; }, { passive: true });
+            var startX = null, startY = null;
+            view.addEventListener("touchstart", function (e) {
+              startX = e.changedTouches[0].screenX; startY = e.changedTouches[0].screenY;
+            }, { passive: true });
             view.addEventListener("touchend", function (e) {
-              var endX = e.changedTouches[0].screenX;
               if (startX === null) return;
-              if (endX < startX - 50 && pageIndex < pages.length - 1) { pageIndex++; showPage(); }
-              if (endX > startX + 50 && pageIndex > 0) { pageIndex--; showPage(); }
+              var dx = e.changedTouches[0].screenX - startX;
+              var dy = e.changedTouches[0].screenY - startY;
               startX = null;
+              // Ignore vertical scrolls and sideways scrolls of wide tables.
+              if (Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+              if (e.target.closest && e.target.closest(".table-wrap")) return;
+              if (dx < 0 && pageIndex < pages.length - 1) { pageIndex++; turnPage(); }
+              if (dx > 0 && pageIndex > 0) { pageIndex--; turnPage(); }
             }, { passive: true });
           }
         }
 
+        // Bring the top of the new page into view instead of leaving her at the bottom.
+        function turnPage() {
+          showPage();
+          var top = notesCard.getBoundingClientRect().top;
+          if (top < 0) window.scrollBy(0, top - 70);
+        }
+
         showPage();
       })
-      .catch(function (err) {
+      .catch(function () {
+        if (nav !== navId) return;
         notesCard.innerHTML = '<h3>Notes</h3><div class="empty">Notes not available for this unit yet.</div>';
       });
 
-    document.getElementById("studyStart").onclick = function () {
-      go(function () { screenQuiz(shuffle(unitQuestions(paper, unit)), unit.name); });
+    var start = document.getElementById("studyStart");
+    if (start) start.onclick = function () {
+      go(function () { screenQuiz(shuffle(unitQs), unit.name); });
     };
   }
 
@@ -440,31 +546,37 @@
     var html = "<h1>" + esc(paper.name) + "</h1>" +
       '<p class="lede">Semester ' + paper.semester + (paper.note ? " &middot; " + esc(paper.note) : "") + "</p>";
 
+    var mockN = Math.min(MOCK_COUNT, qs.length);
+
     if (qs.length) {
       html += '<div class="card" style="margin-top:18px">' +
         "<h3>Practise the whole paper</h3>" +
-        '<p class="lede">' + qs.length + " questions, shuffled.</p>" +
+        '<p class="lede">' + qs.length + " questions, shuffled. " + seenCount(qs) + " seen so far.</p>" +
         '<button class="primary" id="wholePaper" style="margin-top:14px">Start</button>' +
-        '<button class="ghost" id="mockExam">Mock exam &middot; 75 questions, 90 minutes</button>' +
+        '<button class="ghost" id="mockExam">Mock exam &middot; ' + mockN + " questions, 90 minutes</button>" +
         "</div>";
-    } else if (paper.source) {
-      html += '<div class="card" style="margin-top:18px"><div class="empty">Questions for this paper haven\'t been added yet.<br><br>' +
-        '<a href="' + esc(paper.source) + '" target="_blank" rel="noopener">Open the source</a>' +
+    } else {
+      html += '<div class="card" style="margin-top:18px"><div class="empty">MCQs for this paper haven\'t been added yet.' +
+        ((paper.units || []).length ? " Read the unit notes below in the meantime." : "") +
+        (paper.source ? '<br><br><a href="' + esc(paper.source) + '" target="_blank" rel="noopener">Open the source</a>' : "") +
         "</div></div>";
     }
 
     if (paper.units && paper.units.length) {
       html += '<h2 class="sectiontitle">Units</h2>';
       paper.units.forEach(function (u) {
-        var n = (u.questions || []).length;
-        var done = 0;
-        (u.questions || []).forEach(function (q, i) { if (S.seen[uid(paper.id, u.id, i)]) done++; });
-        html += '<button class="rowlink" data-unit="' + u.id + '"' + (n ? "" : " disabled") + '>' +
+        var uqs = unitQuestions(paper, u);
+        var n = uqs.length;
+        // A notes-only unit opens its notes directly instead of sitting there disabled.
+        html += '<button class="rowlink" ' + (n ? 'data-unit="' : 'data-study="') + esc(u.id) + '">' +
           '<span class="body"><span class="title">' + esc(u.name) + "</span>" +
           '<span class="sub">' + esc(u.blurb || "") + "</span>" +
-          '<span class="bar"><i style="width:' + (n ? Math.round(done / n * 100) : 0) + '%"></i></span></span>' +
+          (n ? '<span class="sub unitcount">' + seenCount(uqs) + " of " + n + " seen</span>" +
+               '<span class="bar"><i style="width:' + Math.round(seenCount(uqs) / n * 100) + '%"></i></span>'
+             : '<span class="sub unitcount">Study notes</span>') +
+          "</span>" +
           '<span class="chev">&#8250;</span></button>';
-        html += '<div class="study-bar"><button class="ghost study-btn" data-study="' + u.id + '">Study notes</button></div>';
+        if (n) html += '<div class="study-bar"><button class="linkbtn study-btn" data-study="' + esc(u.id) + '">Study notes</button></div>';
       });
     }
 
@@ -473,7 +585,10 @@
     var whole = document.getElementById("wholePaper");
     if (whole) whole.onclick = function () { go(function () { screenQuiz(shuffle(qs), paper.name); }); };
     var mock = document.getElementById("mockExam");
-    if (mock) mock.onclick = function () { go(function () { screenQuiz(shuffle(qs).slice(0, 75), paper.name + " &middot; mock", 90 * 60); }); };
+    if (mock) mock.onclick = function () {
+      if (!confirm("Start a " + mockN + "-question mock exam? The 90-minute timer starts now and the exam ends when time is up.")) return;
+      go(function () { screenQuiz(shuffle(qs).slice(0, mockN), paper.name + " · mock", MOCK_SECONDS); });
+    };
     app.querySelectorAll("[data-unit]").forEach(function (btn) {
       btn.onclick = function () {
         var u = paper.units.filter(function (x) { return x.id === btn.dataset.unit; })[0];
@@ -508,17 +623,18 @@
 
   function screenProgress() {
     var all = allQuestions();
-    var seenN = Object.keys(S.seen).length;
-    var wrongN = Object.keys(S.wrong).length;
+    var seenN = seenCount(all);
+    var wrongN = wrongSet().length;
     var acc = S.total ? Math.round(S.correct / S.total * 100) : 0;
     var days = Object.keys(S.days).length;
 
     var html = "<h1>Progress</h1><p class=\"lede\">Accuracy is the number that matters. Aim to hold it above 70 per cent.</p>" +
-      '<div class="card" style="margin-top:18px"><div class="todaymeta" style="border-top:none;padding-top:0;margin:0;flex-wrap:wrap;gap:26px">' +
+      '<div class="card statcard" style="margin-top:18px"><div class="todaymeta">' +
       '<div><span class="n">' + acc + '%</span><span class="k">accuracy</span></div>' +
       '<div><span class="n">' + seenN + "/" + all.length + '</span><span class="k">coverage</span></div>' +
       '<div><span class="n">' + days + '</span><span class="k">days practised</span></div>' +
       '<div><span class="n">' + wrongN + '</span><span class="k">to revisit</span></div>' +
+      '<div><span class="n">' + liveStreak() + '</span><span class="k">day streak</span></div>' +
       "</div></div>";
 
     html += '<h2 class="sectiontitle">By paper</h2>';
@@ -527,18 +643,18 @@
       sub.papers.forEach(function (p) {
         var qs = paperQuestions(p);
         if (!qs.length) return;
-        var done = qs.filter(function (x) { return S.seen[x.id]; }).length;
+        var done = seenCount(qs);
         html += '<div class="card"><h3>' + esc(p.name) + "</h3>" +
-          '<p class="lede">' + done + " of " + qs.length + " seen</p>" +
+          '<p class="lede">' + esc(sub.name) + " &middot; Semester " + p.semester + " &middot; " + done + " of " + qs.length + " seen</p>" +
           '<span class="bar"><i style="width:' + Math.round(done / qs.length * 100) + '%"></i></span></div>';
       });
     });
 
-    html += '<button class="ghost" id="resetAll" style="margin-top:20px">Reset all progress</button>';
+    html += '<button class="ghost danger" id="resetAll" style="margin-top:20px">Reset all progress</button>';
     render(html);
     document.getElementById("resetAll").onclick = function () {
-      if (confirm("This clears every answer and your streak. Continue?")) {
-        S = blank(); save(); updateStreak(); screenProgress();
+      if (confirm("This clears every answer and your streak" + (currentUser ? ", on this device and in the cloud" : "") + ". Continue?")) {
+        S = blank(); saveLocal(); syncProgress(); updateStreak(); screenProgress();
       }
     };
   }
@@ -546,25 +662,55 @@
   /* ---------- quiz engine ---------- */
 
   function screenQuiz(items, title, seconds) {
-    var i = 0, score = 0, timeLeft = seconds || 0, timer = null;
+    if (!items.length) {
+      render('<div class="card"><div class="empty">There are no questions here yet.</div></div>');
+      return;
+    }
+    var i = 0, score = 0, timeLeft = seconds || 0;
     var answers = new Array(items.length).fill(null);
     var corrects = new Array(items.length).fill(null);
 
+    function answeredCount() {
+      return answers.filter(function (a) { return a !== null; }).length;
+    }
+
+    function clock() {
+      return Math.floor(timeLeft / 60) + ":" + ("0" + (timeLeft % 60)).slice(-2);
+    }
+
     function finish() {
-      if (timer) clearInterval(timer);
-      markDay();
+      stopQuizTimer();
+      if (answeredCount()) markDay();
       var pct = Math.round(score / items.length * 100);
+      var skipped = items.length - answeredCount();
       var msg = pct >= 85 ? "Strong. This is the level that earns a good grade."
               : pct >= 70 ? "Solid. Keep the wrong ones in review and go again."
               : pct >= 45 ? "Getting there. Work through the wrong answers before new material."
               : "Early days. Read the unit notes, then come back to these.";
       render('<div class="result"><div class="score">' + score + "</div>" +
-        '<div class="of">out of ' + items.length + " &middot; " + pct + "%</div>" +
+        '<div class="of">out of ' + items.length + " &middot; " + pct + "%" +
+        (skipped ? " &middot; " + skipped + " not answered" : "") + "</div>" +
+        (seconds && timeLeft <= 0 ? '<p class="lede">Time is up.</p>' : "") +
         "<h2>" + msg + "</h2></div>" +
         '<button class="primary" id="againBtn" style="margin-top:24px">Practise again</button>' +
         '<button class="ghost" id="homeBtn">Back to today</button>');
       document.getElementById("againBtn").onclick = function () { screenQuiz(shuffle(items), title, seconds); };
       document.getElementById("homeBtn").onclick = function () { stack = []; go(screenHome); setTab("home"); };
+    }
+
+    function tryFinish() {
+      var left = items.length - answeredCount();
+      if (left && !confirm(left + (left === 1 ? " question is" : " questions are") + " not answered yet. Finish anyway?")) return;
+      finish();
+    }
+
+    function goNext() {
+      if (i >= items.length - 1) { tryFinish(); return; }
+      i++; draw();
+    }
+
+    function goPrev() {
+      if (i > 0) { i--; draw(); }
     }
 
     function gridHtml() {
@@ -614,9 +760,9 @@
       });
 
       var next = document.getElementById("nextBtn");
-      if (next) next.onclick = function () { i++; draw(); };
+      if (next) next.onclick = goNext;
       var prev = document.getElementById("prevBtn");
-      if (prev) prev.onclick = function () { i--; draw(); };
+      if (prev) prev.onclick = goPrev;
 
       app.querySelectorAll(".qgrid-btn").forEach(function (btn) {
         btn.onclick = function () {
@@ -625,16 +771,16 @@
         };
       });
       var fin = document.getElementById("gridFinish");
-      if (fin) fin.onclick = function () { finish(); };
+      if (fin) fin.onclick = tryFinish;
 
       if (answers[i] !== null) {
         var after = document.getElementById("after");
         if (after) {
           after.innerHTML = afterHtml(true, answers[i], corrects[i], it.q);
           var next2 = document.getElementById("nextBtn");
-          if (next2) next2.onclick = function () { i++; draw(); };
+          if (next2) next2.onclick = goNext;
           var prev2 = document.getElementById("prevBtn");
-          if (prev2) prev2.onclick = function () { i--; draw(); };
+          if (prev2) prev2.onclick = goPrev;
         }
       }
       updateGrid();
@@ -648,11 +794,11 @@
 
       var head = (i + 1) + " of " + items.length;
       var right = seconds
-        ? Math.floor(timeLeft / 60) + ":" + ("0" + (timeLeft % 60)).slice(-2)
-        : title;
+        ? '<span class="qclock' + (timeLeft < 300 ? " low" : "") + '">' + clock() + "</span>"
+        : "<span>" + esc(title) + "</span>";
 
-      var main = '<div class="qhead"><span>' + head + "</span><span>" + right + "</span></div>" +
-        '<span class="bar"><i style="width:' + Math.round(i / items.length * 100) + '%"></i></span>' +
+      var main = '<div class="qhead"><span>' + head + "</span>" + right + "</div>" +
+        '<span class="bar"><i style="width:' + Math.round(answeredCount() / items.length * 100) + '%"></i></span>' +
         '<p class="qtext">' + esc(q.q) + "</p>" +
         '<div id="opts">';
       q.o.forEach(function (o, n) {
@@ -690,19 +836,22 @@
       var after = document.getElementById("after");
       after.innerHTML = afterHtml(true, n, ok, q);
       var next = document.getElementById("nextBtn");
-      if (next) next.onclick = function () { i++; draw(); };
+      if (next) next.onclick = goNext;
       var prev = document.getElementById("prevBtn");
-      if (prev) prev.onclick = function () { i--; draw(); };
-      if (next) next.focus();
+      if (prev) prev.onclick = goPrev;
+      if (next) next.focus({ preventScroll: true });
+      var bar = app.querySelector(".quiz-main .bar i");
+      if (bar) bar.style.width = Math.round(answeredCount() / items.length * 100) + "%";
       updateGrid();
     }
 
+    stopQuizTimer();
     if (seconds) {
-      timer = setInterval(function () {
+      quizTimer = setInterval(function () {
         timeLeft--;
-        if (timeLeft <= 0) { clearInterval(timer); finish(); return; }
-        var h = app.querySelector(".qhead span:last-child");
-        if (h) h.textContent = Math.floor(timeLeft / 60) + ":" + ("0" + (timeLeft % 60)).slice(-2);
+        if (timeLeft <= 0) { timeLeft = 0; finish(); return; }
+        var h = app.querySelector(".qclock");
+        if (h) { h.textContent = clock(); h.classList.toggle("low", timeLeft < 300); }
       }, 1000);
     }
 
@@ -712,96 +861,158 @@
   /* ---------- grammar ---------- */
 
   function grammarDateString(d) {
-    return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+    return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
   }
 
   function screenLogin() {
-    render('<div class="card"><h2>Welcome to Sakura Study</h2>' +
-      '<p class="lede">Log in with your email and password to continue.</p>' +
-      '<input type="email" id="loginEmail" class="field" placeholder="Email">' +
-      '<input type="password" id="loginPass" class="field" placeholder="Password">' +
+    stack = [];
+    setChrome(false);
+    render('<div class="card login-card"><div class="mark" style="font-size:2.6rem;margin-bottom:6px" aria-hidden="true">&#10047;</div>' +
+      '<h2>Welcome to Sakura Study</h2>' +
+      '<p class="lede">Log in to keep your practice in sync.</p>' +
+      '<input type="email" id="loginEmail" class="field" placeholder="Email" autocomplete="email" aria-label="Email">' +
+      '<input type="password" id="loginPass" class="field" placeholder="Password" autocomplete="current-password" aria-label="Password">' +
       '<button class="primary" id="loginBtn">Log in</button>' +
-      '<div id="loginErr" class="empty" style="margin-top:10px;color:var(--koubai)"></div></div>');
-    document.getElementById("loginBtn").onclick = function () {
-      var email = document.getElementById("loginEmail").value.trim();
-      var pass = document.getElementById("loginPass").value;
+      '<div id="loginErr" class="login-error" role="alert"></div></div>');
+    var emailEl = document.getElementById("loginEmail");
+    var passEl = document.getElementById("loginPass");
+    var btn = document.getElementById("loginBtn");
+    var errEl = document.getElementById("loginErr");
+    function doLogin() {
+      var email = emailEl.value.trim();
+      var pass = passEl.value;
+      if (!email || !pass) { errEl.textContent = "Enter your email and password."; return; }
+      errEl.textContent = "";
+      btn.disabled = true;
+      btn.textContent = "Logging in…";
       fbAuth.signInWithEmailAndPassword(email, pass).catch(function (err) {
-        document.getElementById("loginErr").textContent = err.message;
+        btn.disabled = false;
+        btn.textContent = "Log in";
+        errEl.textContent = loginMessage(err);
       });
-    };
+    }
+    btn.onclick = doLogin;
+    passEl.onkeydown = function (e) { if (e.key === "Enter") doLogin(); };
+    emailEl.onkeydown = function (e) { if (e.key === "Enter") passEl.focus(); };
+  }
+
+  function loginMessage(err) {
+    var code = (err && err.code) || "";
+    if (code === "auth/invalid-email") return "That email address doesn't look right.";
+    if (code === "auth/network-request-failed") return "No connection. Check your internet and try again.";
+    if (code === "auth/too-many-requests") return "Too many attempts. Wait a few minutes and try again.";
+    if (/auth\/(invalid-credential|invalid-login-credentials|wrong-password|user-not-found)/.test(code)) return "Email or password is incorrect.";
+    return (err && err.message) || "Could not log in.";
   }
 
   function screenGrammarToday() {
+    screenGrammarExercise("grammar-" + grammarDateString(new Date()), true);
+  }
+
+  function screenGrammarExercise(id, isToday) {
     if (!fbDb) {
       render('<div class="card"><div class="empty">Grammar exercises need Firebase. Please check that firebase-config.js is present.</div></div>');
       return;
     }
-    var dateStr = grammarDateString(new Date());
-    var id = "grammar-" + dateStr;
-    render('<div class="card"><div class="empty">Loading today\'s grammar exercise…</div></div>');
+    var nav = navId;
+    render('<div class="card"><div class="empty">Loading the grammar exercise…</div></div>');
     fbDb.collection("grammar_exercises").doc(id).get().then(function (doc) {
-      if (!doc.exists) {
-        render('<div class="card"><div class="empty">Today\'s exercise is not ready yet. It is generated daily at 5 AM IST.</div></div>');
+      if (nav !== navId) return;
+      var ex = doc.exists ? doc.data() : null;
+      if (!ex || !(ex.questions || []).length) {
+        render('<div class="card"><div class="empty">' +
+          (isToday ? "Today's exercise is not ready yet. It is generated daily at 5 AM IST." : "This exercise could not be found.") +
+          "</div></div>");
         return;
       }
-      var ex = doc.data();
-      var items = ex.questions.map(function (q, i) { return { id: ex.id + "/" + i, q: q }; });
-      screenQuizGrammar(items, ex.title, ex.id, ex.date);
-    }).catch(function () {
-      render('<div class="card"><div class="empty">Could not load today\'s exercise. Please check your connection.</div></div>');
+      var items = ex.questions.map(function (q, i) { return { id: id + "/" + i, q: q }; });
+      screenQuizGrammar(items, ex.title || id, ex.id || id, ex.date || id.replace("grammar-", ""));
+    }).catch(function (err) {
+      if (nav !== navId) return;
+      console.error("grammar load error", err);
+      render('<div class="card"><div class="empty">Could not load the exercise. Please check your connection.</div></div>');
     });
   }
 
   function screenGrammarPast() {
+    var head = '<h1>Past Grammar Exercises</h1><p class="lede">Pick any day to re-attempt.</p>';
     if (!fbDb) {
-      render('<h1>Past Grammar Exercises</h1><div class="card"><div class="empty">Grammar exercises need Firebase. Please check that firebase-config.js is present.</div></div>');
+      render(head + '<div class="card"><div class="empty">Grammar exercises need Firebase. Please check that firebase-config.js is present.</div></div>');
       return;
     }
-    render('<h1>Past Grammar Exercises</h1><p class="lede">Pick any day to re-attempt.</p>');
-    fbDb.collection("grammar_exercises").orderBy("date", "desc").get().then(function (snap) {
+    var nav = navId;
+    render(head + '<div class="card"><div class="empty">Loading…</div></div>');
+    Promise.all([
+      fbDb.collection("grammar_exercises").orderBy("date", "desc").get(),
+      myGrammarBest()
+    ]).then(function (results) {
+      if (nav !== navId) return;
+      var snap = results[0], best = results[1];
       var html = "";
       if (snap.empty) {
         html += '<div class="card"><div class="empty">No past exercises yet.</div></div>';
       } else {
         snap.forEach(function (doc) {
           var ex = doc.data();
-          html += '<button class="rowlink" data-gid="' + ex.id + '">' +
-            '<span class="body"><span class="title">' + esc(ex.title) + "</span>" +
-            '<span class="sub">' + ex.count + " questions</span></span>" +
+          var b = best[doc.id];
+          html += '<button class="rowlink" data-gid="' + esc(doc.id) + '">' +
+            '<span class="semtag">' + esc(shortDate(ex.date)) + "</span>" +
+            '<span class="body"><span class="title">' + esc(ex.title || doc.id) + "</span>" +
+            '<span class="sub">' + (ex.questions || []).length + " questions" +
+            (b ? " &middot; best " + b.score + "/" + b.total : " &middot; not attempted") + "</span></span>" +
             '<span class="chev">&#8250;</span></button>';
         });
       }
-      render('<h1>Past Grammar Exercises</h1><p class="lede">Pick any day to re-attempt.</p>' + html);
+      render(head + html);
       app.querySelectorAll("[data-gid]").forEach(function (btn) {
         btn.onclick = function () {
           var gid = btn.dataset.gid;
-          fbDb.collection("grammar_exercises").doc(gid).get().then(function (doc) {
-            var ex = doc.data();
-            var items = ex.questions.map(function (q, i) { return { id: ex.id + "/" + i, q: q }; });
-            screenQuizGrammar(items, ex.title, ex.id, ex.date);
-          });
+          go(function () { screenGrammarExercise(gid, false); });
         };
       });
+    }).catch(function (err) {
+      if (nav !== navId) return;
+      console.error("grammar past error", err);
+      render(head + '<div class="card"><div class="empty">Could not load past exercises. Please check your connection.</div></div>');
     });
+  }
+
+  /* Best score per exercise for the signed-in user; empty if it can't be read. */
+  function myGrammarBest() {
+    if (!currentUser) return Promise.resolve({});
+    return fbDb.collection("grammar_attempts").where("userId", "==", currentUser.uid).get().then(function (snap) {
+      var best = {};
+      snap.forEach(function (doc) {
+        var a = doc.data();
+        if (!best[a.exerciseId] || a.score > best[a.exerciseId].score) best[a.exerciseId] = a;
+      });
+      return best;
+    }).catch(function () { return {}; });
+  }
+
+  function shortDate(dateStr) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateStr || "");
+    if (!m) return "";
+    return parseInt(m[3], 10) + " " + "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(" ")[parseInt(m[2], 10) - 1];
   }
 
   function screenQuizGrammar(items, title, exerciseId, exerciseDate) {
     var i = 0, score = 0;
     var answers = new Array(items.length).fill(null);
-    var corrects = new Array(items.length).fill(null);
 
     function recordAttempt() {
       if (!fbDb || !currentUser) return;
       var pct = Math.round(score / items.length * 100);
       fbDb.collection("grammar_attempts").add({
         userId: currentUser.uid,
+        email: currentUser.email || "",
         exerciseId: exerciseId,
         date: exerciseDate,
         score: score,
         total: items.length,
         percentage: pct,
         answeredAt: firebase.firestore.FieldValue.serverTimestamp()
-      });
+      }).catch(function (err) { console.error("recordAttempt failed", err); });
     }
 
     function finish() {
@@ -819,8 +1030,10 @@
     function draw() {
       if (i >= items.length) return finish();
       var q = items[i].q;
+      var answered = answers[i] !== null;
       var html = '<div class="qhead"><span>' + (i + 1) + " of " + items.length + "</span><span>" + esc(title) + "</span></div>" +
         '<span class="bar"><i style="width:' + Math.round(i / items.length * 100) + '%"></i></span>' +
+        (q.topic ? '<p class="qtopic">' + esc(q.topic) + "</p>" : "") +
         '<p class="qtext">' + esc(q.q) + "</p>" +
         '<div id="opts">';
       q.o.forEach(function (o, n) {
@@ -828,29 +1041,37 @@
       });
       html += '</div><div id="after"></div>';
       render(html);
+      if (answered) showAnswer(q, answers[i]);
 
       app.querySelectorAll(".opt").forEach(function (btn) {
         btn.onclick = function () {
           if (answers[i] !== null) return;
           var n = parseInt(btn.dataset.n, 10);
-          var ok = n === q.a;
           answers[i] = n;
-          corrects[i] = ok;
-          if (ok) score++;
-
-          app.querySelectorAll(".opt").forEach(function (b) {
-            var bn = parseInt(b.dataset.n, 10);
-            b.disabled = true;
-            if (bn === q.a) b.classList.add("correct");
-            else if (bn === n) b.classList.add("wrong");
-          });
-          document.getElementById("after").innerHTML = '<p class="verdict ' + (ok ? "ok" : "no") + '">' +
-            (ok ? "Correct." : "Not this time. The answer is " + "ABCD"[q.a] + ": " + esc(q.o[q.a]) + ".") + "</p>" +
-            '<button class="primary" id="nextBtn">' + (i === items.length - 1 ? "See result" : "Next question") + "</button>";
-          document.getElementById("nextBtn").onclick = function () { i++; draw(); };
-          document.getElementById("nextBtn").focus();
+          if (n === q.a) score++;
+          showAnswer(q, n);
+          document.getElementById("nextBtn").focus({ preventScroll: true });
         };
       });
+    }
+
+    function showAnswer(q, n) {
+      var ok = n === q.a;
+      app.querySelectorAll(".opt").forEach(function (b) {
+        var bn = parseInt(b.dataset.n, 10);
+        b.disabled = true;
+        if (bn === q.a) b.classList.add("correct");
+        else if (bn === n) b.classList.add("wrong");
+      });
+      document.getElementById("after").innerHTML = '<p class="verdict ' + (ok ? "ok" : "no") + '">' +
+        (ok ? "Correct." : "Not this time.") + "</p>" +
+        (ok ? "" : "<p>The answer is " + "ABCD"[q.a] + ": " + esc(q.o[q.a]) + ".</p>") +
+        '<div class="quiz-nav">' +
+        (i > 0 ? '<button class="ghost" id="prevBtn">Previous</button>' : "") +
+        '<button class="primary" id="nextBtn">' + (i === items.length - 1 ? "See result" : "Next question") + "</button></div>";
+      document.getElementById("nextBtn").onclick = function () { i++; draw(); };
+      var prev = document.getElementById("prevBtn");
+      if (prev) prev.onclick = function () { i--; draw(); };
     }
 
     draw();
@@ -858,28 +1079,34 @@
 
   function screenAdmin() {
     if (!isAdmin || !fbDb) { go(screenHome); return; }
-    render('<h1>Admin Dashboard</h1><p class="lede">Track Sugra\'s progress.</p>' +
-      '<div class="card"><div class="empty">Loading…</div></div>');
+    var head = '<h1>Admin Dashboard</h1><p class="lede">Track Sugra\'s progress.</p>';
+    var nav = navId;
+    render(head + '<div class="card"><div class="empty">Loading…</div></div>');
 
     Promise.all([
       fbDb.collection("progress").get(),
-      fbDb.collection("grammar_attempts").orderBy("answeredAt", "desc").get()
+      fbDb.collection("grammar_attempts").orderBy("answeredAt", "desc").limit(100).get()
     ]).then(function (results) {
+      if (nav !== navId) return;
       var progressSnap = results[0];
       var attemptsSnap = results[1];
+      var emails = {};
 
-      var html = '<h2 class="sectiontitle">Subject Progress</h2>';
+      var html = head + '<h2 class="sectiontitle">Subject Progress</h2>';
+      if (progressSnap.empty) html += '<div class="card"><div class="empty">No one has practised yet.</div></div>';
       progressSnap.forEach(function (doc) {
         var data = doc.data();
+        if (data.email) emails[doc.id] = data.email;
         var acc = data.total ? Math.round(data.correct / data.total * 100) : 0;
         var seen = Object.keys(data.seen || {}).length;
         var wrong = Object.keys(data.wrong || {}).length;
         var days = Object.keys(data.days || {}).length;
-        html += '<div class="card"><h3>' + (data.email || doc.id) + "</h3>" +
-          '<div class="todaymeta" style="border-top:none;padding-top:0;margin:0;flex-wrap:wrap;gap:22px">' +
+        html += '<div class="card statcard"><h3>' + esc(data.email || doc.id) + "</h3>" +
+          '<p class="lede">Last practised ' + esc(data.lastDay || "never") + " &middot; " + (data.total || 0) + " answers</p>" +
+          '<div class="todaymeta">' +
           '<div><span class="n">' + acc + '%</span><span class="k">accuracy</span></div>' +
           '<div><span class="n">' + seen + "</span><span class=\"k\">seen</span></div>" +
-          '<div><span class="n">' + wrong + "</span><span class=\"k\">wrong</span></div>" +
+          '<div><span class="n">' + wrong + "</span><span class=\"k\">to revisit</span></div>" +
           '<div><span class="n">' + days + "</span><span class=\"k\">days</span></div>" +
           "</div></div>";
       });
@@ -890,13 +1117,17 @@
       } else {
         attemptsSnap.forEach(function (doc) {
           var a = doc.data();
-          html += '<div class="card"><h3>' + esc(a.date || "Unknown date") + "</h3>" +
-            '<p class="lede">Score: ' + a.score + "/" + a.total + " &middot; " + a.percentage + "%</p></div>";
+          var who = a.email || emails[a.userId] || a.userId || "Unknown user";
+          var when = a.answeredAt && a.answeredAt.toDate ? a.answeredAt.toDate().toLocaleString() : "";
+          html += '<div class="rowlink static"><span class="semtag">' + esc(a.percentage) + "%</span>" +
+            '<span class="body"><span class="title">' + esc(a.date || "Unknown date") + " &middot; " + esc(a.score) + "/" + esc(a.total) + "</span>" +
+            '<span class="sub">' + esc(who) + (when ? " &middot; " + esc(when) : "") + "</span></span></div>";
         });
       }
       render(html);
     }).catch(function (err) {
-      render('<h1>Admin Dashboard</h1><p class="lede">Could not load data.</p><div class="card"><div class="empty">' + esc(err.message) + "</div></div>");
+      if (nav !== navId) return;
+      render(head + '<p class="lede">Could not load data.</p><div class="card"><div class="empty">' + esc(err.message) + "</div></div>");
     });
   }
 
@@ -970,7 +1201,7 @@
   function boot() {
     var hasFirebase = initFirebase();
     if (!hasFirebase) {
-      updateStreak();
+      setChrome(true);
       go(screenHome);
       return;
     }
@@ -978,9 +1209,12 @@
     fbAuth.onAuthStateChanged(function (user) {
       if (user) {
         currentUser = user;
-        isAdmin = user.email === "rahilrizvi0786110@gmail.com";
+        isAdmin = user.email === ADMIN_EMAIL;
+        render('<div class="card"><div class="empty">Loading your progress…</div></div>');
         loadProgressFromCloud(user.uid).then(function () {
-          updateStreak();
+          setChrome(true);
+          setTab("home");
+          stack = [];
           go(screenHome);
         });
       } else {

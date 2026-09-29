@@ -28,31 +28,35 @@ def q_preposition(rng: random.Random) -> Dict[str, Any]:
         ("The book belongs ___ me.", "to"),
         ("They arrived ___ the station early.", "at"),
         ("She is good ___ painting.", "at"),
-        ("We waited ___ him for an hour.", "for"),
+        ("We waited ___ him for an hour.", "for", {"on"}),
         ("He is interested ___ music.", "in"),
-        ("The cat jumped ___ the wall.", "over"),
+        ("He is proud ___ his son.", "of"),
         ("I prefer tea ___ coffee.", "to"),
         ("He was accused ___ theft.", "of"),
         ("She is married ___ a doctor.", "to"),
         ("They live ___ a small village.", "in"),
-        ("The picture hangs ___ the wall.", "on"),
+        ("The picture hangs ___ the wall.", "on", {"from"}),
         ("He apologised ___ being late.", "for"),
         ("She depends ___ her parents.", "on"),
         ("We are looking forward ___ the party.", "to"),
         ("He succeeded ___ solving the problem.", "in"),
-        ("The thief ran ___ the police.", "from"),
+        ("He was absent ___ school yesterday.", "from"),
         ("She is fond ___ classical dance.", "of"),
-        ("The train leaves ___ 6 p.m.", "at"),
+        ("The train leaves ___ 6 p.m.", "at", {"by"}),
     ]
-    sentence, answer = rng.choice(templates)
+    template = rng.choice(templates)
+    sentence, answer = template[0], template[1]
+    also_right = template[2] if len(template) > 2 else set()
     distractors = ["for", "with", "from", "about", "on", "at", "in", "to", "of", "by"]
-    options = [answer] + [d for d in distractors if d != answer]
+    wrong = [d for d in distractors if d != answer and d not in also_right]
+    rng.shuffle(wrong)
+    options = [answer] + wrong[:3]
     rng.shuffle(options)
     return {
-        "q": sentence,
-        "o": options[:4],
-        "a": options.index(answer),
-        "topic": "Prepositions",
+      "q": sentence,
+      "o": options,
+      "a": options.index(answer),
+      "topic": "Prepositions",
     }
 
 
@@ -69,7 +73,7 @@ def q_tense(rng: random.Random) -> Dict[str, Any]:
         ("He ___ in this office since 2019.", "has been working"),
         ("By the time you arrive, we ___ dinner.", "will have finished"),
         ("She ___ the letter just now.", "wrote"),
-        ("I ___ my homework before dinner.", "will finish"),
+        ("Tomorrow I ___ my homework before dinner.", "will finish"),
         ("The guests ___ already when we came.", "had left"),
         ("Water ___ at 100 degrees Celsius.", "boils"),
         ("Look! The children ___ in the park.", "are playing"),
@@ -79,23 +83,24 @@ def q_tense(rng: random.Random) -> Dict[str, Any]:
     distractors = {
         "will have completed": ["will complete", "would complete", "has completed"],
         "have read": ["read", "has read", "am reading"],
-        "had left": ["has left", "left", "was leaving"],
         "goes": ["is going", "went", "has gone"],
-        "has been crying": ["cried", "was crying", "is crying"],
-        "will stay": ["would stay", "stayed", "stay"],
+        "has been crying": ["cried", "cries", "is crying"],
+        "will stay": ["would stay", "stayed", "had stayed"],
         "rises": ["rose", "is rising", "has risen"],
         "were playing": ["played", "are playing", "had played"],
         "has been working": ["is working", "worked", "had worked"],
         "will have finished": ["will finish", "have finished", "finished"],
-        "wrote": ["has written", "was writing", "had written"],
+        "wrote": ["has written", "writes", "had written"],
         "will finish": ["finished", "would finish", "have finished"],
-        "had left": ["left", "have left", "were leaving"],
+        "had left": ["has left", "have left", "leaves"],
         "boils": ["is boiling", "boiled", "has boiled"],
         "are playing": ["play", "were playing", "played"],
     }[answer]
-    options = [answer] + distractors
+    wrong = [d for d in distractors if d != answer]
+    rng.shuffle(wrong)
+    options = [answer] + wrong[:3]
     rng.shuffle(options)
-    return {"q": sentence, "o": options[:4], "a": options.index(answer), "topic": "Tenses"}
+    return {"q": sentence, "o": options, "a": options.index(answer), "topic": "Tenses"}
 
 
 def q_direct_indirect(rng: random.Random) -> Dict[str, Any]:
@@ -123,14 +128,15 @@ def q_direct_indirect(rng: random.Random) -> Dict[str, Any]:
         "was writing": ["wrote", "had written", "is writing"],
         "had bought": ["bought", "has bought", "was buying"],
         "is": ["was", "has been", "were"],
-        "would": ["will", "shall", "should"],
         "did": ["does", "do", "had"],
     }[answer]
-    options = [answer] + distractors
+    wrong = [d for d in distractors if d != answer]
+    rng.shuffle(wrong)
+    options = [answer] + wrong[:3]
     rng.shuffle(options)
     return {
         "q": sentence,
-        "o": options[:4],
+        "o": options,
         "a": options.index(answer),
         "topic": "Direct-Indirect Speech",
     }
@@ -157,16 +163,17 @@ def q_active_passive(rng: random.Random) -> Dict[str, Any]:
         "will be": ["would be", "will have been", "is"],
         "was written": ["is written", "has been written", "had been written"],
         "are being flown": ["were being flown", "are flown", "have been flown"],
-        "has been": ["had been", "was", "is being"],
         "will have been": ["would have been", "will be", "has been"],
         "was being cooked": ["is being cooked", "was cooked", "had been cooked"],
         "had been": ["has been", "was", "were"],
     }[answer]
-    options = [answer] + distractors
+    wrong = [d for d in distractors if d != answer]
+    rng.shuffle(wrong)
+    options = [answer] + wrong[:3]
     rng.shuffle(options)
     return {
         "q": sentence,
-        "o": options[:4],
+        "o": options,
         "a": options.index(answer),
         "topic": "Active-Passive Voice",
     }
@@ -189,18 +196,20 @@ def q_phrasal_verb(rng: random.Random) -> Dict[str, Any]:
     distractors = {
         "take off": ["put off", "take on", "get off"],
         "called off": ["put off", "took off", "gave off"],
-        "ran into": ["came across", "looked into", "got over"],
+        "ran into": ["ran over", "looked into", "got over"],
         "put up with": ["keep up with", "catch up with", "give up"],
-        "turn off": ["switch on", "put out", "turn down"],
+        "turn off": ["switch on", "turn up", "turn down"],
         "took off": ["put on", "took on", "gave away"],
         "took after": ["took off", "looked after", "cared for"],
-        "fill in": ["fill out", "fill up", "write down"],
+        "fill in": ["put in", "fill up", "write down"],
         "looking into": ["looking after", "looking for", "searching out"],
         "put across": ["put off", "put on", "gave away"],
     }[answer]
-    options = [answer] + distractors
+    wrong = [d for d in distractors if d != answer]
+    rng.shuffle(wrong)
+    options = [answer] + wrong[:3]
     rng.shuffle(options)
-    return {"q": sentence, "o": options[:4], "a": options.index(answer), "topic": "Phrasal Verbs"}
+    return {"q": sentence, "o": options, "a": options.index(answer), "topic": "Phrasal Verbs"}
 
 
 def q_error_correction(rng: random.Random) -> Dict[str, Any]:
@@ -234,7 +243,7 @@ def q_error_correction(rng: random.Random) -> Dict[str, Any]:
     stem, answer, wrongs = rng.choice(templates)
     options = [answer] + wrongs
     rng.shuffle(options)
-    return {"q": stem, "o": options[:4], "a": options.index(answer), "topic": "Error Correction"}
+    return {"q": stem, "o": options, "a": options.index(answer), "topic": "Error Correction"}
 
 
 GENERATORS = [q_preposition, q_tense, q_direct_indirect, q_active_passive, q_phrasal_verb, q_error_correction]
@@ -242,7 +251,7 @@ GENERATORS = [q_preposition, q_tense, q_direct_indirect, q_active_passive, q_phr
 
 def generate_exercise(date_str: str, count: int = 20) -> Dict[str, Any]:
     """Generate a deterministic daily exercise for `date_str` (YYYY-MM-DD)."""
-    seed = hashlib.sha256(date_str.encode("utf-8")).hexdigest()
+    seed = hashlib.sha256(("sakura-grammar-" + date_str).encode("utf-8")).hexdigest()
     rng = random.Random(seed)
     questions: List[Dict[str, Any]] = []
     topic_quota = {
@@ -261,10 +270,18 @@ def generate_exercise(date_str: str, count: int = 20) -> Dict[str, Any]:
         "Phrasal Verbs": q_phrasal_verb,
         "Error Correction": q_error_correction,
     }
-    # Fill according to rough ICSE balance
+    # Fill according to rough ICSE balance, never repeating a question within a day
+    seen = set()
     for topic, quota in topic_quota.items():
-        for _ in range(quota):
-            questions.append(gen_by_topic[topic](rng))
+        added = 0
+        while added < quota:
+            q = gen_by_topic[topic](rng)
+            key = (q["q"], q["o"][q["a"]])
+            if key in seen:
+                continue
+            seen.add(key)
+            questions.append(q)
+            added += 1
     rng.shuffle(questions)
     return {
         "id": f"grammar-{date_str}",

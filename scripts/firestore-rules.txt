@@ -2,9 +2,18 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Users can read/write only their own progress document.
+    // Admin is either a custom claim or the admin email (verified accounts only
+    // matter if sign-up is open; accounts are created by hand in the console).
+    function isAdmin() {
+      return request.auth != null &&
+        (request.auth.token.get('admin', false) == true ||
+         request.auth.token.get('email', '') == 'rahilrizvi0786110@gmail.com');
+    }
+
+    // Users can read/write only their own progress document; admin can read all.
     match /progress/{userId} {
       allow read, write: if request.auth != null && request.auth.uid == userId;
+      allow read: if isAdmin();
     }
 
     // Grammar exercises are public (read-only) for logged-in users.
@@ -13,19 +22,12 @@ service cloud.firestore {
       allow write: if false; // only server-side scripts can create exercises
     }
 
-    // Grammar attempt history: users can create/read their own.
+    // Grammar attempt history: users can create/read their own; admin can read all.
     match /grammar_attempts/{attemptId} {
       allow read: if request.auth != null && resource.data.userId == request.auth.uid;
       allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
       allow update, delete: if false;
-    }
-
-    // Admin users can read any progress or attempt.
-    match /progress/{userId} {
-      allow read: if request.auth != null && request.auth.token.admin == true;
-    }
-    match /grammar_attempts/{attemptId} {
-      allow read: if request.auth != null && request.auth.token.admin == true;
+      allow read: if isAdmin();
     }
   }
 }

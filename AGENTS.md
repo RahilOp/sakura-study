@@ -97,7 +97,7 @@ Rules:
 
 ## 5. State management
 
-Stored under the localStorage key `sakura-study-v1`:
+Stored under the localStorage key `sakura-study-v1` (the uid that owns it is kept in `sakura-study-owner`; a different account logging in starts from blank, and logout flushes to Firestore then clears both keys):
 
 ```js
 {
@@ -152,12 +152,13 @@ Tabs and their root screens:
 - Tapping a paper opens `screenPaper`.
 
 ### `screenCourse`
-- Lists every paper from every subject grouped by semester: 2, then 4, then 6.
-- Papers with no questions are disabled.
+- Lists every paper from every subject grouped by semester, in ascending order of whatever semesters exist in the data.
+- Each row shows question count and a coverage bar. Papers with no questions, no units and no `source` are disabled; notes-only papers stay open.
 
 ### `screenPaper(paper)`
 - Card to practise the whole paper (shuffled).
-- Mock exam button: 75 questions, 90-minute timer.
+- Mock exam button: up to 75 questions (`MOCK_COUNT`), 90-minute timer (`MOCK_SECONDS`), asks for confirmation first. The countdown is the module-level `quizTimer` and is stopped by `go()`/back, so leaving a mock never force-finishes another screen.
+- Units without questions (notes-only papers) open their notes directly.
 - Lists units with progress bars.
 - Tapping a unit starts a shuffled quiz for that unit.
 - If a unit has `notes` or `resources`, a "Study notes" button appears below the unit; tapping opens a study screen with revision notes and source links before practising.
@@ -182,7 +183,8 @@ Tabs and their root screens:
 
 ### `screenQuizGrammar(items, title, exerciseId, exerciseDate)`
 - Simplified quiz for grammar exercises fetched from Firestore.
-- Records an attempt document in `grammar_attempts` on finish.
+- Records an attempt document in `grammar_attempts` (including `email`) on finish. Has a Previous button.
+- Past exercises list shows the user's best score per day.
 
 ### `screenAdmin`
 - Visible only when logged in as `rahilrizvi0786110@gmail.com`.
@@ -302,7 +304,7 @@ Use the rules in `scripts/firestore-rules.txt`.
 
 ### Admin account
 
-Set `rahilrizvi0786110@gmail.com` as an admin in Firebase Authentication custom claims, or rely on the hard-coded email check in `app.js` plus security rules using `request.auth.token.admin == true`.
+Set `rahilrizvi0786110@gmail.com` as an admin in Firebase Authentication custom claims, or rely on the hard-coded email check in `app.js` plus the security rules in `scripts/firestore-rules.txt`, which accept either the `admin` custom claim or the admin email.
 
 ---
 

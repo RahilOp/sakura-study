@@ -25,11 +25,11 @@
 
 <main id="app"></main>
 
-<nav class="tabbar" id="tabbar">
-  <button data-tab="home" class="tab is-on">Today</button>
-  <button data-tab="course" class="tab">Course</button>
-  <button data-tab="review" class="tab">Review</button>
-  <button data-tab="progress" class="tab">Progress</button>
+<nav class="tabbar" id="tabbar" hidden>
+  <button data-tab="home" class="tab is-on"><span class="tabicon" aria-hidden="true">&#10047;</span>Today</button>
+  <button data-tab="course" class="tab"><span class="tabicon" aria-hidden="true">&#9776;</span>Course</button>
+  <button data-tab="review" class="tab"><span class="tabicon" aria-hidden="true">&#8634;</span>Review</button>
+  <button data-tab="progress" class="tab"><span class="tabicon" aria-hidden="true">&#9650;</span>Progress</button>
 </nav>
 
 <script src="data/english.js"></script>
@@ -208,11 +208,12 @@
 
   #sakura-replay-bud {
     position: fixed;
-    bottom: 18px;
-    right: 18px;
-    z-index: 500;
-    width: 46px;
-    height: 46px;
+    /* sits just above the app's bottom tab bar so it never covers a tab */
+    bottom: calc(var(--tab-h, 62px) + 12px + env(safe-area-inset-bottom));
+    right: 14px;
+    z-index: 25;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: #fff0f4;
     border: 1px solid #ffd0dd;
@@ -265,7 +266,7 @@ Ganbatte on today's set. I'm cheering for you from here. 🌸
   </div>
 </div>
 
-<div id="sakura-replay-bud" onclick="sakuraReplay()" title="Read it again">🌸</div>
+<div id="sakura-replay-bud" onclick="sakuraReplay()" title="Read it again" role="button" tabindex="0" aria-label="Read the letter again" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();sakuraReplay();}">🌸</div>
 
 <script>
 (function () {

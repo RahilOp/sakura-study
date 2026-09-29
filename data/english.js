@@ -3739,12 +3739,12 @@ window.SUBJECT_ENGLISH = {
           {
               q: "Jayant Mahapatra was born on-",
               o: [
-              "12th October, 1921 Bengal. Physics Nissim Ezekiel Patna University 1985 2001 27th August 2023 His nets B) His food C) His daughter D) His Water bottle. 16 3 stanzas Need to drink 24th January, 1937 Mumbai Doctor 1950 Under Orion Under Orion Winter Poems Love and aging Pleasure",
-              "2nd July, 1927 Punjab Botany Toru Dutt Allahabad University 1981 2005 15th July 2023 15 5 stanzas Money 16thJune, 1930 Lahore Teacher 1960 Landscapes. Winter Poems Landscapes Social issues Happiness",
-              "3rd June, 1925 Cuttack Maths A.K. Ramanujan. Punjab University 1902 2006 1st June 2023 19 4 Stanzas Sexual gratification 15th July, 1937 Gujrat Manager 1958 Winter Poems. The Keeper of the Dead. The keeper of the Dead Nature Mourning",
-              "22nd October, 1928 Mumbai English Jayant Mahapatra. Ans- D 44. Mahapatra completed M.Sc. in Physics from - Banaras Hindu University. 1988 2009 5th March 2023 21 6 stanzas. None of these. 2nd April, 1938 Punjab Police officer 1955 Fire Altar. Landscapes Under Orion None of these. Joy"
+              "12th October, 1921",
+              "2nd July, 1927",
+              "3rd June, 1925",
+              "22nd October, 1928"
               ],
-              a: 2
+              a: 3
             },
           {
               q: "In the poem ‘Mother’, poet talks about his mother's -",
@@ -6322,9 +6322,9 @@ window.SUBJECT_ENGLISH = {
               q: "Which book did Gandhi ji write during his journey from London to South Africa?",
               o: [
               "My Experiment with Truth",
-              "Gitanjali Sita and Ram",
-              "Hind-Swaraj Sita and Lakshman.",
-              "None of these Ans -(C) (38)The poem Lakshman is a dialogue between - (A Sita and Ravana Sita and Bharat."
+              "Gitanjali",
+              "Hind-Swaraj",
+              "None of these"
               ],
               a: 2
             },
