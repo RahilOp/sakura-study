@@ -22,6 +22,12 @@ service cloud.firestore {
       allow write: if false; // only server-side scripts can create exercises
     }
 
+    // What the grammar agent remembers about her. Written only by the daily job.
+    match /grammar_memory/{docId} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+
     // Grammar attempt history: users can create/read their own; admin can read all.
     match /grammar_attempts/{attemptId} {
       allow read: if request.auth != null && resource.data.userId == request.auth.uid;

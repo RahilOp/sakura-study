@@ -5,10 +5,16 @@ on:
     # 5 AM IST = 11:30 PM UTC (previous day)
     - cron: '30 23 * * *'
   workflow_dispatch:
+    inputs:
+      force:
+        description: 'Replace an existing exercise for today'
+        type: boolean
+        default: false
 
 jobs:
   generate:
     runs-on: ubuntu-latest
+    concurrency: daily-grammar
     steps:
       - uses: actions/checkout@v4
 
@@ -26,9 +32,14 @@ jobs:
         run: |
           echo "$FIREBASE_SERVICE_ACCOUNT" > firebase-service-account.json
 
-      - name: Generate and upload exercise
+      - name: Generate and upload personalised exercise
         env:
           FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
           GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/firebase-service-account.json
+          # Without this secret the agent falls back to the template bank.
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          # Optional repo variables (comma-separated model ids) to swap free models without code changes.
+          GRAMMAR_MODELS: ${{ vars.GRAMMAR_MODELS }}
+          GRAMMAR_VERIFY_MODELS: ${{ vars.GRAMMAR_VERIFY_MODELS }}
         run: |
-          python3 scripts/grammar_generator.py --upload --count 20
+          python3 scripts/grammar_agent.py --upload --count 20 ${{ inputs.force && '--force' || '' }}

@@ -189,6 +189,14 @@ button.ghost.danger{color:var(--koubai)}
 .qhead{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;color:var(--ink-soft);margin-bottom:8px}
 .qclock{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink)}
 .qclock.low{color:var(--koubai)}
+.focuscard{
+  background:var(--sakura);border-radius:11px;padding:10px 13px;margin-top:14px;
+  font-size:.88rem;color:var(--ink);
+}
+.focuscard .k{display:block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--koubai)}
+.explain{font-size:.9rem;color:var(--ink-soft);background:#FFFBFB;border-left:3px solid var(--sakura-deep);padding:8px 12px;margin-top:10px;border-radius:0 8px 8px 0}
+.topicstat{display:flex;justify-content:space-between;font-size:.85rem;margin-top:14px;color:var(--ink-soft)}
+.topicstat + .bar{margin-top:5px}
 .qtopic{font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--koubai);margin-top:14px}
 .qtopic + .qtext{margin-top:6px}
 .qtext{font-family:var(--serif);font-size:1.2rem;line-height:1.5;margin:16px 0 20px}

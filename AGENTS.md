@@ -181,15 +181,16 @@ Tabs and their root screens:
 - If `seconds` is provided, shows a countdown in the header; time-up forces finish.
 - Finish screen shows score, percentage, and a motivational message.
 
-### `screenQuizGrammar(items, title, exerciseId, exerciseDate)`
+### `screenQuizGrammar(items, title, exerciseId, exerciseDate, focus)`
 - Simplified quiz for grammar exercises fetched from Firestore.
-- Records an attempt document in `grammar_attempts` (including `email`) on finish. Has a Previous button.
+- Shows a "Today's focus" card on question 1 when the exercise has `focus`, and each question's `explanation` after answering.
+- Records an attempt document in `grammar_attempts` (including `email` and per-question `responses`) on finish. Has a Previous button.
 - Past exercises list shows the user's best score per day.
 
 ### `screenAdmin`
 - Visible only when logged in as `rahilrizvi0786110@gmail.com`.
-- Reads all `progress` and `grammar_attempts` documents.
-- Shows accuracy, coverage, days, and grammar scores per date.
+- Reads all `progress` and `grammar_attempts` documents, plus `grammar_memory/student`.
+- Shows accuracy, coverage, days, the grammar tutor's notes and per-topic recent accuracy, and grammar scores per date.
 
 ---
 
@@ -291,8 +292,9 @@ The app now uses Firebase for cloud progress, authentication, admin tracking, an
 | Collection | Purpose |
 |------------|---------|
 | `progress/{userId}` | User's subject quiz progress (`seen`, `wrong`, `days`, `streak`, `total`, `correct`). |
-| `grammar_exercises/{grammar-YYYY-MM-DD}` | Daily generated 20-question grammar exercise. |
-| `grammar_attempts/{autoId}` | Each grammar exercise attempt (`userId`, `exerciseId`, `date`, `score`, `total`, `percentage`, `answeredAt`). |
+| `grammar_exercises/{grammar-YYYY-MM-DD}` | Daily generated 20-question grammar exercise (`questions` with `topic`, `q`, `o`, `a`, optional `explanation`; plus `focus`, `mix`, `generatedBy`). |
+| `grammar_attempts/{autoId}` | Each grammar exercise attempt (`userId`, `email`, `exerciseId`, `date`, `score`, `total`, `percentage`, `answeredAt`, `responses: [{chosen}]`). |
+| `grammar_memory/student` | The grammar agent's memory of Sugra: per-topic stats, recent mistakes, used questions, tutor notes, current focus. Admin-readable, written only by the daily job. |
 
 ### Security rules
 
@@ -300,7 +302,17 @@ Use the rules in `scripts/firestore-rules.txt`.
 
 ### GitHub Actions
 
-`.github/workflows/daily-grammar.yml` runs `scripts/grammar_generator.py --upload --count 20` every day at 5 AM IST.
+`.github/workflows/daily-grammar.yml` runs `scripts/grammar_agent.py --upload --count 20` every day at 5 AM IST (manual runs can tick "force" to replace today's exercise). Secrets: `FIREBASE_SERVICE_ACCOUNT`, `FIREBASE_PROJECT_ID`, `OPENROUTER_API_KEY`. Optional repo variables `GRAMMAR_MODELS` / `GRAMMAR_VERIFY_MODELS` override the model lists.
+
+### Grammar agent
+
+`scripts/grammar_agent.py` writes a personalised exercise each day:
+
+1. Loads `grammar_memory/student` and folds in Sugra's new attempts (first attempt per exercise only; the admin's attempts are ignored).
+2. Picks the topic mix: the default mix until 20 answers are recorded, then at least 2 per topic with the rest weighted by recent error rate.
+3. Asks a free OpenRouter model (`GENERATE_MODELS`, tried in order) for questions targeting her recent mistakes, then has a different model (`VERIFY_MODELS`) answer them blind and drops any it disagrees with or finds ambiguous. Only models that support structured outputs (`json_schema`) work. Her name is not sent, since free providers may log prompts.
+4. Fills any gaps from the template bank in `scripts/grammar_generator.py`. Without `OPENROUTER_API_KEY`, or if every model fails, the whole exercise comes from templates. `generatedBy` records the model that wrote it, or `templates`.
+5. Uploads the exercise and the updated memory. It skips the date if an exercise already exists, unless `--force` is given.
 
 ### Admin account
 
@@ -348,8 +360,8 @@ To regenerate notes after editing markdown:
 python3 scripts/build-notes.py
 ```
 
-To test the grammar generator locally:
+To test the grammar agent locally (no Firestore; uses OpenRouter if `OPENROUTER_API_KEY` is set, otherwise templates):
 
 ```bash
-python3 scripts/grammar_generator.py --count 20 --output /tmp/grammar.json
+python3 scripts/grammar_agent.py --count 20 --output /tmp/grammar.json
 ```

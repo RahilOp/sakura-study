@@ -1,5 +1,6 @@
 # Secrets — never commit tokens or credentials
 token.txt
+apikey.txt
 .env
 .env.local
 firebase-config.js
@@ -15,3 +16,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Python (grammar_agent.py imports grammar_generator.py)
+__pycache__/

@@ -926,7 +926,7 @@
         return;
       }
       var items = ex.questions.map(function (q, i) { return { id: id + "/" + i, q: q }; });
-      screenQuizGrammar(items, ex.title || id, ex.id || id, ex.date || id.replace("grammar-", ""));
+      screenQuizGrammar(items, ex.title || id, ex.id || id, ex.date || id.replace("grammar-", ""), ex.focus);
     }).catch(function (err) {
       if (nav !== navId) return;
       console.error("grammar load error", err);
@@ -996,7 +996,7 @@
     return parseInt(m[3], 10) + " " + "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(" ")[parseInt(m[2], 10) - 1];
   }
 
-  function screenQuizGrammar(items, title, exerciseId, exerciseDate) {
+  function screenQuizGrammar(items, title, exerciseId, exerciseDate, focus) {
     var i = 0, score = 0;
     var answers = new Array(items.length).fill(null);
 
@@ -1011,6 +1011,8 @@
         score: score,
         total: items.length,
         percentage: pct,
+        // Per-question choices let the daily grammar agent see which rules she missed.
+        responses: answers.map(function (n) { return { chosen: n }; }),
         answeredAt: firebase.firestore.FieldValue.serverTimestamp()
       }).catch(function (err) { console.error("recordAttempt failed", err); });
     }
@@ -1023,7 +1025,7 @@
         "<h2>" + (pct >= 80 ? "Excellent work." : pct >= 60 ? "Good effort." : "Keep practising.") + "</h2></div>" +
         '<button class="primary" id="againBtn" style="margin-top:24px">Try again</button>' +
         '<button class="ghost" id="homeBtn">Back to today</button>');
-      document.getElementById("againBtn").onclick = function () { screenQuizGrammar(items, title, exerciseId, exerciseDate); };
+      document.getElementById("againBtn").onclick = function () { screenQuizGrammar(items, title, exerciseId, exerciseDate, focus); };
       document.getElementById("homeBtn").onclick = function () { stack = []; go(screenHome); setTab("home"); };
     }
 
@@ -1033,6 +1035,7 @@
       var answered = answers[i] !== null;
       var html = '<div class="qhead"><span>' + (i + 1) + " of " + items.length + "</span><span>" + esc(title) + "</span></div>" +
         '<span class="bar"><i style="width:' + Math.round(i / items.length * 100) + '%"></i></span>' +
+        (i === 0 && focus && focus.length ? '<div class="focuscard"><span class="k">Today\'s focus</span>' + focus.map(esc).join(" &middot; ") + "</div>" : "") +
         (q.topic ? '<p class="qtopic">' + esc(q.topic) + "</p>" : "") +
         '<p class="qtext">' + esc(q.q) + "</p>" +
         '<div id="opts">';
@@ -1066,6 +1069,7 @@
       document.getElementById("after").innerHTML = '<p class="verdict ' + (ok ? "ok" : "no") + '">' +
         (ok ? "Correct." : "Not this time.") + "</p>" +
         (ok ? "" : "<p>The answer is " + "ABCD"[q.a] + ": " + esc(q.o[q.a]) + ".</p>") +
+        (q.explanation ? '<p class="explain">' + esc(q.explanation) + "</p>" : "") +
         '<div class="quiz-nav">' +
         (i > 0 ? '<button class="ghost" id="prevBtn">Previous</button>' : "") +
         '<button class="primary" id="nextBtn">' + (i === items.length - 1 ? "See result" : "Next question") + "</button></div>";
@@ -1085,11 +1089,13 @@
 
     Promise.all([
       fbDb.collection("progress").get(),
-      fbDb.collection("grammar_attempts").orderBy("answeredAt", "desc").limit(100).get()
+      fbDb.collection("grammar_attempts").orderBy("answeredAt", "desc").limit(100).get(),
+      fbDb.collection("grammar_memory").doc("student").get().catch(function () { return null; })
     ]).then(function (results) {
       if (nav !== navId) return;
       var progressSnap = results[0];
       var attemptsSnap = results[1];
+      var memory = results[2] && results[2].exists ? results[2].data() : null;
       var emails = {};
 
       var html = head + '<h2 class="sectiontitle">Subject Progress</h2>';
@@ -1111,6 +1117,8 @@
           "</div></div>";
       });
 
+      if (memory) html += grammarMemoryHtml(memory);
+
       html += '<h2 class="sectiontitle">Grammar Attempts</h2>';
       if (attemptsSnap.empty) {
         html += '<div class="card"><div class="empty">No grammar attempts yet.</div></div>';
@@ -1129,6 +1137,23 @@
       if (nav !== navId) return;
       render(head + '<p class="lede">Could not load data.</p><div class="card"><div class="empty">' + esc(err.message) + "</div></div>");
     });
+  }
+
+  /* What the grammar agent remembers about her: its notes and per-topic accuracy. */
+  function grammarMemoryHtml(m) {
+    var html = '<h2 class="sectiontitle">Grammar Tutor Notes</h2><div class="card">';
+    html += m.notes ? '<p class="notes">' + esc(m.notes) + "</p>" : '<p class="lede">No notes yet.</p>';
+    if (m.focus && m.focus.length) html += '<p class="lede" style="margin-top:10px">Today\'s focus: ' + m.focus.map(esc).join(" &middot; ") + "</p>";
+    var stats = m.topicStats || {};
+    Object.keys(stats).sort().forEach(function (t) {
+      var recent = stats[t].recent || [];
+      if (!recent.length) return;
+      var ok = recent.filter(function (x) { return x; }).length;
+      var pct = Math.round(ok / recent.length * 100);
+      html += '<div class="topicstat"><span>' + esc(t) + "</span><span>" + ok + "/" + recent.length + " recent</span></div>" +
+        '<span class="bar"><i style="width:' + pct + '%"></i></span>';
+    });
+    return html + "</div>";
   }
 
   /* ---------- tabs ---------- */
