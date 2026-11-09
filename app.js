@@ -10,6 +10,7 @@
   var MOCK_SECONDS = 90 * 60;
   var LOCAL_KEY = "sakura-study-v1";
   var OWNER_KEY = "sakura-study-owner";
+  var QUIZ_KEY = "sakura-study-quizzes-v1:";
   var ADMIN_EMAIL = "rahilrizvi0786110@gmail.com";
 
   var app = document.getElementById("app");
@@ -122,6 +123,74 @@
   }
 
   function save() { markDirty(); }
+
+  /* Unfinished tests stay on this browser, separately for each account. */
+  var quizDrafts = {};
+  var quizSaveFailed = false;
+
+  function quizStorageKey() {
+    return QUIZ_KEY + (currentUser ? currentUser.uid : "local");
+  }
+
+  function loadQuizDrafts() {
+    quizDrafts = {};
+    quizSaveFailed = false;
+    try {
+      var stored = JSON.parse(localStorage.getItem(quizStorageKey()) || "{}");
+      Object.keys(stored).forEach(function (key) {
+        var d = stored[key];
+        if (!d || d.key !== key || (d.kind !== "subject" && d.kind !== "grammar")) return;
+        if (!Array.isArray(d.items) || !d.items.length || !Array.isArray(d.answers) || d.answers.length !== d.items.length) return;
+        if (typeof d.index !== "number" || d.index % 1 || d.index < 0 || d.index >= d.items.length) return;
+        if (!d.items.every(function (it) { return it && it.q && Array.isArray(it.q.o) && it.q.o.length === 4; })) return;
+        if (!d.answers.every(function (n) { return n === null || (typeof n === "number" && n % 1 === 0 && n >= 0 && n < 4); })) return;
+        if (d.seconds && (typeof d.deadline !== "number" || !isFinite(d.deadline))) return;
+        quizDrafts[key] = d;
+      });
+    } catch (e) {}
+  }
+
+  function writeQuizDrafts() {
+    try {
+      localStorage.setItem(quizStorageKey(), JSON.stringify(quizDrafts));
+      quizSaveFailed = false;
+    } catch (e) {
+      quizSaveFailed = true;
+    }
+    var warning = document.getElementById("quizSaveWarning");
+    if (warning) warning.hidden = !quizSaveFailed;
+  }
+
+  function saveQuizDraft(draft) {
+    draft.updatedAt = Date.now();
+    quizDrafts[draft.key] = draft;
+    writeQuizDrafts();
+  }
+
+  function clearQuizDraft(key) {
+    delete quizDrafts[key];
+    writeQuizDrafts();
+  }
+
+  function newQuizDraft(items, title, key, kind, seconds) {
+    return {
+      key: key,
+      kind: kind,
+      title: title,
+      // Snapshot just the questions, not the subject/paper objects. This preserves
+      // their order and options even if the question bank changes before resuming.
+      items: items.map(function (it) { return { id: it.id, q: it.q }; }),
+      answers: new Array(items.length).fill(null),
+      index: 0,
+      seconds: seconds || 0,
+      deadline: seconds ? Date.now() + seconds * 1000 : null
+    };
+  }
+
+  function quizSaveWarningHtml() {
+    return '<p class="lede" id="quizSaveWarning" role="alert"' + (quizSaveFailed ? "" : " hidden") +
+      '>This browser could not save your test. Keep this page open to avoid losing your place.</p>';
+  }
 
   function today() {
     var d = new Date();
@@ -290,6 +359,46 @@
     }
   }
 
+  function savedQuizzesHtml() {
+    var keys = Object.keys(quizDrafts).sort(function (a, b) {
+      return quizDrafts[b].updatedAt - quizDrafts[a].updatedAt;
+    });
+    if (!keys.length) return "";
+    var html = '<h2 class="sectiontitle">Unfinished tests</h2><p class="lede">' +
+      (quizSaveFailed ? 'Browser storage is unavailable. These tests will be lost if you close or reload this page.' : 'Saved on this browser. Pick up where you left off.') + '</p>';
+    keys.forEach(function (key) {
+      var d = quizDrafts[key];
+      var answered = d.answers.filter(function (n) { return n !== null; }).length;
+      var expired = d.seconds && d.deadline <= Date.now();
+      html += '<div class="card" style="margin-top:12px"><h3>' + esc(d.title) + '</h3>' +
+        '<p class="lede">' + answered + ' of ' + d.items.length + ' answered &middot; Question ' + (d.index + 1) + '</p>' +
+        (d.seconds ? '<p class="lede">' + (expired ? 'The timer has ended. Your saved answers are ready to score.' : 'The exam timer keeps running while you are away.') + '</p>' : '') +
+        '<button class="primary" data-resume="' + esc(key) + '" style="margin-top:14px">' + (expired ? 'View result' : 'Resume test') + '</button>' +
+        '<button class="ghost" data-discard="' + esc(key) + '">Discard saved test</button></div>';
+    });
+    return html;
+  }
+
+  function bindSavedQuizzes() {
+    app.querySelectorAll("[data-resume]").forEach(function (btn) {
+      btn.onclick = function () {
+        var d = quizDrafts[btn.dataset.resume];
+        if (!d) return;
+        go(function () {
+          if (d.kind === "grammar") screenQuizGrammar(d.items, d.title, d.exerciseId, d.exerciseDate, d.focus);
+          else screenQuiz(d.items, d.title, d.seconds, d.key);
+        });
+      };
+    });
+    app.querySelectorAll("[data-discard]").forEach(function (btn) {
+      btn.onclick = function () {
+        if (!confirm("Discard this unfinished test? Answers already counted in your progress will stay there.")) return;
+        clearQuizDraft(btn.dataset.discard);
+        screenHome();
+      };
+    });
+  }
+
   /* ---------- screens ---------- */
 
   function screenHome() {
@@ -297,6 +406,8 @@
     var seenN = seenCount(all);
     var wrongN = wrongSet().length;
     var doneToday = S.days[today()];
+    var dailyKey = "daily/" + today();
+    var grammarKey = "grammar/grammar-" + grammarDateString(new Date());
 
     var html = '<section class="today">' +
       '<h1>' + (doneToday ? "Practice done for today" : "Today's practice") + "</h1>" +
@@ -313,15 +424,17 @@
         '<div><span class="n">' + wrongN + "</span><span class=\"k\">to revisit</span></div>" +
       "</div>" +
       '<button class="primary" id="startDaily"' + (all.length ? "" : " disabled") + ">" +
-        (doneToday ? "Practise again" : "Start today's practice") + "</button>" +
+        (quizDrafts[dailyKey] ? "Resume today's practice" : doneToday ? "Practise again" : "Start today's practice") + "</button>" +
       (wrongN ? '<button class="ghost" id="startWrong">Review the ' + wrongN + " you got wrong</button>" : "") +
       "</section>";
+
+    html += savedQuizzesHtml();
 
     if (fbDb) {
       html += '<div class="card grammarcard">' +
         '<h3>English Grammar Daily</h3>' +
         '<p class="lede">20 ICSE-style MCQs: tenses, prepositions, active-passive, direct-indirect and more.</p>' +
-        '<button class="primary" id="startGrammar">Start today\'s grammar exercise</button>' +
+        '<button class="primary" id="startGrammar">' + (quizDrafts[grammarKey] ? "Resume today's grammar exercise" : "Start today's grammar exercise") + '</button>' +
         '<button class="ghost" id="pastGrammar">Past grammar exercises</button>' +
         '</div>';
     }
@@ -348,10 +461,11 @@
 
     render(html);
 
+    bindSavedQuizzes();
     var b = document.getElementById("startDaily");
-    if (b) b.onclick = function () { var set = dailySet(); if (set.length) go(function () { screenQuiz(set, "Today's practice"); }); };
+    if (b) b.onclick = function () { var set = dailySet(); if (set.length) go(function () { screenQuiz(set, "Today's practice", null, dailyKey); }); };
     var w = document.getElementById("startWrong");
-    if (w) w.onclick = function () { var set = shuffle(wrongSet()); if (set.length) go(function () { screenQuiz(set, "Review"); }); };
+    if (w) w.onclick = function () { var set = shuffle(wrongSet()); if (set.length) go(function () { screenQuiz(set, "Review", null, "review"); }); };
     var g = document.getElementById("startGrammar");
     if (g) g.onclick = function () { go(screenGrammarToday); };
     var p = document.getElementById("pastGrammar");
@@ -537,7 +651,7 @@
 
     var start = document.getElementById("studyStart");
     if (start) start.onclick = function () {
-      go(function () { screenQuiz(shuffle(unitQs), unit.name); });
+      go(function () { screenQuiz(shuffle(unitQs), unit.name, null, "unit/" + paper.id + "/" + unit.id); });
     };
   }
 
@@ -552,8 +666,8 @@
       html += '<div class="card" style="margin-top:18px">' +
         "<h3>Practise the whole paper</h3>" +
         '<p class="lede">' + qs.length + " questions, shuffled. " + seenCount(qs) + " seen so far.</p>" +
-        '<button class="primary" id="wholePaper" style="margin-top:14px">Start</button>' +
-        '<button class="ghost" id="mockExam">Mock exam &middot; ' + mockN + " questions, 90 minutes</button>" +
+        '<button class="primary" id="wholePaper" style="margin-top:14px">' + (quizDrafts["paper/" + paper.id] ? "Resume" : "Start") + '</button>' +
+        '<button class="ghost" id="mockExam">' + (quizDrafts["mock/" + paper.id] ? "Resume mock exam" : "Mock exam") + ' &middot; ' + mockN + " questions, 90 minutes</button>" +
         "</div>";
     } else {
       html += '<div class="card" style="margin-top:18px"><div class="empty">MCQs for this paper haven\'t been added yet.' +
@@ -583,16 +697,16 @@
     render(html);
 
     var whole = document.getElementById("wholePaper");
-    if (whole) whole.onclick = function () { go(function () { screenQuiz(shuffle(qs), paper.name); }); };
+    if (whole) whole.onclick = function () { go(function () { screenQuiz(shuffle(qs), paper.name, null, "paper/" + paper.id); }); };
     var mock = document.getElementById("mockExam");
     if (mock) mock.onclick = function () {
-      if (!confirm("Start a " + mockN + "-question mock exam? The 90-minute timer starts now and the exam ends when time is up.")) return;
-      go(function () { screenQuiz(shuffle(qs).slice(0, mockN), paper.name + " · mock", MOCK_SECONDS); });
+      if (!quizDrafts["mock/" + paper.id] && !confirm("Start a " + mockN + "-question mock exam? The 90-minute timer starts now and keeps running if you leave. The exam ends when time is up.")) return;
+      go(function () { screenQuiz(shuffle(qs).slice(0, mockN), paper.name + " · mock", MOCK_SECONDS, "mock/" + paper.id); });
     };
     app.querySelectorAll("[data-unit]").forEach(function (btn) {
       btn.onclick = function () {
         var u = paper.units.filter(function (x) { return x.id === btn.dataset.unit; })[0];
-        go(function () { screenQuiz(shuffle(unitQuestions(paper, u)), u.name); });
+        go(function () { screenQuiz(shuffle(unitQuestions(paper, u)), u.name, null, "unit/" + paper.id + "/" + u.id); });
       };
     });
     app.querySelectorAll("[data-study]").forEach(function (btn) {
@@ -605,7 +719,7 @@
   }
 
   function screenReview() {
-    var set = wrongSet();
+    var set = quizDrafts.review ? quizDrafts.review.items : wrongSet();
     var html = "<h1>Review</h1><p class=\"lede\">Questions you've answered wrong at least once. They leave this list once you get them right.</p>";
     if (!set.length) {
       html += '<div class="card" style="margin-top:18px"><div class="empty">Nothing to review. Answer some questions first, and anything you miss will collect here.</div></div>';
@@ -614,10 +728,10 @@
     }
     html += '<div class="card" style="margin-top:18px"><h3>' + set.length + " to revisit</h3>" +
       '<p class="lede">This is the highest-value practice there is. Do these before anything new.</p>' +
-      '<button class="primary" id="doReview" style="margin-top:14px">Start review</button></div>';
+      '<button class="primary" id="doReview" style="margin-top:14px">' + (quizDrafts.review ? "Resume review" : "Start review") + '</button></div>';
     render(html);
     document.getElementById("doReview").onclick = function () {
-      go(function () { screenQuiz(shuffle(set), "Review"); });
+      go(function () { screenQuiz(shuffle(set), "Review", null, "review"); });
     };
   }
 
@@ -654,6 +768,7 @@
     render(html);
     document.getElementById("resetAll").onclick = function () {
       if (confirm("This clears every answer and your streak" + (currentUser ? ", on this device and in the cloud" : "") + ". Continue?")) {
+        quizDrafts = {}; writeQuizDrafts();
         S = blank(); saveLocal(); syncProgress(); updateStreak(); screenProgress();
       }
     };
@@ -661,14 +776,29 @@
 
   /* ---------- quiz engine ---------- */
 
-  function screenQuiz(items, title, seconds) {
-    if (!items.length) {
+  function screenQuiz(items, title, seconds, quizKey) {
+    quizKey = quizKey || "practice/" + title;
+    var draft = quizDrafts[quizKey];
+    if (!draft && !items.length) {
       render('<div class="card"><div class="empty">There are no questions here yet.</div></div>');
       return;
     }
-    var i = 0, score = 0, timeLeft = seconds || 0;
-    var answers = new Array(items.length).fill(null);
-    var corrects = new Array(items.length).fill(null);
+    draft = draft || newQuizDraft(items, title, quizKey, "subject", seconds);
+    items = draft.items;
+    title = draft.title;
+    seconds = draft.seconds;
+    var i = draft.index, score = 0, timeLeft = 0, finished = false;
+    var answers = draft.answers;
+    var corrects = answers.map(function (n, idx) {
+      if (n === null) return null;
+      var ok = n === items[idx].q.a;
+      if (ok) score++;
+      return ok;
+    });
+
+    function updateTime() {
+      timeLeft = seconds ? Math.max(0, Math.ceil((draft.deadline - Date.now()) / 1000)) : 0;
+    }
 
     function answeredCount() {
       return answers.filter(function (a) { return a !== null; }).length;
@@ -679,7 +809,10 @@
     }
 
     function finish() {
+      if (finished) return;
+      finished = true;
       stopQuizTimer();
+      clearQuizDraft(quizKey);
       if (answeredCount()) markDay();
       var pct = Math.round(score / items.length * 100);
       var skipped = items.length - answeredCount();
@@ -694,11 +827,13 @@
         "<h2>" + msg + "</h2></div>" +
         '<button class="primary" id="againBtn" style="margin-top:24px">Practise again</button>' +
         '<button class="ghost" id="homeBtn">Back to today</button>');
-      document.getElementById("againBtn").onclick = function () { screenQuiz(shuffle(items), title, seconds); };
+      document.getElementById("againBtn").onclick = function () { screenQuiz(shuffle(items), title, seconds, quizKey); };
       document.getElementById("homeBtn").onclick = function () { stack = []; go(screenHome); setTab("home"); };
     }
 
     function tryFinish() {
+      updateTime();
+      if (seconds && timeLeft <= 0) { finish(); return; }
       var left = items.length - answeredCount();
       if (left && !confirm(left + (left === 1 ? " question is" : " questions are") + " not answered yet. Finish anyway?")) return;
       finish();
@@ -787,7 +922,10 @@
     }
 
     function draw() {
-      if (i >= items.length) return finish();
+      updateTime();
+      if (i >= items.length || (seconds && timeLeft <= 0)) return finish();
+      draft.index = i;
+      saveQuizDraft(draft);
       var it = items[i];
       var q = it.q;
       var answered = answers[i] !== null;
@@ -797,7 +935,7 @@
         ? '<span class="qclock' + (timeLeft < 300 ? " low" : "") + '">' + clock() + "</span>"
         : "<span>" + esc(title) + "</span>";
 
-      var main = '<div class="qhead"><span>' + head + "</span>" + right + "</div>" +
+      var main = quizSaveWarningHtml() + '<div class="qhead"><span>' + head + "</span>" + right + "</div>" +
         '<span class="bar"><i style="width:' + Math.round(answeredCount() / items.length * 100) + '%"></i></span>' +
         '<p class="qtext">' + esc(q.q) + "</p>" +
         '<div id="opts">';
@@ -814,6 +952,8 @@
     }
 
     function choose(n, it) {
+      updateTime();
+      if (finished || (seconds && timeLeft <= 0)) { finish(); return; }
       if (answers[i] !== null) return;
       var q = it.q;
       var ok = n === q.a;
@@ -824,6 +964,7 @@
       S.total++;
       if (ok) { score++; S.correct++; delete S.wrong[it.id]; }
       else { S.wrong[it.id] = 1; }
+      saveQuizDraft(draft);
       save();
 
       app.querySelectorAll(".opt").forEach(function (btn) {
@@ -846,16 +987,15 @@
     }
 
     stopQuizTimer();
-    if (seconds) {
+    draw();
+    if (seconds && !finished) {
       quizTimer = setInterval(function () {
-        timeLeft--;
-        if (timeLeft <= 0) { timeLeft = 0; finish(); return; }
+        updateTime();
+        if (timeLeft <= 0) { finish(); return; }
         var h = app.querySelector(".qclock");
         if (h) { h.textContent = clock(); h.classList.toggle("low", timeLeft < 300); }
       }, 1000);
     }
-
-    draw();
   }
 
   /* ---------- grammar ---------- */
@@ -865,6 +1005,9 @@
   }
 
   function screenLogin() {
+    stopQuizTimer();
+    navId++;
+    quizDrafts = {};
     stack = [];
     setChrome(false);
     render('<div class="card login-card"><div class="mark" style="font-size:2.6rem;margin-bottom:6px" aria-hidden="true">&#10047;</div>' +
@@ -910,6 +1053,11 @@
   }
 
   function screenGrammarExercise(id, isToday) {
+    var draft = quizDrafts["grammar/" + id];
+    if (draft) {
+      screenQuizGrammar(draft.items, draft.title, draft.exerciseId, draft.exerciseDate, draft.focus);
+      return;
+    }
     if (!fbDb) {
       render('<div class="card"><div class="empty">Grammar exercises need Firebase. Please check that firebase-config.js is present.</div></div>');
       return;
@@ -997,8 +1145,17 @@
   }
 
   function screenQuizGrammar(items, title, exerciseId, exerciseDate, focus) {
-    var i = 0, score = 0;
-    var answers = new Array(items.length).fill(null);
+    var quizKey = "grammar/" + exerciseId;
+    var draft = quizDrafts[quizKey] || newQuizDraft(items, title, quizKey, "grammar");
+    draft.exerciseId = exerciseId;
+    draft.exerciseDate = exerciseDate;
+    draft.focus = focus || [];
+    items = draft.items;
+    title = draft.title;
+    focus = draft.focus;
+    var i = draft.index, score = 0, finished = false;
+    var answers = draft.answers;
+    answers.forEach(function (n, idx) { if (n === items[idx].q.a) score++; });
 
     function recordAttempt() {
       if (!fbDb || !currentUser) return;
@@ -1018,7 +1175,10 @@
     }
 
     function finish() {
+      if (finished) return;
+      finished = true;
       recordAttempt();
+      clearQuizDraft(quizKey);
       var pct = Math.round(score / items.length * 100);
       render('<div class="result"><div class="score">' + score + "</div>" +
         '<div class="of">out of ' + items.length + " &middot; " + pct + "%</div>" +
@@ -1031,9 +1191,11 @@
 
     function draw() {
       if (i >= items.length) return finish();
+      draft.index = i;
+      saveQuizDraft(draft);
       var q = items[i].q;
       var answered = answers[i] !== null;
-      var html = '<div class="qhead"><span>' + (i + 1) + " of " + items.length + "</span><span>" + esc(title) + "</span></div>" +
+      var html = quizSaveWarningHtml() + '<div class="qhead"><span>' + (i + 1) + " of " + items.length + "</span><span>" + esc(title) + "</span></div>" +
         '<span class="bar"><i style="width:' + Math.round(i / items.length * 100) + '%"></i></span>' +
         (i === 0 && focus && focus.length ? '<div class="focuscard"><span class="k">Today\'s focus</span>' + focus.map(esc).join(" &middot; ") + "</div>" : "") +
         (q.topic ? '<p class="qtopic">' + esc(q.topic) + "</p>" : "") +
@@ -1052,6 +1214,7 @@
           var n = parseInt(btn.dataset.n, 10);
           answers[i] = n;
           if (n === q.a) score++;
+          saveQuizDraft(draft);
           showAnswer(q, n);
           document.getElementById("nextBtn").focus({ preventScroll: true });
         };
@@ -1226,6 +1389,7 @@
   function boot() {
     var hasFirebase = initFirebase();
     if (!hasFirebase) {
+      loadQuizDrafts();
       setChrome(true);
       go(screenHome);
       return;
@@ -1233,7 +1397,9 @@
 
     fbAuth.onAuthStateChanged(function (user) {
       if (user) {
+        stopQuizTimer();
         currentUser = user;
+        loadQuizDrafts();
         isAdmin = user.email === ADMIN_EMAIL;
         render('<div class="card"><div class="empty">Loading your progress…</div></div>');
         loadProgressFromCloud(user.uid).then(function () {

@@ -113,7 +113,9 @@ Stored under the localStorage key `sakura-study-v1` (the uid that owns it is kep
 
 - `load()` merges missing keys from `blank()` so schema upgrades are safe.
 - `save()` is called after every answer.
-- Resetting progress wipes everything back to `blank()`.
+- Resetting progress wipes everything back to `blank()` and clears this account's unfinished tests on this browser.
+
+Unfinished tests are stored separately in `sakura-study-quizzes-v1:<uid>` (or `:local` without Firebase). Each draft saves its question snapshot/order, chosen answers, current index, title, and an absolute deadline for timed exams. Draft keys distinguish daily sets by date, reviews, whole papers, units, mocks, and grammar exercises. Drafts are saved on every answer and question change, survive logout for the same account, and are removed on finish or confirmed discard. They are local to this browser, not synced to Firestore.
 
 ---
 
@@ -146,6 +148,7 @@ Tabs and their root screens:
 - Lists subjects as row links; tapping opens `screenSubject`.
 - If there are wrong answers, shows "Review the N you got wrong" ghost button.
 - Shows "Admin dashboard" for `rahilrizvi0786110@gmail.com`.
+- Lists unfinished tests with Resume / View result and confirmed Discard buttons. Starting the same test also resumes its saved draft.
 
 ### `screenSubject(subject)`
 - Lists papers for that subject with semester tags.
@@ -157,7 +160,7 @@ Tabs and their root screens:
 
 ### `screenPaper(paper)`
 - Card to practise the whole paper (shuffled).
-- Mock exam button: up to 75 questions (`MOCK_COUNT`), 90-minute timer (`MOCK_SECONDS`), asks for confirmation first. The countdown is the module-level `quizTimer` and is stopped by `go()`/back, so leaving a mock never force-finishes another screen.
+- Mock exam button: up to 75 questions (`MOCK_COUNT`), 90-minute timer (`MOCK_SECONDS`), asks for confirmation on a new attempt. The saved deadline keeps counting down while away. `go()`/back stop the module-level `quizTimer` render interval, so expiry never overwrites another screen; resuming an expired mock shows its result.
 - Units without questions (notes-only papers) open their notes directly.
 - Lists units with progress bars.
 - Tapping a unit starts a shuffled quiz for that unit.
@@ -173,7 +176,8 @@ Tabs and their root screens:
 - Lists progress bars per paper.
 - Has a "Reset all progress" button with confirm dialog.
 
-### `screenQuiz(items, title, seconds)`
+### `screenQuiz(items, title, seconds, quizKey)`
+- Resumes the draft for `quizKey` or creates one; restored answers are not counted again in lifetime progress.
 - Renders one question at a time with A-D options.
 - On answer: disables options, highlights correct/wrong, shows verdict.
 - Shows a question-number grid on the right (desktop) or below the question (mobile). Tapping a number jumps to that question and shows its state: current, correct, wrong, or not yet attempted.
@@ -182,7 +186,7 @@ Tabs and their root screens:
 - Finish screen shows score, percentage, and a motivational message.
 
 ### `screenQuizGrammar(items, title, exerciseId, exerciseDate, focus)`
-- Simplified quiz for grammar exercises fetched from Firestore.
+- Simplified quiz for grammar exercises fetched from Firestore. Saved drafts can resume without fetching the exercise again and submit an attempt only when finished.
 - Shows a "Today's focus" card on question 1 when the exercise has `focus`, and each question's `explanation` after answering.
 - Records an attempt document in `grammar_attempts` (including `email` and per-question `responses`) on finish. Has a Previous button.
 - Past exercises list shows the user's best score per day.
@@ -353,6 +357,16 @@ python3 -m http.server 8000
 ```
 
 Then visit `http://localhost:8000`.
+
+To run the quiz-resume browser tests (Firebase is stubbed; no live services are used):
+
+```bash
+python3 -m pip install playwright
+python3 -m playwright install chromium
+python3 -m unittest discover -s tests -v
+```
+
+If using an already installed Chromium, set `CHROMIUM_PATH` to its executable.
 
 To regenerate notes after editing markdown:
 

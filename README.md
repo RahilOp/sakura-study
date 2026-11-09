@@ -55,6 +55,15 @@ Tell her to open the URL on her phone and use **Add to Home Screen**. It then be
 
 Progress is stored in **Firebase Firestore** and synced locally. She can use the app from any device after logging in.
 
+### Resuming an unfinished test
+
+Answers and your place in a test are saved automatically on this browser. After switching tabs, refreshing, or returning to the site, open **Today → Unfinished tests → Resume test**. Opening the same test from its usual button also resumes it. Daily practice, paper/unit quizzes, reviews, mock exams, and grammar exercises are saved separately for each account.
+
+- Question order, selected answers, score, and current question are preserved; resuming doesn't count old answers again.
+- Mock exam timers keep running while you are away. If time has expired, **View result** scores the saved answers.
+- Finished tests are removed from this list. **Discard saved test** removes an unfinished attempt after confirmation, without undoing answers already counted in your progress.
+- Unfinished tests stay on this browser; they don't move between devices. Clearing site data or resetting progress removes them. If browser storage is unavailable, a warning appears rather than claiming the test is saved.
+
 ## Adding questions
 
 Everything lives in `data/`. The format is:
